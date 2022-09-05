@@ -21,7 +21,7 @@
 
 <!-- TEAM -->
 ### Miembros del equipo
-* [Fernanda Camila Vasquez Melendez](https://github.com/cam-vasquez)
+* [Fernanda Camila Vásquez Meléndez](https://github.com/cam-vasquez)
 * [Melvin Armando Aguilar Hernández](https://github.com/MelvinAguilar)
 * [Henry Eduardo Escobar Lima](https://github.com/HenryLima07)
 

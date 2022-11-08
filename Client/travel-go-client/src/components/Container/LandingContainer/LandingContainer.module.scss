@@ -1,12 +1,14 @@
 @import "./../../../mixins";
 
 .LandingContainer {
-  min-height: 100vh;
   max-width: 1440px;
-  margin: auto;
+  margin-inline: auto;
 
-  //background-color: #b68d8d;
-  /*background-image:   url("./../../../assets/arena.svg"),
+  &__content {
+    min-height: 100vh;
+
+    //background-color: #b68d8d;
+    /*background-image:   url("./../../../assets/arena.svg"),
                         url("./../../../assets/leaf.svg"),
                         url("./../../../assets/leaf2.svg"),
                         url("./../../../assets/leaf3.svg"),
@@ -14,14 +16,20 @@
                         background-repeat: no-repeat;
     background-size: contain, 10rem,10rem,10rem;
     background-position: top right, bottom left, bottom left, bottom left;*/
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-inline: 1rem;
-  text-align: center;
-  
-  > div {
-    max-width: 30rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: 1rem;
+    //text-align: center;
+
+    &-text {
+      max-width: 30rem;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-block: 2rem;
+    }
   }
 
   h1 {
@@ -34,10 +42,7 @@
     }
   }
 
-  p {
-    font-size: 1rem;
-    margin-block: 2rem;
-  }
+  
 
   @include media-breakpoint-up(600px) {
     text-align: left;
@@ -53,7 +58,7 @@
       }
     }
 
-    p {
+    &__content p {
       font-size: 1.4rem;
     }
   }

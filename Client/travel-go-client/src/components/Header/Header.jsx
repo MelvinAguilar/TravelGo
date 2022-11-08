@@ -10,9 +10,9 @@ const Header = () => {
 
       <Navbar />
 
-      <Button className={classes["Header__button"]}>Iniciar sesión</Button>
+      <Button modifierClass="Button--white">Iniciar sesión</Button>
     </header>
   );
-};
+};  
 
 export default Header;

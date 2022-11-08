@@ -1,0 +1,63 @@
+.LandingInformation {
+
+    &__title {
+        max-width: 35rem;
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+
+        > div {
+            flex: 1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    &__card {
+        max-width: 23rem;
+        min-height: 20rem;
+        margin: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: 0.7rem;
+        box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        i {
+            font-size: 3rem;
+        }
+
+        h3 {
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        button {
+            margin-top: auto;
+        }
+    }
+}

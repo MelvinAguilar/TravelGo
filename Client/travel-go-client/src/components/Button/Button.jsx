@@ -1,8 +1,8 @@
 import classes from "./Button.module.scss";
 
-const Button = ({ children, className, ...rest }) => {
+const Button = ({ children, type, className, ...rest }) => {
   return (
-    <button className={`${classes["Button"]} ${className}`} {...rest}>
+    <button className={`${classes["Button"]} ${className}`} {...rest} type={type}>
       {children}
     </button>
   );

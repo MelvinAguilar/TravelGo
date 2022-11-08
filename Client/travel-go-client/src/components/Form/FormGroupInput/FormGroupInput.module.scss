@@ -1,0 +1,14 @@
+@import "./../../../mixins";
+
+.FormGroupInput {
+  margin-block: 1rem;
+  position: relative;
+
+  &__input {
+    @include forminput;
+  }
+
+  &__label {
+    @include formlabel;
+  }
+}

@@ -1,5 +1,30 @@
+@import "./../../mixins";
+
 .Footer {
   background-color: #b68d8d;
-  min-height: 40vh;
-  padding: 30px;
+
+  &__copy {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  @include media-breakpoint-up(600px) {
+    &__content {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      max-width: 1440px;
+      margin: auto;
+
+      > div {
+        flex: 50%;
+      }
+    }
+  }
 }

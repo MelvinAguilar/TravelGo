@@ -73,3 +73,12 @@ td,
 th {
   padding: 0;
 }
+
+/* Focus on elements only when they are navigated to using the keyboard. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: #6c5ce7 dotted 0.188rem;
+  outline-offset: 0.15rem;
+}

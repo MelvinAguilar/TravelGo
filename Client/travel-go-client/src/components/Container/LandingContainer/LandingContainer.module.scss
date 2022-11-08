@@ -1,0 +1,60 @@
+@import "./../../../mixins";
+
+.LandingContainer {
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: auto;
+
+  //background-color: #b68d8d;
+  /*background-image:   url("./../../../assets/arena.svg"),
+                        url("./../../../assets/leaf.svg"),
+                        url("./../../../assets/leaf2.svg"),
+                        url("./../../../assets/leaf3.svg"),
+                        url("./../../../assets/leaf4.svg");
+                        background-repeat: no-repeat;
+    background-size: contain, 10rem,10rem,10rem;
+    background-position: top right, bottom left, bottom left, bottom left;*/
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-inline: 1rem;
+  text-align: center;
+  
+  > div {
+    max-width: 30rem;
+  }
+
+  h1 {
+    font-size: 1.87rem;
+
+    > span {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    margin-block: 2rem;
+  }
+
+  @include media-breakpoint-up(600px) {
+    text-align: left;
+    padding-inline: 3rem;
+
+    h1 {
+      font-size: 3.5rem;
+
+      > span {
+        text-transform: uppercase;
+        font-size: 5rem;
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}

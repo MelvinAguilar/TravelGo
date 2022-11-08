@@ -1,0 +1,25 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  background: hsla(360, 100%, 100%, 0.9);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  /*background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);*/
+
+  /*position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;*/
+
+  &__logo {
+    width: 10rem;
+  }
+}

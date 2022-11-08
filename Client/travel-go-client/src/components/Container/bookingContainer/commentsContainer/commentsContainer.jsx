@@ -11,7 +11,7 @@ const commentsContainer  = ()=>{
                 <figure>
                     <StarFill/>
                 </figure>
-                <h2>4.7 (100 reseñas)</h2>
+                <h2>4.7  ·  (100 reseñas)</h2>
             </div>
             <div className={classes["comments-container"]}>
                 <Comment/>

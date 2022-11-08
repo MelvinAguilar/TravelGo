@@ -6,11 +6,12 @@ import Footer from "./components/Footer/Footer";
 function App() {
   return (
     <div className={classes["App"]}>
-      {//<Header />
+      {<Header />
       }
 
       <main>
-        <Booking />
+        {//<Booking />
+        }
       </main>
 
       {<Footer />

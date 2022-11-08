@@ -24,26 +24,27 @@
 
 ### Font Colors
 
-`$text1: 000000;`
-`$text2: 111111;`
-`$text3: 2A2A2A;`
-`$text4: 515151;`
+`$text1: 000000;`  
+`$text2: 111111;`  
+`$text3: 2A2A2A;`  
+`$text4: 515151;`  
 `$text5: ffffff;`
 
 ### Colors
 
-`$dominant: ffffff;`
-`$complement: 111111;`
-`$accent1: FEDFB1;`
-`$accent2: FFDA78;`
-`$accent3: 130F49;`
-`$accent4: DE5A75;`
-`$accent5: 8DABAC;`
-`$accent6: 6C5CE7;`
+`$dominant: ffffff;`  
+`$complement: 111111;`  
+`$accent1: FEDFB1;`  
+`$accent2: FFDA78;`  
+`$accent3: 130F49;`  
+`$accent4: DE5A75;`  
+`$accent5: 8DABAC;`  
+`$accent6: 6C5CE7;`  
 
 ### Border shadow
 
-`$shadow1: box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.05);`
+`$shadow1: box-shadow: 0px 4px 5px 5px rgba(0, 0, 0, 0.05);`  
+
 
 ### Imágenes
 

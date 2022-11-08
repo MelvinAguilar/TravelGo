@@ -1,0 +1,18 @@
+@import "./../../../mixins";
+
+.FormGroupTextarea {
+  margin-block: 1rem;
+  position: relative;
+
+  &__input {
+    @include forminput;
+  }
+
+  &__label {
+    @include formlabel;
+  }
+
+  textarea {
+    resize: none;
+  }
+}

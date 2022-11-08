@@ -11,4 +11,8 @@
   &__label {
     @include formlabel;
   }
+
+  textarea {
+    resize: none;
+  }
 }

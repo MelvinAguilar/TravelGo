@@ -7,11 +7,10 @@ const Header = () => {
   return (
     <header className={classes["Header"]}>
       <img src={logo} alt="Travel Go" className={classes["Header__logo"]} />
+
       <Navbar />
 
-      {/* Add purple class  */}
       <Button className={classes["Header__button"]}>Iniciar sesión</Button>
-      {/* <Button className={"Button--purple"}>Contact us</Button> */}
     </header>
   );
 };

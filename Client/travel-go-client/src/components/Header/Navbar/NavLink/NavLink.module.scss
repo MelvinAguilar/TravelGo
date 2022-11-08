@@ -1,21 +1,12 @@
 @import "./../../../../mixins";
 
 .NavLink {
-  header &:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    background-color: #fdcb6e;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    top: 35%;
-  }
-
+  position: relative;
+  
   &__item {
     position: relative;
     color: #2a2a2a;
     text-decoration: none;
-    margin-inline: 2.4rem 2rem;
 
     &::before {
       content: "";
@@ -36,6 +27,19 @@
         transform-origin: center;
         transform: scaleX(1);
       }
+    }
+  }
+
+  @include media-breakpoint-up(1000px) {
+    header &:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      background-color: #fdcb6e;
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      top: 35%;
+      right: -1.5rem;
     }
   }
 }

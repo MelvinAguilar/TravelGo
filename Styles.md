@@ -4,21 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
 
-`- Concert One para display`
-`- IBM Plex Serif para headlines`
+`- Concert One para display`  
+`- IBM Plex Serif para headlines`  
 `- Source Sans Pro para body, label y tittles`
 
 
 ### CSS rules to specify families
 
-`$display-font: 'Concert One', cursive;`
-`$headlines-font: 'IBM Plex Serif', serif;`
+`$display-font: 'Concert One', cursive;`  
+`$headlines-font: 'IBM Plex Serif', serif;`  
 `$body-label-tittle-font: 'Source Sans Pro', sans-serif;`
 
-`font-family: 'Concert One', cursive;`
-`font-family: 'IBM Plex Serif', serif;`
-`font-family: 'Source Sans Pro', sans-serif;`
 
+`font-family: 'Concert One', cursive;`  
+`font-family: 'IBM Plex Serif', serif;`  
+`font-family: 'Source Sans Pro', sans-serif;`
 
 ### Colores
 

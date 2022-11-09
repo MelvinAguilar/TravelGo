@@ -2,11 +2,16 @@
 
 .NavLink {
   position: relative;
-  
+
   &__item {
     position: relative;
     color: #2a2a2a;
     text-decoration: none;
+
+    header & {
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
 
     &::before {
       content: "";
@@ -30,7 +35,7 @@
     }
   }
 
-  @include media-breakpoint-up(1000px) {
+  @include media-breakpoint-up($screen-lg) {
     header &:not(:last-child)::after {
       content: "";
       position: absolute;

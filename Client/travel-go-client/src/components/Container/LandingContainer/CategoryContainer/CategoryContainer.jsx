@@ -1,6 +1,8 @@
 import classes from "./CategoryContainer.module.scss";
 import Button from "./../../../Button/Button";
 
+import { Camera } from "react-bootstrap-icons";
+
 const CategoryContainer = () => {
   return (
     <section className={classes["CategoryContainer"]}>
@@ -14,7 +16,7 @@ const CategoryContainer = () => {
       </div>
       <div className={classes["CategoryContainer__categories"]}>
         <Button modifierClass={"Button--white"}>
-          <i className="fas fa-search"></i>
+          <Camera />
           stargazing
         </Button>
         <Button modifierClass={"Button--white"}>

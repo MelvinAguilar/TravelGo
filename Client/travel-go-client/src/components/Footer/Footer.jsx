@@ -68,7 +68,7 @@ const Footer = () => {
             <p className={classes["Subtitle"]}>Contact us</p>
             <a href="mailto:hello@travelgo.com">hello@travelgo.com</a>
           </address>
-          <Form>
+          <Form className={classes["Footer__form"]}>
             <fieldset>
               <legend className={classes["Subtitle"]}>Leave a message</legend>
               <FormGroupInput
@@ -88,11 +88,11 @@ const Footer = () => {
                 label="Mensaje"
                 name="message"
                 placeholder=" "
-                rows="5"
+                rows="3"
                 required={true}
               />
+              <Button modifierClass="Button--white" type="submit">Enviar</Button>
             </fieldset>
-            <Button type="submit">Enviar</Button>
           </Form>
         </div>
       </div>

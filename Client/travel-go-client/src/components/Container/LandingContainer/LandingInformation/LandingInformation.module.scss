@@ -1,8 +1,11 @@
+@import "./../../../../mixins";
+
 .LandingInformation {
   padding-block: 4.25rem;
 
   &__title {
-    max-width: 47.063rem;
+    font-family: 'IBM Plex Serif';
+    max-width: 50.063rem;
     margin-inline: auto;
     margin-bottom: 2.5rem;
     display: flex;
@@ -21,17 +24,12 @@
     p {
       font-size: 1.5rem;
     }
-
-    i {
-      font-size: 4.063rem;
-    }
   }
 
   &__cards {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    //-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
   }
@@ -39,7 +37,7 @@
   &__card {
     max-width: 24.708rem;
     min-height: 19.688rem;
-    //margin: 1rem;
+    text-align: center;
     padding: 2rem;
     display: flex;
     flex-direction: column;

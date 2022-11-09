@@ -1,29 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
-
 @import "./../../../mixins";
 
 .LandingContainer {
-  max-width: 90rem;
-  margin-inline: auto;
   position: relative;
   overflow-x: hidden;
+  padding: 1rem;
 
   &__content {
     height: 100vh;
-    max-height: 62.5rem;
     position: relative;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 1rem;
-    text-align: center;
-
-    &-text {
-      max-width: 37.5rem;
+    > div {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 1rem;
+      text-align: center;
     }
 
-    &-image {
+    .woman {
       display: none;
     }
 
@@ -31,6 +26,46 @@
       font-size: 1rem;
       margin-block: 2rem;
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -3rem;
+      height: 19.5rem;
+      width: 18.5rem;
+      // width: -webkit-fill-available;
+      // height: -webkit-fill-available;
+      background: url("./../../../assets/group-leaf.svg") 0 0 repeat;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -3rem;
+      right: -4rem;
+      height: 9.5rem;
+      width: 7.5rem;
+      background: url("./../../../assets/leaf.svg") 0 0 repeat;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(237deg);
+      z-index: 0;
+    }
+  }
+
+  .sand {
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    height: 50vh;
+    max-height: 62.5rem;
+    z-index: -50;
+    background-size: cover;
   }
 
   h1 {
@@ -47,7 +82,9 @@
     }
   }
 
-  @include media-breakpoint-up(600px) {
+  @include media-breakpoint-up($screen-sm) {
+    padding: 0 1.5rem;
+
     h1 {
       font-size: 3.225rem;
       line-height: 0.7;
@@ -59,17 +96,17 @@
 
     &__content {
       text-align: left;
-      padding-inline: 3rem;
       padding-top: 5.313rem;
 
       p {
         font-size: 1.4rem;
-        max-width: 31.938rem;
       }
     }
   }
 
-  @include media-breakpoint-up(1000px) {
+  @include media-breakpoint-up($screen-lg) {
+    padding: 0 3rem;
+
     h1 {
       font-size: 5.225rem;
 
@@ -84,52 +121,51 @@
     }
 
     &__content {
+      max-height: 62.5rem;
+
+      > div {
+        text-align: left;
+      }
+
+      &-text {
+        max-width: 37.5rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+        max-width: 31.938rem;
+      }
+
       &-image {
         display: block;
       }
 
       &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: -3rem;
         height: 23.625rem;
         width: 36.063rem;
-        background: url("./../../../assets/group-leaf.svg") 0 0 repeat;
-        background-size: cover;
-        z-index: -1;
       }
 
       &::after {
-        content: "";
-        position: absolute;
         top: -9rem;
         right: -10rem;
         height: 24.5rem;
         width: 20.5rem;
-        background: url("./../../../assets/leaf.svg") 0 0 repeat;
-        background-size: cover;
-        transform: rotate(-107.73deg);
-        z-index: 0;
-      }
-
-      .sand {
-        position: absolute;
-        top: 0;
-        right: -3rem;
-        height: 100vh;
-        max-height: 62.5rem;
-        z-index: -50;
-        background-size: cover;
       }
 
       .woman {
         height: 80vh;
+        max-height: 45rem;
         z-index: 10;
         align-self: normal;
         display: block;
         justify-self: auto;
       }
+    }
+
+    .sand {
+      height: 100vh;
+      top: 0;
+      right: -3rem;
     }
   }
 }

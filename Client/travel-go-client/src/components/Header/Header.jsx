@@ -4,6 +4,7 @@ import classes from "./Header.module.scss";
 import logo from "../../assets/logo_light-mode.svg";
 import Navbar from "./Navbar/Navbar";
 import Button from "../Button/Button";
+import Container from "../Container/Container";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
@@ -14,17 +15,19 @@ const Header = () => {
     } else {
       setSticky(false);
     }
-  }
+  };
 
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
-      <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
+    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`} >
+      <Container>
+        <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
 
-      <Navbar />
+        <Navbar />
 
-      <Button modifierClass="Button--white">Iniciar sesión</Button>
+        <Button modifierClass="Button--white">Iniciar sesión</Button>
+      </Container>
     </header>
   );
 };

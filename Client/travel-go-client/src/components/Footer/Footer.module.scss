@@ -33,6 +33,12 @@
   fieldset {
     border: none;
     margin-top: 2rem;
+
+    button {
+      width: 100%;
+      height: fit-content;
+      margin: 0;
+    }
   }
 
   // Social media links
@@ -59,7 +65,7 @@
     }
   }
 
-  @include media-breakpoint-up(600px) {
+  @include media-breakpoint-up($screen-sm) {
     text-align: left;
 
     &__content {
@@ -84,7 +90,7 @@
       flex-direction: column;
       flex-wrap: wrap;
       max-height: 7rem;
-  
+
       a {
         display: inline-block;
         margin: 1rem 0;
@@ -92,10 +98,43 @@
     }
 
     address a {
-        font-size: 2rem;
+      font-size: 2rem;
     }
   }
 
+  @include media-breakpoint-up($screen-md) {
+    &__form fieldset {
+      display: grid;
+      grid-template-columns: 2fr 0.5fr 1.6fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+      grid-template-areas:
+        "c1 c2 c2"
+        "c3 c3 c4";
+
+      > div {
+        margin-block: 0;
+      }
+
+      //Create a form and set the grid area
+      div:nth-child(2) {
+        grid-area: c1;
+      }
+
+      div:nth-child(3) {
+        grid-area: c2;
+      }
+      div:nth-child(4) {
+        grid-area: c3;
+      }
+
+      button {
+        grid-area: c4;
+        padding: 0.8rem;
+        border-radius: 1.063rem;
+      }
+    }
+  }
 }
 
 .Subtitle {
@@ -105,8 +144,8 @@
   text-transform: uppercase;
   margin-block: 4rem 0.5rem;
 
-  @include media-breakpoint-up(600px) {
+  @include media-breakpoint-up($screen-md) {
     font-size: 0.89rem;
-    margin-block: 2rem 0.5rem;
+    margin-block: 2rem 1rem;
   }
 }

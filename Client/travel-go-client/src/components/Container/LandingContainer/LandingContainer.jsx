@@ -3,50 +3,72 @@ import Button from "./../../Button/Button";
 import LandingInformation from "./LandingInformation/LandingInformation";
 import CategoryContainer from "./CategoryContainer/CategoryContainer";
 import FeatureContainer from "./FeatureContainer/FeatureContainer";
+import ExploreContainer from "./../ExploreContainer/ExploreContainer";
+import Container from "./../Container";
 
-import leaf1 from "./../../../assets/leaf.svg";
-import leaf2 from "./../../../assets/leaf2.svg";
-import leaf3 from "./../../../assets/leaf3.svg";
-import leaf4 from "./../../../assets/leaf4.svg";
-import arena from "./../../../assets/bg-sand.png";
+import sandMobile from "./../../../assets/bg-sand-mobile.png";
+import sandDesktop from "./../../../assets/bg-sand-desktop.png";
 import woman from "./../../../assets/woman.svg";
+import { Binoculars } from "react-bootstrap-icons";
 
 const LandingContainer = () => {
   return (
     <div className={classes["LandingContainer"]}>
       <div className={classes["LandingContainer__content"]}>
-        <div className={classes["LandingContainer__content-text"]}>
-          <h1>
-            Let's find your <span>Adventure</span>
-          </h1>
-          <p>
-            Descubre lugares mágicos en El Salvador, un paraíso tropical secreto
-            en medio de junglas de concreto.
-          </p>
-          <Button modifierClass="Button--white">
-            Explore a hidden trip
-            <i className="fas fa-arrow-right"></i>
-          </Button>
-        </div>
-        <div className={classes["LandingContainer__content-image"]}>
-          <img
-            src={woman}
-            className={classes["woman"]}
-            alt=""
-            aria-hidden="true"
-          />
-          <img
-            src={arena}
-            className={classes["sand"]}
-            alt=""
-            aria-hidden="true"
-          />
-        </div>
+        <Container>
+          <div className={classes["LandingContainer__content-text"]}>
+            <h1>
+              Let's find your <span>Adventure</span>
+            </h1>
+            <p>
+              Descubre lugares mágicos en El Salvador, un paraíso tropical
+              secreto en medio de junglas de concreto.
+            </p>
+            <Button modifierClass="Button--white">
+              Explore a hidden trip
+              <Binoculars />
+            </Button>
+          </div>
+          <div className={classes["LandingContainer__content-image"]}>
+            <img
+              src={woman}
+              className={classes["woman"]}
+              alt=""
+              aria-hidden="true"
+            />
+            <picture>
+              <source srcSet={sandDesktop} media="(min-width: 62em)" />
+              <img
+                src={sandMobile}
+                className={classes["sand"]}
+                alt=""
+                aria-hidden="true"
+              />
+            </picture>
+          </div>
+        </Container>
       </div>
 
-      <LandingInformation />
-      <FeatureContainer />
-      <CategoryContainer />
+      <Container>
+        <LandingInformation />
+        <FeatureContainer />
+        <CategoryContainer />
+        
+        <ExploreContainer>
+          <h2>Multitrips made for you</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae
+            congue justo. Maecenas at imperdiet ligula, et lobortis augue. Nam
+            suscipit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam vitae congue justo.
+          </p>
+          <Button modifierClass="Button--purple">
+            Explore a hidden trip
+            <Binoculars />
+          </Button>
+        </ExploreContainer>
+
+      </Container>
     </div>
   );
 };

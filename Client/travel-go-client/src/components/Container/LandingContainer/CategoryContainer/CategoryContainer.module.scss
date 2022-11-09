@@ -1,0 +1,39 @@
+.CategoryContainer {
+  margin-block: 4.375rem;
+
+  &__title {
+    display: flex;
+    align-items: center;
+
+    gap: 3.438rem;
+
+    p,
+    h2 {
+      flex: 50%;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 3.75rem;
+
+    button {
+      max-width: 11.625rem;
+      width: 100%;
+      min-height: 3.063rem;
+      border-radius: 0.625rem;
+      margin: 0;
+    }
+  }
+}

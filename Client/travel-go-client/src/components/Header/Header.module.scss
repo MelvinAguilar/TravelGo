@@ -4,8 +4,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem;
-  background: hsla(360, 100%, 100%, 0.9);
+  padding: 0.8rem 1rem;
+  transition: all 0.25s ease-in-out; 
 
   position: fixed;
   top: 0;
@@ -24,7 +24,7 @@
 
   > button {
     font-size: 0.7rem;
-    margin-right: 1.5rem;
+    margin-right: 2.3rem;
     padding: 0.3rem 0.5rem;
   }
 
@@ -39,4 +39,9 @@
       padding: 0.3rem 1.5rem;
     }
   }
+}
+
+.Fixed {
+  background: hsla(360, 100%, 100%, 0.95);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
 }

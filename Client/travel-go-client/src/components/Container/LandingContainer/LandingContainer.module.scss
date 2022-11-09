@@ -1,29 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=IBM+Plex+Serif:wght@100;200;300;400;500;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
 @import "./../../../mixins";
 
 .LandingContainer {
-  max-width: 1440px;
+  max-width: 90rem;
   margin-inline: auto;
+  position: relative;
+  overflow-x: hidden;
 
   &__content {
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 62.5rem;
+    position: relative;
 
-    //background-color: #b68d8d;
-    /*background-image:   url("./../../../assets/arena.svg"),
-                        url("./../../../assets/leaf.svg"),
-                        url("./../../../assets/leaf2.svg"),
-                        url("./../../../assets/leaf3.svg"),
-                        url("./../../../assets/leaf4.svg");
-                        background-repeat: no-repeat;
-    background-size: contain, 10rem,10rem,10rem;
-    background-position: top right, bottom left, bottom left, bottom left;*/
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding-inline: 1rem;
-    //text-align: center;
+    text-align: center;
 
     &-text {
-      max-width: 30rem;
+      max-width: 37.5rem;
+    }
+
+    &-image {
+      display: none;
     }
 
     p {
@@ -34,32 +35,101 @@
 
   h1 {
     font-size: 1.87rem;
+    font-family: "IBM Plex Serif";
+    font-weight: 400;
 
     > span {
       text-transform: uppercase;
       font-size: 2rem;
-      font-weight: 700;
+      font-weight: 400;
+
+      font-family: "Concert One";
     }
   }
 
-  
-
   @include media-breakpoint-up(600px) {
-    text-align: left;
-    padding-inline: 3rem;
-
     h1 {
-      font-size: 3.5rem;
+      font-size: 3.225rem;
+      line-height: 0.7;
 
       > span {
-        text-transform: uppercase;
-        font-size: 5rem;
-        font-weight: 700;
+        font-size: 4.475rem;
       }
     }
 
-    &__content p {
-      font-size: 1.4rem;
+    &__content {
+      text-align: left;
+      padding-inline: 3rem;
+      padding-top: 5.313rem;
+
+      p {
+        font-size: 1.4rem;
+        max-width: 31.938rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(1000px) {
+    h1 {
+      font-size: 5.225rem;
+
+      > span {
+        font-size: 6.475rem;
+      }
+    }
+
+    button {
+      padding-block: 0.6rem;
+      font-size: 1.388rem;
+    }
+
+    &__content {
+      &-image {
+        display: block;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -3rem;
+        height: 23.625rem;
+        width: 36.063rem;
+        background: url("./../../../assets/group-leaf.svg") 0 0 repeat;
+        background-size: cover;
+        z-index: -1;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -9rem;
+        right: -10rem;
+        height: 24.5rem;
+        width: 20.5rem;
+        background: url("./../../../assets/leaf.svg") 0 0 repeat;
+        background-size: cover;
+        transform: rotate(-107.73deg);
+        z-index: 0;
+      }
+
+      .sand {
+        position: absolute;
+        top: 0;
+        right: -3rem;
+        height: 100vh;
+        max-height: 62.5rem;
+        z-index: -50;
+        background-size: cover;
+      }
+
+      .woman {
+        height: 80vh;
+        z-index: 10;
+        align-self: normal;
+        display: block;
+        justify-self: auto;
+      }
     }
   }
 }

@@ -4,7 +4,7 @@ import Button from "./../../../Button/Button";
 const CategoryContainer = () => {
   return (
     <section className={classes["CategoryContainer"]}>
-      <div>
+      <div className={classes["CategoryContainer__title"]}>
         <h2>Explora según tus actividades favoritas</h2>
         <p>
           Vulputate molestie molestie amet leo blandit accumsan. Sapien sed amet
@@ -13,6 +13,18 @@ const CategoryContainer = () => {
         </p>
       </div>
       <div className={classes["CategoryContainer__categories"]}>
+        <Button modifierClass={"Button--white"}>
+          <i className="fas fa-search"></i>
+          stargazing
+        </Button>
+        <Button modifierClass={"Button--white"}>
+          <i className="fas fa-search"></i>
+          stargazing
+        </Button>
+        <Button modifierClass={"Button--white"}>
+          <i className="fas fa-search"></i>
+          stargazing
+        </Button>
         <Button modifierClass={"Button--white"}>
           <i className="fas fa-search"></i>
           stargazing

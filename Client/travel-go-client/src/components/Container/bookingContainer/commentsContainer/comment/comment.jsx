@@ -1,7 +1,7 @@
 import classes from "./comment.module.scss";
 import {PersonCircle} from "react-bootstrap-icons"
 
-const Comment = ()=>{
+const Comment = ({commentInformation})=>{
 
     return(
         <div className={classes["comment-container"]}>
@@ -10,12 +10,12 @@ const Comment = ()=>{
                     <PersonCircle/>
                 </figure>
                 <div>
-                    <h3>John El John</h3>
-                    14 de septiembre de 2022
+                    <h3>{commentInformation.usuario}</h3>
+                    {commentInformation.fecha}
                 </div>
             </div>
             <div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sodales suscipit. Aenean auctor nunc sit amet lacus auctor rutrum. Nunc at dictum tortor. Nunc sit amet lectus varius, vulputate ligula et, commodo nibh. 
+                {commentInformation.comentario}
             </div>
         </div>
     );

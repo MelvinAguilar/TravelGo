@@ -1,9 +1,21 @@
 import classes from "./mainContainer.module.scss";
 import TitleContainer from "./titleContainer/titleContainer";
+import ImgContainer from "./imgContainer/imgContainer";
+import MoreInformation from "./moreInformationContainer/moreInformation";
 
-const MainContainer = ()=>{
+const MainContainer = ({mainInformation})=>{
     return(
-        <TitleContainer/>
+        <section className={classes["main-information"]}>
+            <TitleContainer title={mainInformation.nombre}/>
+
+            <ImgContainer urlImgs={mainInformation.images}/>
+
+            <MoreInformation>
+                {mainInformation.descripcion_general}
+            </MoreInformation>
+
+        </section>
+
     );
 }
 

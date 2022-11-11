@@ -1,18 +1,19 @@
 @import "./../../../mixins";
 
+
+
+
 .Input {
   position: relative;
   
   input {
     @include forminput;
-    padding: 0.8rem ;
   }
-  
+ 
   &.hasIcon input {
     padding-right: 3rem;
   }
 
-  
   button {
     cursor: pointer;
     border: none;

@@ -14,24 +14,35 @@ const SignupForm = () => {
     setShowPassword(!showPassword);
   };
 
+  const togglePasswordButton = (
+    <button onClick={togglePassword} type="button">
+      {showPassword ? <Eye /> : <EyeSlash />}
+    </button>
+  );
+
   return (
     <Form className={classes["SignupForm"]}>
       <label htmlFor="name">Nombre</label>
-      <InputField modifierClass={"hasIcon"} placeholder={"e.g. John Doe"}>
-        <Person />
-      </InputField>
+      <InputField
+        modifierClass={"hasIcon"}
+        placeholder={"e.g. John Doe"}
+        icon={<Person />}
+      />
 
       <label htmlFor="email">Correo electrónico</label>
-      <InputField modifierClass={"hasIcon"} placeholder={"e.g. hellotravelgo@hotmail.com"}>
-        <Envelope />
-      </InputField>
+      <InputField
+        modifierClass={"hasIcon"}
+        placeholder={"e.g. hellotravelgo@hotmail.com"}
+        icon={<Envelope />}
+      />
 
       <label htmlFor="password">Contraseña</label>
-      <InputField modifierClass={"hasIcon"} placeholder={"********"} type={showPassword ? "text" : "password"}>
-        <button onClick={togglePassword} type="button">
-          {showPassword ? <Eye /> : <EyeSlash />}
-        </button>
-      </InputField>
+      <InputField
+        modifierClass={"hasIcon"}
+        placeholder={"********"}
+        type={showPassword ? "text" : "password"}
+        icon={togglePasswordButton}
+      />
 
       <Button type="submit">Registrarse</Button>
     </Form>

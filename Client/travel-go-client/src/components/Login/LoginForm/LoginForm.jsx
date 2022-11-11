@@ -14,19 +14,28 @@ const LoginForm = () => {
     setShowPassword(!showPassword);
   };
 
+  const togglePasswordButton = (
+    <button onClick={togglePassword} type="button">
+      {showPassword ? <Eye /> : <EyeSlash />}
+    </button>
+  );
+
   return (
     <Form className={classes["LoginForm"]}>
       <label htmlFor="email">Correo electrónico</label>
-      <InputField modifierClass={"hasIcon"} placeholder={"e.g. hellotravelgo@hotmail.com"}>
-        <Person />
-      </InputField>
+      <InputField
+        modifierClass={"hasIcon"}
+        placeholder={"e.g. hellotravelgo@hotmail.com"}
+        icon={<Person />}
+      />
 
       <label htmlFor="password">Contraseña</label>
-      <InputField modifierClass={"hasIcon"} placeholder={"*********"} type={showPassword ? "text" : "password"}>
-        <button onClick={togglePassword} type="button">
-          {showPassword ? <Eye /> : <EyeSlash />}
-        </button>
-      </InputField>
+      <InputField
+        modifierClass={"hasIcon"}
+        placeholder={"**********"}
+        icon={togglePasswordButton}
+        type={showPassword ? "text" : "password"}
+      />
 
       <Button type="submit">Iniciar sesión</Button>
     </Form>

@@ -17,8 +17,8 @@ function App() {
       </main>
 
       <Footer /> */}
-      {/* <Login /> */}
-      <Singup />
+      <Login />
+      {/* <Singup /> */}
       
     </div>
   );

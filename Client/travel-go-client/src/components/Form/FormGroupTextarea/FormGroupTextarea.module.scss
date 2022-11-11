@@ -5,6 +5,7 @@
 
   &__input {
     @include forminput;
+    @include formfloatlabel;
   }
 
   &__label {

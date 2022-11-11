@@ -1,9 +1,5 @@
 import classes from "./Footer.module.scss";
-import Form from "../Form/Form";
-import FormGroupInput from "../Form/FormGroupInput/FormGroupInput";
-import FormGroupTextarea from "../Form/FormGroupTextarea/FormGroupTextarea";
-import Button from "../Button/Button";
-
+import FooterForm from "./FooterForm/FooterForm";
 import NavLink from "../Header/Navbar/NavLink/NavLink";
 
 const Footer = () => {
@@ -68,32 +64,7 @@ const Footer = () => {
             <p className={classes["Subtitle"]}>Contact us</p>
             <a href="mailto:hello@travelgo.com">hello@travelgo.com</a>
           </address>
-          <Form>
-            <fieldset>
-              <legend className={classes["Subtitle"]}>Leave a message</legend>
-              <FormGroupInput
-                label="Usuario"
-                type="text"
-                name="user"
-                placeholder=" "
-              />
-              <FormGroupInput
-                label="Email"
-                type="email"
-                name="email"
-                placeholder=" "
-                required={true}
-              />
-              <FormGroupTextarea
-                label="Mensaje"
-                name="message"
-                placeholder=" "
-                rows="5"
-                required={true}
-              />
-            </fieldset>
-            <Button type="submit">Enviar</Button>
-          </Form>
+          <FooterForm />
         </div>
       </div>
 

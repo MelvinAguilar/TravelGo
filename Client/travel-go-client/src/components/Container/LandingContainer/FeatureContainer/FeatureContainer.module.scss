@@ -1,0 +1,37 @@
+.FeatureContainer {
+  padding-block: 5rem;
+  position: relative;
+  min-height: 100vh;
+
+  img {
+    position: absolute;
+    width: 64.604rem;
+    height: 57.715rem;
+    left: -28rem;
+    z-index: -1;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    max-width: 71.875rem;
+    margin-inline: auto;
+    gap: 11.875rem; //gap: 3.438rem;
+
+    p,
+    h2 {
+      flex: 50%;
+    }
+
+    h2 {
+      font-family: "Source Sans Pro";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 3.988rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}

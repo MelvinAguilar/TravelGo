@@ -30,11 +30,6 @@
     }
   }
 
-  fieldset {
-    border: none;
-    margin-top: 2rem;
-  }
-
   // Social media links
   &__social {
     display: flex;
@@ -59,7 +54,7 @@
     }
   }
 
-  @include media-breakpoint-up(600px) {
+  @include media-breakpoint-up($screen-sm) {
     text-align: left;
 
     &__content {
@@ -84,7 +79,7 @@
       flex-direction: column;
       flex-wrap: wrap;
       max-height: 7rem;
-  
+
       a {
         display: inline-block;
         margin: 1rem 0;
@@ -92,21 +87,7 @@
     }
 
     address a {
-        font-size: 2rem;
+      font-size: 2rem;
     }
-  }
-
-}
-
-.Subtitle {
-  color: #2a2a2a;
-  font-size: 1.3rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-block: 4rem 0.5rem;
-
-  @include media-breakpoint-up(600px) {
-    font-size: 0.89rem;
-    margin-block: 2rem 0.5rem;
   }
 }

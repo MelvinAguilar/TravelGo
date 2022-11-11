@@ -1,25 +1,52 @@
+@import "./../../mixins";
+
 .Header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem 3rem;
-  background: hsla(360, 100%, 100%, 0.9);
+  padding: 0.8rem 1rem;
+  transition: all 0.25s ease-in-out;
 
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
+  z-index: 1000;
 
-  /*background-color: #fff;
-    box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.1);*/
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  /*position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;*/
+    > button {
+      font-size: 0.7rem;
+      margin-right: 2.3rem;
+      padding: 0.3rem 0.5rem;
+    }
+  }
 
   &__logo {
-    width: 10rem;
+    width: 6rem;
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    padding: 1.25rem 3rem;
+
+    &__logo {
+      width: 10rem;
+    }
+
+    > div button {
+      font-size: 1rem;
+      margin-right: 0;
+      padding: 0.3rem 1.5rem;
+      border-color: rgb(243, 243, 243);
+    }
+  }
+}
+
+.Fixed {
+  background: hsla(360, 100%, 100%, 0.95);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding-block: 0.8rem;
+
+  > div > button {
+    border: 0.125rem solid #2a2a2a;
   }
 }

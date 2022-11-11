@@ -48,6 +48,7 @@
 }
 
 @mixin forminput {
+  font-family: "Source Sans Pro";
   border: none;
   background-color: #f0f0f0;
   font-size: 1rem;
@@ -56,7 +57,23 @@
   border: 0.125rem solid #e0ddf7;
   border-radius: 0.8rem;
   transition: all 0.3s ease-in-out;
+}
 
+@mixin formlabel {
+  width: 100%;
+  text-align: left;
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  padding: 0.9125rem;
+  transition: all 0.1s ease-in-out;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+@mixin formfloatlabel {
   &:hover,
   &:focus {
     border-color: #adadad;
@@ -73,18 +90,4 @@
     transform: scale(0.8) translateX(0.2rem) translateY(-0.5rem);
     color: #6c5ce7;
   }
-}
-
-@mixin formlabel {
-  width: 100%;
-  text-align: left;
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-  padding: 0.8rem;
-  transition: all 0.1s ease-in-out;
-  transform-origin: 0 0;
-  pointer-events: none;
 }

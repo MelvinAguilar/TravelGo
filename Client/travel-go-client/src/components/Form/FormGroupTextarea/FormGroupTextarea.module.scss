@@ -1,11 +1,11 @@
 @import "./../../../mixins";
 
 .FormGroupTextarea {
-  margin-block: 1rem;
   position: relative;
 
   &__input {
     @include forminput;
+    @include formfloatlabel;
   }
 
   &__label {

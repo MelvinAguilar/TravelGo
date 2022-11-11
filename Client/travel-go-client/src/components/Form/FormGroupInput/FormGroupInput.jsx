@@ -1,28 +1,13 @@
 import classes from "./FormGroupInput.module.scss";
 
-const FormGroupInput = ({
-  label,
-  type,
-  name,
-  value,
-  onChange,
-  placeholder,
-  required,
-}) => {
+const FormGroupInput = ({ icon, label, modifierClass, nameGroup, ...rest }) => {
   return (
-    <div className={classes["FormGroupInput"]}>
-      <input
-        className={classes["FormGroupInput__input"]}
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-        required={required}
-      />
-      <label className={classes["FormGroupInput__label"]} htmlFor={name}>
+    <div className={`${classes["FormGroupInput"]} ${classes[modifierClass]}`}>
+      <input className={classes["FormGroupInput__input"]} name={nameGroup} {...rest} />
+      <label className={classes["FormGroupInput__label"]} htmlFor={nameGroup}>
         {label}
       </label>
+      {icon}
     </div>
   );
 };

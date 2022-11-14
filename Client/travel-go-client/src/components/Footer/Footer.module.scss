@@ -1,0 +1,93 @@
+@import "./../../mixins";
+
+.Footer {
+  text-align: center;
+
+  // Copyrigth text
+  &__copy {
+    background-color: #2a2a2a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  &__content {
+    padding: 1rem;
+  }
+
+  // Email section
+  address {
+    font-style: normal;
+
+    a {
+      color: #7e70ea;
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+      margin-block: 1rem;
+      display: block;
+    }
+  }
+
+  // Social media links
+  &__social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+
+    a {
+      width: 3rem;
+      font-size: 2.5rem;
+      color: #2a2a2a;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      @include media-hover-effect() {
+        &:hover {
+          color: #6c5ce7;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    text-align: left;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
+      max-width: 1440px;
+      margin: auto;
+      padding: 4rem 3rem;
+
+      > div {
+        flex: 50%;
+      }
+    }
+
+    &__social {
+      justify-content: flex-start;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 7rem;
+
+      a {
+        display: inline-block;
+        margin: 1rem 0;
+      }
+    }
+
+    address a {
+      font-size: 2rem;
+    }
+  }
+}

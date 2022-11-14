@@ -1,0 +1,70 @@
+@import "./../../../../mixins";
+
+.LandingInformation {
+  padding-block: 4.25rem;
+
+  &__title {
+    font-family: 'IBM Plex Serif';
+    max-width: 50.063rem;
+    margin-inline: auto;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+
+    > div {
+      flex: 1;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__card {
+    max-width: 24.708rem;
+    min-height: 19.688rem;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    i {
+      font-size: 3.75rem;
+    }
+
+    h3 {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    button {
+      width: 12.063rem;
+      margin-top: auto;
+    }
+  }
+}

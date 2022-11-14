@@ -1,0 +1,57 @@
+@import "../../../../../mixins";
+@import "../../../../../_variables";
+
+.more-information{
+    @include flex(row, space-between);
+    font-family: $body-label-tittle-font;
+    color: $text3;
+    width: 100%;
+    
+    >.information{
+        @include flex(column, center, flex-start);
+        width: 40%;
+        border: 1px solid #b4b4b4;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        margin: 0;
+    }
+    >:first-child{
+        gap: 1.5rem;
+        
+        >div{
+            @include flex(row, space-between);
+            width: 100%;
+           
+            >:first-child{
+                text-decoration: underline;
+
+            }
+        }
+        >hr{
+            height: 0px;
+            width: 100%;
+        }
+        >:last-child{
+            font-weight: 700;
+            >:first-child{
+                text-decoration: none;
+
+            }
+        }
+    }
+    >:last-child{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        
+        > div{
+            width: 100%;
+            padding-bottom: 0.5rem;
+            >input{
+                padding-left: 1.5rem;
+                height: 2.5rem;
+                border-radius: 1.5rem;
+            }
+        }
+    } 
+}

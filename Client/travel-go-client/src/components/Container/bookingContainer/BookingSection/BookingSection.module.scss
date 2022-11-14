@@ -1,0 +1,22 @@
+@import "../../../../mixins";
+@import "../../../../_variables";
+
+.booking-section{
+    @include flex(column, center, flex-start);
+    gap: 1rem;
+    border: 1px #0000;
+    width: 100%;
+    
+    >hr{
+      width: 0px;
+      height: 0px;
+      border-color: transparent;
+      @include media-breakpoint-up(850px) {
+          height: 300px;
+          border-color: ($text5);
+        }
+    }
+    @include media-breakpoint-up(600px) {
+      @include flex(row, space-between, center);
+      }
+}

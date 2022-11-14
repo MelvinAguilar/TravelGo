@@ -1,0 +1,171 @@
+@import "./../../../mixins";
+
+.LandingContainer {
+  position: relative;
+  overflow-x: hidden;
+  padding: 1rem;
+
+  &__content {
+    height: 100vh;
+    position: relative;
+
+    > div {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 1rem;
+      text-align: center;
+    }
+
+    .woman {
+      display: none;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-block: 2rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -3rem;
+      height: 19.5rem;
+      width: 18.5rem;
+      // width: -webkit-fill-available;
+      // height: -webkit-fill-available;
+      background: url("./../../../assets/group-leaf.svg") 0 0 repeat;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -3rem;
+      right: -4rem;
+      height: 9.5rem;
+      width: 7.5rem;
+      background: url("./../../../assets/leaf.svg") 0 0 repeat;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transform: rotate(237deg);
+      z-index: 0;
+    }
+  }
+
+  .sand {
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    height: 50vh;
+    max-height: 62.5rem;
+    z-index: -50;
+    background-size: cover;
+  }
+
+  h1 {
+    font-size: 1.87rem;
+    font-family: "IBM Plex Serif";
+    font-weight: 400;
+
+    > span {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 400;
+
+      font-family: "Concert One";
+    }
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    padding: 0 1.5rem;
+
+    h1 {
+      font-size: 3.225rem;
+      line-height: 0.7;
+
+      > span {
+        font-size: 4.475rem;
+      }
+    }
+
+    &__content {
+      text-align: left;
+      padding-top: 5.313rem;
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    padding: 0 3rem;
+
+    h1 {
+      font-size: 5.225rem;
+
+      > span {
+        font-size: 6.475rem;
+      }
+    }
+
+    button {
+      padding-block: 0.6rem;
+      font-size: 1.388rem;
+    }
+
+    &__content {
+      max-height: 62.5rem;
+
+      > div {
+        text-align: left;
+      }
+
+      &-text {
+        max-width: 37.5rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+        max-width: 31.938rem;
+      }
+
+      &-image {
+        display: block;
+      }
+
+      &::before {
+        height: 23.625rem;
+        width: 36.063rem;
+      }
+
+      &::after {
+        top: -9rem;
+        right: -10rem;
+        height: 24.5rem;
+        width: 20.5rem;
+      }
+
+      .woman {
+        height: 80vh;
+        max-height: 45rem;
+        z-index: 10;
+        align-self: normal;
+        display: block;
+        justify-self: auto;
+      }
+    }
+
+    .sand {
+      height: 100vh;
+      top: 0;
+      right: -3rem;
+    }
+  }
+}

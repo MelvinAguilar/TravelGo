@@ -1,0 +1,18 @@
+@import "../../../../../mixins";
+@import "../../../../../_variables";
+
+.services-container{
+    @include flex(column, center, center);
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    font-family: ($body-label-tittle-font);
+    font-weight: 600;
+    max-height: 21rem;
+    font-size: 1.2rem;
+    
+    @include media-breakpoint-up(600px) {
+        width: 40%;
+      }
+
+}
+

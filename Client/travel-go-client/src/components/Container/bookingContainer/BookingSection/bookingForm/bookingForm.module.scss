@@ -35,15 +35,6 @@
            border: none;
            width: 100%;
         }
-        >:last-child{
-           background-color: #DE5A75;
-           border-color: #DE5A75;
-       }
-       
-       >:last-child:hover{
-           background-color: transparent;
-           color: #DE5A75;
-        } 
     }
     
     @include media-breakpoint-up(600px) {

@@ -43,7 +43,7 @@ const BookingForm = ({placeInformation})=>{
                     required = {true}
                 />
             </fieldset>
-            <Button type={"submit"}>Reservar ya</Button>
+            <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ya</Button>
         </Form>
     </div>
     );

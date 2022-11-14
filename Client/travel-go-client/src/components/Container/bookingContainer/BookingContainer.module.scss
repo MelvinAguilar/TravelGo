@@ -3,8 +3,10 @@
 
 .booking-article{
     @include flex(column, flex-start, center);
+    position: relative;
     gap: 5rem;    
     padding: 0 5%;
+
 
     >hr{
         height: 0px;

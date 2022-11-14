@@ -23,7 +23,6 @@
         font-family: ($body-label-tittle-font);
         font-weight: 400;
         font-size: 1.25rem;
-        text-decoration: underline;
         @include flex(row, space-between); 
         >div{
             cursor: pointer;
@@ -38,5 +37,12 @@
                 color: rgb(243, 35, 35);
             }
         }
+    }
+
+    >:last-child >:first-child:hover{
+        text-decoration: underline;
+    }
+    >:last-child >:last-child:hover{
+        text-decoration: underline;
     }
 }

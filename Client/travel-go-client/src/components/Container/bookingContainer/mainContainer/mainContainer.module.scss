@@ -1,7 +1,7 @@
 @import "../../../../mixins";
 .main-information{
-    width: 100%;
     @include flex(column, center, flex-start);
+    width: 100%;
     gap: 1.5rem;
 
     >:last-child{

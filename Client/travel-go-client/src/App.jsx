@@ -16,7 +16,7 @@ function App() {
 
         <main>
             {
-              <CarritoContainer/>
+              //<CarritoContainer/>
               //<LandingContainer />
               //<BookingContainer/>
             }
@@ -27,7 +27,7 @@ function App() {
 
       {//<Login />
       }
-      { //<Singup />
+      { <Singup />
        }
       
     </div>

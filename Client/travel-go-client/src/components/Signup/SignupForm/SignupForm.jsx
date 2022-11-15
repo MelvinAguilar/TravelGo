@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React, {useRef} from "react";
 
 import classes from "./SignupForm.module.scss";
 import InputField from "./../../Form/InputField/InputField";
@@ -9,6 +10,7 @@ import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
 
 const SignupForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const ref = useRef();
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -44,6 +46,15 @@ const SignupForm = () => {
         icon={togglePasswordButton}
       />
 
+      <label htmlFor="fec_nacimiento">Fecha de nacimiento</label>
+      <InputField
+        type={"date"}
+      />
+
+      <label htmlFor="tel">Telefono</label>
+      <InputField
+        placeholder={"e.g. 7655-4488"}
+      />
       <Button type="submit">Registrarse</Button>
     </Form>
   );

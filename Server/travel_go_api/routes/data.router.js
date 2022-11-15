@@ -18,12 +18,12 @@ router.get("/:dataSchema/:identifier", generalController.findOneById);
 
 //post direction routs
 
-router.post("/user", user.create);
-router.post("/turisticplace", turisticplace.create);
-router.post("/booking", booking.create);
-router.post("/shoppingcart", shoppingcart.create);
-router.post("/turisticplan", turisticplan.create);
-router.post("/wishlist", wishlist.create);
+router.post("/post/user", user.create);
+router.post("/post/turisticplace", turisticplace.create);
+router.post("/post/booking", booking.create);
+router.post("/post/shoppingcart", shoppingcart.create);
+router.post("/post/turisticplan", turisticplan.create);
+router.post("/post/wishlist", wishlist.create);
 
 
 module.exports = router;

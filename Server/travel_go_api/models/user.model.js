@@ -9,12 +9,6 @@ const UserSchema = new Schema({
         required: true,
 
     },
-    apellido:{
-        type: String,
-        trim: true,
-        required: true,
-
-    },
     email:{
         type: String,
         trim: true,
@@ -42,7 +36,7 @@ const UserSchema = new Schema({
     imagen:{
         type: String,
         trim: true,
-        default: '../public/images/usuario.png',       
+        default: 'img/img_user/usuario.png',       
 
     },
     rol:{

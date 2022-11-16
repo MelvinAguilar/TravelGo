@@ -3,8 +3,10 @@ import { useState } from "react";
 import classes from "./Header.module.scss";
 import logo from "../../assets/logo_light-mode.svg";
 import Navbar from "./Navbar/Navbar";
+import ButtonLink from "../Button/ButtonLink/ButtonLink";
 import Button from "../Button/Button";
 import Container from "../Container/Container";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
@@ -22,11 +24,15 @@ const Header = () => {
   return (
     <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`} >
       <Container>
-        <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
+        <Link to="/">
+          <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
+        </Link>
 
         <Navbar />
 
-        <Button modifierClass="Button--white">Iniciar sesión</Button>
+        <ButtonLink to="/login" modifierClass="Button--white">
+          Iniciar sesión
+        </ButtonLink>
       </Container>
     </header>
   );

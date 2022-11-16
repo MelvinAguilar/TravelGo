@@ -4,7 +4,6 @@ import classes from "./Header.module.scss";
 import logo from "../../assets/logo_light-mode.svg";
 import Navbar from "./Navbar/Navbar";
 import ButtonLink from "../Button/ButtonLink/ButtonLink";
-import Button from "../Button/Button";
 import Container from "../Container/Container";
 import { Link } from "react-router-dom";
 

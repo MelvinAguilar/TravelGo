@@ -1,7 +1,7 @@
 @import "./../../mixins";
 
 .Form {
-  margin-inline: 4vw;
+  // margin-inline: 4vw;
   width: 100%;
 
   > button {
@@ -10,7 +10,7 @@
     padding-block: 0.6rem;
   }
 
-  @include media-breakpoint-up($screen-sm) {
-    margin-inline: 0;
-  }
+  // @include media-breakpoint-up($screen-sm) {
+  //   margin-inline: 0;
+  // }
 }

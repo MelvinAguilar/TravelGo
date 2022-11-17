@@ -24,7 +24,6 @@ const comments = {
 
 
 const BookingContainer = ()=>{
-
     return (
         <Container className={classes["booking-container"]}>
             <MainContainer mainInformation={placeInformation} />

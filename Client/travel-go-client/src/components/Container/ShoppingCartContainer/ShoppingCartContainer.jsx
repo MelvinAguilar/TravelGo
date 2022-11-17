@@ -129,17 +129,6 @@ const setPriceFormat = (price)=>{
 });
 }
 
-
-// window.onscroll = ()=>{
-//     const _elementTotal = document.querySelector("#totalContainer");
-//     const _elementFooterTop = document.querySelector("#footer").offsetTop - 850;
-    
-//     if(window.scrollY <= _elementFooterTop)
-//         _elementTotal.style.position = "fixed";
-//     else
-//         _elementTotal.style.position = "static";
-// }
-
 const CarritoContainer = ()=>{
 
     //useState for items in shoppingCart

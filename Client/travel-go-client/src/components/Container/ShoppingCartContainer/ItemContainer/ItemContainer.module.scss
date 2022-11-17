@@ -4,12 +4,10 @@
 .item-information-section{
     @include flex(column, center, flex-start);
     max-width: 75rem;
-    // width: 55%;
     gap: 1rem;
     height: fit-content;
     border-bottom: 0.0625rem solid ($text4);
     margin-bottom: 4rem;
-    // padding: 2rem;
     text-align: center;
     
     >h2{
@@ -36,10 +34,6 @@
             text-decoration: underline;
         }
     }
-    // >:last-child:hover{
-    //     text-decoration: underline;
-    //     cursor: pointer;
-    // }
 
     @include media-breakpoint-up($screen-md) {
         > h2{

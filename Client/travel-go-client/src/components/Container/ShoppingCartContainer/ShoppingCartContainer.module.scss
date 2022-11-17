@@ -3,24 +3,16 @@
 
 .shopping-cart-container{
     width: 100%;
-    max-width: 75rem;
-    // @include flex(column);
-    
+    max-width: 75rem;    
     padding:  3.313rem 0.5rem 0;
 
    .shopping-cart-introduction {
-    //width: 78%;
         color: $text4;
-        // >figure > svg{
-        //     @include size(3.5rem);
-        //     cursor: pointer;
-        // }   
 
         > div{
             @include flex(column, center, normal);
             gap: 1rem;
-            // background-color: red;
-            //padding-left: 3.5rem;
+
             >h1{
                 font-size: 2.2rem;
                 font-weight: 600;
@@ -55,21 +47,12 @@
     }
 
     .total-container{
-        // height: fit-content;
-        // position: fixed;
-        // top: 0;
         position: sticky;
         bottom: 0;
-        
         width: 100%;
-        // margin-left: -1rem;
-        
-        // max-width: 73rem;
-        // top: 0;
         background-color: $dominant;
         border-top: 0.0625rem solid rgb(184, 184, 184);
         padding: 1rem;
-        // width: 55%;
         z-index: 5;
         @include flex(row, flex-end);
         gap: 1.1rem;
@@ -92,6 +75,10 @@
         }
     }
 
+    .shopping-cart-items {
+        margin: 2rem 1rem;
+    }
+
     @include media-breakpoint-up($screen-md) {
         padding: 5.313rem 2rem 0;
         .back {
@@ -105,10 +92,4 @@
             border-radius: 0;
         }
     }
-}
-
-
-
-.shopping-cart-items {
-    margin: 2rem 1rem;
 }

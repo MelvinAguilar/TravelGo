@@ -1,3 +1,5 @@
+@import "./../../../../mixins";
+
 .FeatureContainer {
   padding-block: 5rem;
   position: relative;
@@ -12,21 +14,35 @@
   }
 
   &__title {
-    display: flex;
-    align-items: center;
-    max-width: 71.875rem;
-    margin-inline: auto;
-    gap: 11.875rem; //gap: 3.438rem;
+    gap: 11.875rem;
 
-    p,
     h2 {
-      flex: 50%;
+      font-weight: 600;
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    padding-block: 10rem;
+
+    &__title {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.438rem;
+
+      h2 {
+        text-align: left;
+      }
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    &__title {
+      gap: 11.875rem; 
     }
 
     h2 {
-      font-family: "Source Sans Pro";
-      font-style: normal;
-      font-weight: 600;
       font-size: 3.988rem;
     }
 

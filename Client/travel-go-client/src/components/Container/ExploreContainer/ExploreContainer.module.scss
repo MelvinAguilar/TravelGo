@@ -1,47 +1,48 @@
 @import "./../../../mixins";
 
 .ExploreContainer {
-  margin-inline: 4rem;
-  
+  max-width: 30rem;
+  margin-inline: auto;
+
   &__content {
+    text-align: center;
+
     h2 {
       font-weight: 700;
-      font-size: 3.625rem;
+      font-size: 2.5rem;
       color: #130f49;
     }
 
     p {
+      line-height: 1.35;
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1rem;
       opacity: 0.6;
       margin-block: 2.5rem;
     }
   }
 
   &__mockup {
-    width: 13.688rem;
-    height: 13.688rem;
+    max-width: 11.688rem;
+    aspect-ratio: 1/1;
+    padding: 1.875rem;
     border-radius: 50%;
     background-color: #fbdcad;
     @include center-grid;
     place-items: center;
     margin-inline: auto;
-
-    img {
-      width: 100%;
-      height: 100%;
-      max-width: 335.57px;
-      max-height: 305.06px;
-      object-fit: cover;
-    }
   }
 
   @include media-breakpoint-up($screen-md) {
+    max-width: fit-content;
+
     &__content {
+      text-align: left;
       display: flex;
       flex-direction: row-reverse;
       justify-content: center;
       align-items: center;
+      gap: 3rem;
 
       > div {
         flex: 50%;
@@ -49,8 +50,24 @@
     }
 
     &__mockup {
-      width: 27.688rem;
-      height: 27.688rem;
+      padding: 3.75rem;
+      max-width: 21.688rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    &__content {
+      h2 {
+        font-size: 3.625rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__mockup {
+      max-width: 27.688rem;
     }
   }
 }

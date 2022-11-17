@@ -5,20 +5,16 @@
 
   &__title {
     font-family: 'IBM Plex Serif';
-    max-width: 50.063rem;
-    margin-inline: auto;
-    margin-bottom: 2.5rem;
-    display: flex;
-    align-items: center;
     text-align: center;
-    gap: 1rem;
 
     > div {
       flex: 1;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-weight: 500;
+      margin-block: 1rem;
+      font-size: 1.875rem;
     }
 
     p {
@@ -32,13 +28,14 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    padding-top: 2.5rem;
   }
 
   &__card {
-    max-width: 24.708rem;
+    max-width: 18.708rem;
     min-height: 19.688rem;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -65,6 +62,31 @@
     button {
       width: 12.063rem;
       margin-top: auto;
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    &__card {
+      max-width: 24.708rem;
+      padding: 2rem;
+    }
+
+    &__title {
+      font-family: 'IBM Plex Serif';
+      max-width: 50.063rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 1rem;
+  
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      > div {
+        flex: 1;
+      }
     }
   }
 }

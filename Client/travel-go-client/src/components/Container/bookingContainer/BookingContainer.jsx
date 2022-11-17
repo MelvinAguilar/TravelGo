@@ -2,6 +2,7 @@ import classes from "./BookingContainer.module.scss";
 import MainContainer from "./mainContainer/mainContainer";
 import BookingSection from "./BookingSection/BookingSection";
 import CommentsContainer from "./commentsContainer/commentsContainer";
+import Container from "./../Container";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
@@ -25,7 +26,7 @@ const comments = {
 const BookingContainer = ()=>{
 
     return (
-        <article className={classes["booking-article"]}>
+        <Container className={classes["booking-container"]}>
             <MainContainer mainInformation={placeInformation} />
 
             <hr/>
@@ -36,7 +37,7 @@ const BookingContainer = ()=>{
 
             <CommentsContainer commentsInformation = {comments} cant_comentarios = {placeInformation.cant_comentarios} puntuacion_prom = {placeInformation.puntuacion_prom}/>
 
-        </article>
+        </Container>
 
     );
 }

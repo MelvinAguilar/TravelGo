@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import classes from "./Navbar.module.scss";
 import NavLink from "./NavLink/NavLink";
+import { List } from "react-bootstrap-icons";
 
 const Navbar = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
         <NavLink to="/about">Nosotros</NavLink>
       </ul>
       <button className={classes["Navbar__toggle-button"]} onClick={toggleMenu}>
-        <i className="fas fa-bars"></i>
+        <List />
       </button>
     </nav>
   );

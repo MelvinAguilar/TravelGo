@@ -4,9 +4,9 @@ import classes from "./imgContainer.module.scss";
 const ImgContainer = ({urlImgs = []})=>{
     const mappedImg = urlImgs.map((urlImg, counter)=>{
         return(
-            <figure key={counter}>
+            // <div key={counter}>
                 <img url={urlImg} alt="Imagen de lugar turistico" key={counter}/>
-            </figure>
+            // </div>
         );
     });
 

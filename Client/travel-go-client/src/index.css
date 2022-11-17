@@ -84,7 +84,7 @@ textarea:focus-visible {
 }
 
 /* Text visible only for screenreader */
-sr-only {
+.sr-only {
   position: absolute;
   width: 0.063rem;
   height: 0.063rem;

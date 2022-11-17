@@ -1,15 +1,14 @@
 @import "../../../mixins";
 @import "../../../_variables";
 
-.booking-article{
+.booking-container{
     @include flex(column, flex-start, center);
     position: relative;
-    gap: 5rem;    
-    padding: 0 5%;
-
+    gap: 5rem;
+    padding: 6.313rem 3rem 0;
 
     >hr{
-        height: 0px;
+        height: 0;
         width: 90%;
         border-color: ($text5);
     }

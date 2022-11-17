@@ -2,6 +2,7 @@ import classes from "./App.module.scss";
 import Header from "./components/Header/Header";
 import LandingContainer from "./components/Container/LandingContainer/LandingContainer";
 import Footer from "./components/Footer/Footer";
+import FooterAttribution from "./components/Footer/FooterAttribution/FooterAttribution";
 import Login from "./components/Login/Login";
 import Singup from "./components/Signup/Signup";
 import BookingContainer from "./components/Container/bookingContainer/BookingContainer";
@@ -28,6 +29,18 @@ const AppWithHeader = (element) => {
   );
 };
 
+const AppWithAttribution = (element) => {
+  return (
+    <div className={classes["App"]}>
+      <Header />
+      <main>{element}</main>
+      <footer>
+        <FooterAttribution />
+      </footer>
+    </div>
+  );
+};
+
 const AppMain = (element) => {
   return (
     <div className={classes["App"]}>
@@ -43,7 +56,7 @@ function App() {
       <Route path="/login" element={AppMain(<Login />)} />
       <Route path="/register" element={AppMain(<Singup />)} />
       <Route path="/booking" element={rootElement(<BookingContainer />)} />
-      <Route path="/cart" element={rootElement(<CartContainer />)} />
+      <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
     </Routes>
   );

@@ -5,32 +5,31 @@ import {StarFill} from "react-bootstrap-icons";
 const Adventure =({itemInformation})=>{
     return (
         <div className={classes["adventure-container"]}>
-            <figure>
-               {<img src={itemInformation.image}/>
-               }
-            </figure>
+            <div className={classes["image-container"]}>
+               {<img src={itemInformation.image} alt={`${itemInformation.nombre} Trip`} />}
+            </div>
             <div className={classes["information"]}>
-                <h1>
-                    {`${itemInformation.nombre.toUpperCase()} TRIP` }
-                </h1>
                 <h2>
-                    {`${itemInformation.ubicacion.direccion.toUpperCase()}, ${itemInformation.ubicacion.departamento.toUpperCase()}`
-                    }
+                    {`${itemInformation.nombre} Trip` }
                 </h2>
+                <address>
+                    {`${itemInformation.ubicacion.direccion}, ${itemInformation.ubicacion.departamento}`
+                    }
+                </address>
                 <div>
-                    <h3>
-                        {`$${itemInformation.precio}`}
-                    </h3>
-                    <h4>
-                        USD
-                    </h4>
                     <p>
-                        noche
+                        {`$${itemInformation.precio}`}
+                        <span className={classes["currency"]}>
+                            &nbsp;USD&nbsp;
+                        </span>
+                        <span className={classes["plan-type"]}>
+                            x noche
+                        </span>
                     </p>
                 </div>
                 <div>
                     <StarFill/>
-                    <p>
+                    <p className={classes["rating"]}>
                         {`${itemInformation.puntuacion_prom} · (${itemInformation.cant_comentarios})`}
                     </p>
                 </div>

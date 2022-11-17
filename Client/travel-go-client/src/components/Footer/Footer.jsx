@@ -2,6 +2,7 @@ import classes from "./Footer.module.scss";
 import FooterForm from "./FooterForm/FooterForm";
 import NavLink from "../Header/Navbar/NavLink/NavLink";
 import Container from "./../Container/Container";
+import FooterAttribution from "./FooterAttribution/FooterAttribution";
 import {
   Facebook,
   Twitter,
@@ -77,10 +78,8 @@ const Footer = () => {
           </div>
         </Container>
       </div>
-
-      <div className={classes["Footer__copy"]}>
-        <p>© TRAVELGO 2022 by Los Fullstack</p>
-      </div>
+      
+      <FooterAttribution />
     </footer>
   );
 };

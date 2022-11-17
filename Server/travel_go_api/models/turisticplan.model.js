@@ -7,6 +7,7 @@ const turisticPlanSchema = new Schema({
         type: String,
         trim: true,
         required: true,
+        unique: true
     },  
     lugares:{
         type: [mongoose.Types.ObjectId],

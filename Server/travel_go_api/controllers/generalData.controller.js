@@ -1,7 +1,6 @@
 const debug = require("debug")("app:post-controller");
 /* store and logical variables */
 let allData;
-let allController;
 
 /* importing all controllers */
 

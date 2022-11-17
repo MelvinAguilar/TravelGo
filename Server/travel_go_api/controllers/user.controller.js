@@ -1,34 +1,51 @@
 const User = require("../models/user.model");
-const debug = require("debug")("app:post-controller");
+const debug = require("debug")("app:register-controller");
 
 const controller = {};
 
-controller.create = async(req, res) =>{
-
+controller.register = async(req, res)=>{
     try{
-        const {nombre, apellido, email, contrasenia_hash, fec_nacimiento, telefono, imagen, rol} = req.body;
+        //obtenemos datos del req->|body
+        const {
+            nombre, email, contrasenia_hash, fec_nacimiento, telefono, imagen, rol
+        } = req.body;
 
-        const user = new User({
+        //verificamos que el username o email no estén ocupados
+        const user = await User.findOne({
+            $or:[{nombre: nombre},{email:email}]
+        });
+
+        if(user){
+            return res.status(409).json({
+                error: "Este usuario e email ya están siendo usados"
+            })
+        }
+
+        //encripatamos contraseña
+        const newUser = new User({
             nombre: nombre,
-            apellido: apellido,
             email: email,
-            contrasenia_hash: contrasenia_hash,
+            password: contrasenia_hash,
             fec_nacimiento: fec_nacimiento,
             telefono: telefono,
             imagen: imagen,
-            rol: rol,
+            rol: rol
+        });
+        //creamos usuario
 
+        await newUser.save();
+        return res.status(201).json({
+            message: "Usuario creado con éxito"
         });
 
-        const newUser = await user.save();
-        return res.status(201).json(newUser);
     }
     catch(error){
         debug({error});
         return res.status(500).json({
-            error: "Error en el servidor"
+            message: "Error inesperado"
         });
     }
+
 }
 
 module.exports = controller;

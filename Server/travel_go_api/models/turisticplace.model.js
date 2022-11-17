@@ -20,7 +20,7 @@ const redesSchema = new Schema({
     nombre:{
         type:String,
         required: true,
-        trim: true,
+        trim: true        
     },
     url:{
         type:String,
@@ -34,6 +34,7 @@ const turisticPlaceSchema = new Schema({
         type: String,
         trim: true,
         required: true,
+        unique: true
 
     },
     descripcion_general:{

@@ -20,7 +20,6 @@ const itemSchema = new Schema({
     fecha:{
         type:Date,
         required: true,
-        default: Date.now(),
         trim: true
 
     },

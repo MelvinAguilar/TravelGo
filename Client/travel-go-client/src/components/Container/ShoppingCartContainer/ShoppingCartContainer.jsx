@@ -128,15 +128,15 @@ const setPriceFormat = (price)=>{
 }
 
 
-window.onscroll = ()=>{
-    const _elementTotal = document.querySelector("#totalContainer");
-    const _elementFooterTop = document.querySelector("#footer").offsetTop - 850;
+// window.onscroll = ()=>{
+//     const _elementTotal = document.querySelector("#totalContainer");
+//     const _elementFooterTop = document.querySelector("#footer").offsetTop - 850;
     
-    if(window.scrollY <= _elementFooterTop)
-        _elementTotal.style.position = "fixed";
-    else
-        _elementTotal.style.position = "static";
-}
+//     if(window.scrollY <= _elementFooterTop)
+//         _elementTotal.style.position = "fixed";
+//     else
+//         _elementTotal.style.position = "static";
+// }
 
 const CarritoContainer = ()=>{
 
@@ -148,10 +148,10 @@ const CarritoContainer = ()=>{
     const impuestos = 10;
 
     //Function remove 
-    const removeElementHandler = (e)=>{
-        const itemRemove = e.target.getAttribute("data-delete");
-        removeElementList(listItems.filter(item=>item._id !== itemRemove));
-    }
+    // const removeElementHandler = (e)=>{
+    //     const itemRemove = e.target.getAttribute("data-delete");
+    //     removeElementList(listItems.filter(item=>item._id !== itemRemove));
+    // }
 
     //mapping items creation
     const mappedShoppingCart = listItems.map((item)=>{
@@ -178,7 +178,10 @@ const CarritoContainer = ()=>{
 
         if(item.id_lugar == placeInformation.id)
             castedPlaceInformation = CastPlaceInformation(placeInformation)
-        return <ItemContainer adventureData={castedPlaceInformation} moreInformationData={_moreInformation} key={item._id} eventHandler = {removeElementHandler} _key={item._id}/>
+        return <ItemContainer adventureData={castedPlaceInformation} 
+        moreInformationData={_moreInformation} key={item._id} 
+        // eventHandler = {removeElementHandler}
+        _key={item._id}/>
 
     });
     

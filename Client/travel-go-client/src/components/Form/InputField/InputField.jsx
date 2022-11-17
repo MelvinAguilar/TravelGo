@@ -1,9 +1,9 @@
 import classes from "./InputField.module.scss";
 
-const InputField = ({ className, modifierClass, icon, ...rest }) => {
+const InputField = ({ className, modifierClass, icon, innerRef, ...rest }) => {
   return (
     <div className={`${classes["Input"]} ${classes[modifierClass]} ${className}`}>
-        <input {...rest} />
+        <input refs={innerRef} {...rest} />
         {icon}
     </div>
   );

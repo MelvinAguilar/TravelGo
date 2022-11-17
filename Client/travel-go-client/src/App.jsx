@@ -14,19 +14,19 @@ function App() {
          }
       
 
-        <main>
+        {/* <main>
             {
               <CarritoContainer/>
               //<LandingContainer />
               //<BookingContainer/>
             }
-        </main>
+        </main> */}
 
        { //<Footer />
        }
 
-      {//<Login />
-      }
+      <Login />
+      
       { //<Singup />
        }
       

@@ -1,5 +1,7 @@
 import React from 'react';
 import classes from "./Loader.module.scss";
+/* import "./Loader.css"; */
+
 /* import Container from "../Container/Container";
  */
 

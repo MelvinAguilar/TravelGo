@@ -8,6 +8,8 @@ import Singup from "./components/Signup/Signup";
 import BookingContainer from "./components/Container/bookingContainer/BookingContainer";
 import CartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import ErrorPage from "./components/Container/ErrorContainer/ErrorContainer";
+import TermsOfService from "./components/Container/TermsOfService/TermsOfService";
+import PrivacyPolicy from "./components/Container/PrivacyPolicy/PrivacyPolicy";
 import { Route, Routes } from "react-router-dom";
 
 const rootElement = (element) => {
@@ -57,6 +59,8 @@ function App() {
       <Route path="/register" element={AppMain(<Singup />)} />
       <Route path="/booking" element={rootElement(<BookingContainer />)} />
       <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
+      <Route path="/terms-of-service" element={AppWithAttribution(<TermsOfService />)} />
+      <Route path="/privacy-policy" element={AppWithAttribution(<PrivacyPolicy />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
     </Routes>
   );

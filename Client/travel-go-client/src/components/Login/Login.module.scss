@@ -38,13 +38,13 @@
   }
 
   &__signup {
-    text-align: center;
     margin: auto;
     display: block;
+    width: fit-content;
   }
 
   &__container {
-    max-width: 32.375rem; //34.375rem = 550px
+    max-width: 32.375rem; 
     width: 100%;
 
     padding: 3.75rem;
@@ -64,6 +64,4 @@
       font-size: 1.25rem;
     }
   }
-
-  
 }

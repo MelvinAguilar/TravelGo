@@ -5,6 +5,8 @@ import ItemContainer from "./ItemContainer/ItemContainer";
 import Button from "../../Button/Button";
 import Container from "../Container";
 
+import { Link } from "react-router-dom";
+
 
 const shoppingCartInformation = {
 
@@ -127,17 +129,6 @@ const setPriceFormat = (price)=>{
 });
 }
 
-
-// window.onscroll = ()=>{
-//     const _elementTotal = document.querySelector("#totalContainer");
-//     const _elementFooterTop = document.querySelector("#footer").offsetTop - 850;
-    
-//     if(window.scrollY <= _elementFooterTop)
-//         _elementTotal.style.position = "fixed";
-//     else
-//         _elementTotal.style.position = "static";
-// }
-
 const CarritoContainer = ()=>{
 
     //useState for items in shoppingCart
@@ -178,39 +169,42 @@ const CarritoContainer = ()=>{
 
         if(item.id_lugar == placeInformation.id)
             castedPlaceInformation = CastPlaceInformation(placeInformation)
-        return <ItemContainer adventureData={castedPlaceInformation} 
-        moreInformationData={_moreInformation} key={item._id} 
-        // eventHandler = {removeElementHandler}
-        _key={item._id}/>
-
+        return <ItemContainer 
+                    adventureData={castedPlaceInformation} 
+                    moreInformationData={_moreInformation} 
+                    key={item._id} 
+                    eventHandler = {removeElementHandler} 
+                    _key={item._id}/>
     });
     
     return(
-        <article className={classes["shopping-cart-article"]}>
-            <Container>
-                <figure>
+        <Container className={classes["shopping-cart-container"]}>
+            <div className={classes["shopping-cart-introduction"]}>
+                <Link to="/" className={classes.back}>
                     <ArrowLeft/>
-                </figure>
+                    Back to home
+                </Link>
                 <div>
                     <h1>{`CARRITO (${listItems.length})`}</h1>
-
                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
                 </div>
+            </div>
 
-            </Container>
-            {mappedShoppingCart
-            }
+            <section className={classes["shopping-cart-items"]}>
+                <h2 className="sr-only">Items in shopping cart</h2>
+                {(mappedShoppingCart.length > 0) ? mappedShoppingCart : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p>}
+            </section>
+
             <div className={classes["total-container"]} id="totalContainer" >
                 <div>
-                    <h6>{`TOTAL $${setPriceFormat(total)} USD`}</h6>
-                    <p>+ IVA INCLUIDO</p>
+                    <p className={classes["total-money"]}>
+                        {`Total $${setPriceFormat(total)} USD`}
+                    </p>
+                    <p>+ IVA Incluido</p>
                 </div>
                 <Button modifierClass={'Button--black'}>CONTINUAR</Button>
             </div>
-            <div className={classes["Footer__copy"]} id="footer">
-                <p>© TRAVELGO 2022 by Los Fullstack</p>
-            </div>
-        </article>
+        </Container>
     );
 }
 

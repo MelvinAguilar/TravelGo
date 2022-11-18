@@ -4,14 +4,14 @@ import MoreInformationContainer from "./MoreInformationContainer/MoreInformation
 
 const ItemContainer =({adventureData, moreInformationData, eventHandler, _key})=>{
     return(
-        <section className={classes["item-information-section"]}>
+        <div className={classes["item-information-section"]}>
             {<Adventure itemInformation={adventureData}/>
             }
             <h2>Info de tu trip</h2>
             {<MoreInformationContainer itemInformation={moreInformationData}/>
             }
-            <h2 data-delete={_key} onClick={eventHandler}>ELIMINAR</h2>
-        </section>
+            <button data-delete={_key} onClick={eventHandler}>Eliminar</button>
+        </div>
     );
 }
 

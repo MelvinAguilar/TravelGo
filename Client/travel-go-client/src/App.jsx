@@ -13,19 +13,19 @@ function App() {
          {//<Header />
          }
       
-
-        {/* <main>
+{/* 
+        <main>
             {
-              <CarritoContainer/>
-              //<LandingContainer />
-              //<BookingContainer/>
+              // <CarritoContainer/>
+              <LandingContainer />
+              // <BookingContainer/>
             }
         </main> */}
 
-       { //<Footer />
-       }
+       <Footer />
+       
 
-      <Login />
+      {/* <Login /> */}
       
       { //<Singup />
        }

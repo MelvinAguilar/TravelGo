@@ -12,8 +12,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <AppComponent />
       <ToastContainer
-        theme="dark"
-        position="bottom-right"
+        theme="light"
+        position="top-right"
         pauseOnHover="false"
       />
     </BrowserRouter>

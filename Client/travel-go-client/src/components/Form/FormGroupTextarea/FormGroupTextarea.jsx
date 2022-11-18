@@ -1,12 +1,27 @@
 import classes from "./FormGroupTextarea.module.scss";
 
-const FormGroupTextarea = ({ label, name, ...rest }) => {
+const FormGroupTextarea = ({ children, className, label, nameGroup, validation, innerRef, ...rest }) => {
+  // label, name, ...rest }) => {
   return (
     <div className={classes["FormGroupTextarea"]}>
-      <textarea className={classes["FormGroupTextarea__input"]} name={name} {...rest} />
-      <label className={classes["FormGroupTextarea__label"]} htmlFor={name}>
+      <textarea
+        className={`${classes["FormGroupTextarea__area"]} ${
+          validation ? classes["has-error"] : ""
+        }`}
+        name={nameGroup}
+        {...rest}
+        {...innerRef}
+      />  
+      <label className={classes["FormGroupTextarea__label"]} htmlFor={nameGroup}>
         {label}
       </label>
+      {/* <textarea className={classes["FormGroupTextarea__input"]} name={name} {...rest} />
+      <label className={classes["FormGroupTextarea__label"]} htmlFor={name}>
+        {label}
+      </label> */}
+
+      {/* Set the react-hook validation here */}
+      {children}
     </div>
   );
 };

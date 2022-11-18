@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 /* getting all controllers */
-const user = require("../controllers/user.controller");
-const turisticplace = require("../controllers/turisticplace.controller");
-const booking = require("../controllers/booking.controller");
-const shoppingcart = require("../controllers/shoppingcart.controller");
-const turisticplan = require("../controllers/turisticplan.controller");
-const wishlist = require("../controllers/wishlist.controller");
+const userController = require("../controllers/auth.controller");
+const turisticplaceController = require("../controllers/turisticplace.controller");
+const bookingController = require("../controllers/booking.controller");
+const shoppingcartController = require("../controllers/shoppingcart.controller");
+const turisticplanController = require("../controllers/turisticplan.controller");
+const wishlistController = require("../controllers/wishlist.controller");
 
 //importing validators
 const bookingValidator = require("../validators/booking.validators");
@@ -21,39 +21,45 @@ const wishlistValidator = require("../validators/wishlist.validators");
 //middleware
 const runValidation = require("../validators/middlewares/post.middleware");
 
+//sing up user
 router.post("/singup", 
     userValidator.registerValidator,
     runValidation,
-    user.register
+    userController.register
+);
+
+//sing in user
+router.post("/singin",
+    userController.singin
 );
 
 router.post("/turisticplace",
     turisticplaceValidator.createTuristicPlaceValidator,
     runValidation,
-    turisticplace.create
+    turisticplaceController.create
 );
 
 router.post("/booking", 
     bookingValidator.createBookingValidator, 
     runValidation, 
-    booking.create
+    bookingController.create
 );
 
 router.post("/shoppingcart", 
     shoppingcartValidator.createShoppingCartValidator,
     runValidation,
-    shoppingcart.create
+    shoppingcartController.create
 );
 
 router.post("/turisticplan", 
     turisticplanValidator.createPlanValidator,
     runValidation,
-    turisticplan.create
+    turisticplanController.create
 );
 router.post("/wishlist", 
     wishlistValidator.createWishListValidator,
     runValidation,
-    wishlist.create
+    wishlistController.create
 );
 
 

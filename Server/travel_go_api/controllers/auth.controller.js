@@ -48,4 +48,30 @@ controller.register = async(req, res)=>{
 
 }
 
+controller.singin = async(req, res)=>{
+    try{
+        const {email, password} = req.body;
+
+        //verificando existencia de usuario 
+        const user = await User.findOne({email: email})
+        if(!user) return res.status(404).json({ error: "El usuario no existe"});
+
+        //comparando contraseñas 
+        if(!user.comparePassword(password))
+            return res.status(401).json({error: "Contraseña incorrecta"});
+        
+        return res.status(200).json({message: "El usuario se ha loggeado"});
+
+
+        //permitir loggeo
+
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
 module.exports = controller;

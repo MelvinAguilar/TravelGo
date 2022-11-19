@@ -6,7 +6,7 @@ const MoreInformationContainer = ({itemInformation})=>{
     
     return (
         <div className={classes["more-information"]}>
-            <Container className={classes.information}>
+            <div className={classes.information}>
                 <div>
                     <p>{`$${itemInformation.precio_unitario} USD x ${itemInformation.noches} noches`}</p>
                     <p>{`$${itemInformation.sub_precio_noches}`}</p>
@@ -28,27 +28,31 @@ const MoreInformationContainer = ({itemInformation})=>{
                         {`$${itemInformation.subtotal_item}USD`}
                     </p>
                 </div>
-            </Container>
-            <Container className={classes.information}>
+            </div>
+
+            <div className={classes.information}>
             <label htmlFor="fecha_inicio">Día de llegada</label>
                 <InputField
                     className={classes["input-information"]}
                     value = {itemInformation.fecha_inicio}
+                    name="fecha_inicio"
                     disabled
                 />
             <label htmlFor="fecha_final">Día de salida</label>
                 <InputField
                     className={classes["input-information"]}
                     value = {itemInformation.fecha_final}
+                    name="fecha_final"
                     disabled
                 />
             <label htmlFor="N_personas">Num de personas</label>
                 <InputField
                     className={classes["input-information"]}
                     value = {itemInformation.cant_personas}
+                    name="N_personas"
                     disabled
                 />
-            </Container>
+            </div>
         </div>
     );
     }

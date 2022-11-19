@@ -2,41 +2,41 @@
 @import "../../../../../_variables";
 
 .more-information{
-    @include flex(row, space-between);
     font-family: $body-label-tittle-font;
     color: $text3;
     width: 100%;
     
-    >.information{
+    .information{
+        margin: 0 auto 3rem;
+        max-width: 450px;
+        width: 100%;
         @include flex(column, center, flex-start);
-        width: 40%;
-        border: 1px solid #b4b4b4;
+        border: 0.0625rem solid #b4b4b4;
         border-radius: 1rem;
-        box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.2);
-        padding: 2rem;
-        margin: 0;
+        box-shadow: 0rem 0rem 0.3125rem 0.1563rem rgba(0, 0, 0, 0.2);
+        padding: 1.6rem;
     }
+
     >:first-child{
         gap: 1.5rem;
         
         >div{
             @include flex(row, space-between);
             width: 100%;
+            gap: 0.5rem;
            
             >:first-child{
                 text-decoration: underline;
-
             }
         }
         >hr{
-            height: 0px;
+            height: 0rem;
             width: 100%;
         }
         >:last-child{
             font-weight: 700;
             >:first-child{
                 text-decoration: none;
-
             }
         }
     }
@@ -53,5 +53,16 @@
                 border-radius: 1.5rem;
             }
         }
-    } 
+    }
+
+    @include media-breakpoint-up($screen-lg) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+
+        .information{
+            margin: 0;
+            padding: 2rem;
+        }
+    }
 }

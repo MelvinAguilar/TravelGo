@@ -20,6 +20,7 @@
   align-items: center;
   width: fit-content;
   gap: 0.5rem;
+  text-decoration: none;
   
   &__icon {
     width: 1rem;
@@ -41,10 +42,6 @@
     background-color: #0F0B3D;
     border-color: #0F0B3D;
     color: white;
-  }
-
-  &--link {
-    text-decoration: none;
   }
 
   &--purple{

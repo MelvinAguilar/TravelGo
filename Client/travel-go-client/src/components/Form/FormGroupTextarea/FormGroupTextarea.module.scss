@@ -3,7 +3,7 @@
 .FormGroupTextarea {
   position: relative;
 
-  &__input {
+  &__area {
     @include forminput;
     @include formfloatlabel;
   }
@@ -14,5 +14,9 @@
 
   textarea {
     resize: none;
+  }
+
+  & textarea.has-error{
+    border-color: rgb(255, 88, 88);
   }
 }

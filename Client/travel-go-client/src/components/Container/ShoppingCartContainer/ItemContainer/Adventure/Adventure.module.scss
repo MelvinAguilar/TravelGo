@@ -2,48 +2,77 @@
 @import "../../../../../_variables";
 
 .adventure-container{
-    @include flex(row, space-between);
-    width: 100%;
+    margin-inline: auto;
 
-    >figure{
-        width: 45%;
+    .image-container {
         >img{
-            border: 0.75px solid ($text2);
-
+            width: 100%;
+            max-width: 30rem;
+            display: block;
+            border: 0.0469rem solid ($text2);
+            margin-block: 2rem;
         }
     }
 
-    >.information{
-        width: 50%;
+    .information{
         font-family: ($body-label-tittle-font);
-        @include flex(column, center, flex-start);
-       gap: 0.5rem;
-        > h1{
+        
+
+        > h2{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        > address{
+            text-transform: uppercase;
+            font-style: normal;
+            
             font-weight: 600;
             font-size: 2rem;
-        }
-        >h2{
-            font-weight: 400;
-            font-size: 1.5rem;
             color: ($text4);
         }
+
         > div{
             @include flex(row);
             gap: 0.25rem;
 
-            >h3{
-                font-weight: 700;
-                font-size: 1.5rem;
-            }
-            >h4{
-                font-weight: 300;
-            }
-            >p{
-                font-weight: 400;
-                font-size: 1rem;
-                text-decoration: underline;
+            > p {
+                font-weight: 600;
                 color: ($text3);
-           }
+            }
+        }
+
+        .plan-type {
+            text-decoration: underline;
+            font-weight: 400;
+        }
+
+        .currency {
+            font-weight: 300;
+        }
+
+        .rating {
+            text-decoration: underline;
+        }
+    }
+
+    @include media-breakpoint-up($screen-lg) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+
+        .image-container {
+            >img{
+                max-width: 26rem;
+                margin-block: 0;
+            }
+        }
+
+        .information{
+            @include flex(column, center, flex-start);
+            gap: 0.5rem;
         }
     }
 }

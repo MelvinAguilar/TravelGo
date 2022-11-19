@@ -8,11 +8,11 @@ const LandingInformation = () => {
   return (
     <section className={classes["LandingInformation"]}>
       <div className={classes["LandingInformation__title"]}>
+        <Cursor size={70}/>
         <div>
           <h2>Decide your perfect trip with a click</h2>
           <p>Dont't worry! Enjoy the rest of your trip.</p>
         </div>
-        <Cursor size={70}/>
       </div>
       <div className={classes["LandingInformation__cards"]}>
         <div className={classes["LandingInformation__card"]}>

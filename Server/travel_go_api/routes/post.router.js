@@ -1,0 +1,84 @@
+const express = require("express");
+const router = express.Router();
+const ROLS = require("../data/roles.constant.json");
+
+/* getting all controllers */
+const userController = require("../controllers/auth.controller");
+const turisticplaceController = require("../controllers/turisticplace.controller");
+const bookingController = require("../controllers/booking.controller");
+const shoppingcartController = require("../controllers/shoppingcart.controller");
+const turisticplanController = require("../controllers/turisticplan.controller");
+const wishlistController = require("../controllers/wishlist.controller");
+
+//importing validators
+const bookingValidator = require("../validators/booking.validators");
+const shoppingcartValidator = require("../validators/shoppingcart.validators");
+const userValidator = require("../validators/user.validators");
+const turisticplaceValidator = require("../validators/turisticplace.validators");
+const turisticplanValidator = require("../validators/turisticplan.validators");
+const wishlistValidator = require("../validators/wishlist.validators");
+
+
+//middleware
+const runValidation = require("../validators/middlewares/post.middleware");
+const {authentication, authorization} = require("../middleware/auth.middlewares");
+
+//sing up user for users
+router.post("/singup", 
+    userValidator.registerValidator,
+    runValidation,
+    userController.register
+);
+
+//sing in user for users
+router.post("/singin",
+    userController.singin
+);
+
+//for admins only
+router.post("/turisticplace",
+    authentication,
+    authorization(ROLS.ADMIN),
+    turisticplaceValidator.createTuristicPlaceValidator,
+    runValidation,
+    turisticplaceController.create
+    );
+    
+    //for user 
+    router.post("/booking", 
+    authentication,
+    authorization(ROLS.USER),
+    bookingValidator.createBookingValidator, 
+    runValidation, 
+    bookingController.create
+    );
+    
+//for user
+router.post("/shoppingcart", 
+    authentication,
+    authorization(ROLS.USER),
+    shoppingcartValidator.createShoppingCartValidator,
+    runValidation,
+    shoppingcartController.create
+    );
+    
+    //for admin only
+router.post("/turisticplan", 
+    authentication,
+    authorization(ROLS.ADMIN),
+    turisticplanValidator.createPlanValidator,
+    runValidation,
+    turisticplanController.create
+    );
+    
+    //for user
+router.post("/wishlist", 
+    authentication,
+    authorization(ROLS.USER),
+    wishlistValidator.createWishListValidator,
+    runValidation,
+    wishlistController.create
+    );
+    
+    
+    module.exports = router;

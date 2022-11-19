@@ -85,4 +85,20 @@ controller.singin = async(req, res)=>{
     }
 }
 
+controller.findByToken = async(req, res)=>{
+    try{
+        const {tokenIdentifier} = req.params;
+        const user = await User.findOne({
+            tokens: tokenIdentifier
+        });
+        return res.status(200).json(user.roles);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
 module.exports = controller;

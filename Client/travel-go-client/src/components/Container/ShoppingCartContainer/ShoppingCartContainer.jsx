@@ -139,10 +139,10 @@ const CarritoContainer = ()=>{
     const impuestos = 10;
 
     //Function remove 
-    // const removeElementHandler = (e)=>{
-    //     const itemRemove = e.target.getAttribute("data-delete");
-    //     removeElementList(listItems.filter(item=>item._id !== itemRemove));
-    // }
+    const removeElementHandler = (e)=>{
+        const itemRemove = e.target.getAttribute("data-delete");
+        removeElementList(listItems.filter(item=>item._id !== itemRemove));
+    }
 
     //mapping items creation
     const mappedShoppingCart = listItems.map((item)=>{

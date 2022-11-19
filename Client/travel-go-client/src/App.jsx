@@ -6,6 +6,7 @@ import FooterAttribution from "./components/Footer/FooterAttribution/FooterAttri
 import Login from "./components/Login/Login";
 import Singup from "./components/Signup/Signup";
 import BookingContainer from "./components/Container/bookingContainer/BookingContainer";
+import ShoppingCartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import CartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import ErrorPage from "./components/Container/ErrorContainer/ErrorContainer";
 import TermsOfService from "./components/Container/TermsOfService/TermsOfService";
@@ -62,6 +63,7 @@ function App() {
       <Route path="/terms-of-service" element={AppWithAttribution(<TermsOfService />)} />
       <Route path="/privacy-policy" element={AppWithAttribution(<PrivacyPolicy />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
+      <Route path="/shopping-cart" element={AppWithHeader(<ShoppingCartContainer />)} />
     </Routes>
   );
 }

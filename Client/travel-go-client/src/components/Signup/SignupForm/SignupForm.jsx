@@ -34,8 +34,8 @@ const SignupForm = () => {
 
   const newUser = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
       try{
-        await axios.post("/post/user", { nombre, email, contrasenia_hash, fec_nacimiento, telefono });
-        console.log("bien");
+        await axios.post("/singup", { nombre, email, contrasenia_hash, fec_nacimiento, telefono });
+        console.log("usuario registrado");
       }
 
       catch(error){

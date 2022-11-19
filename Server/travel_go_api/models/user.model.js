@@ -45,14 +45,18 @@ const UserSchema = new Schema({
         default: 'img/img_user/usuario.png',       
 
     },
-    rol:{
-        type: String,
+    roles:{
+        type: [String],
         trim: true,
-        default: 'usuario',
+        default: []
     },
 
     salt:{
         type: String,
+    },
+    tokens: {
+        type: [String],
+        default: []
     }
 
 },     

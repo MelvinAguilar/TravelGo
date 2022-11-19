@@ -4,8 +4,7 @@ const validator = {};
 
 validator.createWishListValidator =[      
     body("id_usuario")
-        .notEmpty().withMessage("El id_usuario no debe estar vacío")
-        .bail()
+        .optional()
         .isMongoId().withMessage("El id debe de ser tipo id"),
 
     body("lugares")

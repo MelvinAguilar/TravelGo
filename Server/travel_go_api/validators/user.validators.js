@@ -33,7 +33,10 @@ validator.registerValidator = [
 
     body("rol")
         .optional()
-        .isString().withMessage("rol debe de ser string")
+        .isArray().withMessage("rol debe de ser array"),
+
+    body("rol.*")
+        .not().isArray().isString().withMessage("array solo de string")
 ];
 
 module.exports = validator;

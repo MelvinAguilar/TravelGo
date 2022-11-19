@@ -6,9 +6,10 @@ const controller = {};
 
 controller.create = async(req, res)=>{
     try{
-        const {id_usuario, lugares} = req.body;
+        const {lugares} = req.body;
+        const user = req.user;
         const wishlist = new WishList({
-            id_usuario: id_usuario,
+            id_usuario: user._id,
             lugares: lugares
         });
 

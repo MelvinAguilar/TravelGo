@@ -1,5 +1,8 @@
 const User = require("../models/user.model");
 const debug = require("debug")("app:register-controller");
+const ROLS = require("../data/roles.constant.json");
+
+const {createToken, verifyToken} = require("../utils/jwt.tools");
 
 const controller = {};
 
@@ -7,7 +10,7 @@ controller.register = async(req, res)=>{
     try{
         //obtenemos datos del req->|body
         const {
-            nombre, email, contrasenia_hash, fec_nacimiento, telefono, imagen, rol
+            nombre, email, contrasenia_hash, fec_nacimiento, telefono, imagen
         } = req.body;
 
         //verificamos que el username o email no estén ocupados
@@ -29,7 +32,7 @@ controller.register = async(req, res)=>{
             fec_nacimiento: fec_nacimiento,
             telefono: telefono,
             imagen: imagen,
-            rol: rol
+            roles: [ROLS.USER]
         });
         //creamos usuario
 
@@ -59,11 +62,19 @@ controller.singin = async(req, res)=>{
         //comparando contraseñas 
         if(!user.comparePassword(password))
             return res.status(401).json({error: "Contraseña incorrecta"});
-        
-        return res.status(200).json({message: "El usuario se ha loggeado"});
-
 
         //permitir loggeo
+        //creacion de token
+        const token = createToken(user._id);
+
+        //verificando tokens activos y eliminando viejos, dejando 4 sesiones activas only
+        user.tokens = [token, ...user.tokens.filter(_token => verifyToken(_token)).splice(0,3)];
+
+        //almacenamiento de token
+        await user.save();
+
+        return res.status(200).json({token: token});
+
 
     }
     catch(error){

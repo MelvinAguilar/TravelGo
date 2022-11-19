@@ -151,7 +151,7 @@ const CarritoContainer = ()=>{
         const days = DayCounter(new Date(item.fecha_inicio), new Date(item.fecha_final));
         const totalPerDays = item.precio_unitario * (days===0 ? 1: days);
         const subTotal = totalPerItem(item.cant_personas, totalPerDays, totalPerService);
-        total += subTotal;
+        total += (subTotal*0.13)+subTotal;
 
         //new object
         const _moreInformation = {

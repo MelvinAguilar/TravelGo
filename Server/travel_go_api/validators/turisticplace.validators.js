@@ -32,6 +32,11 @@ validator.createTuristicPlaceValidator =[
     body("cant_comentarios")
         .optional()
         .isNumeric().withMessage("cant_comentarios debe de ser numerico"),
+    
+    body("comentarios")
+        .notEmpty().withMessage("El lugares no debe estar vacío")
+        .bail()
+        .isArray().isMongoId().withMessage("lugares debe de ser array de id"),
 
     body("puntuacion_prom")
         .optional()

@@ -34,5 +34,37 @@ controller.create = async(req, res)=>{
         });
     }
 };
+//find place by etiqueta
+controller.findByTag = async(req, res)=>{
+    try{
+        const {tag} = req.params;
+        const data = await TuristicPlace
+        .find({etiqueta: tag, hidden: false});
 
+        return res.status(200).json(data);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({error: "Error interno del servidor"});
+    }
+}
+
+
+//find place by name
+controller.findByName = async(req, res)=>{
+    try{
+        const {name} = req.params;
+        const data = await TuristicPlace.find({
+            nombre: name
+        });
+
+        return res.status(200).json(data);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error interno del servidor"
+        });
+    }
+}
 module.exports = controller;

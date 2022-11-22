@@ -73,10 +73,14 @@ const turisticPlaceSchema = new Schema({
         default: 0.00,
 
     },
+    comentarios:{
+        type: [Schema.Types.ObjectId],
+        ref: "Comment",
+        default: [],
+    },
     etiqueta:{
         type: [String],
         trim: true,
-
 
     },
     ubicacion:{

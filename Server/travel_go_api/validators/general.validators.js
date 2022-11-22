@@ -6,18 +6,19 @@ const directions = {
     'turisticplace': 'turisticplace',
     'turisticplan': 'turisticplan',
     'user': 'user',
-    'wishlist': 'wishlist'
+    'wishlist': 'wishlist',
+    'comments': 'comments'
 }
 
 const validator = {};
 validator.findByIdValidator = [
     param("dataSchema")
-        .notEmpty().withMessage("La direccion debe de pertenecer a una coleccion")
+        .optional()
         .custom((value)=> value.includes(directions[value])
         ).withMessage("La direccion no pertenece a ninguna coleccion disponible"),
 
     param("identifier")
-        .notEmpty().withMessage("El id no debe de ir vacio")
+        .optional()
         .isMongoId().withMessage("El id debe ser de mongo")
 ];
 

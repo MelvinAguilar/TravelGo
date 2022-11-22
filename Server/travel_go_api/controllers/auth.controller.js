@@ -85,13 +85,26 @@ controller.singin = async(req, res)=>{
     }
 }
 
-controller.findByToken = async(req, res)=>{
+controller.findRoleByToken = async(req, res)=>{
     try{
-        const {tokenIdentifier} = req.params;
-        const user = await User.findOne({
-            tokens: tokenIdentifier
-        });
+        const {_id} = req.user;
+        const user = await User.findById(_id);
         return res.status(200).json(user.roles);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
+controller.findUserByToken = async(req, res)=>{
+    try{
+        const {_id, nombre, email, fec_nacimiento, telefono, imagen} = req.user;
+        return res.status(200).json({
+            _id, nombre, email, fec_nacimiento, telefono, imagen
+        });
     }
     catch(error){
         debug(error);

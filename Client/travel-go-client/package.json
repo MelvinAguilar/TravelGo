@@ -14,9 +14,12 @@
     "i": "^0.3.7",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.9.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.39.4",
     "react-router-dom": "^6.4.3",
+    "react-tag-input": "^6.8.1",
     "react-toastify": "^9.1.1",
     "sass": "^1.56.1"
   },

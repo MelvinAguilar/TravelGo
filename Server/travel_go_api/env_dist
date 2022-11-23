@@ -1,0 +1,2 @@
+# Database Mongo DB URL connection string (MongoDB Atlas)
+MONGODB_URL=

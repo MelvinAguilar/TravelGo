@@ -10,10 +10,13 @@ const commentsController = require("../controllers/comments.controller");
 
 /*general validators*/
 const generalValidator = require("../validators/general.validators");
-const {authentication} = require("../middleware/auth.middlewares");
 
 /*middleware*/
 const runValidator = require("../validators/middlewares/post.middleware");
+const {authentication, authorization} = require("../middleware/auth.middlewares");
+
+//Roles
+const ROLS = require("../data/roles.constant.json");
 
 //find user role by token
 router.get("/user/rol/", 
@@ -47,12 +50,19 @@ router.get("/own/:Schema",
 );
 
 //find one by id 
-router.get("/:dataSchema/:identifier", 
+router.get("/general/:dataSchema/:identifier", 
     generalValidator.findByIdValidator, 
     runValidator,  
     generalController.findOneById
 );
 
 
-
+//delete one by id for admins only
+router.delete("/general/:dataSchema/:identifier",
+    authentication,
+    authorization(ROLS.ADMIN),
+    generalValidator.findByIdValidator,
+    runValidator,
+    generalController.deleteById
+);
 module.exports = router;

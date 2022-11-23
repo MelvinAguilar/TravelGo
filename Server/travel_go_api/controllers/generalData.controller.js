@@ -1,3 +1,5 @@
+const { find } = require("../models/user.model");
+
 const debug = require("debug")("app:post-controller");
 /* store and logical variables */
 let allData;
@@ -75,6 +77,29 @@ controller.findOneById = async(req, res) =>{
     }
 }
 
+
+controller.deleteById = async(req, res)=>{
+    try{
+        const {dataSchema, identifier} = req.params;
+        binderData(dataSchema);
+        
+        //verificando si existe el dato
+        const verifyExistense = await allData.findById(identifier);
+        if(!verifyExistense) return res.status(404).json({error: "no encontrado"});
+
+        //si existe borramos
+        await allData.remove({
+            _id: identifier
+        }); 
+        return res.status(200).json(`Deleted`);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        })
+    }
+}
 
 //find user items by user token
 controller.findOwn = async (req, res)=>{

@@ -1,4 +1,5 @@
 const {param} = require("express-validator");
+const debug = require("debug")("app: validator");
 
 const directions = {
     'booking': 'booking',
@@ -13,12 +14,14 @@ const directions = {
 const validator = {};
 validator.findByIdValidator = [
     param("dataSchema")
-        .optional()
-        .custom((value)=> value.includes(directions[value])
-        ).withMessage("La direccion no pertenece a ninguna coleccion disponible"),
+        .exists()
+        .custom(value=>{
+            if(value===directions[value]) return true;
+            return false;
+        }).withMessage(`La direccion no pertenece a ninguna coleccion disponible`),
 
     param("identifier")
-        .optional()
+        .exists()
         .isMongoId().withMessage("El id debe ser de mongo")
 ];
 

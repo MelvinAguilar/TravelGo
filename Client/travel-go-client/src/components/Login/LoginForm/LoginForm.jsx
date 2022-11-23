@@ -34,7 +34,11 @@ const LoginForm = () => {
     const {email, password} = data;
       try{
         const response = await axios.post("/singin", {email, password});
-        const rolUser = await axios.get(`/user/rol/${response.data.token}`);
+        const rolUser = await axios.get('/user/rol/', {
+          headers:{
+            Authorization: `Bearer ${response.data.token}`,
+          }
+        });
         const data = {
           "token": response.data.token,
           "roles": rolUser.data
@@ -43,7 +47,6 @@ const LoginForm = () => {
         navigateTo('/');
       }
       catch(error){
-        console.log(error);
         const {status} = error.response;
         const msg = {
           "400": "Wrong fields",
@@ -51,6 +54,7 @@ const LoginForm = () => {
           "401": "Contraseña incorrecta",
           "500": "Something went wrong!",
         }
+        console.log(status.toString() + " " + error);
         toast.error(msg[status.toString()] || "unexpected error");
 
       }
@@ -61,6 +65,7 @@ const LoginForm = () => {
 const saveIntoSessionStorage = (data)=>{
   sessionStorage.setItem("userToken", data.token);
   sessionStorage.setItem("userRol", data.roles);
+  sessionStorage.setItem("session", true);
 }
 
   // When the form is submitted, but there are errors

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React, {useRef} from "react";
+import {toast} from "react-toastify";
 //import bcrypt from "bcr"
 
 import classes from "./SignupForm.module.scss";
@@ -29,7 +30,7 @@ const SignupForm = () => {
     const data = new FormData(e.target);
     //await fetchingData();
     await newUser(data.get("name"), data.get("email"), data.get("password"), data.get("date_birth"), data.get("phone"));
-
+    e.target.reset();
   }
 
   const newUser = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
@@ -43,9 +44,10 @@ const SignupForm = () => {
         const msg = {
           "400": "Wrong fields",
           "404": "Not found",
+          "409": "Email and name already exist",
           "500": "Something went wrong!",
         }
-        console.log(msg[status.toString()] || "unexpected error");
+        toast.error(msg[status.toString()] || "unexpected error");
       }
   }
 /*   const fetchingData = async()=>{

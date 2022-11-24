@@ -12,7 +12,7 @@ import Loader from "./components/Loader/Loader";
 import { Route, Routes } from "react-router-dom";
 
 
-/* const rootElement = (element) => {
+const rootElement = (element) => {
   return (
     <div className={classes["App"]}>
       <Header />
@@ -21,7 +21,7 @@ import { Route, Routes } from "react-router-dom";
     </div>
   );
 };
- *//* 
+
 const AppWithHeader = (element) => {
   return (
     <div className={classes["App"]}>
@@ -30,7 +30,7 @@ const AppWithHeader = (element) => {
     </div>
   );
 };
- *//* 
+
 const AppWithAttribution = (element) => {
   return (
     <div className={classes["App"]}>
@@ -41,28 +41,27 @@ const AppWithAttribution = (element) => {
       </footer>
     </div>
   );
-}; */
+};
 
-/* const AppMain = (element) => {
+const AppMain = (element) => {
   return (
     <div className={classes["App"]}>
       <main>{element}</main>
     </div>
   );
-}; */
+};
 
  function App() {
   return (
-  /*   <Routes>
+    <Routes>
       <Route path="/" element={rootElement(<LandingContainer />)} />
       <Route path="/login" element={AppMain(<Login />)} />
       <Route path="/register" element={AppMain(<Singup />)} />
       <Route path="/booking" element={rootElement(<BookingContainer />)} />
       <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
-    </Routes>  */
-    <Loader></Loader>
-
+      <Route path="/loader" element={AppWithHeader(<Loader />)} />
+    </Routes>
   );
 }
 

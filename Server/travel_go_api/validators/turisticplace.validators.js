@@ -8,13 +8,6 @@ validator.createTuristicPlaceValidator =[
         .bail()
         .isString().withMessage("El nombre debe de ser string"),
 
-    body("descripcion_general")
-        .notEmpty().withMessage("descripcion_general no puede ser vacía")
-        .bail()
-        .isString().withMessage("descripcion_general debe de ser string")
-        .bail()
-        .isLength({max: 250}),
-
     body("descripcion_especifica")
         .notEmpty().withMessage("descripcion_especifica no puede ser vacía")
         .bail()
@@ -71,11 +64,14 @@ validator.createTuristicPlaceValidator =[
         .bail()
         .isURL().withMessage("redes.url debe de ser url"),
 
-    body("servicios")
-        .optional()
-        .isArray().withMessage("servicios debe de ser array"),
+    body("img")
+        .notEmpty().withMessage("Es necesario indicar la direccion de las imagenes")
+        .bail()
+        .isArray().withMessage("imagenes debe de ser array")
+        .bail()
+        .isLength({max: 5}).withMessage("Solo se permiten 5 imagenes max"),
 
-    body("servicios.*")
+    body("img.*")
         .not().isArray().isString().withMessage("servicios debe de ser array de string"),
     
 ]

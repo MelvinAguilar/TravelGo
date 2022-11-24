@@ -7,20 +7,20 @@ controller.create = async(req, res)=>{
 
     try{
 
-        const {nombre, descripcion_general, descripcion_especifica, precio, capacidad, cant_comentarios, puntuacion_prom, etiqueta, ubicacion, redes, servicios} = req.body;
+        const {nombre, descripcion_especifica, precio, capacidad, cant_comentarios, puntuacion_prom, comentarios, etiqueta, ubicacion, redes, img} = req.body;
 
         const turisticPlace = new TuristicPlace({
             nombre: nombre,
-            descripcion_general: descripcion_general,
             descripcion_especifica: descripcion_especifica,
             precio: precio,
             capacidad: capacidad,
             cant_comentarios: cant_comentarios,
             puntuacion_prom: puntuacion_prom,
+            comentarios: comentarios,
             etiqueta: etiqueta,
             ubicacion: ubicacion,
             redes: redes,
-            servicios: servicios,
+            img: img,
 
         });
 

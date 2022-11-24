@@ -1,4 +1,5 @@
 const { find } = require("../models/user.model");
+const { all } = require("../routes/data.router");
 
 const debug = require("debug")("app:post-controller");
 /* store and logical variables */
@@ -77,21 +78,46 @@ controller.findOneById = async(req, res) =>{
     }
 }
 
-
+//delete document by given id
 controller.deleteById = async(req, res)=>{
     try{
         const {dataSchema, identifier} = req.params;
         binderData(dataSchema);
         
-        //verificando si existe el dato
-        const verifyExistense = await allData.findById(identifier);
-        if(!verifyExistense) return res.status(404).json({error: "no encontrado"});
+        //buscamos por id y si existe borramos
+        await allData.findByIdAndRemove({_id: identifier})
+        .then(data=>{
 
-        //si existe borramos
-        await allData.remove({
-            _id: identifier
+            //verificando si existe el dato
+            if(data)
+                return res.status(200).json(`Deleted`);
+            return res.status(404).json({error: "no encontrado"});
         }); 
-        return res.status(200).json(`Deleted`);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        })
+    }
+}
+
+//update document by given id
+controller.updateById = async(req, res)=>{
+    try{
+        const {dataSchema, identifier} = req.params;
+        binderData(dataSchema);
+        
+        //buscamos por id y si existe hacemos update con los datos de su body
+        await allData.findByIdAndUpdate({_id: identifier}, req.body)
+        .then(async()=>{
+            await allData.findById(identifier).then(data=>{
+
+                //verify if value existed
+                if(data) return res.status(200).json(data);
+                return res.status(404).json({error: "no encontrado"});
+            })
+        }); 
     }
     catch(error){
         debug(error);

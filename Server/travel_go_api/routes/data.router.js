@@ -30,10 +30,10 @@ router.get("/user/profile/",
     userController.findUserByToken
 );
 
-//find client data 
+//find view (admin administration) data
 router.get("/adm/:dataSchema", generalController.findAllPlaces);
 
-//find users all data
+//find users data (user actions in client)
 router.get("/user_adm/:dataSchema", generalController.findAll);
 
 //find places per targs and name
@@ -49,8 +49,8 @@ router.get("/own/:Schema",
     generalController.findOwn
 );
 
-//find one by id 
-router.get("/general/:dataSchema/:identifier", 
+//find one by id (in all collections)
+router.get("/specific/:dataSchema/:identifier", 
     generalValidator.findByIdValidator, 
     runValidator,  
     generalController.findOneById
@@ -58,11 +58,21 @@ router.get("/general/:dataSchema/:identifier",
 
 
 //delete one by id for admins only
-router.delete("/general/:dataSchema/:identifier",
+router.delete("/delete/:dataSchema/:identifier",
     authentication,
     authorization(ROLS.ADMIN),
     generalValidator.findByIdValidator,
     runValidator,
     generalController.deleteById
 );
+
+//update one by given id for admins only
+router.put("/update/:dataSchema/:identifier",
+    authentication,
+    authorization(ROLS.ADMIN),
+    generalValidator.findByIdValidator,
+    runValidator,
+    generalController.updateById
+);
+
 module.exports = router;

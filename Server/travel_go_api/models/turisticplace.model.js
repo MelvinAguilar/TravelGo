@@ -37,12 +37,6 @@ const turisticPlaceSchema = new Schema({
         unique: true
 
     },
-    descripcion_general:{
-        type: String,
-        trim: true,
-        required: true,
-
-    },
     descripcion_especifica:{
         type: String,
         trim: true,
@@ -92,11 +86,10 @@ const turisticPlaceSchema = new Schema({
         type: redesSchema,
         default: null,
     },
-    servicios:{
+    img:{
         type: [String],
         trim: true,
-        default: null,
-
+        required :true
     }
 },
 {

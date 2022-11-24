@@ -1,0 +1,82 @@
+@import "./../../../mixins";
+
+.Navbar {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding-inline-start: 0;
+
+    position: fixed;
+    inset: 0 0 0 10%;
+    display: flex;
+    gap: 2.313rem;
+    flex-direction: column;
+    padding: 5rem 2.5rem 2rem;
+    background-color: #252525;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  // When in mobile view, the navbar is visible
+  &--open ul {
+    transform: translateX(0);
+
+    + button {
+      color: white;
+    }
+  }
+
+  ul > li {
+    display: block;
+  }
+
+  a {
+    color: white;
+    display: block;
+  }
+
+  &__toggle-button {
+    position: absolute;
+    top: 0.45rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    color: #2a2a2a;
+    font-size: 1.5rem;
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    ul {
+      inset: 0 0 0 55%;
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    position: relative;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: relative;
+      inset: 0;
+      padding: 0;
+      transform: translateX(0);
+      background-color: transparent;
+    }
+
+    &__toggle-button {
+      display: none;
+    }
+
+    a {
+      color: #18272f;
+    }
+  }
+}

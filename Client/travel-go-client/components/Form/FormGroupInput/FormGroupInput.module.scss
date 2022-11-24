@@ -1,0 +1,27 @@
+@import "./../../../mixins";
+
+.FormGroupInput {
+  position: relative;
+
+  &__input {
+    @include forminput;
+    @include formfloatlabel;
+  }
+
+  &__label {
+    @include formlabel;
+  }
+
+  svg {
+    position: absolute;
+    top: 30%;
+    right: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    pointer-events: none;
+  }
+
+  &.hasIcon input {
+    padding-right: 3rem;
+  }
+}

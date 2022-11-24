@@ -1,0 +1,69 @@
+@import "./../../../../mixins";
+
+.CategoryContainer {
+  margin-block: 4.375rem;
+
+  &__title {
+    text-align: center;
+
+    h2 {
+      font-family: 'IBM Plex Serif';
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3.75rem;
+
+    button {
+      width: fit-content;
+      min-height: 3.063rem;
+      border-radius: 0.625rem;
+      margin: 0;
+      padding-inline: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    &__title {
+      h2 {
+        font-size: 2.3rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    &__categories {
+      gap: 2.5rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 3.438rem;
+      text-align: left;
+
+      p,
+      h2 {
+        flex: 50%;
+      }
+      
+      h2 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

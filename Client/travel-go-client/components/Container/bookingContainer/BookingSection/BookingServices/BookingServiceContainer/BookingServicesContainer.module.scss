@@ -1,0 +1,13 @@
+@import "../../../../../../mixins";
+@import "../../../../../../_variables";
+
+.service-container{
+    @include flex(row, center, center);
+    >h3{
+        margin-left: 2rem;
+    }
+    
+    > svg{
+        @include size(2rem);
+    }
+}

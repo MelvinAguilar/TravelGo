@@ -1,0 +1,40 @@
+@import "../../../../variables";
+.comments-article{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    >:first-child{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        font-family: ($display-font);
+        font-weight: 400;
+        >figure{
+            padding: 0.35rem 0 0 4.5rem;
+            >svg{
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+        >h2{
+            font-size: 1.5rem;
+        }
+    }
+
+    >.btn-mostrar-comentarios{
+        align-self: flex-end;
+        margin-right: 5rem;
+
+    }
+}
+
+
+.comments-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}

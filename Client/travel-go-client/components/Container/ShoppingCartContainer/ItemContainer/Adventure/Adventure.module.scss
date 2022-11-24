@@ -1,0 +1,78 @@
+@import "../../../../../mixins";
+@import "../../../../../_variables";
+
+.adventure-container{
+    margin-inline: auto;
+
+    .image-container {
+        >img{
+            width: 100%;
+            max-width: 30rem;
+            display: block;
+            border: 0.0469rem solid ($text2);
+            margin-block: 2rem;
+        }
+    }
+
+    .information{
+        font-family: ($body-label-tittle-font);
+        
+
+        > h2{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        > address{
+            text-transform: uppercase;
+            font-style: normal;
+            
+            font-weight: 600;
+            font-size: 2rem;
+            color: ($text4);
+        }
+
+        > div{
+            @include flex(row);
+            gap: 0.25rem;
+
+            > p {
+                font-weight: 600;
+                color: ($text3);
+            }
+        }
+
+        .plan-type {
+            text-decoration: underline;
+            font-weight: 400;
+        }
+
+        .currency {
+            font-weight: 300;
+        }
+
+        .rating {
+            text-decoration: underline;
+        }
+    }
+
+    @include media-breakpoint-up($screen-lg) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+
+        .image-container {
+            >img{
+                max-width: 26rem;
+                margin-block: 0;
+            }
+        }
+
+        .information{
+            @include flex(column, center, flex-start);
+            gap: 0.5rem;
+        }
+    }
+}

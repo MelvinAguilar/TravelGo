@@ -64,7 +64,7 @@ const UserSchema = new Schema({
     timestamps: true
 });
 
-UserSchema. methods = {
+UserSchema.methods = {
     encryptedPassword: function(password){
         if(!password) return "";
 

@@ -11,14 +11,7 @@ import sandDesktop from "./../../../assets/bg-sand-desktop.png";
 import woman from "./../../../assets/woman.svg";
 import { Binoculars } from "react-bootstrap-icons";
 
-const getFromSessionStorage = ()=>{
-  const rol = sessionStorage.getItem("userRol");
-  const token = sessionStorage.getItem("userToken");
-  console.log(`rol: ${rol} token: ${token}`);
-}
-
 const LandingContainer = () => {
-  getFromSessionStorage();
   return (
     <div className={classes["LandingContainer"]}>
       <div className={classes["LandingContainer__content"]}>

@@ -20,7 +20,7 @@ controller.register = async(req, res)=>{
 
         if(user){
             return res.status(409).json({
-                error: "Este usuario e email ya están siendo usados"
+                error: "Este usuario e email ya están registrados"
             })
         }
 
@@ -58,7 +58,6 @@ controller.singin = async(req, res)=>{
         //verificando existencia de usuario 
         const user = await User.findOne({email: email})
         if(!user) return res.status(404).json({ error: "El usuario no existe"});
-
         //comparando contraseñas 
         if(!user.comparePassword(password))
             return res.status(401).json({error: "Contraseña incorrecta"});
@@ -76,6 +75,35 @@ controller.singin = async(req, res)=>{
         return res.status(200).json({token: token});
 
 
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
+controller.findRoleByToken = async(req, res)=>{
+    try{
+        const {_id} = req.user;
+        const user = await User.findById(_id);
+        return res.status(200).json(user.roles);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
+controller.findUserByToken = async(req, res)=>{
+    try{
+        const {_id, nombre, email, fec_nacimiento, telefono, imagen} = req.user;
+        return res.status(200).json({
+            _id, nombre, email, fec_nacimiento, telefono, imagen
+        });
     }
     catch(error){
         debug(error);

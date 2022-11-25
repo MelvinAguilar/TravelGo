@@ -6,11 +6,11 @@ import FooterAttribution from "./components/Footer/FooterAttribution/FooterAttri
 import Login from "./components/Login/Login";
 import Singup from "./components/Signup/Signup";
 import BookingContainer from "./components/Container/bookingContainer/BookingContainer";
-import ShoppingCartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import CartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import ErrorPage from "./components/Container/ErrorContainer/ErrorContainer";
 import TermsOfService from "./components/Container/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./components/Container/PrivacyPolicy/PrivacyPolicy";
+import PlaceContainer from "./components/Container/PlaceContainer/PlaceContainer";
 import { Route, Routes } from "react-router-dom";
 
 const rootElement = (element) => {
@@ -62,8 +62,8 @@ function App() {
       <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
       <Route path="/terms-of-service" element={AppWithAttribution(<TermsOfService />)} />
       <Route path="/privacy-policy" element={AppWithAttribution(<PrivacyPolicy />)} />
+      <Route path="/place" element={AppWithAttribution(<PlaceContainer />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
-      <Route path="/shopping-cart" element={AppWithHeader(<ShoppingCartContainer />)} />
     </Routes>
   );
 }

@@ -6,12 +6,12 @@ const controller = {};
 controller.create = async(req, res)=>{
     try{
         const {fecha, precio_total, item} = req.body;
-        const user = req.user;
+        const {_id: userId} = req.user;
 
-        debug(`User creado por ${user._id}`)
+        debug(`User creado por ${userId}`)
 
         const booking = new Booking({
-            id_usuario: user._id,
+            user: userId,
             fecha: fecha,
             precio_total: precio_total,
             item: item,

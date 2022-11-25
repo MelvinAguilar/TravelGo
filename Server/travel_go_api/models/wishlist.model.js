@@ -5,16 +5,17 @@ const Schema = Mongoose.Schema;
 
 const wishListSchema = new Schema({
     
-    id_usuario:{
-        type: mongoose.Types.ObjectId,
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: "User",
         required: true,
         trim: true,
 
     },
     lugares:{
         type: [mongoose.Types.ObjectId],
-        required: true,
-        trim: true,
+        ref: "TuristicPlace",
+        default: []
 
     }
 });

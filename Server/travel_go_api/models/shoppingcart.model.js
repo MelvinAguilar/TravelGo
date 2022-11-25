@@ -45,8 +45,9 @@ const itemSchema = new Schema({
 });
 
 const shoppingCartSchema = new Schema({
-    id_usuario:{
-        type: mongoose.Types.ObjectId,
+    user :{
+        type: Schema.Types.ObjectId,
+        ref: "User",
         required:true,
         trim: true,
 

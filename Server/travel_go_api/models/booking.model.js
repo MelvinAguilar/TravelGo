@@ -38,9 +38,10 @@ const itemSchema = new Schema({
 });
 
 const bookingSchema = new Schema({
-    id_usuario:{
-        type: mongoose.Types.ObjectId,
-        required: true,
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true, 
         trim: true,
 
     },

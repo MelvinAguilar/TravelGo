@@ -40,6 +40,10 @@ const itemSchema = new Schema({
         trim: true,
         required: true,
 
+    },
+    compra:{
+        type: Boolean,
+        default: false
     }
 
 });

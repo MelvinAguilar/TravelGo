@@ -2,14 +2,9 @@ const {body} = require("express-validator");
 
 const validator = {};
 
-validator.createShoppingCartValidator =[      
-    body("id_usuario")
-        .optional()
-        .isMongoId().withMessage("El id debe de ser de mongo"),
-
+validator.createShoppingCartValidatorUser =[      
     body("precio_total")
-        .notEmpty().withMessage("total no puede ser vacía")
-        .bail()
+        .optional()
         .isNumeric().withMessage("campo total debe de ser tipo numerico"),
     
     body("item")
@@ -45,6 +40,16 @@ validator.createShoppingCartValidator =[
         .bail()
         .isNumeric().withMessage("precio_unitario debe de ser tipo numerico")
     
+]
+
+validator.createShoppingCartValidatorFirst =[      
+    body("precio_total")
+        .optional()
+        .isNumeric().withMessage("campo total debe de ser tipo numerico"),
+    
+    body("item")
+        .optional()
+   
 ]
 
 

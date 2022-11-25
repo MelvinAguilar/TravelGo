@@ -64,9 +64,8 @@ const Footer = () => {
             <h2 className={classes["Subtitle"]}>Information</h2>
             <ul className={classes["Footer__list"]}>
               <NavLink to="/about">About Us</NavLink>
-              <NavLink to="/contact">Contact Us</NavLink>
-              <NavLink to="/privacy">Privacy Policy</NavLink>
-              <NavLink to="/terms">Terms & Conditions</NavLink>
+              <NavLink to="/privacy-policy">Privacy Policy</NavLink>
+              <NavLink to="/terms-of-service">Terms & Conditions</NavLink>
             </ul>
           </div>
           <div>

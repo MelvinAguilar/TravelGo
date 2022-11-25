@@ -139,10 +139,10 @@ const CarritoContainer = ()=>{
     const impuestos = 10;
 
     //Function remove 
-    const removeElementHandler = (e)=>{
-        const itemRemove = e.target.getAttribute("data-delete");
-        removeElementList(listItems.filter(item=>item._id !== itemRemove));
-    }
+    // const removeElementHandler = (e)=>{
+    //     const itemRemove = e.target.getAttribute("data-delete");
+    //     removeElementList(listItems.filter(item=>item._id !== itemRemove));
+    // }
 
     //mapping items creation
     const mappedShoppingCart = listItems.map((item)=>{
@@ -151,7 +151,7 @@ const CarritoContainer = ()=>{
         const days = DayCounter(new Date(item.fecha_inicio), new Date(item.fecha_final));
         const totalPerDays = item.precio_unitario * (days===0 ? 1: days);
         const subTotal = totalPerItem(item.cant_personas, totalPerDays, totalPerService);
-        total += subTotal;
+        total += (subTotal*0.13)+subTotal;
 
         //new object
         const _moreInformation = {
@@ -175,7 +175,6 @@ const CarritoContainer = ()=>{
                     key={item._id} 
                     eventHandler = {removeElementHandler} 
                     _key={item._id}/>
-
     });
     
     return(

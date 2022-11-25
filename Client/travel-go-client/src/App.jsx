@@ -8,9 +8,10 @@ import Singup from "./components/Signup/Signup";
 import BookingContainer from "./components/Container/bookingContainer/BookingContainer";
 import CartContainer from "./components/Container/ShoppingCartContainer/ShoppingCartContainer";
 import ErrorPage from "./components/Container/ErrorContainer/ErrorContainer";
-import Loader from "./components/Loader/Loader";
+import TermsOfService from "./components/Container/TermsOfService/TermsOfService";
+import PrivacyPolicy from "./components/Container/PrivacyPolicy/PrivacyPolicy";
+import PlaceContainer from "./components/Container/PlaceContainer/PlaceContainer";
 import { Route, Routes } from "react-router-dom";
-
 
 const rootElement = (element) => {
   return (
@@ -51,7 +52,7 @@ const AppMain = (element) => {
   );
 };
 
- function App() {
+function App() {
   return (
     <Routes>
       <Route path="/" element={rootElement(<LandingContainer />)} />
@@ -59,8 +60,10 @@ const AppMain = (element) => {
       <Route path="/register" element={AppMain(<Singup />)} />
       <Route path="/booking" element={rootElement(<BookingContainer />)} />
       <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
+      <Route path="/terms-of-service" element={AppWithAttribution(<TermsOfService />)} />
+      <Route path="/privacy-policy" element={AppWithAttribution(<PrivacyPolicy />)} />
+      <Route path="/place" element={AppWithAttribution(<PlaceContainer />)} />
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
-      <Route path="/loader" element={AppWithHeader(<Loader />)} />
     </Routes>
   );
 }

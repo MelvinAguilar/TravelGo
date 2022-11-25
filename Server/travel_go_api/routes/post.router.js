@@ -61,7 +61,7 @@ router.post("/booking",
 router.post("/shoppingcart", 
     authentication,
     authorization(ROLS.USER),
-    shoppingcartValidator.createShoppingCartValidator,
+    shoppingcartValidator.createShoppingCartValidatorFirst,
     runValidation,
     shoppingcartController.create
     );

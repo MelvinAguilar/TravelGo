@@ -32,7 +32,7 @@ const LoginForm = () => {
   // Create a function to handle the form submission
   const onSubmit = async(data) => {
     const {email, password} = data;
-      try{
+      try {
         const response = await axios.post("/singin", {email, password});
         const rolUser = await axios.get('/user/rol/', {
           headers:{
@@ -54,19 +54,11 @@ const LoginForm = () => {
           "401": "Contraseña incorrecta",
           "500": "Something went wrong!",
         }
-        console.log(status.toString() + " " + error);
-        toast.error(msg[status.toString()] || "unexpected error");
-
+        toast.error(msg[status.toString()] || "unexpected error", {
+          toastId: "loginError",
+        });
       }
-
   };
-
-//save token in session storage
-const saveIntoSessionStorage = (data)=>{
-  sessionStorage.setItem("userToken", data.token);
-  sessionStorage.setItem("userRol", data.roles);
-  sessionStorage.setItem("session", true);
-}
 
   // When the form is submitted, but there are errors
   const onInvalid = () => {
@@ -75,7 +67,12 @@ const saveIntoSessionStorage = (data)=>{
     });
   };
 
-
+  //save token in session storage
+  const saveIntoSessionStorage = (data)=>{
+    sessionStorage.setItem("userToken", data.token);
+    sessionStorage.setItem("userRol", data.roles);
+    sessionStorage.setItem("session", true);
+  }
 
   return (
     <Form className={classes["LoginForm"]} onSubmit={handleSubmit(onSubmit, onInvalid)}>

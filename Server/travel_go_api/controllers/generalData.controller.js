@@ -1,5 +1,3 @@
-const { find } = require("../models/user.model");
-const { all } = require("../routes/data.router");
 
 const debug = require("debug")("app:post-controller");
 /* store and logical variables */

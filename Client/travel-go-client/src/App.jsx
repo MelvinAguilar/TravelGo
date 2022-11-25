@@ -10,7 +10,7 @@ import CartContainer from "./components/Container/ShoppingCartContainer/Shopping
 import ErrorPage from "./components/Container/ErrorContainer/ErrorContainer";
 import TermsOfService from "./components/Container/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./components/Container/PrivacyPolicy/PrivacyPolicy";
-import PlaceContainer from "./components/Container/PlaceContainer/PlaceContainer";
+// import PlaceContainer from "./components/Container/PlaceContainer/PlaceContainer";
 import { Route, Routes } from "react-router-dom";
 
 const rootElement = (element) => {
@@ -62,7 +62,7 @@ function App() {
       <Route path="/cart" element={AppWithAttribution(<CartContainer />)} />
       <Route path="/terms-of-service" element={AppWithAttribution(<TermsOfService />)} />
       <Route path="/privacy-policy" element={AppWithAttribution(<PrivacyPolicy />)} />
-      <Route path="/place" element={AppWithAttribution(<PlaceContainer />)} />
+      {/* <Route path="/place" element={AppWithAttribution(<PlaceContainer />)} /> */}
       <Route path="*" element={AppWithHeader(<ErrorPage />)} />
     </Routes>
   );

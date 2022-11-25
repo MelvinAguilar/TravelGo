@@ -7,6 +7,11 @@ controller.create = async(req, res)=>{
     try{
         const {precio_total, item} = req.body;
         const {_id: userId} = req.user;
+        
+        const element = await Shoppingcart.findOne({
+            user: userId
+        });
+        if(element) return res.status(500).json({error: "shopping cart in user already"});
 
         const shoppingcart = new Shoppingcart({
             user: userId,

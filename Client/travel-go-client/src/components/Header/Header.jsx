@@ -6,9 +6,18 @@ import Navbar from "./Navbar/Navbar";
 import ButtonLink from "../Button/ButtonLink/ButtonLink";
 import Container from "../Container/Container";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+  
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
+  const [inSession, setSession] = useState(false);
+  const navigateTo = useNavigate();
+
+  const userSession = ()=>{
+    const data = sessionStorage.getItem("session");
+    if(data) setSession(true);
+    else setSession(false);
+  }
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -18,10 +27,20 @@ const Header = () => {
     }
   };
 
+  const handlerClick = (e)=>{
+    console.log(inSession);
+    if(inSession){
+      sessionStorage.clear();
+    }
+    else
+      navigateTo("/login");
+  }
+
+
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`} >
+    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}  onLoad={userSession}>
       <Container>
         <Link to="/">
           <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
@@ -29,8 +48,8 @@ const Header = () => {
 
         <Navbar />
 
-        <ButtonLink to="/login" modifierClass="Button--white">
-          Iniciar sesión
+        <ButtonLink to = "/login" modifierClass="Button--white" onClick={handlerClick}>
+          {(inSession) ? 'Cerrar sesión': 'Iniciar sesión'}
         </ButtonLink>
       </Container>
     </header>

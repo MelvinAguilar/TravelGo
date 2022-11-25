@@ -1,11 +1,11 @@
-import classes from "./Signup.module.scss";
-import SignupForm from "./SignupForm/SignupForm";
+import classes from "./SignupView.module.scss";
+import SignupForm from "../../components/SignupForm/SignupForm";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
 
-const Signup = () => {
+const SignupView = () => {
   return (
-    <div className={classes.Signup}>
+    <main className={classes.Signup}>
       <div className={classes.Signup__container}>
         <Link to="/" className={classes.Signup__back}>
           <ArrowLeft />
@@ -18,8 +18,8 @@ const Signup = () => {
 
         <Link to="/login" className={classes.Signup__login}>¿Ya tienes una cuenta? Inicia sesión</Link>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default Signup;
+export default SignupView;

@@ -1,8 +1,8 @@
 import classes from "./LoginForm.module.scss";
-import InputField from "./../../Form/InputField/InputField";
-import Form from "./../../Form/Form";
-import Button from "./../../Button/Button";
-import ErrorMessage from "../../Form/ErrorMessage/ErrorMessage";
+import InputField from "../Form/InputField/InputField";
+import Form from "../Form/Form";
+import Button from "../Button/Button";
+import ErrorMessage from "../Form/ErrorMessage/ErrorMessage";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';

@@ -1,7 +1,7 @@
-@import "../../../mixins";
-@import "../../../_variables";
+@import "../../mixins";
+@import "../../_variables";
 
-.booking-container{
+.Place {
     @include flex(column, flex-start, center);
     position: relative;
     gap: 5rem;

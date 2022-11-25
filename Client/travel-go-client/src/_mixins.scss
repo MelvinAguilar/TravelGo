@@ -93,3 +93,16 @@
     color: #6c5ce7;
   }
 }
+
+@mixin animate($animation,$duration,$method,$times){
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+  @keyframes #{$name}{
+      @content;
+  }
+}
+
+/* animation: square3 4s 0s forwards ease-in-out infinite; 
+ */

@@ -25,7 +25,6 @@ middlewares.authentication = async(req, res, next)=>{
         
         //obtener usuario
         const {userID} = tokenObject;
-        debug(userID);
         
         const user = await User.findById(userID);
         if(!user) return res.status(401).json({error: "No autorizado"});
@@ -54,7 +53,6 @@ middlewares.authorization = (rolReq = ROLS.SYSADMIN)=>{
         try{
          //asumiendo que se ha pasado el proceso de autentificación 
         const {roles=[]} = req.user;
-        debug(req.user);
         //paso 1 verificamos que el rol sea de roles
         const roleIndex = roles.findIndex(rol=>(rol === rolReq) || rol === ROLS.SYSADMIN);
         

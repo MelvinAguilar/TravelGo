@@ -6,10 +6,10 @@ const controller = {};
 controller.create = async(req, res)=>{
     try{
         const {precio_total, item} = req.body;
-        const user = req.user;
+        const {_id: userId} = req.user;
 
         const shoppingcart = new Shoppingcart({
-            id_usuario: user._id,
+            user: userId,
             precio_total: precio_total,
             item: item
         });

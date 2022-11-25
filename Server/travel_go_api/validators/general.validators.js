@@ -1,4 +1,5 @@
 const {param} = require("express-validator");
+const debug = require("debug")("app: validator");
 
 const directions = {
     'booking': 'booking',
@@ -6,18 +7,21 @@ const directions = {
     'turisticplace': 'turisticplace',
     'turisticplan': 'turisticplan',
     'user': 'user',
-    'wishlist': 'wishlist'
+    'wishlist': 'wishlist',
+    'comments': 'comments'
 }
 
 const validator = {};
 validator.findByIdValidator = [
     param("dataSchema")
-        .notEmpty().withMessage("La direccion debe de pertenecer a una coleccion")
-        .custom((value)=> value.includes(directions[value])
-        ).withMessage("La direccion no pertenece a ninguna coleccion disponible"),
+        .exists()
+        .custom(value=>{
+            if(value===directions[value]) return true;
+            return false;
+        }).withMessage(`La direccion no pertenece a ninguna coleccion disponible`),
 
     param("identifier")
-        .notEmpty().withMessage("El id no debe de ir vacio")
+        .exists()
         .isMongoId().withMessage("El id debe ser de mongo")
 ];
 

@@ -46,7 +46,10 @@ controller.patchShoppingCart = async(req, res)=>{
         });
 
         shoppingcart.item = [...shoppingcart.item, item];
-        await res.status(200).json({message: "Lista de compras actualizada"});
+        
+        await shoppingcart.save();
+
+        return res.status(200).json({message: "Lista de compras actualizada"});
 
     }
     catch(error){

@@ -66,6 +66,14 @@ router.post("/shoppingcart",
     shoppingcartController.create
     );
     
+//function to add items on shopping cart
+router.patch("/shoppingcart",
+    authentication,
+    authorization(ROLS.USER),
+    shoppingcartValidator.createShoppingCartValidatorUser,
+    runValidation,
+    shoppingcartController.patchShoppingCart
+);
 //for admin only
 router.post("/turisticplan", 
     authentication,

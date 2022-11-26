@@ -1,3 +1,4 @@
+
 const express = require("express");
 const router = express.Router();
 const ROLS = require("../data/roles.constant.json");
@@ -60,11 +61,19 @@ router.post("/booking",
 router.post("/shoppingcart", 
     authentication,
     authorization(ROLS.USER),
-    shoppingcartValidator.createShoppingCartValidator,
+    shoppingcartValidator.createShoppingCartValidatorFirst,
     runValidation,
     shoppingcartController.create
     );
     
+//function to add items on shopping cart
+router.patch("/shoppingcart",
+    authentication,
+    authorization(ROLS.USER),
+    shoppingcartValidator.createShoppingCartValidatorUser,
+    runValidation,
+    shoppingcartController.patchShoppingCart
+);
 //for admin only
 router.post("/turisticplan", 
     authentication,

@@ -37,6 +37,12 @@ const turisticPlaceSchema = new Schema({
         unique: true
 
     },
+    sub_nombre: {
+        type: String,
+        trim: true,
+        required: true,
+        unique: true
+    },
     descripcion_especifica:{
         type: String,
         trim: true,

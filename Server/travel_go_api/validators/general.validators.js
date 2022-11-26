@@ -14,14 +14,14 @@ const directions = {
 const validator = {};
 validator.findByIdValidator = [
     param("dataSchema")
-        .exists()
+        .optional()
         .custom(value=>{
             if(value===directions[value]) return true;
             return false;
         }).withMessage(`La direccion no pertenece a ninguna coleccion disponible`),
 
     param("identifier")
-        .exists()
+        .optional()
         .isMongoId().withMessage("El id debe ser de mongo")
 ];
 

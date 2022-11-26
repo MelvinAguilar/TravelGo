@@ -8,6 +8,10 @@ validator.createTuristicPlaceValidator =[
         .bail()
         .isString().withMessage("El nombre debe de ser string"),
 
+    body("sub_nombre")
+        .notEmpty().withMessage("Este campo no puede estar vacío")
+        .isString().withMessage("Este campo debe ser string"),
+
     body("descripcion_especifica")
         .notEmpty().withMessage("descripcion_especifica no puede ser vacía")
         .bail()
@@ -27,8 +31,7 @@ validator.createTuristicPlaceValidator =[
         .isNumeric().withMessage("cant_comentarios debe de ser numerico"),
     
     body("comentarios")
-        .notEmpty().withMessage("El lugares no debe estar vacío")
-        .bail()
+        .optional()
         .isArray().isMongoId().withMessage("lugares debe de ser array de id"),
 
     body("puntuacion_prom")
@@ -54,22 +57,21 @@ validator.createTuristicPlaceValidator =[
         .bail()
         .isString().withMessage("direccion debe de ser string"),
 
+    body("redes")
+        .optional(),
+
     body("redes.nombre")
-        .notEmpty().withMessage("redes.nombre no puede ser vacía")
-        .bail()
+        .optional()
         .isString().withMessage("redes.nombre debe de ser string"),
 
     body("redes.url")
-        .notEmpty().withMessage("redes.url no puede ser vacía")
-        .bail()
+        .optional()
         .isURL().withMessage("redes.url debe de ser url"),
 
     body("img")
         .notEmpty().withMessage("Es necesario indicar la direccion de las imagenes")
         .bail()
-        .isArray().withMessage("imagenes debe de ser array")
-        .bail()
-        .isLength({max: 5}).withMessage("Solo se permiten 5 imagenes max"),
+        .isArray({max: 3}).withMessage("imagenes debe de ser un array de 3 items"),
 
     body("img.*")
         .not().isArray().isString().withMessage("servicios debe de ser array de string"),

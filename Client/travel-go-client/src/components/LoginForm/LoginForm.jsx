@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { UseAuthContext } from "../../contexts/authContext";
 
 const LoginForm = () => {
+  const navigateTo = useNavigate();
   const [ showPassword, setShowPassword ] = useState(false);
   const {login} = UseAuthContext();
 
@@ -35,6 +36,8 @@ const LoginForm = () => {
   const onSubmit = async(data) => {
     const {email, password} = data;
     await login(email, password);
+    navigateTo("/");
+
   };
 
   // When the form is submitted, but there are errors

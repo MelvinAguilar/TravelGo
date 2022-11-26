@@ -12,7 +12,7 @@ import { UseAuthContext } from "../../contexts/authContext";
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
   const [inSession, setSession] = useState(false);
-  const {user} = UseAuthContext();
+  const {user, logout} = UseAuthContext();
   const navigateTo = useNavigate();
 
   const userSession = ()=>{
@@ -31,7 +31,7 @@ const Header = () => {
   const handlerClick = (e)=>{
     console.log(inSession);
     if(inSession){
-      sessionStorage.clear();
+        logout();
     }
     else
       navigateTo("/login");

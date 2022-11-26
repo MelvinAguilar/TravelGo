@@ -81,7 +81,7 @@ export const AuthContextProvider = (props)=>{
         }
     } 
     
-    const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
+    const singup = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
         startLoading();
         try{
             await axios.post("/singup",
@@ -115,7 +115,7 @@ export const AuthContextProvider = (props)=>{
         user,
         login,
         logout,
-        register    
+        singup    
     }
     return <authContext.Provider value={state} {...props}/>
 }

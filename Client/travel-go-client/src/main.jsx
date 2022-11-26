@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 
-import { authContextProvider } from "./contexts/authContext"; 
+import { AuthContextProvider } from "./contexts/authContext"; 
 import "react-toastify/dist/ReactToastify.css";
 
 axios.defaults.baseURL = import.meta.env.VITE_API || "http://localhost:3500/api";
@@ -17,7 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <ConfigProvider>
-          <authContextProvider>
+          <AuthContextProvider>
             <AppComponent />
             <ToastContainer
               theme="light"
@@ -25,7 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               pauseOnHover="false"
             />
             <Loader />
-        </authContextProvider>
+        </AuthContextProvider>
       </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>

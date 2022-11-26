@@ -11,14 +11,7 @@ import { UseAuthContext } from "../../contexts/authContext";
   
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
-  const [inSession, setSession] = useState(false);
   const {user, logout} = UseAuthContext();
-  const navigateTo = useNavigate();
-
-  const userSession = ()=>{
-    if(user) setSession(true);
-    else setSession(false);
-  }
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -29,19 +22,16 @@ const Header = () => {
   };
 
   const handlerClick = (e)=>{
-    console.log(inSession);
-    if(inSession){
+    console.log(user);
+    if(user)
         logout();
-    }
-    else
-      navigateTo("/login");
   }
 
 
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}  onLoad={userSession}>
+    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
       <Container>
         <Link to="/">
           <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
@@ -50,7 +40,7 @@ const Header = () => {
         <Navbar />
 
         <ButtonLink to = "/login" modifierClass="Button--white" onClick={handlerClick}>
-          {(inSession) ? 'Cerrar sesión': 'Iniciar sesión'}
+          {(user) ? 'Cerrar sesión': 'Iniciar sesión'}
         </ButtonLink>
       </Container>
     </header>

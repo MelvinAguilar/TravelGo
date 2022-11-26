@@ -1,3 +1,5 @@
+import classes from './App.module.scss';
+
 import NotFoundView from "./views/NotFoundView/NotFoundView";
 import LandingView from "./views/LandingView/LandingView";
 import LoginView from "./views/LoginView/LoginView";

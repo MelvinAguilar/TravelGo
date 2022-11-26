@@ -9,10 +9,12 @@ import { toast } from 'react-toastify';
 import { Person, Eye, EyeSlash } from "react-bootstrap-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useConfigContext } from "../../contexts/ConfigContext";
 
 const LoginForm = () => {
   const navigateTo = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
+  const [ showPassword, setShowPassword ] = useState(false);
+  const { startLoading, stopLoading } = useConfigContext();
   const {
     register,
     formState: { errors },
@@ -33,6 +35,8 @@ const LoginForm = () => {
   const onSubmit = async(data) => {
     const {email, password} = data;
       try {
+        startLoading();
+
         const response = await axios.post("/singin", {email, password});
         const rolUser = await axios.get('/user/rol/', {
           headers:{
@@ -45,8 +49,7 @@ const LoginForm = () => {
         }
         saveIntoSessionStorage(data);
         navigateTo('/');
-      }
-      catch(error){
+      } catch(error){
         const {status} = error.response;
         const msg = {
           "400": "Wrong fields",
@@ -57,6 +60,8 @@ const LoginForm = () => {
         toast.error(msg[status.toString()] || "unexpected error", {
           toastId: "loginError",
         });
+      } finally {
+        stopLoading();
       }
   };
 

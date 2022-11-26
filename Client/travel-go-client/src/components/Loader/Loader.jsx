@@ -1,11 +1,13 @@
 import React from 'react';
 import classes from "./Loader.module.scss";
 
-import { useConfigContext } from '../../contexts/ConfigContexts';
+import { useConfigContext } from '../../contexts/ConfigContext';
 
 const Loader = () => {
+    const { loading } = useConfigContext();
+
     return (
-        useConfigContext.loading && 
+        loading && 
         <div className={classes['Loader']}>
             <svg>
                 <g>

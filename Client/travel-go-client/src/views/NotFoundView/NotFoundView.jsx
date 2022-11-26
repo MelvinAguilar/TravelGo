@@ -1,10 +1,13 @@
 import ButtonLink from "../../components/Button/ButtonLink/ButtonLink";
 import classes from "./NotFoundView.module.scss";
 import pageNotFound from "./../../assets/page-not-found.svg";
+import Header from "../../components/Header/Header";
 import { HeartFill } from "react-bootstrap-icons";
 
 const NotFoundView = () => {
   return (
+    <>
+    <Header />
     <main className={classes.ErrorContainer}>
       <div>
         <img src={pageNotFound} alt="" aria-hidden="true" />
@@ -25,6 +28,7 @@ const NotFoundView = () => {
         </ButtonLink>
       </div>
     </main>
+    </>
   );
 };
 

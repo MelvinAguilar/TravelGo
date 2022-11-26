@@ -6,7 +6,7 @@ import {useConfigContext} from "./ConfigContext";
 const authContext = React.createContext();
 const TOKEN_KEY = "BEARER";
 
-export const authContextProvider = (props)=>{  
+export const AuthContextProvider = (props)=>{  
     
     //estado para el token
     //estado para los datos del usuario
@@ -48,9 +48,7 @@ export const authContextProvider = (props)=>{
         finally{
             stopLoading();
         }
-    }
     
-
     //funcion para login
     const login = async(email, password)=>{
         startLoading();
@@ -91,8 +89,8 @@ export const authContextProvider = (props)=>{
         register    
     }
     return <authContext.Provider value={state} {...props}/>
+   }
 }
-
 const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
     startLoading();
     try{
@@ -125,7 +123,7 @@ const logout = ()=>{
   setUser(null);  
 }
     
-export const useAuthContext = ()=>{
+export const UseAuthContext = ()=>{
     const context = React.useContext(authContext);
     
     if(!context)

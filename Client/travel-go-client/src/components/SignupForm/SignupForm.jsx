@@ -2,7 +2,7 @@ import { useState } from "react";
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import {authContextProvider} from "../contexts/authContext.jsx";
+import {authContextProvider} from "../../contexts/authContext";
 
 import classes from "./SignupForm.module.scss";
 import InputField from "../Form/InputField/InputField";
@@ -15,7 +15,7 @@ import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
 
 const SignupForm = () => {
 
-  const {register} = authContextProvider();
+  const {register: singup} = authContextProvider();
 
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -37,7 +37,7 @@ const SignupForm = () => {
 
   const onSubmit = async(data)=>{
     const {name, email, password, date_birth, phone} = data;
-    await register(name, email, password, date_birth, phone);
+    await singup(name, email, password, date_birth, phone);
   }
 
   // When the form is submitted, but there are errors

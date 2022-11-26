@@ -2,7 +2,7 @@ import { useState } from "react";
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import {authContextProvider} from "../../contexts/authContext";
+import {AuthContextProvider} from "../../contexts/authContext";
 
 import classes from "./SignupForm.module.scss";
 import InputField from "../Form/InputField/InputField";
@@ -15,7 +15,7 @@ import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
 
 const SignupForm = () => {
 
-  const {register: singup} = authContextProvider();
+  const {register: singup} = AuthContextProvider();
 
   const [showPassword, setShowPassword] = useState(false);
   const {

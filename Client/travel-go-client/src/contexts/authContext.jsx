@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import {useConfigContext} from "./ConfigContext";
 
 const authContext = React.createContext();
-const TOKEN_KEY = "BEARER";
+const TOKEN_KEY = "tokens_TG";
 
 export const AuthContextProvider = (props)=>{  
     
@@ -19,7 +19,7 @@ export const AuthContextProvider = (props)=>{
        const _token = getTokensLS();
        if(!_token)  
             setToken(_token);
-    },{});
+    },[]);
 
     //efecto para verificar usuario
     useEffect(()=>{
@@ -48,6 +48,7 @@ export const AuthContextProvider = (props)=>{
         finally{
             stopLoading();
         }
+    }
     
     //funcion para login
     const login = async(email, password)=>{
@@ -80,6 +81,34 @@ export const AuthContextProvider = (props)=>{
         }
     } 
     
+    const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
+        startLoading();
+        try{
+            await axios.post("/singup",
+            {nombre, email, contrasenia_hash, fec_nacimiento, telefono}
+            );
+            toast.success("Creación de usuario completado"); 
+        }
+        catch(error){
+            const {status} = error.response || {status: 500};
+            msg = {
+                "400": "Datos erroneos",
+                "409": "Usuario e Email ya registrados",
+                "500": "Error inesperado"
+            }
+            toast.error(msg[String(status)]);
+        }
+        finally{
+            stopLoading();
+        }
+    }
+
+    const logout = ()=>{
+        removeItemLS();
+        setTokenLS(null);
+        setUser(null);  
+    }
+
     //funcion para singup
     const state = {
         token,
@@ -89,40 +118,8 @@ export const AuthContextProvider = (props)=>{
         register    
     }
     return <authContext.Provider value={state} {...props}/>
-   }
-}
-const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
-    startLoading();
-    try{
-        await axios.post("/singup",
-        {nombre, email, contrasenia_hash, fec_nacimiento, telefono}
-        );
-        toast.success("Creación de usuario completado"); 
-    }
-    catch(error){
-        const {status} = error.response || {status: 500};
-        msg = {
-            "400": "Datos erroneos",
-            "409": "Usuario e Email ya registrados",
-            "500": "Error inesperado"
-        }
-        toast.error(msg[String(status)]);
-    }
-    finally{
-        stopLoading();
-    }
 }
 
-const setTokenLS = (token)=> localStorage.setItem(TOKEN_KEY, token);
-const getTokensLS = () => localStorage.getItem(TOKEN_KEY);
-const removeItemLS = () => localStorage.removeItem(TOKEN_KEY);
-
-const logout = ()=>{
-    removeItemLS();
-    setTokenLS(null);
-  setUser(null);  
-}
-    
 export const UseAuthContext = ()=>{
     const context = React.useContext(authContext);
     
@@ -131,3 +128,8 @@ export const UseAuthContext = ()=>{
 
     return context;
 }
+const setTokenLS = (token)=> localStorage.setItem(TOKEN_KEY, token);
+const getTokensLS = () => localStorage.getItem(TOKEN_KEY);
+const removeItemLS = () => localStorage.removeItem(TOKEN_KEY);
+
+    

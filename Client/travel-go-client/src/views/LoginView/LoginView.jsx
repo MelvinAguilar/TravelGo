@@ -8,7 +8,10 @@ import { UseAuthContext } from "../../contexts/authContext";
 const LoginView = () => {
   const navigateTo = useNavigate();
   const {user} = UseAuthContext();
-  if(user) navigateTo("/")
+  
+  userEffect(()=>{
+    navigateTo("/");
+  }, [user]);
 
   return (
     <main className={classes.Login}>

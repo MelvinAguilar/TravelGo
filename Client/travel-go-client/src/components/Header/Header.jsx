@@ -7,15 +7,16 @@ import ButtonLink from "../Button/ButtonLink/ButtonLink";
 import Container from "../Container/Container";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { UseAuthContext } from "../../contexts/authContext";
   
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
   const [inSession, setSession] = useState(false);
+  const {user} = UseAuthContext();
   const navigateTo = useNavigate();
 
   const userSession = ()=>{
-    const data = sessionStorage.getItem("session");
-    if(data) setSession(true);
+    if(user) setSession(true);
     else setSession(false);
   }
 

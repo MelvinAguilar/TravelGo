@@ -9,12 +9,12 @@ import { toast } from 'react-toastify';
 import { Person, Eye, EyeSlash } from "react-bootstrap-icons";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useConfigContext } from "../../contexts/ConfigContext";
+import { UseAuthContext } from "../../contexts/authContext";
 
 const LoginForm = () => {
-  const navigateTo = useNavigate();
   const [ showPassword, setShowPassword ] = useState(false);
-  const { startLoading, stopLoading } = useConfigContext();
+  const {login} = UseAuthContext();
+
   const {
     register,
     formState: { errors },
@@ -34,35 +34,7 @@ const LoginForm = () => {
   // Create a function to handle the form submission
   const onSubmit = async(data) => {
     const {email, password} = data;
-      try {
-        startLoading();
-
-        const response = await axios.post("/singin", {email, password});
-        const rolUser = await axios.get('/user/rol/', {
-          headers:{
-            Authorization: `Bearer ${response.data.token}`,
-          }
-        });
-        const data = {
-          "token": response.data.token,
-          "roles": rolUser.data
-        }
-        saveIntoSessionStorage(data);
-        navigateTo('/');
-      } catch(error){
-        const {status} = error.response;
-        const msg = {
-          "400": "Wrong fields",
-          "404": "Email no registrado",
-          "401": "Contraseña incorrecta",
-          "500": "Something went wrong!",
-        }
-        toast.error(msg[status.toString()] || "unexpected error", {
-          toastId: "loginError",
-        });
-      } finally {
-        stopLoading();
-      }
+    await login(email, password);
   };
 
   // When the form is submitted, but there are errors
@@ -71,13 +43,6 @@ const LoginForm = () => {
       toastId: "warning"
     });
   };
-
-  //save token in session storage
-  const saveIntoSessionStorage = (data)=>{
-    sessionStorage.setItem("userToken", data.token);
-    sessionStorage.setItem("userRol", data.roles);
-    sessionStorage.setItem("session", true);
-  }
 
   return (
     <Form className={classes["LoginForm"]} onSubmit={handleSubmit(onSubmit, onInvalid)}>

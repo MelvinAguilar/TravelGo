@@ -31,7 +31,7 @@ const Header = () => {
   window.addEventListener("scroll", handleScroll);
 
   return (
-    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
+    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}  onLoad={userSession}>
       <Container>
         <Link to="/">
           <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />

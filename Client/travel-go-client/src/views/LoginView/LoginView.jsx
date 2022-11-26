@@ -10,7 +10,8 @@ const LoginView = () => {
   const {user} = UseAuthContext();
   
   useEffect(()=>{
-    navigateTo("/");
+    if(user)
+      navigateTo("/");
   }, [user]);
 
   return (

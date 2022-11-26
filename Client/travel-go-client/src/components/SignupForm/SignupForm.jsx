@@ -2,6 +2,7 @@ import { useState } from "react";
 import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import {authContextProvider} from "../contexts/authContext.jsx";
 
 import classes from "./SignupForm.module.scss";
 import InputField from "../Form/InputField/InputField";
@@ -10,9 +11,12 @@ import ErrorMessage from "../Form/ErrorMessage/ErrorMessage";
 import Button from "../Button/Button";
 
 import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
-import axios from "axios";
+
 
 const SignupForm = () => {
+
+  const {register} = authContextProvider();
+
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -32,12 +36,8 @@ const SignupForm = () => {
   );
 
   const onSubmit = async(data)=>{
-    // e.preventDefault();
     const {name, email, password, date_birth, phone} = data;
-    await newUser(name, email, password, date_birth, phone);
-    // const data = new FormData(e.target);
-    // await newUser(data.get("name"), data.get("email"), data.get("password"), data.get("date_birth"), data.get("phone"));
-    // e.target.reset();
+    await register(name, email, password, date_birth, phone);
   }
 
   // When the form is submitted, but there are errors
@@ -46,31 +46,6 @@ const SignupForm = () => {
       toastId: "warning"
     });
   };
-
-  const newUser = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
-      try {
-        await axios.post("/singup", { nombre, email, contrasenia_hash, fec_nacimiento, telefono });
-        // .then((response)=>{
-        //   console.log(response);
-        // });
-        console.log("usuario registrado");
-      }
-      catch(error){
-        console.log(error);
-        console.log("------------------");
-
-        // const {status} = error.response;
-        // const msg = {
-        //   "400": "Wrong fields",
-        //   "404": "Not found",
-        //   "409": "Email and name already exist",
-        //   "500": "Something went wrong!",
-        // }
-        // toast.error(msg[status.toString()] || "unexpected error", {
-        //   toastId: "signupError",
-        // });
-      }
-  }
 
   return (
     <Form className={classes["SignupForm"]} onSubmit={handleSubmit(onSubmit, onInvalid)}>

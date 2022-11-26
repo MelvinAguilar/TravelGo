@@ -62,7 +62,7 @@ export const authContextProvider = (props)=>{
             setToken(_token);
             setTokenLS(_token);
 
-
+            toast.success("Inicio de sesión completado"); 
         }
         catch(error){
             //loging out
@@ -73,7 +73,7 @@ export const authContextProvider = (props)=>{
                 "404": "Email no registrado",
                 "401": "Contraseña incorrecta",
                 "500": "Something went wrong!",
-              }
+            }
             toast.error(msg[String(status)]);
         }
         finally{
@@ -94,7 +94,7 @@ export const authContextProvider = (props)=>{
 
 export const useAuthContext = ()=>{
     const context = React.useContext(authContext);
-
+    
     if(!context)
         throw new Error("authContext must be call inside of a authContextProvider component");
 
@@ -110,8 +110,9 @@ const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono
     startLoading();
     try{
         await axios.post("/singup",
-            {nombre, email, contrasenia_hash, fec_nacimiento, telefono}
+        {nombre, email, contrasenia_hash, fec_nacimiento, telefono}
         );
+        toast.success("Creación de usuario completado"); 
     }
     catch(error){
         const {status} = error.response || {status: 500};

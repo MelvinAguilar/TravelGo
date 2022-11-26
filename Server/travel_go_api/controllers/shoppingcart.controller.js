@@ -41,9 +41,7 @@ controller.patchShoppingCart = async(req, res)=>{
         });
         shoppingcart.precio_total = precio_total;
 
-        shoppingcart.item = shoppingcart.item.filter(individualItem =>{
-            !(individualItem.compra == true);
-        });
+        shoppingcart.item = shoppingcart.item.filter(individualItem =>!(individualItem.compra === true));
 
         shoppingcart.item = [...shoppingcart.item, item];
         

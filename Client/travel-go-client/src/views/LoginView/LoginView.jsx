@@ -2,8 +2,16 @@ import classes from "./LoginView.module.scss";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
+import { authContextProvider } from "../../contexts/authContext";
+
 
 const LoginView = () => {
+  const {login} = authContextProvider;
+  
+  const onLoginHandler = async(email, password)=>{
+    //ejecutar servicio de login
+    await login(email, password);
+  }
   return (
     <main className={classes.Login}>
       <div className={classes.Login__container}>

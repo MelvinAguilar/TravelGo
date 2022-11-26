@@ -8,6 +8,12 @@ const TOKEN_KEY = "BEARER";
 
 export const authContextProvider = (props)=>{  
     
+    //estado para el token
+    //estado para los datos del usuario
+    const [token, setToken] = useState(null);
+    const [user, setUser ] = useState(null);
+    const {startLoading, stopLoading} = useConfigContext();
+    
     //verificar la validez del token
     useEffect(()=>{
        const _token = getTokensLS();
@@ -19,7 +25,7 @@ export const authContextProvider = (props)=>{
     useEffect(()=>{
         //obtener datos del usuario
         fetchUserData();
-    }, {token});
+    }, [token]);
     
     const fetchUserData = async()=>{
         if(!token)
@@ -43,12 +49,7 @@ export const authContextProvider = (props)=>{
             stopLoading();
         }
     }
-    //estado para el token
-    //estado para los datos del usuario
-    const [token, setToken] = useState(null);
-    const [user, setUser ] = useState(null);
     
-    const {startLoading, stopLoading} = useConfigContext();
 
     //funcion para login
     const login = async(email, password)=>{
@@ -92,20 +93,6 @@ export const authContextProvider = (props)=>{
     return <authContext.Provider value={state} {...props}/>
 }
 
-export const useAuthContext = ()=>{
-    const context = React.useContext(authContext);
-    
-    if(!context)
-        throw new Error("authContext must be call inside of a authContextProvider component");
-
-    return context;
-}
-
-
-const setTokenLS = (token)=> localStorage.setItem(TOKEN_KEY, token);
-const getTokensLS = () => localStorage.getItem(TOKEN_KEY);
-const removeItemLS = () => localStorage.removeItem(TOKEN_KEY);
-
 const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono)=>{
     startLoading();
     try{
@@ -128,8 +115,21 @@ const register = async(nombre, email, contrasenia_hash, fec_nacimiento, telefono
     }
 }
 
+const setTokenLS = (token)=> localStorage.setItem(TOKEN_KEY, token);
+const getTokensLS = () => localStorage.getItem(TOKEN_KEY);
+const removeItemLS = () => localStorage.removeItem(TOKEN_KEY);
+
 const logout = ()=>{
-  removeItemLS();
-  setTokenLS(null);
+    removeItemLS();
+    setTokenLS(null);
   setUser(null);  
+}
+    
+export const useAuthContext = ()=>{
+    const context = React.useContext(authContext);
+    
+    if(!context)
+        throw new Error("authContext must be call inside of a authContextProvider component");
+
+    return context;
 }

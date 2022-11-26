@@ -3,13 +3,13 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { UseAuthContext } from "../../contexts/authContext";
-
+import { useEffect } from "react"; 
 
 const LoginView = () => {
   const navigateTo = useNavigate();
   const {user} = UseAuthContext();
   
-  userEffect(()=>{
+  useEffect(()=>{
     navigateTo("/");
   }, [user]);
 

@@ -4,12 +4,12 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 
 import classes from "./SignupForm.module.scss";
-import InputField from "./../../Form/InputField/InputField";
-import Form from "./../../Form/Form";
-import ErrorMessage from "../../Form/ErrorMessage/ErrorMessage";
-import Button from "./../../Button/Button";
+import InputField from "../Form/InputField/InputField";
+import Form from "../Form/Form";
+import ErrorMessage from "../Form/ErrorMessage/ErrorMessage";
+import Button from "../Button/Button";
 
-import { Person, Envelope, Eye, EyeSlash, ArrowThroughHeart } from "react-bootstrap-icons";
+import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
 import axios from "axios";
 
 const SignupForm = () => {

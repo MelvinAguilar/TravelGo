@@ -1,0 +1,8 @@
+@import "./../../../mixins";
+
+.Textarea {
+    textarea {
+        @include forminput;
+        resize: none;
+    }
+}

@@ -1,14 +1,14 @@
-// import { useRouteError } from "react-router-dom";
-import ButtonLink from "../../Button/ButtonLink/ButtonLink";
-import classes from "./ErrorContainer.module.scss";
-import pageNotFound from "./../../../assets/page-not-found.svg";
+import ButtonLink from "../../components/Button/ButtonLink/ButtonLink";
+import classes from "./NotFoundView.module.scss";
+import pageNotFound from "./../../assets/page-not-found.svg";
+import Header from "../../components/Header/Header";
 import { HeartFill } from "react-bootstrap-icons";
 
-const ErrorContainer = () => {
-  // const error = useRouteError();
-
+const NotFoundView = () => {
   return (
-    <div className={classes.ErrorContainer}>
+    <>
+    <Header />
+    <main className={classes.ErrorContainer}>
       <div>
         <img src={pageNotFound} alt="" aria-hidden="true" />
       </div>
@@ -27,8 +27,9 @@ const ErrorContainer = () => {
           Go back to home
         </ButtonLink>
       </div>
-    </div>
+    </main>
+    </>
   );
 };
 
-export default ErrorContainer;
+export default NotFoundView;

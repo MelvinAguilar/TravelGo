@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { ArrowLeft } from "react-bootstrap-icons";
-import classes from "./ShoppingCartContainer.module.scss";
-import ItemContainer from "./ItemContainer/ItemContainer";
-import Button from "../../Button/Button";
-import Container from "../Container";
+import classes from "./ShoppingCartView.module.scss";
+import ItemContainer from "../../components/Container/ShoppingCartContainer/ItemContainer/ItemContainer";
+import Button from "../../components/Button/Button";
+import Container from "../../components/Container/Container";
+import Header from "../../components/Header/Header";
+import FooterAttribution from "../../components/Footer/FooterAttribution/FooterAttribution";
 
 import { Link } from "react-router-dom";
 
@@ -129,7 +131,7 @@ const setPriceFormat = (price)=>{
 });
 }
 
-const CarritoContainer = ()=>{
+const ShoppingCartView = ()=>{
 
     //useState for items in shoppingCart
     const [listItems, removeElementList] = useState(shoppingCartInformation.item);
@@ -139,10 +141,10 @@ const CarritoContainer = ()=>{
     const impuestos = 10;
 
     //Function remove 
-    // const removeElementHandler = (e)=>{
-    //     const itemRemove = e.target.getAttribute("data-delete");
-    //     removeElementList(listItems.filter(item=>item._id !== itemRemove));
-    // }
+    const removeElementHandler = (e)=>{
+        const itemRemove = e.target.getAttribute("data-delete");
+        removeElementList(listItems.filter(item=>item._id !== itemRemove));
+    }
 
     //mapping items creation
     const mappedShoppingCart = listItems.map((item)=>{
@@ -177,35 +179,41 @@ const CarritoContainer = ()=>{
                     _key={item._id}/>
     });
     
-    return(
-        <Container className={classes["shopping-cart-container"]}>
-            <div className={classes["shopping-cart-introduction"]}>
-                <Link to="/" className={classes.back}>
-                    <ArrowLeft/>
-                    Back to home
-                </Link>
-                <div>
-                    <h1>{`CARRITO (${listItems.length})`}</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
+    return (
+        <>
+        <Header />
+        <main>
+            <Container className={classes["shopping-cart-container"]}>
+                <div className={classes["shopping-cart-introduction"]}>
+                    <Link to="/" className={classes.back}>
+                        <ArrowLeft/>
+                        Back to home
+                    </Link>
+                    <div>
+                        <h1>{`CARRITO (${listItems.length})`}</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
+                    </div>
                 </div>
-            </div>
 
-            <section className={classes["shopping-cart-items"]}>
-                <h2 className="sr-only">Items in shopping cart</h2>
-                {(mappedShoppingCart.length > 0) ? mappedShoppingCart : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p>}
-            </section>
+                <section className={classes["shopping-cart-items"]}>
+                    <h2 className="sr-only">Items in shopping cart</h2>
+                    {(mappedShoppingCart.length > 0) ? mappedShoppingCart : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p>}
+                </section>
 
-            <div className={classes["total-container"]} id="totalContainer" >
-                <div>
-                    <p className={classes["total-money"]}>
-                        {`Total $${setPriceFormat(total)} USD`}
-                    </p>
-                    <p>+ IVA Incluido</p>
+                <div className={classes["total-container"]} id="totalContainer" >
+                    <div>
+                        <p className={classes["total-money"]}>
+                            {`Total $${setPriceFormat(total)} USD`}
+                        </p>
+                        <p>+ IVA Incluido</p>
+                    </div>
+                    <Button modifierClass={'Button--black'}>CONTINUAR</Button>
                 </div>
-                <Button modifierClass={'Button--black'}>CONTINUAR</Button>
-            </div>
-        </Container>
+            </Container>
+        </main>
+        <FooterAttribution />
+        </>
     );
 }
 
-export default CarritoContainer;
+export default ShoppingCartView;

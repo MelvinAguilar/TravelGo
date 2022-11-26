@@ -9,6 +9,12 @@ const LoginView = () => {
   const navigateTo = useNavigate();
   const {user} = UseAuthContext();
   
+  useEffect(()=>{
+    if(user){
+      navigateTo("/");
+    }
+  }, [user]);
+
   return (
     <main className={classes.Login}>
       <div className={classes.Login__container}>

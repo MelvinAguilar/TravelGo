@@ -17,7 +17,7 @@ export const AuthContextProvider = (props)=>{
     //verificar la validez del token
     useEffect(()=>{
        const _token = getTokensLS();
-       if(!_token)  
+       if(_token)  
             setToken(_token);
     },[]);
 

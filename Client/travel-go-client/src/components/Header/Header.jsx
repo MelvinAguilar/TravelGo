@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import classes from "./Header.module.scss";
 import logo from "../../assets/logo_light-mode.svg";
@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   window.addEventListener("scroll", handleScroll);
-
+  console.log(user);
   return (
     <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
       <Container>

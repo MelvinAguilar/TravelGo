@@ -6,7 +6,6 @@ import classes from "./bookingForm.module.scss";
 import {shoppingCartApi} from "../../../../../Server/shoppingCartServer";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
-import moment from "moment";
 
 const BookingForm = ({placeInformation})=>{
 

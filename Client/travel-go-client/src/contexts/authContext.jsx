@@ -91,7 +91,7 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             const {status} = error.response || {status: 500};
-            msg = {
+            const msg = {
                 "400": "Datos erroneos",
                 "409": "Usuario e Email ya registrados",
                 "500": "Error inesperado"

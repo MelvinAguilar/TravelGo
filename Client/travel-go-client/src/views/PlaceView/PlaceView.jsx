@@ -27,6 +27,7 @@ const placeInformation = {
 const PlaceView = () => {
     const { placeId } = useParams();
     const [ place, setPlace ] = useState({});
+    const {comments} = commentsAPI(placeId);
 
     useEffect(() => {
         fetchPlace();
@@ -43,9 +44,6 @@ const PlaceView = () => {
         }
     };
 
-
-const PlaceView = ()=>{
-    const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
         <>
             <Header/>
@@ -59,7 +57,7 @@ const PlaceView = ()=>{
 
                     <hr/>
 
-                    <CommentsContainer commentsInformation = {comments} cant_comentarios = {placeInformation.cant_comentarios} puntuacion_prom = {placeInformation.puntuacion_prom}/>
+                    <CommentsContainer commentsInformation = {comments} cant_comentarios = {place.cant_comentarios} puntuacion_prom = {place.puntuacion_prom}/>
                 </Container>
             </main>
             <Footer/>

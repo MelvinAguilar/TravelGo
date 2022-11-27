@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import AppComponent from "./App";
 import axios from 'axios';
 import Loader from "./components/Loader/Loader";
+import ScrollToTop from './services/ScrollToTop';
 import { ConfigProvider } from "./contexts/ConfigContext";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter } from "react-router-dom";
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <ConfigProvider>
           <AuthContextProvider>
+            <ScrollToTop />
             <AppComponent />
             <ToastContainer
               theme="light"

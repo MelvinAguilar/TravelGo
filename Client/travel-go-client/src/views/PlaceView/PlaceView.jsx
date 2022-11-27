@@ -44,6 +44,7 @@ const PlaceView = () => {
         }
     };
 
+    const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
         <>
             <Header/>
@@ -64,6 +65,6 @@ const PlaceView = () => {
         </>
         
     );
-}
+};
 
 export default PlaceView;

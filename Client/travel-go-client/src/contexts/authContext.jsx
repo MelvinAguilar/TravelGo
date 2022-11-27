@@ -41,7 +41,9 @@ export const AuthContextProvider = (props)=>{
               setUser(data);
         }
         catch(error){
-            toast.error("Error inesperado");
+            toast.error("Error inesperado", {
+                toastId: "error"
+            });
             logout();
 
         }
@@ -55,26 +57,30 @@ export const AuthContextProvider = (props)=>{
         startLoading();
         try{
             const {data} = await axios.post("/singin",
-            {email, password}
+                {email, password}
             );   
 
             const _token = data.token;
             setToken(_token);
             setTokenLS(_token);
 
-            toast.success("Inicio de sesión completado"); 
+            toast.success("Inicio de sesión completado", {
+                toastId: "success"
+            }); 
         }
         catch(error){
             //loging out
             logout();
             const {status} = error.response || {status: 500};
             const msg = {
-                "400": "Datos erroneos",
+                "400": "Datos erroneos " + error.message,
                 "404": "Email no registrado",
                 "401": "Contraseña incorrecta",
                 "500": "Something went wrong!",
             }
-            toast.error(msg[String(status)]);
+            toast.error(msg[String(status)], {
+                toastId: "error"
+            });
         }
         finally{
             stopLoading();
@@ -87,16 +93,21 @@ export const AuthContextProvider = (props)=>{
             await axios.post("/singup",
             {nombre, email, contrasenia_hash, fec_nacimiento, telefono}
             );
-            toast.success("Creación de usuario completado"); 
+            toast.success("Creación de usuario completado", {
+                toastId: "success"
+            }); 
         }
         catch(error){
             const {status} = error.response || {status: 500};
+            const errorMessage = error.response.data.error[0].message || ["Error inesperado"];
             const msg = {
                 "400": "Datos erroneos",
                 "409": "Usuario e Email ya registrados",
                 "500": "Error inesperado"
             }
-            toast.error(msg[String(status)]);
+            toast.error(msg[String(status)] + ": " + errorMessage, {
+                toastId: "error"
+            });
         }
         finally{
             stopLoading();

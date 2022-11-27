@@ -36,6 +36,10 @@ router.get("/adm/:dataSchema", generalController.findAllPlaces);
 //find users data (user actions in client)
 router.get("/user_adm/:dataSchema", generalController.findAll);
 
+//Get all places
+router.get("/places", turisticPlaceController.findAll);
+router.get("/places_info", turisticPlaceController.findAllPlaces);
+
 //find places per targs and name
 router.get("/place_tag/:tag", turisticPlaceController.findByTag);
 router.get("/place_name/:name", turisticPlaceController.findByName);

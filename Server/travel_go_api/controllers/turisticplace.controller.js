@@ -35,6 +35,33 @@ controller.create = async(req, res)=>{
         });
     }
 };
+
+controller.findAll = async(req, res)=>{
+    try{
+        const turisticPlaces = await TuristicPlace.find();
+        return res.status(200).json(turisticPlaces);
+    }
+    catch(error){
+        debug({error});
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+};
+
+controller.findAllPlaces = async(req, res)=>{
+    try{
+        const turisticPlaces = await TuristicPlace.find({}, {nombre: 1, ubicacion: 1, img: 1});
+        return res.status(200).json(turisticPlaces);
+    }
+    catch(error){
+        debug({error});
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+};
+
 //find place by etiqueta
 controller.findByTag = async(req, res)=>{
     try{

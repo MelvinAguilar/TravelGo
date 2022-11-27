@@ -15,10 +15,10 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingView />} />
+      <Route path="/main" element={<LandingView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<SignupView />} />
-      <Route path="/place" element={<PlaceView />} />
+      <Route path="/" element={<PlaceView />} />
       <Route path="/cart" element={<ShoppingCartView />} />
       <Route path="/terms-of-service" element={<TermsOfServiceView />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyView />} />

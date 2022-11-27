@@ -5,7 +5,7 @@ import CommentsContainer from "../../components/Container/bookingContainer/comme
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { commentsAPI } from "../../Server/placeServer";
+import { commentsAPI, placeAPI } from "../../Server/placeServer";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",

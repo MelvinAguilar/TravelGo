@@ -37,7 +37,8 @@ router.get("/adm/:dataSchema", generalController.findAllPlaces);
 router.get("/user_adm/:dataSchema", generalController.findAll);
 
 //Get all places
-router.get("/places", turisticPlaceController.findAll);
+// router.get("/places", turisticPlaceController.findAll);
+router.get("/places/:id", turisticPlaceController.findOne);
 router.get("/places_info", turisticPlaceController.findAllPlaces);
 
 //find places per targs and name

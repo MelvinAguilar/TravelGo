@@ -49,10 +49,25 @@ controller.findAll = async(req, res)=>{
     }
 };
 
+//find all places and return only name, ubicacion and img
 controller.findAllPlaces = async(req, res)=>{
     try{
         const turisticPlaces = await TuristicPlace.find({}, {nombre: 1, ubicacion: 1, img: 1});
         return res.status(200).json(turisticPlaces);
+    }
+    catch(error){
+        debug({error});
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+};
+
+//find one place by id
+controller.findOne = async(req, res)=>{
+    try{
+        const turisticPlace = await TuristicPlace.findById(req.params.id);
+        return res.status(200).json(turisticPlace);
     }
     catch(error){
         debug({error});

@@ -9,11 +9,31 @@ import Place from "../../components/Trips/Places/Places";
 import SandMobile from "./../../assets/bg-sand-mobile.png";
 import SandDesktop from "./../../assets/bg-sand-desktop.png";
 import Woman from "./../../assets/woman.svg";
-import { Binoculars } from "react-bootstrap-icons";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import axios from 'axios';
+import { Binoculars } from "react-bootstrap-icons";
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const LandingView = () => {
+  const [ trips, setTrips ] = useState([]);
+
+  useEffect(() => {
+    fetchTrips();
+  }, []);
+
+  const fetchTrips = async () => {
+    try {
+      const { data } = await axios.get("/places_info");
+      setTrips(data);
+    } catch (error) {
+      toast.error(error.message, {
+        toastId: "fetchTripsError"
+      });
+    }
+  };
+
   return (
     <>
       <Header />
@@ -73,7 +93,7 @@ const LandingView = () => {
             
           </ExploreContainer>
 
-          <Place />
+          <Place trips={trips} />
         </Container>
       </main>
       <Footer />

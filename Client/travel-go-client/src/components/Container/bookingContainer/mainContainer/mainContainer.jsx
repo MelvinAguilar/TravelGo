@@ -13,9 +13,7 @@ const MainContainer = ({mainInformation})=>{
             <MoreInformation>
                 {mainInformation.descripcion_especifica}
             </MoreInformation>
-
         </section>
-
     );
 }
 

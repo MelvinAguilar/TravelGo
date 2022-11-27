@@ -5,7 +5,11 @@ import CommentsContainer from "../../components/Container/bookingContainer/comme
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import { commentsAPI, placeAPI } from "../../Server/placeServer";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import { useParams } from "react-router-dom";
+import { commentsAPI } from "../../Server/placeServer";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
@@ -20,6 +24,26 @@ const placeInformation = {
 };
 
 
+const PlaceView = () => {
+    const { placeId } = useParams();
+    const [ place, setPlace ] = useState({});
+
+    useEffect(() => {
+        fetchPlace();
+    }, []);
+
+    const fetchPlace = async () => {
+        try {
+            const { data } = await axios.get(`/places/${placeId}`);
+            setPlace(data);
+        } catch (error) {
+            toast.error(error.message, {
+                toastId: "fetchPlaceError"
+            });
+        }
+    };
+
+
 const PlaceView = ()=>{
     const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
@@ -27,11 +51,11 @@ const PlaceView = ()=>{
             <Header/>
             <main>
                 <Container className={classes["Place"]}>
-                    <MainContainer mainInformation={placeInformation} />
+                    <MainContainer mainInformation={place} />
 
                     <hr/>
 
-                    <BookingSection placeInformation={placeInformation}/>
+                    <BookingSection placeInformation={place}/>
 
                     <hr/>
 

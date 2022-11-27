@@ -10,7 +10,7 @@ import TermsOfServiceView from "./views/TermsOfServiceView/TermsOfServiceView";
 import ShoppingCartView from "./views/ShoppingCartView/ShoppingCartView";
 import CreatePlaceView from './views/CreatePlaceView/CreatePlaceView';
 import TripsView from "./views/TripsView/TripsView";
-
+import AboutUsView from "./views/AboutUsView/AboutUsView";
 
 import { Route, Routes, useParams } from "react-router-dom";
 
@@ -26,6 +26,7 @@ function App() {
       <Route path="/privacy-policy" element={<PrivacyPolicyView />} />
       <Route path="/create-place" element={<CreatePlaceView />} />
       <Route path="/trips" element={<TripsView />} />
+      <Route path="/about" element={<AboutUsView />} />
       <Route path="*" element={<NotFoundView />} />
     </Routes>
   );

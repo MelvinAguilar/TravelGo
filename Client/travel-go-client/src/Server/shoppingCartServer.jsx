@@ -9,11 +9,22 @@ export const shoppingCartApi = ()=>{
 
     const {startLoading, stopLoading} = useConfigContext();
 
-    const postShoppingItem = async(precio_total, item)=>{
+    const postShoppingItem = async(precio_total, item, token)=>{
+        if(!precio_total || !item || !token){
+            toast.error("Error inesperado");
+            return;
+        }
+            
         startLoading();
         try{
-            await axios.patch("/shoppingcart", {precio_total, item});
+            await axios.patch("/shoppingcart", {precio_total, item}, {
+                headers:{
+                    Authorization: `${R} ${token}`,
+                }
+            });
         }catch(error){
+            const status = error.response.data.error[0].message;
+            console.log(status);
             toast.error("Error inesperado");
         }
         finally{

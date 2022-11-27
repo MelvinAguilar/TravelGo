@@ -6,10 +6,9 @@ import classes from "./bookingForm.module.scss";
 import {shoppingCartApi} from "../../../../../Server/shoppingCartServer";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
-import axios from "axios";
-
 
 const BookingForm = ({placeInformation})=>{
+
     const {postShoppingItem} = shoppingCartApi();
     const {
         register,
@@ -19,20 +18,34 @@ const BookingForm = ({placeInformation})=>{
     
 
       const onSubmitHandler = async(data)=>{
+
         const {fecha_inicio, fecha_final, cant_personas} = data;
+        const _fecha_inicio = new Date(fecha_inicio);
+        const _fecha_final = new Date(fecha_final);
+        const _toDay = new Date();
+        const toDay = `${_toDay.getFullYear()}-${_toDay.getMonth()}-${_toDay.getDate()}`
+        const precio_total = parseInt(cant_personas) * parseFloat(placeInformation.precio);
 
-        const precio_total = cant_personas * precio_unitario;
-
-        const item = {
-            "id_lugar": "insertar_dato",
-            "cant_personas": cant_personas,
-            "fecha": new Date(),
-            "fecha_incio": fecha_inicio,
-            "fecha_final": fecha_final,
-            "precio_unitario": 0
+        if(_fecha_inicio <= _toDay){
+            toast.warn("No se puede guardar está fecha");
+            return;
         }
 
-        await postShoppingItem(precio_total, item);
+        if(_fecha_final <= _toDay || _fecha_final < _fecha_inicio){
+            toast.warn("No se puede guardar está fecha");
+            return;
+        }
+        const item = {
+            "id_lugar": placeInformation._id,
+            "cant_personas": parseInt(cant_personas),
+            "fecha": toDay,
+            "fecha_inicio": fecha_inicio,
+            "fecha_final": fecha_final,
+            "precio_unitario": parseFloat(placeInformation.precio)
+        }
+        const token = localStorage.tokens_TG;
+        await postShoppingItem(precio_total, item, token);
+        toast.success("Agregado al carrito");
     }
     
       const onInvalid = () => {
@@ -42,7 +55,8 @@ const BookingForm = ({placeInformation})=>{
       };
 
     let getDate = new Date();
-    getDate.setDate(getDate.getDate() + 3)
+    getDate.setDate(getDate.getDate())
+
     return(
     <div className={classes["booking-form"]}>
         <Form onSubmit={handleSubmit(onSubmitHandler, onInvalid)}>
@@ -54,25 +68,36 @@ const BookingForm = ({placeInformation})=>{
             </div>
             <fieldset>
                 <FormGroupInput 
-                    label={"Fecha de llegada"}
-                    type = {"date"}
-                    required = {true}
-                    value = {getDate.toLocaleDateString('en-CA')}
+                    id="fecha_inicio"
+                    name="fecha_inicio"
+                    aria-invalid={errors.date ? "true" : "false"}
+                    innerRef={{...register("fecha_inicio", { required: true}) }}
+                    validation={errors.date}
+                    type="date"
+                    label={"fecha_inicio"}
+                    labelText={"Fecha de entrada"}
+                    placeholder={"e.g. 1999-12-31"}
                 />
-
                 <FormGroupInput 
-                    label={"Fecha de salida"}
-                    type = {"date"}
-                    required = {true}
-                    value = {getDate.toLocaleDateString('en-CA')}
-
+                    id="fecha_final"
+                    name="fecha_final"
+                    aria-invalid={errors.date ? "true" : "false"}
+                    innerRef={{...register("fecha_final", { required: true}) }}
+                    validation={errors.date}
+                    type="date"
+                    label={"fecha_final"}
+                    labelText={"Fecha de salida"}
+                    placeholder={"e.g. 1999-12-31"}
                 />
-
                 <FormGroupInput 
-                    label={"Num de personas"}
-                    type = {"number"}
-                    placeholder ={`Num de personas`}
-                    required = {true}
+                    id={"cant_personas"}
+                    name={"cant_personas"}
+                    aria-invalid={errors.number ? "true" : "false"}
+                    innerRef={{...register("cant_personas", { required: true}) }}
+                    validation={errors.number}
+                    type={"number"}
+                    label={"cant_personas"}
+                    labelText={"Num de personas"}
                 />
             </fieldset>
             <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ya</Button>

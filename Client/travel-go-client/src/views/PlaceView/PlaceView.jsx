@@ -5,6 +5,11 @@ import CommentsContainer from "../../components/Container/bookingContainer/comme
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import { useParams } from "react-router-dom";
+import { commentsAPI } from "../../Server/placeServer";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
@@ -18,24 +23,37 @@ const placeInformation = {
 
 };
 
-const comments = {
-    "usuario": "John el mas john",
-    "fecha": "14 de agosto de 2022",
-    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sodales suscipit. Aenean auctor nunc sit amet lacus auctor rutrum. Nunc at dictum tortor. Nunc sit amet lectus varius, vulputate ligula et, commodo nibh."
-}
 
+const PlaceView = () => {
+    const { placeId } = useParams();
+    const [ place, setPlace ] = useState({});
 
-const PlaceView = ()=>{
+    useEffect(() => {
+        fetchPlace();
+    }, []);
+
+    const fetchPlace = async () => {
+        try {
+            const { data } = await axios.get(`/places/${placeId}`);
+            setPlace(data);
+        } catch (error) {
+            toast.error(error.message, {
+                toastId: "fetchPlaceError"
+            });
+        }
+    };
+
+    const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
         <>
             <Header/>
             <main>
                 <Container className={classes["Place"]}>
-                    <MainContainer mainInformation={placeInformation} />
+                    <MainContainer mainInformation={place} />
 
                     <hr/>
 
-                    <BookingSection placeInformation={placeInformation}/>
+                    <BookingSection placeInformation={place}/>
 
                     <hr/>
 
@@ -46,6 +64,6 @@ const PlaceView = ()=>{
         </>
         
     );
-}
+};
 
 export default PlaceView;

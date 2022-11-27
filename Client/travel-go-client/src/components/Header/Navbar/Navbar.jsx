@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className={`${classes["Navbar"]} ${isMenuOpen ? classes["Navbar--open"] : ""}`}>
       <ul className={classes["Navbar__list"]}>
         <NavLink to="/" exact>Home</NavLink>
-        <NavLink to="/destinations">Trips</NavLink>
+        <NavLink to="/trips">Trips</NavLink>
         <NavLink to="/multidestinations">Multi-trips</NavLink>
         <NavLink to="/text">Hecho para ti</NavLink>
         <NavLink to="/about">Nosotros</NavLink>

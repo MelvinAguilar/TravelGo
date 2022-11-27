@@ -247,6 +247,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@emailjs/browser@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@emailjs/browser/-/browser-3.10.0.tgz#74de36d95838e117cf76f7b71b68ffbe5668367d"
+  integrity sha512-pregUOBkSjjctQoAgn8DcSaeY4ypHjXAJEzWlJysM3RkQXw1ulavfHva3YYeAkxfJ7qbIhpyvRmhyQlgNG4GVg==
+
 "@esbuild/android-arm@0.15.13":
   version "0.15.13"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.13.tgz#ce11237a13ee76d5eae3908e47ba4ddd380af86a"
@@ -944,6 +949,11 @@ react-toastify@^9.1.1:
   integrity sha512-pkFCla1z3ve045qvjEmn2xOJOy4ZciwRXm1oMPULVkELi5aJdHCN/FHnuqXq8IwGDLB7PPk2/J6uP9D8ejuiRw==
   dependencies:
     clsx "^1.1.1"
+
+react-web-share@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-web-share/-/react-web-share-2.0.2.tgz#ed0f08fd07ec28777b8fc7290bd59f0be78f1410"
+  integrity sha512-bGm1TJc6xtC0MhAnYFsrzT4En7l2oAdLTgCK7nk7b4xGTg3L5gOldiPrmYQ8a/dEXNydgekvOj/tfjduIlIRVA==
 
 react@^18.2.0:
   version "18.2.0"

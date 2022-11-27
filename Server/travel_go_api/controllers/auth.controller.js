@@ -100,9 +100,9 @@ controller.findRoleByToken = async(req, res)=>{
 
 controller.findUserByToken = async(req, res)=>{
     try{
-        const {_id, nombre, email, fec_nacimiento, telefono, imagen} = req.user;
+        const {_id, nombre, email, fec_nacimiento, telefono, roles, imagen} = req.user;
         return res.status(200).json({
-            _id, nombre, email, fec_nacimiento, telefono, imagen
+            _id, nombre, email, fec_nacimiento, telefono, roles, imagen
         });
     }
     catch(error){

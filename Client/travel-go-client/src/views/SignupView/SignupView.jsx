@@ -1,9 +1,20 @@
 import classes from "./SignupView.module.scss";
 import SignupForm from "../../components/SignupForm/SignupForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
+import { useEffect } from "react";
+import { UseAuthContext } from "../../contexts/authContext";
+
 
 const SignupView = () => {
+  const {user} = UseAuthContext();
+  const navigateTo = useNavigate();
+
+  useEffect(()=>{
+    if(user)
+      navigateTo("/");
+  },[user]);
+
   return (
     <main className={classes.Signup}>
       <div className={classes.Signup__container}>

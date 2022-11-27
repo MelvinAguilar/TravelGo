@@ -1,0 +1,12 @@
+@import "../../mixins";
+
+.TripsView {
+  max-width: 90rem;
+  width: 100%;
+  margin-inline: auto;
+  padding: 3rem 2rem;
+
+  @include media-breakpoint-up($screen-sm) {
+    padding: 5.313rem 3rem 3rem;
+  }
+}

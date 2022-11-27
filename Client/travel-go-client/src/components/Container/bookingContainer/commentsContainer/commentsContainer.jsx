@@ -4,11 +4,10 @@ import Comment from "./comment/comment"
 import Button from "../../../Button/Button";
 
 const commentsContainer  = ({commentsInformation, cant_comentarios, puntuacion_prom})=>{
-    const comentarios = [commentsInformation, commentsInformation, commentsInformation, commentsInformation, commentsInformation, commentsInformation]
 
-    const mappedComentarios = comentarios.map((comentario, counter)=>{
+    const mappedComentarios = commentsInformation.map((comentario, counter)=>{
         return(
-            <Comment commentInformation = {comentario} key={counter}/>
+            <Comment commentInformation = {comentario} key={comentario._id}/>
 
         );
     });

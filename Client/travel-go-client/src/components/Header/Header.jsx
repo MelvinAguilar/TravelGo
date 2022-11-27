@@ -22,7 +22,6 @@ const Header = () => {
   };
 
   window.addEventListener("scroll", handleScroll);
-  console.log(user);
   return (
     <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
       <Container>

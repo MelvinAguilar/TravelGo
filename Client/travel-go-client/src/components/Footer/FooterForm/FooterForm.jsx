@@ -4,11 +4,9 @@ import FormGroupInput from "./../../Form/FormGroupInput/FormGroupInput";
 import FormGroupTextarea from "./../../Form/FormGroupTextarea/FormGroupTextarea";
 import Button from "./../../Button/Button";
 import emailjs from "@emailjs/browser";
-
-import { useForm } from "react-hook-form";
 import ErrorMessage from "../../Form/ErrorMessage/ErrorMessage";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-
 import { Person, Envelope } from "react-bootstrap-icons";
 
 const FooterForm = () => {
@@ -25,8 +23,12 @@ const FooterForm = () => {
 
     // Send email
     try {
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', data, 'YOUR_PUBLIC_KEY')
-        .then((result) => {
+      emailjs.send(
+        import.meta.env.VITE_MAIL_SERVICE_ID,
+        import.meta.env.VITE_MAIL_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_MAIL_PUBLIC_KEY
+      ).then((result) => {
           toast.success("¡Gracias por tus comentarios!", {
             toastId: "success",
           });
@@ -35,6 +37,7 @@ const FooterForm = () => {
           reset(); // Reset forms
         });
     } catch (error) {
+      console.log(error);
       toast.error("¡Ups! Algo salió mal", {
         toastId: "error",
       });

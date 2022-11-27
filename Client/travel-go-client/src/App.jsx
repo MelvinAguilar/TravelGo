@@ -11,12 +11,13 @@ import ShoppingCartView from "./views/ShoppingCartView/ShoppingCartView";
 import CreatePlaceView from './views/CreatePlaceView/CreatePlaceView';
 import TripsView from "./views/TripsView/TripsView";
 
+
 import { Route, Routes, useParams } from "react-router-dom";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingView />} />
+      <Route path="/main" element={<LandingView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<SignupView />} />
       <Route path="/place/:placeId" element={<PlaceView />} />

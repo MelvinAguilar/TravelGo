@@ -9,7 +9,7 @@ validator.createCommentsValidator = [
 
     body("lugar")
         .optional()
-        .isArray().isMongoId().withMessage("El campo debe de ser id mongo"),
+        .isMongoId().withMessage("El campo debe de ser id mongo"),
 
     body("comentario")
         .notEmpty().withMessage("El campo no puede estar vacío")

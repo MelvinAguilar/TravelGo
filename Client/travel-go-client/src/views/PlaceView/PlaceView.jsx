@@ -9,6 +9,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useParams } from "react-router-dom";
+import { commentsAPI } from "../../Server/placeServer";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
@@ -22,11 +23,6 @@ const placeInformation = {
 
 };
 
-const comments = {
-    "usuario": "John el mas john",
-    "fecha": "14 de agosto de 2022",
-    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sodales suscipit. Aenean auctor nunc sit amet lacus auctor rutrum. Nunc at dictum tortor. Nunc sit amet lectus varius, vulputate ligula et, commodo nibh."
-}
 
 const PlaceView = () => {
     const { placeId } = useParams();
@@ -47,6 +43,9 @@ const PlaceView = () => {
         }
     };
 
+
+const PlaceView = ()=>{
+    const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
         <>
             <Header/>

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "react-bootstrap-icons";
 
 const SinglePlace = ({ id, nombre = "", img = "", ubicacion = "" }) => {
-  console.log(ubicacion);
   return (
     <div className={classes["SinglePlace"]}>
       <img src={img} alt={nombre} className={classes["SinglePlace__image"]} />

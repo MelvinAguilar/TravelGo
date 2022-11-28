@@ -15,11 +15,7 @@ const FormGroupTextarea = ({ children, className, label, nameGroup, validation, 
       <label className={classes["FormGroupTextarea__label"]} htmlFor={nameGroup}>
         {label}
       </label>
-      {/* <textarea className={classes["FormGroupTextarea__input"]} name={name} {...rest} />
-      <label className={classes["FormGroupTextarea__label"]} htmlFor={name}>
-        {label}
-      </label> */}
-
+      
       {/* Set the react-hook validation here */}
       {children}
     </div>

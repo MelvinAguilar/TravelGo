@@ -11,11 +11,10 @@ const MainContainer = ({mainInformation})=>{
             <ImgContainer urlImgs={mainInformation.img}/>
 
             <MoreInformation>
-                {mainInformation.descripcion_general}
+                {mainInformation.descripcion_especifica}
             </MoreInformation>
 
         </section>
-
     );
 }
 

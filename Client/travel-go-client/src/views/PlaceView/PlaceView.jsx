@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useParams } from "react-router-dom";
-import { commentsAPI } from "../../Server/placeServer";
+import { commentsAPI } from "../../services/placeServer";
 import { useConfigContext } from "../../contexts/ConfigContext";
 import { UseAuthContext } from "../../contexts/authContext";
 

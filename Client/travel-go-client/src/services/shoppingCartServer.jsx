@@ -37,6 +37,7 @@ export const shoppingCartApi = ()=>{
                 toastId: "success"
             });
         }catch(error){
+            console.log(error);
             toast.error("Error inesperado");
         }
         finally{

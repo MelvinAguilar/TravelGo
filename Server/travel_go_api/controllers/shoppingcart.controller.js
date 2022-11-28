@@ -57,4 +57,27 @@ controller.patchShoppingCart = async(req, res)=>{
         });
     }
 }
+
+//find all for client views and actions
+controller.findShoppingCartExtraInformation = async(req, res) =>{
+    const {_id: userId} = req.user;
+    try{
+        const data = await WishList.findOne({
+            user: userId
+        })
+        .find({hidden: false})
+        .populate("user", "nombre email")
+        .populate("id_lugar", "nombre ubicacion img");
+
+        return res.status(200).json(data);
+
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+}
+
 module.exports = controller;

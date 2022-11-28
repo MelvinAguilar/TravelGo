@@ -32,14 +32,16 @@ const ShoppingCartView = ()=>{
     const removeElementHandler = (e)=>{
         const itemRemove = e.target.getAttribute("data-delete");
 
-        console.log(elements[0]._id+" "+itemRemove.toString()+ " : "+(elements[0]._id !== itemRemove) );
-
         const newElements = elements.filter(
             item=>{
-                console.log(item._id + (item._id.trim() !== itemRemove.trim())); 
-                return item._id !== itemRemove
+                return item.id_lugar._id !== itemRemove
             });
-        removeElementList(listItems.filter(item=>item._id !== itemRemove));
+
+        const item = elements.find(item=>item.id_lugar._id === itemRemove);
+
+        //TODO : Eliminar item, con 2 opciones, newElements o item
+        console.log(item);
+        // setElements(newElements);
     }
 
     let total = 0; //as global

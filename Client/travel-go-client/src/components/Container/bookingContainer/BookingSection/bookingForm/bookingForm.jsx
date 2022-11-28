@@ -44,7 +44,8 @@ const BookingForm = ({placeInformation})=>{
             "precio_unitario": parseFloat(placeInformation.precio)
         }
         await postShoppingItem(precio_total, item);
-        toast.success("Agregado al carrito");
+        // toast.success("Agregado al carrito");
+        console.log("ssssss");
     }
     
       const onInvalid = () => {

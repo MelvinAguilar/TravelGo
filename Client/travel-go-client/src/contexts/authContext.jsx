@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Await } from "react-router-dom";
 import { toast } from "react-toastify";
 import {useConfigContext} from "./ConfigContext";
 
@@ -96,6 +97,9 @@ export const AuthContextProvider = (props)=>{
             toast.success("Creación de usuario completado", {
                 toastId: "success"
             }); 
+            generalCreateUser();
+
+
         }
         catch(error){
             const {status} = error.response || {status: 500};
@@ -114,6 +118,28 @@ export const AuthContextProvider = (props)=>{
         }
     }
 
+    const generalCreateUser = async()=>{
+        try{
+            await axios.post("/wishlist", {}, {
+                headers: {
+                    Authorization: `${R} ${token}`
+                }
+            });
+            await axios.post("/shoppingcart", {},{
+                headers:{
+                    Authorization: `${R} ${token}`
+                }
+            })
+        }
+        catch(error){
+            toast.error("error inesperado")
+        }
+    }
+
+    const getToken = () => {
+        return token;
+    }
+
     const logout = ()=>{
         removeItemLS();
         setTokenLS(null);
@@ -126,7 +152,8 @@ export const AuthContextProvider = (props)=>{
         user,
         login,
         logout,
-        singup    
+        singup,
+        getToken  
     }
     return <authContext.Provider value={state} {...props}/>
 }

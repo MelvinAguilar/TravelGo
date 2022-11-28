@@ -2,22 +2,15 @@ import axios from "axios";
 import {toast} from "react-toastify"
 import { useConfigContext } from "../contexts/ConfigContext";
 import { useEffect, useState } from "react";
+import { UseAuthContext } from "../contexts/authContext";
 
 const R = 'Bearer';
 
 export const shoppingCartApi = ()=>{
-
     const {startLoading, stopLoading} = useConfigContext();
-
-    const [token, setToken] = useState(null);
+    const {token, user} = UseAuthContext();
+    
     const [shoppingCartData, setShoppingCart] = useState(null);
-
-      //verificar la validez del token
-      useEffect(()=>{
-        const _token = getTokensLS();
-        if(_token)  
-             setToken(_token);
-     },[]);
 
     //efecto para verificar usuario
     useEffect(()=>{
@@ -28,26 +21,27 @@ export const shoppingCartApi = ()=>{
 
     const postShoppingItem = async(precio_total, item)=>{
         if(!precio_total || !item || !token){
-            toast.error("Error inesperado");
+            toast.error("Error inesperado!");
             return;
         }
             
         startLoading();
         try{
-            await axios.patch("/shoppingcart", {precio_total, item}, {
+            const id = user._id;
+            await axios.patch("/shoppingcart", {id, precio_total, item}, {
                 headers:{
                     Authorization: `${R} ${token}`,
                 }
             });
+            toast.success("Item agregado al carrito de compras!", {
+                toastId: "success"
+            });
         }catch(error){
-            const status = error.response.data.error[0].message;
-            console.log(status);
             toast.error("Error inesperado");
         }
         finally{
             stopLoading();
         }
-
     }
 
     const fetchShoppingCart = async()=>{
@@ -62,8 +56,26 @@ export const shoppingCartApi = ()=>{
             setShoppingCart(data);
         }
         catch(error){
-            const status = error.response.data.error[0].message;
-            console.log(status);
+            toast.error("Error inesperado");
+        }
+        finally{
+            stopLoading();
+        }
+    }
+
+    const removeShoppingCartItem = async(_id)=>{
+        if(!_id) return;
+        startLoading();
+        try{
+            await axios.patch("/own/remove/shoppingcart",
+            {_id},{
+                headers:{
+                    Authorization: `${R} ${token}`
+                }
+            })
+            fetchShoppingCart();
+        }
+        catch(error){
             toast.error("Error inesperado");
         }
         finally{
@@ -72,7 +84,8 @@ export const shoppingCartApi = ()=>{
     }
     const func ={
         shoppingCartData,
-        postShoppingItem
+        postShoppingItem,
+        removeShoppingCartItem
     }
     return func;
 }
@@ -100,7 +113,7 @@ export const totalPerServices = (services)=>{
     }
     return total;
 }
-export const totalPerItem = (cant_personas, pricePerDay, totalPerService)=>{
+export const totalPerItem = (cant_personas, pricePerDay, totalPerService=0)=>{
         return (cant_personas*pricePerDay) + totalPerService;
 }
 export const DayCounter = (fecha_inicio, fecha_final)=>{

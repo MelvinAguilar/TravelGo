@@ -1,8 +1,12 @@
 import classes from "./titleContainer.module.scss";
-import {BoxArrowInRight} from "react-bootstrap-icons";
-import {Heart} from "react-bootstrap-icons";
+import { BoxArrowInRight } from "react-bootstrap-icons";
+import { Heart } from "react-bootstrap-icons";
+import { RWebShare } from "react-web-share";
+import { useLocation } from "react-router-dom";
 
 const titleContainer = ({title})=>{
+    const location = useLocation();
+
     return(
         <div className={classes["title-section"]}>
             <div>
@@ -10,10 +14,19 @@ const titleContainer = ({title})=>{
                 <h2>El Salvador, un lugar escondido en Centroamérica</h2>
             </div>
             <div>
-                <div>
-                    <BoxArrowInRight/>
-                    Share
-                </div>
+                <RWebShare
+                    data={{
+                        text: title,
+                        url: location.pathname,
+                        title: "Travel Go"
+                    }}
+                >
+                    <button className={classes["share-button"]}>
+                        <BoxArrowInRight/>
+                        Compartir
+                    </button>
+                </RWebShare>
+                
                 <div>
                     <Heart/>
                     Save

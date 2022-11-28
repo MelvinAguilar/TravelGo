@@ -8,7 +8,7 @@ const MainContainer = ({mainInformation})=>{
         <section className={classes["main-information"]}>
             <TitleContainer title={mainInformation.nombre}/>
 
-            <ImgContainer urlImgs={mainInformation.images}/>
+            <ImgContainer urlImgs={mainInformation.img}/>
 
             <MoreInformation>
                 {mainInformation.descripcion_general}

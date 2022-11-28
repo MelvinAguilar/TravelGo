@@ -16,7 +16,7 @@
     justify-content: space-between;
     align-items: center;
 
-    > a:last-child {
+    > div >  a:last-child {
       font-size: 0.7rem;
       margin-right: 2.3rem;
       padding: 0.3rem 0.5rem;
@@ -27,6 +27,27 @@
     width: 6rem;
   }
 
+  &__cart {
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.3rem;
+    display: grid;
+    place-content: center;
+    margin-right: 0.4rem;
+    color: #2A2A2A;
+
+    @include media-hover-effect() {
+      &:hover {
+        background-color: #f0f0f0;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+  }
+
   @include media-breakpoint-up($screen-lg) {
     padding: 1.25rem 3rem;
 
@@ -34,7 +55,12 @@
       width: 10rem;
     }
 
-    > div > a:last-child {
+    &__cart {
+      font-size: 1.3rem;
+      padding: 0.6rem;
+    }
+
+    > div > div > a:last-child {
       font-size: 1rem;
       margin-right: 0;
       padding: 0.3rem 1.5rem;
@@ -48,7 +74,7 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   padding-block: 0.8rem;
 
-  > div > a:last-child {
+  > div > div > a:last-child {
     border: 0.125rem solid #2a2a2a;
   }
 }

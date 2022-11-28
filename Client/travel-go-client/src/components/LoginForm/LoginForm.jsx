@@ -7,14 +7,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from 'react-toastify';
 import { Person, Eye, EyeSlash } from "react-bootstrap-icons";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { UseAuthContext } from "../../contexts/authContext";
 
 const LoginForm = () => {
   const navigateTo = useNavigate();
   const [ showPassword, setShowPassword ] = useState(false);
-  const {login} = UseAuthContext();
+  const { login, user } = UseAuthContext();
 
   const {
     register,
@@ -36,7 +35,9 @@ const LoginForm = () => {
   const onSubmit = async(data) => {
     const {email, password} = data;
     await login(email, password);
-    navigateTo("/");
+    if (user) {
+      navigateTo("/");
+    }
   };
 
   // When the form is submitted, but there are errors

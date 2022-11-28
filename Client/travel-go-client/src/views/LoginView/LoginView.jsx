@@ -3,7 +3,8 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
 import { UseAuthContext } from "../../contexts/authContext";
-import { useEffect } from "react"; 
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 
 const LoginView = () => {
   const navigateTo = useNavigate();
@@ -11,6 +12,9 @@ const LoginView = () => {
   
   useEffect(()=>{
     if(user){
+      toast.success("Bienvenido de nuevo", {
+        toastId: "success"
+      });
       navigateTo("/");
     }
   }, [user]);

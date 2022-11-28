@@ -6,24 +6,20 @@ import StarRating from "../../../Form/StarRating/StarRating";
 import Button from "../../../Button/Button";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
-const comments = {
-  usuario: "John el mas john",
-  fecha: "14 de agosto de 2022",
-  comentario:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sodales suscipit. Aenean auctor nunc sit amet lacus auctor rutrum. Nunc at dictum tortor. Nunc sit amet lectus varius, vulputate ligula et, commodo nibh.",
-};
-
-const CommentsForm = ({ onAddComment = () => {} }) => {
+const CommentsForm = ({ onAddComment = () => {} , user }) => {
+  const [rating, setRating] = useState(0);
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit
   } = useForm();
-
+  
   // Create a function to handle the form submission
   const onSubmit = (data) => {
-    onAddComment(data);
+    const { comment } = data;
+    onAddComment(comment, rating); //({ comment, rating });
   };
 
   // When the form is submitted, but there are errors
@@ -38,29 +34,41 @@ const CommentsForm = ({ onAddComment = () => {} }) => {
       className={classes["Comments-form"]}
       onSubmit={handleSubmit(onSubmit, onInvalid)}
     >
-      <legend>Califisca este trip</legend>
-       <StarRating
+      <legend>Califica este trip</legend>
+      <StarRating
+        onUpdate={setRating}
         innerRef={{...register("star", { required: true })}}
       />
       {errors.star?.type === "required" && (
         <ErrorMessage>Debes seleccionar una calificación</ErrorMessage>
       )}
+      <div className={classes["Comments-form__user"]}>
+        <img src={user.imagen} alt={user.nombre} className={classes["Comments-form__avatar"]} />
+        <p className={classes["Comments-form__name"]}>{user.nombre}</p>
+      </div>
       
       <TextareaField
         id={"comment"}
         name={"comment"}
         className={classes["Comments-form__comment"]}
         aria-invalid={errors.comment ? "true" : "false"}
-        innerRef={{ ...register("comment", { required: true }) }}
+        innerRef={{
+          ...register("comment", {
+            required: true,
+            maxLength: 230,
+            pattern: /\S/,
+          }),
+        }}
         validation={errors.comment}
         placeholder={"Escribe tu comentario"}
         type={"text"}
+        rows="4"
       >
-        {errors.comment?.type === "required" && (
-          <ErrorMessage>Este campo es requerido</ErrorMessage>
-        )}
+        {errors.comment?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+        {errors.comment?.type === "maxLength" && (<ErrorMessage>El mensaje no puede tener más de 230 caracteres</ErrorMessage>)}
+        {errors.comment?.type === "pattern" && (<ErrorMessage>Este campo no puede estar vacío</ErrorMessage>)}
       </TextareaField>
-      <Button type="submit">Enviar</Button>
+      <Button type="submit" modifierClass="Button--purple" className={classes["Comments-form__button"]}>Enviar</Button>
     </Form>
   );
 };

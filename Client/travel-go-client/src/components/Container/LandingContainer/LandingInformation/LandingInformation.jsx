@@ -40,7 +40,7 @@ const LandingInformation = () => {
           <p>
             ¿Preocupado por el medio ambiente? La mayoria de nuestros trips están seleccionados para que disfrutes responsable y respetuosamente de la narturaleza. Debes saber que al escoger TRAVELGO formas parte de la cultura del <i>kilometro cero</i>, mientras te diviertes practicas el consumo local y ayudas a miles de salvadoreños.
           </p>
-          <Button modifierClass="Button--light_yellow"s>saber más</Button>
+          <Button modifierClass="Button--light_yellow">saber más</Button>
         </div>
       </div>
     </section>

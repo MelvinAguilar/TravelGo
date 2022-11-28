@@ -3,7 +3,6 @@
 .CategoryContainer {
   margin-block: 4.375rem;
   min-height: fit-content;
-  padding-top: 6rem;
 
   &__title {
     padding: 2rem;
@@ -13,6 +12,7 @@
       font-family: 'IBM Plex Serif';
       font-size: 1.6rem;
       margin-bottom: 2rem;
+      font-weight: 500;
     }
   }
 

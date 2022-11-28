@@ -15,34 +15,27 @@ const CategoryContainer = () => {
         </p>
       </div>
       <div className={classes["CategoryContainer__categories"]}>
-        <Button modifierClass={"Button--white"}>
-          <Tsunami/>surf
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Camera />paisajes</Button>
-        <Button modifierClass={"Button--white"}>
-          <Camera/>  hiking
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Sunset/>atardecer
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <CupStraw />comidita
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Sun/>Playitas
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Water />nadar
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Tree/>
-          bosques
-        </Button>
-        <Button modifierClass={"Button--white"}>
-          <Map />
-          pueblos
-        </Button>
+        <Button modifierClass={"Button--white"}><Tsunami/>surf</Button>
+        <Button modifierClass={"Button--white"}><Camera/>paisajes</Button>
+        <Button modifierClass={"Button--white"}><Camera/>hiking</Button>
+        <Button modifierClass={"Button--white"}><Sunset/>atardecer</Button>
+        <Button modifierClass={"Button--white"}><CupStraw/>comidita</Button>
+        <Button modifierClass={"Button--white"}><Sun/>Playitas</Button>
+        <Button modifierClass={"Button--white"}><Water/>nadar</Button>
+        <Button modifierClass={"Button--white"}><Tree/>bosques</Button>
+        <Button modifierClass={"Button--white"}><Map/>pueblos</Button>
+
+        {/*  */}
+
+        <Button modifierClass={"Button--white"}><Tsunami/>surf</Button>
+        <Button modifierClass={"Button--white"}><Camera/>paisajes</Button>
+        <Button modifierClass={"Button--white"}><Camera/>hiking</Button>
+        <Button modifierClass={"Button--white"}><Sunset/>atardecer</Button>
+        <Button modifierClass={"Button--white"}><CupStraw/>comidita</Button>
+        <Button modifierClass={"Button--white"}><Sun/>Playitas</Button>
+        <Button modifierClass={"Button--white"}><Water/>nadar</Button>
+        <Button modifierClass={"Button--white"}><Tree/>bosques</Button>
+        <Button modifierClass={"Button--white"}><Map/>pueblos</Button>
        
       
       </div>

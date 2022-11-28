@@ -1,5 +1,5 @@
 import Form  from "../../../../Form/Form";
-import FormGroupInput from "./bookingForm/FormGroupInput/FormGroupInput";
+import FormGroupInput from "./FormGroupInput/FormGroupInput";
 import Button from "../../../../Button/Button";
 import {StarFill} from "react-bootstrap-icons"
 import classes from "./bookingForm.module.scss";
@@ -74,8 +74,7 @@ const BookingForm = ({placeInformation})=>{
                     innerRef={{...register("fecha_inicio", { required: true}) }}
                     validation={errors.date}
                     type="date"
-                    label={"fecha_inicio"}
-                    labelText={"Fecha de entrada"}
+                    label={"Fecha de llegada"}
                     placeholder={"e.g. 1999-12-31"}
                 />
                 <FormGroupInput 
@@ -85,8 +84,7 @@ const BookingForm = ({placeInformation})=>{
                     innerRef={{...register("fecha_final", { required: true}) }}
                     validation={errors.date}
                     type="date"
-                    label={"fecha_final"}
-                    labelText={"Fecha de salida"}
+                    label={"Fecha de salida"}
                     placeholder={"e.g. 1999-12-31"}
                 />
                 <FormGroupInput 
@@ -96,11 +94,10 @@ const BookingForm = ({placeInformation})=>{
                     innerRef={{...register("cant_personas", { required: true}) }}
                     validation={errors.number}
                     type={"number"}
-                    label={"cant_personas"}
-                    labelText={"Num de personas"}
+                    label={"Num. de personas"}
                 />
             </fieldset>
-            <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ya</Button>
+            <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ahora</Button>
         </Form>
     </div>
     );

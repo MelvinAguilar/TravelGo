@@ -58,7 +58,7 @@ const FooterForm = () => {
       onSubmit={handleSubmit(onSubmit, onInvalid)}
     >
       <fieldset>
-        <legend className={classes["Subtitle"]}>Leave a message</legend>
+        <legend className={classes["Subtitle"]}>Dejános un mensaje</legend>
         <FormGroupInput
           label="Usuario"
           name="user"
@@ -69,8 +69,8 @@ const FooterForm = () => {
           validation={errors.user}
           type="text"
         >
-          {errors.user?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
-          {errors.user?.type === "pattern" && (<ErrorMessage>Este campo no puede estar vacío</ErrorMessage>)}
+          {errors.user?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
+          {errors.user?.type === "pattern" && (<ErrorMessage>¡Hey!, Este campo no puede estar vacío</ErrorMessage>)}
         </FormGroupInput>
 
         <FormGroupInput
@@ -88,9 +88,8 @@ const FooterForm = () => {
           validation={errors.email}
           type="email"
         >
-          {errors.email?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
-          {errors.email?.type === "pattern" && (<ErrorMessage>Por favor ingrese un correo electrónico válido</ErrorMessage>
-          )}
+          {errors.email?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
+          {errors.email?.type === "pattern" && (<ErrorMessage>Por favor ingrese un correo electrónico válido</ErrorMessage>)}
         </FormGroupInput>
 
         <FormGroupTextarea
@@ -108,7 +107,7 @@ const FooterForm = () => {
           }}
           validation={errors.message}
         >
-          {errors.message?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+          {errors.message?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
           {errors.message?.type === "maxLength" && (<ErrorMessage>El mensaje no puede tener más de 230 caracteres</ErrorMessage>)}
           {errors.message?.type === "pattern" && (<ErrorMessage>Este campo no puede estar vacío</ErrorMessage>)}
         </FormGroupTextarea>

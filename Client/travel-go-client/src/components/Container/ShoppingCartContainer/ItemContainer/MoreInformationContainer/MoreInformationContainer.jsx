@@ -45,7 +45,7 @@ const MoreInformationContainer = ({itemInformation})=>{
                     name="fecha_final"
                     disabled
                 />
-            <label htmlFor="N_personas">Num de personas</label>
+            <label htmlFor="N_personas">Num. de personas</label>
                 <InputField
                     className={classes["input-information"]}
                     value = {itemInformation.cant_personas}

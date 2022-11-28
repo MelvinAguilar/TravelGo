@@ -143,7 +143,10 @@ export const AuthContextProvider = (props)=>{
     const logout = ()=>{
         removeItemLS();
         setTokenLS(null);
-        setUser(null);  
+        setUser(null);
+        toast.success("Sesión cerrada", {
+            toastId: "success"
+        });
     }
 
     //funcion para singup

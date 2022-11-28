@@ -919,6 +919,11 @@ react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-medium-image-zoom@^5.1.2:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/react-medium-image-zoom/-/react-medium-image-zoom-5.1.2.tgz#ff13b8cf37e3348c36a2fc6deade84912fdad8ce"
+  integrity sha512-Lk9TDqd+vUpQVP77p45jXgh1LGjClLfyLJnTemCfpI+5Zp3X7MX7iGP5VmSdLGXy9mhdlZiByHOyp4Irf4N8vg==
+
 react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"

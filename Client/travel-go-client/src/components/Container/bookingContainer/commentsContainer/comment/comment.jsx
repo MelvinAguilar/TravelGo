@@ -2,47 +2,36 @@ import classes from "./comment.module.scss";
 import {PersonCircle} from "react-bootstrap-icons"
 
 const months = {
-    "01": 'enero',
-    "02": 'febrero',
-    "03": 'marzo',
-    "04": 'abril',
-    "05": 'mayo',
-    "06": 'junio',
-    "07": 'julio',
-    "08": 'agosto',
-    "09": 'septiembre',
-    "10": 'octubre',
-    "11": 'noviembre',
-    "12": 'diciembre',
+    "01": 'enero', "02": 'febrero', "03": 'marzo', "04": 'abril', "05": 'mayo', "06": 'junio',
+    "07": 'julio', "08": 'agosto', "09": 'septiembre', "10": 'octubre', "11": 'noviembre', "12": 'diciembre',
 }
 
 const Comment = ({commentInformation})=>{
 
     const dateFormat = (date)=>{
-        date = new Date(date);
-        try{
-            const commentDate = `${date.getDay()} de ${months[date.getMonth().toString()]} de ${date.getFullYear()}`;
-            return commentDate;
+        try {
+            const _date = new Date(date);
+            return `${_date.getDate()} de ${months[_date.getMonth()+1]} de ${_date.getFullYear()}`;
         }
         catch(error){
-            return '01 de enero de 2022';
+            return 'Hace mucho tiempo';
         }
     }
 
     return(
         <div className={classes["comment-container"]}>
             <div className={classes["user-information"]}>
-                <figure>
+                <div className={classes["user-image"]}>
                     <PersonCircle/>
-                </figure>
+                </div>
                 <div>
                     <h3>{commentInformation.user.nombre}</h3>
-                    {dateFormat(commentInformation.fecha)}
+                    <p>{dateFormat(commentInformation.fecha)}</p>
                 </div>
             </div>
-            <div>
+            <p>
                 {commentInformation.comentario}
-            </div>
+            </p>
         </div>
     );
 }

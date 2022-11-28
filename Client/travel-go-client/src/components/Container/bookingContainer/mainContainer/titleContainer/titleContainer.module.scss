@@ -42,7 +42,19 @@
                 text-decoration: underline;
             }
         }
+        
+        >:last-child:active{
+            >svg{
+                color: rgb(243, 35, 35);
+            }
+        }
+    }
 
+    >:last-child >:first-child:hover{
+        text-decoration: underline;
+    }
+    >:last-child >:last-child:hover{
+        text-decoration: underline;
     }
 }
 

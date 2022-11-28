@@ -3,7 +3,7 @@
 @import "./variables";
 @import "./mixins";
 
-body > div {
+body > div:first-child {
   font-family: 'Source Sans Pro';
   display: flex;
   min-height: 100vh;

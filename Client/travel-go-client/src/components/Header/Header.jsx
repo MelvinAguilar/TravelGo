@@ -7,7 +7,7 @@ import ButtonLink from "../Button/ButtonLink/ButtonLink";
 import Container from "../Container/Container";
 import { Link } from "react-router-dom";
 import { UseAuthContext } from "../../contexts/authContext";
-
+import { Cart } from "react-bootstrap-icons";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
@@ -38,11 +38,18 @@ const Header = () => {
             </ButtonLink>
           </>
             :
-          <>
+          <div className={classes["Header__links"]}>
+            <Link 
+              to="/cart" 
+              aria-label="Ir al carro de compras"
+              className={classes["Header__cart"]}
+            >
+              <Cart />
+            </Link>
             <ButtonLink onClick ={()=>logout()} modifierClass="Button--white">
               Cerrar sesión
             </ButtonLink>
-          </>
+          </div>
         }
       </Container>
     </header>

@@ -40,10 +40,7 @@ export const commentsAPI = (_id)=>{
         }
     }
 
-    const functions = {
-        comments
-    }
-    return functions;
+    return {comments, setComments, fetchComments};
 }
 
 

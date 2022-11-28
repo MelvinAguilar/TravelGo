@@ -100,16 +100,16 @@ const ShoppingCartView = ()=>{
                 <div className={classes["shopping-cart-introduction"]}>
                     <Link to="/" className={classes.back}>
                         <ArrowLeft/>
-                            Regresar al inicio
+                        Regresar a Inicio
                     </Link>
                     <div>
                         <h1>{`CARRITO (${(shoppingCartData[0].item.length)})`}</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
+                        <p>Ten encuenta que tu reserva no se efecturá hasta que hayas hecho tu pago.</p>
                     </div>
                 </div>
 
                 <section className={classes["shopping-cart-items"]}>
-                    <h2 className="sr-only">Items in shopping cart</h2>
+                    <h2 className="sr-only">Tus trips</h2>
                         { (elements !== undefined) ? mappedShoppingCart(elements) : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p> }
                 </section>
 

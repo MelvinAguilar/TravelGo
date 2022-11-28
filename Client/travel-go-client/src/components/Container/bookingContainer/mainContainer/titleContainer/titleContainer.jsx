@@ -23,7 +23,6 @@ const titleContainer = ({title, _id})=>{
         patchWishList(_id, token);
     }
 
-
     return(
         <div className={classes["title-section"]}>
             <div>

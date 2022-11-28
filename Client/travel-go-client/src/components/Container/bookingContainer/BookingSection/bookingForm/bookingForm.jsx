@@ -43,8 +43,7 @@ const BookingForm = ({placeInformation})=>{
             "fecha_final": fecha_final,
             "precio_unitario": parseFloat(placeInformation.precio)
         }
-        const token = localStorage.tokens_TG;
-        await postShoppingItem(precio_total, item, token);
+        await postShoppingItem(precio_total, item);
         toast.success("Agregado al carrito");
     }
     

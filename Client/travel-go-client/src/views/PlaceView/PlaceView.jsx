@@ -5,6 +5,11 @@ import CommentsContainer from "../../components/Container/bookingContainer/comme
 import Container from "../../components/Container/Container";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import { useParams } from "react-router-dom";
+import { commentsAPI } from "../../Server/placeServer";
 
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
@@ -18,34 +23,47 @@ const placeInformation = {
 
 };
 
-const comments = {
-    "usuario": "Carlos Meléndez",
-    "fecha": "14 de agosto de 2022",
-    "comentario": "Esta cascada es espectácular, sus aguas son tan cristalinas, de un turqeusa muy hermoso. El lugar es perfecto para acampar y disfutrar de la naturaleza."
-}
+const PlaceView = () => {
+    const { placeId } = useParams();
+    const [ place, setPlace ] = useState({});
+    const {comments} = commentsAPI(placeId);
 
+    useEffect(() => {
+        fetchPlace();
+    }, []);
 
-const PlaceView = ()=>{
+    const fetchPlace = async () => {
+        try {
+            const { data } = await axios.get(`/places/${placeId}`);
+            setPlace(data);
+        } catch (error) {
+            toast.error(error.message, {
+                toastId: "fetchPlaceError"
+            });
+        }
+    };
+
+    const {comments} = commentsAPI("63812cff65fae1cb7bad9b84");
     return (
         <>
             <Header/>
             <main>
                 <Container className={classes["Place"]}>
-                    <MainContainer mainInformation={placeInformation} />
+                    <MainContainer mainInformation={place} />
 
                     <hr/>
 
-                    <BookingSection placeInformation={placeInformation}/>
+                    <BookingSection placeInformation={place}/>
 
                     <hr/>
 
-                    <CommentsContainer commentsInformation = {comments} cant_comentarios = {placeInformation.cant_comentarios} puntuacion_prom = {placeInformation.puntuacion_prom}/>
+                    <CommentsContainer commentsInformation = {comments} cant_comentarios = {place.cant_comentarios} puntuacion_prom = {place.puntuacion_prom}/>
                 </Container>
             </main>
             <Footer/>
         </>
         
     );
-}
+};
 
 export default PlaceView;

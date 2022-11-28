@@ -1,0 +1,81 @@
+@import "../../mixins";
+
+.AboutUs {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 3rem 2rem;
+
+  min-height: calc(100vh - 2.8rem);
+  background-image: url("./../../assets/shape.svg");
+  background-repeat: no-repeat;
+  background-position: right -6rem bottom -29vh;
+
+  &__title {
+    font-family: "IBM Plex Serif";
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  &__image {
+    display: block;
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1.02rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+
+  &__warning {
+    background-color: hsl(60, 100%, 50%);
+    text-transform: uppercase;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-inline-start: 1.5rem;
+    list-style-type: disc;
+  }
+
+  li a {
+    color: #2a2a2a;
+    text-decoration: none;
+    font-weight: 600;
+
+    @include media-hover-effect() {
+      &:hover {
+        color: lighten(#2a2a2a, 30%);
+      }
+    }
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    padding: 5.313rem 3rem 3rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    &__introduction {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 5rem;
+
+      margin-block: 3rem 7rem;
+    }
+  }
+}

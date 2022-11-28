@@ -1,9 +1,20 @@
 import classes from "./LoginView.module.scss";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft } from "react-bootstrap-icons";
+import { UseAuthContext } from "../../contexts/authContext";
+import { useEffect } from "react"; 
 
 const LoginView = () => {
+  const navigateTo = useNavigate();
+  const {user} = UseAuthContext();
+  
+  useEffect(()=>{
+    if(user){
+      navigateTo("/");
+    }
+  }, [user]);
+
   return (
     <main className={classes.Login}>
       <div className={classes.Login__container}>

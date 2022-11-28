@@ -9,8 +9,10 @@ import PrivacyPolicyView from "./views/PrivacyPolicyView/PrivacyPolicyView";
 import TermsOfServiceView from "./views/TermsOfServiceView/TermsOfServiceView";
 import ShoppingCartView from "./views/ShoppingCartView/ShoppingCartView";
 import CreatePlaceView from './views/CreatePlaceView/CreatePlaceView';
+import TripsView from "./views/TripsView/TripsView";
+import AboutUsView from "./views/AboutUsView/AboutUsView";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 
 function App() {
   return (
@@ -18,11 +20,13 @@ function App() {
       <Route path="/" element={<LandingView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<SignupView />} />
-      <Route path="/place" element={<PlaceView />} />
+      <Route path="/place/:placeId" element={<PlaceView />} />
       <Route path="/cart" element={<ShoppingCartView />} />
       <Route path="/terms-of-service" element={<TermsOfServiceView />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyView />} />
       <Route path="/create-place" element={<CreatePlaceView />} />
+      <Route path="/trips" element={<TripsView />} />
+      <Route path="/about" element={<AboutUsView />} />
       <Route path="*" element={<NotFoundView />} />
     </Routes>
   );

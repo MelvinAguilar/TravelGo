@@ -6,16 +6,14 @@ import MoreInformation from "./moreInformationContainer/moreInformation";
 const MainContainer = ({mainInformation})=>{
     return(
         <section className={classes["main-information"]}>
-            <TitleContainer title={mainInformation.nombre}/>
+            <TitleContainer title={`${mainInformation.nombre}`}/>
 
             <ImgContainer urlImgs={mainInformation.images}/>
 
             <MoreInformation>
-                {mainInformation.descripcion_general}
+                {mainInformation.descripcion_especifica}
             </MoreInformation>
-
         </section>
-
     );
 }
 

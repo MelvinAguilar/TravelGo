@@ -12,10 +12,10 @@ const Navbar = () => {
     <nav className={`${classes["Navbar"]} ${isMenuOpen ? classes["Navbar--open"] : ""}`}>
       <ul className={classes["Navbar__list"]}>
         <NavLink to="/" exact>Inicio</NavLink>
-        <NavLink to="/destinations">solo trips</NavLink>
-        <NavLink to="/multidestinations">multi-trips</NavLink>
-        <NavLink to="/text">hecho para ti</NavLink>
-        <NavLink to="/about">nosotros</NavLink>
+        <NavLink to="/trips">Lugares</NavLink>
+        <NavLink to="/multidestinations">Viajes</NavLink>
+        <NavLink to="/text">Hecho para ti</NavLink>
+        <NavLink to="/about">Nosotros</NavLink>
       </ul>
       <button className={classes["Navbar__toggle-button"]} onClick={toggleMenu}>
         <List />

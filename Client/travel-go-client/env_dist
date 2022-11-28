@@ -1,0 +1,8 @@
+#  Fill the following variables with your own values,
+# for example: VITE_API = http://localhost:3000/api/
+VITE_API = 
+
+# EmailJS variables
+VITE_MAIL_SERVICE_ID = 
+VITE_MAIL_TEMPLATE_ID = 
+VITE_MAIL_PUBLIC_KEY = 

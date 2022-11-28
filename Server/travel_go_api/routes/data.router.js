@@ -44,6 +44,12 @@ router.get("/own/shoppingcart",
     shoppingcartController.findShoppingCartExtraInformation
 );
     
+//ShoppingCart per user with extra Information
+router.patch("/own/remove/shoppingcart", 
+    authentication,
+    shoppingcartController.patchShoppingCartRemove
+);
+    
 //find view (admin administration) data
 router.get("/adm/:dataSchema", generalController.findAllPlaces);
 

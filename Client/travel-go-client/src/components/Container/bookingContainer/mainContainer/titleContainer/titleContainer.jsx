@@ -6,6 +6,11 @@ import { useLocation } from "react-router-dom";
 
 const titleContainer = ({title})=>{
     const location = useLocation();
+
+    const onClickHandler = ()=>{
+        
+    }
+
     return(
         <div className={classes["title-section"]}>
             <div>
@@ -25,14 +30,9 @@ const titleContainer = ({title})=>{
                         Compartir
                     </button>
                 </RWebShare>
-
-                <div>
-                    <BoxArrowInRight/>
-                    Share
-                </div>
-                <div>
+                <div onClick={onClickHandler}>
                     <Heart/>
-                    Save
+                    Guardar
                 </div>
             </div>
         </div>

@@ -4,6 +4,8 @@ import {toast} from "react-toastify";
 import { useConfigContext } from "../contexts/ConfigContext"; 
 import React, {useEffect, useState} from "react";   
 
+const R = 'Bearer';
+
 export const commentsAPI = (_id)=>{
     const {startLoading, stopLoading} = useConfigContext();
     const navigateTo = useNavigate();
@@ -44,40 +46,27 @@ export const commentsAPI = (_id)=>{
     return functions;
 }
 
-export const placeAPI = (_id)=>{
+
+export const wishlist = ()=>{
     const {startLoading, stopLoading} = useConfigContext();
-    const [place, setPlaceInformation] = useState({});
-    const [place_id, setPlace] = useState(null);
-
-    useEffect(()=>{
-        if(_id)
-            setPlace(_id);
-    },[]);
-
-    useEffect(()=>{
-        if(place_id)
-            fetchPlace();
-    }, [place_id])
-
-/*     const fetchPlace = async()=>{
-        if(!place_id)
+    const patchWishList = async(_id, token)=>{
+        if(!_id)
             return;
+        
         startLoading();
         try{
-            const {data} = await axios.get(`/specific/turisticplace/${place_id}`);
-            setPlaceInformation(data);
+            await axios.patch(`/wishlist/${_id}`,{},{
+                headers:{
+                    Authorization: `${Bearer} ${token}`
+                }
+            });
         }
         catch(error){
             toast.error("Error inesperado");
-            navigateTo("/")
         }
         finally{
             stopLoading();
         }
     }
-    const functions ={
-        place
-    } */
 
-    return functions;
 }

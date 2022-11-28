@@ -3,6 +3,7 @@ const debug = require("debug")("app:register-controller");
 const ROLS = require("../data/roles.constant.json");
 
 const {createToken, verifyToken} = require("../utils/jwt.tools");
+const { findOne } = require("./turisticplace.controller");
 
 const controller = {};
 
@@ -104,6 +105,22 @@ controller.findUserByToken = async(req, res)=>{
         return res.status(200).json({
             _id, nombre, email, fec_nacimiento, telefono, roles, imagen
         });
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error inesperado"
+        });
+    }
+}
+
+controller.findUserByNameAndEmail = async(req, res)=>{
+    try{
+        const {nombre, email} = req.headers;
+        const data = await User.findOne({
+            $and:[{nombre: nombre}, {email: email}]
+        })
+        return res.status(200).json(data._id);
     }
     catch(error){
         debug(error);

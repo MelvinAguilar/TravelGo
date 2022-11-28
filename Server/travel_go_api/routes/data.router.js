@@ -24,7 +24,12 @@ const ROLS = require("../data/roles.constant.json");
 router.get("/user/rol/", 
     authentication,
     userController.findRoleByToken
-    );
+);
+
+//find user _id by name and email
+router.get("/user/id", 
+    userController.findUserByNameAndEmail
+);
     
     //find user by token
     router.get("/user/profile/", 
@@ -36,6 +41,12 @@ router.get("/user/rol/",
 router.get("/own/wishlist", 
     authentication,
     wishlistController.findWishListExtraInformation
+);
+
+//Wishlist get place from wishlist 
+router.get("/own/wishlist/place/:identifier", 
+    authentication,
+    wishlistController.findPlaceInWishlist
 );
     
 //ShoppingCart per user with extra Information

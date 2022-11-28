@@ -6,7 +6,19 @@
   margin-inline: auto;
   padding: 3rem 2rem;
 
+  &__heart {
+    width: 2rem;
+
+    @include media-hover-effect() {
+      &:hover {
+        animation: heartBeat 1s infinite;
+      }
+    }
+  }
+
   @include media-breakpoint-up($screen-sm) {
     padding: 5.313rem 3rem 3rem;
   }
 }
+
+@include heartBeat();

@@ -19,8 +19,8 @@ const NotFoundView = () => {
         </h1>
         <p className={classes.ErrorContainer__text}>
           Pero no te preocupes, tenemos varios trips hechos con 
-          <span className="sr-only">heart</span>
-          <HeartFill fill="#FF5A5F" />
+          <span className="sr-only">el corazón</span>
+          <HeartFill fill="#FF5A5F" className={classes.ErrorContainer__heart} />
           solo para ti.
         </p>
         <ButtonLink to="/" className={classes["error-page__button"]}>

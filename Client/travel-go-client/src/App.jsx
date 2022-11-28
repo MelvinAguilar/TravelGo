@@ -25,7 +25,7 @@ function App() {
       <Route path="/terms-of-service" element={<TermsOfServiceView />} />
       <Route path="/privacy-policy" element={<PrivacyPolicyView />} />
       <Route path="/create-place" element={<CreatePlaceView />} />
-      <Route path="/trips" element={<TripsView />} />
+      <Route path="/trips/*" element={<TripsView />} />
       <Route path="/about" element={<AboutUsView />} />
       <Route path="*" element={<NotFoundView />} />
     </Routes>

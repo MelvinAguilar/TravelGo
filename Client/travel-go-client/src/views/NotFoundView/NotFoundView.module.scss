@@ -18,6 +18,14 @@
   svg {
     margin-inline: 0.3rem;
   }
+  
+  &__heart {
+    @include media-hover-effect() {
+      &:hover {
+        animation: heartBeat 1s infinite;
+      }
+    }
+  }
 
   &__title {
     font-size: 1rem;
@@ -64,3 +72,5 @@
     }
   }
 }
+
+@include heartBeat();

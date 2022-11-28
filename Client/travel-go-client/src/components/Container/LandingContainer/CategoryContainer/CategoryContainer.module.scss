@@ -2,8 +2,11 @@
 
 .CategoryContainer {
   margin-block: 4.375rem;
+  min-height: fit-content;
+  padding-top: 6rem;
 
   &__title {
+    padding: 2rem;
     text-align: center;
 
     h2 {
@@ -22,10 +25,11 @@
 
     button {
       width: fit-content;
-      min-height: 3.063rem;
+      min-height: 3rem;
       border-radius: 0.625rem;
       margin: 0;
       padding-inline: 1rem;
+      font-size: medium
     }
   }
 

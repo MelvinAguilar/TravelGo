@@ -14,11 +14,13 @@
   }
 
   &__title {
-    gap: 11.875rem;
+    gap: 5rem;
+    padding: 5rem;
 
     h2 {
-      font-weight: 600;
+      font-weight:600;
       font-size: 2.5rem;
+      width: fit-content;
       text-align: center;
     }
   }

@@ -100,7 +100,7 @@ const BookingForm = ({placeInformation})=>{
                     labelText={"Num de personas"}
                 />
             </fieldset>
-            <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ya</Button>
+            <Button modifierClass={'Button--pink'} type={"submit"}>Reservar ahora</Button>
         </Form>
     </div>
     );

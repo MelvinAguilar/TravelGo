@@ -13,18 +13,18 @@ const NotFoundView = () => {
         <img src={pageNotFound} alt="" aria-hidden="true" />
       </div>
       <div>
-        <p className={classes.ErrorContainer__greating}>Hello there</p>
+        <p className={classes.ErrorContainer__greating}>¡HOLA!</p>
         <h1 className={classes.ErrorContainer__title}>
-          It seems something is missing
+          Parece que algo salió mal.
         </h1>
         <p className={classes.ErrorContainer__text}>
-          But don’t worry, we got many trips made with 
+          Pero no te preocupes, tenemos varios trips hechos con 
           <span className="sr-only">heart</span>
           <HeartFill fill="#FF5A5F" />
-          just for you.
+          solo para ti.
         </p>
         <ButtonLink to="/" className={classes["error-page__button"]}>
-          Go back to home
+          De vuelta al Inicio
         </ButtonLink>
       </div>
     </main>

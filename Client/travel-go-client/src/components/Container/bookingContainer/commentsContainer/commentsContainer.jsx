@@ -26,7 +26,7 @@ const commentsContainer  = ({commentsInformation, cant_comentarios, puntuacion_p
                 {mappedComentarios}
             </div>
 
-            <Button className={classes["btn-mostrar-comentarios"]}>Mostrar 100 comentarios</Button>
+            <Button className={classes["btn-mostrar-comentarios"]}>Mostrar más comentarios</Button>
         </section>
 
     )

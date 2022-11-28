@@ -20,16 +20,15 @@ const LandingView = () => {
         <div className={classes["LandingContainer__content"]}>
           <Container>
             <div className={classes["LandingContainer__content-text"]}>
-              <h1>
-                Let's find your <span>Adventure</span>
-              </h1>
+              <h1>Let's find your</h1> <span>Adventure</span>
+              
               <p>
-                Descubre lugares mágicos en El Salvador, un paraíso tropical
+                Descubre lugares mágicos en El Salvador, un paraíso tropical completamente 
                 secreto en medio de junglas de concreto.
               </p>
               <Button modifierClass="Button--white">
-                Explore a hidden trip
-                <Binoculars />
+                Explora un trip mágico
+                <Binoculars/>
               </Button>
             </div>
             <div className={classes["LandingContainer__content-image"]}>
@@ -58,15 +57,12 @@ const LandingView = () => {
           <CategoryContainer />
 
           <ExploreContainer>
-            <h2>Multitrips made for you</h2>
+            <h2>Multitrips hechos solo para ti</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-              vitae congue justo. Maecenas at imperdiet ligula, et lobortis
-              augue. Nam suscipit.Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Etiam vitae congue justo.
-            </p>
+              Sabemos que te encanta la aventura, y que descubir un solo lugar no te puede conformar o llenar. Es por eso que hemos creado una selección de multitrips especialmente para ti.</p> 
+            <p> Explora montañas, rios y lagunas mientras disfutas de las playas y practicas tus actividades favoritas, en un mismo trip, a un mejor precio.</p>
             <Button modifierClass="Button--purple">
-              Explore a hidden trip
+              Explora un trip mágico
               <Binoculars />
             </Button>
           </ExploreContainer>

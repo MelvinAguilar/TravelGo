@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer";
 const placeInformation = {
     "nombre": "Cascada La Olomina · Arambala, Morazán",
     "precio": 45.00,
-    "descripcion_general": "A wall of rock and trees guards La Olomina waterfall, and its formation of two levels makes it a visually incredible waterfall.  Its turquoise water gives a unique look to this waterfall. La Olomina has a crystal clear two-stroke waterfall over 50 meters high surrounded by a small oak forest",
+    "descripcion_general": "La Olomina, se encuentra custodiada por una pared de roca y árboles y su formación de dos niveles la hacen una cascada visualmente increíble. Sas aguas turquesas le dan un vista única a esta cascada. La Olomina tiene una casacada cristalina de dos nivel que se eleva más de 50 metros rodeada por un pequerño bosque de robles, ideal para aventureros que buscan una experiencia impriosante.",
     "cant_comentarios": 100,
     "puntuacion_prom": 4.5,
     "images": ["./src/assets/img/1.jpg"
@@ -19,9 +19,9 @@ const placeInformation = {
 };
 
 const comments = {
-    "usuario": "John el mas john",
+    "usuario": "Carlos Meléndez",
     "fecha": "14 de agosto de 2022",
-    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vulputate sodales suscipit. Aenean auctor nunc sit amet lacus auctor rutrum. Nunc at dictum tortor. Nunc sit amet lectus varius, vulputate ligula et, commodo nibh."
+    "comentario": "Esta cascada es espectácular, sus aguas son tan cristalinas, de un turqeusa muy hermoso. El lugar es perfecto para acampar y disfutrar de la naturaleza."
 }
 
 

@@ -3,11 +3,12 @@
 .ErrorContainer {
   min-height: 100vh;
   max-width: 72.5rem;
-  padding: 3rem;
+  padding: 5rem;
   align-items: center;
   gap: 5rem;
   padding-top: 5rem;
   text-align: center;
+  align-content: center;
 
   img {
     max-width: 13.75rem;
@@ -18,7 +19,7 @@
   }
 
   &__title {
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: 700;
   }
 

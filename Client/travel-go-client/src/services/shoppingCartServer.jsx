@@ -2,12 +2,13 @@ import axios from "axios";
 import {toast} from "react-toastify"
 import { useConfigContext } from "../contexts/ConfigContext";
 import { useEffect, useState } from "react";
+import { UseAuthContext } from "../contexts/authContext";
 
 const R = 'Bearer';
 
 export const shoppingCartApi = ()=>{
-
     const {startLoading, stopLoading} = useConfigContext();
+    const {getToken, user} = UseAuthContext();
 
     const [token, setToken] = useState(null);
     const [shoppingCartData, setShoppingCart] = useState(null);
@@ -15,8 +16,10 @@ export const shoppingCartApi = ()=>{
       //verificar la validez del token
       useEffect(()=>{
         const _token = getTokensLS();
-        if(_token)  
-             setToken(_token);
+
+        if(_token) {
+            setToken(_token);
+        }
      },[]);
 
     //efecto para verificar usuario
@@ -28,26 +31,27 @@ export const shoppingCartApi = ()=>{
 
     const postShoppingItem = async(precio_total, item)=>{
         if(!precio_total || !item || !token){
-            toast.error("Error inesperado");
+            toast.error("Error inesperado!");
             return;
         }
             
         startLoading();
         try{
-            await axios.patch("/shoppingcart", {precio_total, item}, {
+            const id = user._id;
+            await axios.patch("/shoppingcart", {id, precio_total, item}, {
                 headers:{
                     Authorization: `${R} ${token}`,
                 }
             });
+            toast.success("Item agregado al carrito de compras!", {
+                toastId: "success"
+            });
         }catch(error){
-            const status = error.response.data.error[0].message;
-            console.log(status);
             toast.error("Error inesperado");
         }
         finally{
             stopLoading();
         }
-
     }
 
     const fetchShoppingCart = async()=>{
@@ -62,8 +66,6 @@ export const shoppingCartApi = ()=>{
             setShoppingCart(data);
         }
         catch(error){
-            const status = error.response.data.error[0].message;
-            console.log(status);
             toast.error("Error inesperado");
         }
         finally{

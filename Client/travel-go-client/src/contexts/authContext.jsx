@@ -114,6 +114,10 @@ export const AuthContextProvider = (props)=>{
         }
     }
 
+    const getToken = () => {
+        return token;
+    }
+
     const logout = ()=>{
         removeItemLS();
         setTokenLS(null);
@@ -126,7 +130,8 @@ export const AuthContextProvider = (props)=>{
         user,
         login,
         logout,
-        singup    
+        singup,
+        getToken  
     }
     return <authContext.Provider value={state} {...props}/>
 }

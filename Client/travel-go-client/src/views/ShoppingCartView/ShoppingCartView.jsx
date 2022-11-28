@@ -7,7 +7,6 @@ import Header from "../../components/Header/Header";
 import FooterAttribution from "../../components/Footer/FooterAttribution/FooterAttribution";
 import ItemContainer from "../../components/Container/ShoppingCartContainer/ItemContainer/ItemContainer";
 
-
 import { Link } from "react-router-dom";
 import { 
     shoppingCartApi,
@@ -19,65 +18,27 @@ import {
     setPriceFormat
     } from "../../services/shoppingCartServer";
 
-
-const shoppingCartInformation = {
-
-    "id": "6368945c50f24634e6069eea",  
-    "id_usuario": "6368449278fb3d4a378632fc",
-    "precio_total": 0.00,
-    "servicios_extra": [],
-    "item": [
-        {
-
-            "id_lugar":"63688fcb106a25c6e1a22f1b",
-            "cant_personas": 3,
-            "fecha": "2022-11-07T05:10:02.587+00:00",
-            "fecha_inicio": "2022-07-08T00:00:00.000+00:00",
-            "fecha_final": "2022-07-08T00:00:00.000+00:00",
-            "precio_unitario": 45,
-            "_id": "6368945c50f24634e6069eeb"
-        },
-        {
-
-            "id_lugar":"63688fcb106a25c6e1a22f1b",
-            "cant_personas": 3,
-            "fecha": "2022-11-07T05:10:02.587+00:00",
-            "fecha_inicio": "2022-07-08T00:00:00.000+00:00",
-            "fecha_final": "2022-07-08T00:00:00.000+00:00",
-            "precio_unitario": 45,
-            "_id": "6368945c50f24634e6069eab"
-        },
-        {
-
-            "id_lugar":"63688fcb106a25c6e1a22f1b",
-            "cant_personas": 3,
-            "fecha": "2022-11-07T05:10:02.587+00:00",
-            "fecha_inicio": "2022-07-08T00:00:00.000+00:00",
-            "fecha_final": "2022-07-08T00:00:00.000+00:00",
-            "precio_unitario": 45,
-            "_id": "6368945c50f24634e6069eec"
-        }
-    ],
-};
-
-
-
-
 const ShoppingCartView = ()=>{
-    const [elements, setElements] = useState();
+    const [elements, setElements] = useState([]);
     const {shoppingCartData} = shoppingCartApi();
 
     useEffect(()=>{
-        if(shoppingCartData !== null) setElements(mappedShoppingCart(shoppingCartData[0].item)
-        );
+        if(shoppingCartData !== null && shoppingCartData.length > 0) {
+            setElements(shoppingCartData[0].item);
+        }
     },[shoppingCartData])
 
-    //useState for items in shoppingCart
-    const [listItems, removeElementList] = useState(shoppingCartInformation.item);
-    
     //Function remove 
     const removeElementHandler = (e)=>{
         const itemRemove = e.target.getAttribute("data-delete");
+
+        console.log(elements[0]._id+" "+itemRemove.toString()+ " : "+(elements[0]._id !== itemRemove) );
+
+        const newElements = elements.filter(
+            item=>{
+                console.log(item._id + (item._id.trim() !== itemRemove.trim())); 
+                return item._id !== itemRemove
+            });
         removeElementList(listItems.filter(item=>item._id !== itemRemove));
     }
 
@@ -109,50 +70,59 @@ const ShoppingCartView = ()=>{
                 "fecha_final": setDateFormat((new Date(item.fecha_final))),
                 "cant_personas": item.cant_personas,
             }
+
             castedPlaceInformation = CastPlaceInformation(item.id_lugar);
-            console.log(castedPlaceInformation);
+
             return <ItemContainer 
                         adventureData={castedPlaceInformation} 
                         moreInformationData={_moreInformation} 
                         key={item._id} 
                         eventHandler = {removeElementHandler} 
-                        _key={item.id_lugar._id}/>
+                        _key={item.id_lugar._id}
+                        />
         }); 
         
         return items;
     } 
-    
+
     //mapping items creation
     return (
         <>
         <Header />
         <main>
             <Container className={classes["shopping-cart-container"]}>
-                <div className={classes["shopping-cart-introduction"]}>
-                    <Link to="/" className={classes.back}>
-                        <ArrowLeft/>
-                        Regresar al inicio
-                    </Link>
-                    <div>
-                        <h1>{`CARRITO (${(shoppingCartData[0].item.length)})`}</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
-                    </div>
-                </div>
 
-                <section className={classes["shopping-cart-items"]}>
-                    <h2 className="sr-only">Items in shopping cart</h2>
-                    { (elements !== undefined) ? elements : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p>}
-                </section>
-
-                <div className={classes["total-container"]} id="totalContainer" >
-                    <div>
-                        <p className={classes["total-money"]}>
-                            {`Total $${setPriceFormat(total)} USD`}
-                        </p>
-                        <p>+ IVA Incluido</p>
+                {elements && elements.length > 0
+                ?  
+                    <>
+                    <div className={classes["shopping-cart-introduction"]}>
+                        <Link to="/" className={classes.back}>
+                            <ArrowLeft/>
+                            Regresar al inicio
+                        </Link>
+                        <div>
+                            <h1>{`CARRITO (${(shoppingCartData[0].item.length)})`}</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, proin commodo nisi montes sed volutpat rhoncus, dictum congue arcu lacinia odio viverra.</p>
+                        </div>
                     </div>
-                    <Button modifierClass={'Button--black'}>CONTINUAR</Button>
-                </div>
+
+                    <section className={classes["shopping-cart-items"]}>
+                        <h2 className="sr-only">Items in shopping cart</h2>
+                        { (elements !== undefined) ? mappedShoppingCart(elements) : <p className={classes["empty-cart"]}>No hay elementos en el carrito</p> }
+                    </section>
+
+                    <div className={classes["total-container"]} id="totalContainer" >
+                        <div>
+                            <p className={classes["total-money"]}>
+                                {`Total $${setPriceFormat(total)} USD`}
+                            </p>
+                            <p>+ IVA Incluido</p>
+                        </div>
+                        <Button modifierClass={'Button--black'}>CONTINUAR</Button>
+                    </div>
+                    </>
+                : <h1>No hay elementos en el carrito</h1> }
+                
             </Container>
         </main>
         <FooterAttribution />

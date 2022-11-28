@@ -6,7 +6,7 @@ import MoreInformation from "./moreInformationContainer/moreInformation";
 const MainContainer = ({mainInformation})=>{
     return(
         <section className={classes["main-information"]}>
-            <TitleContainer title={`${mainInformation.nombre}`}/>
+            <TitleContainer title={`${mainInformation.nombre}`} _id={mainInformation._id}/>
 
             <ImgContainer urlImgs={mainInformation.images}/>
 

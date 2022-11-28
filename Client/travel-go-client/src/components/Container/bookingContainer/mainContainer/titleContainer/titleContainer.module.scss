@@ -43,10 +43,17 @@
             }
         }
 
-        >:last-child:active{
-            >svg{
-                color: rgb(243, 35, 35);
-            }
-        }
+    }
+}
+
+.save-false{
+    >svg{
+        color: ($text2);
+    }
+}
+
+.save-true{
+    >svg{
+        color: red;
     }
 }

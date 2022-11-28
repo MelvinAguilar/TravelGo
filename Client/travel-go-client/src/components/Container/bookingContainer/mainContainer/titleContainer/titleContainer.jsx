@@ -3,13 +3,26 @@ import { BoxArrowInRight } from "react-bootstrap-icons";
 import { Heart } from "react-bootstrap-icons";
 import { RWebShare } from "react-web-share";
 import { useLocation } from "react-router-dom";
+import {useState} from "react";
+import {wishlist} from "../../../../../services/placeServer";
 
-const titleContainer = ({title})=>{
+const titleContainer = ({title, _id})=>{
+
     const location = useLocation();
-
+    const [saved, setSave] = useState(false);
+    const {patchWishList} = wishlist();
+    
     const onClickHandler = ()=>{
-        
+        const token = localStorage.tokens_TG;
+        if(!saved) setSave(true);
+        else setSave(false);
+
+        if(!_id) return;
+        if(!token) return;
+
+        patchWishList(_id, token);
     }
+
 
     return(
         <div className={classes["title-section"]}>
@@ -30,7 +43,7 @@ const titleContainer = ({title})=>{
                         Compartir
                     </button>
                 </RWebShare>
-                <div onClick={onClickHandler}>
+                <div onClick={onClickHandler} className={classes[`save-${saved}`]}>
                     <Heart/>
                     Guardar
                 </div>

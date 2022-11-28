@@ -57,16 +57,24 @@ export const wishlist = ()=>{
         try{
             await axios.patch(`/wishlist/${_id}`,{},{
                 headers:{
-                    Authorization: `${Bearer} ${token}`
+                    Authorization: `${R} ${token}`
                 }
             });
+
         }
         catch(error){
+            console.log(error);
+            //const {status} = error.response;
+            //console.log(status.data.error[0].message);
             toast.error("Error inesperado");
         }
         finally{
             stopLoading();
         }
     }
-
+    
+    const funcs = {
+        patchWishList,
+    };
+    return funcs;
 }

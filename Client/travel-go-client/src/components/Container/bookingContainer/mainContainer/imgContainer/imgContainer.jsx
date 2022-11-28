@@ -1,17 +1,19 @@
 import classes from "./imgContainer.module.scss";
 
-
 const ImgContainer = ({urlImgs = []})=>{
     const mappedImg = urlImgs.map((urlImg, counter)=>{
         return(
-            // <div key={counter}>
-                <img url={urlImg} alt="Imagen de lugar turistico" key={counter}/>
-            // </div>
+            <img 
+                src={urlImg} 
+                alt="Imagen de lugar turistico"
+                key={counter}
+                className={classes[`img${counter}`]}
+            />
         );
     });
 
-    return(
-        <div>
+    return( 
+        <div className={classes["ImgContainer"]}>
             {mappedImg}
         </div>
     );

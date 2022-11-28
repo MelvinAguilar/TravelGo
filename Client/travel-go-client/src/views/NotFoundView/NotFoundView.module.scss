@@ -4,8 +4,9 @@
   min-height: 100vh;
   max-width: 72.5rem;
   padding: 3rem;
-  align-items: center;
-  gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-top: 5rem;
   text-align: center;
 
@@ -40,8 +41,10 @@
   @include media-breakpoint-up($screen-lg) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     text-align: left;
     margin-inline: auto;
+    gap: 5rem;
 
     img {
       max-width: 31.25rem;

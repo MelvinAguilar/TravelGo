@@ -13,13 +13,13 @@ const CommentsForm = ({ onAddComment = () => {} , user }) => {
   const {
     register,
     formState: { errors },
-    handleSubmit,
+    handleSubmit
   } = useForm();
   
   // Create a function to handle the form submission
   const onSubmit = (data) => {
     const { comment } = data;
-    onAddComment(comment, rating);
+    onAddComment(comment, rating); //({ comment, rating });
   };
 
   // When the form is submitted, but there are errors

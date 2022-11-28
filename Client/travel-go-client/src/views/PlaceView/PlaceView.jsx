@@ -17,7 +17,7 @@ import { UseAuthContext } from "../../contexts/authContext";
 const PlaceView = () => {
     const { placeId } = useParams();
     const [ place, setPlace ] = useState({});
-    const { comments } = commentsAPI(placeId);
+    const { comments, fetchComments } = commentsAPI(placeId);
     const { token, user } = UseAuthContext();
     const { startLoading, stopLoading } = useConfigContext();
 
@@ -48,6 +48,9 @@ const PlaceView = () => {
             toast.success("Comment saved successfully", {
                 toastId: "success"
             });
+
+            fetchComments();
+            return { success: true };
         } catch (error) {
             const {status} = error.response || {status: 500};
             const errorMessage = error.response.data.error[0].message || ["Error inesperado"];
@@ -63,6 +66,7 @@ const PlaceView = () => {
         } finally {
             stopLoading();
         }
+        return { success: false };
     };
 
     const onAddCommentHandler = (comment, rating) => {

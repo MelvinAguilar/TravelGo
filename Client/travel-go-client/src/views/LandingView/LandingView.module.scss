@@ -24,7 +24,8 @@
 
     p {
       font-size: 1rem;
-      margin-block: 2rem;
+      padding-top: 0.1rem;  
+      padding-bottom: 2rem;
     }
 
     &::before {
@@ -70,15 +71,16 @@
     font-size: 1.87rem;
     font-family: "IBM Plex Serif";
     font-weight: 400;
+    margin-bottom: 0.5rem;
+}
 
-    > span {
+span {
       text-transform: uppercase;
-      font-size: 2rem;
+      font-size: 5rem;
       font-weight: 400;
-
       font-family: "Concert One";
     }
-  }
+  
 
   @include media-breakpoint-up($screen-sm) {
     padding: 0 1.5rem 3.5rem;
@@ -86,11 +88,11 @@
     h1 {
       font-size: 3.225rem;
       line-height: 0.7;
+    }
 
-      > span {
+    span {
         font-size: 4.475rem;
       }
-    }
 
     &__content {
       text-align: left;

@@ -1,47 +1,166 @@
 @import "./../../../../mixins";
 
 .FeatureContainer {
-  padding-block: 5rem;
   position: relative;
   min-height: 100vh;
 
   img {
     position: absolute;
     width: 64.604rem;
-    height: 57.715rem;
+    height: 65rem;
     left: -28rem;
     z-index: -1;
   }
 
   &__title {
-    gap: 11.875rem;
+    gap: 5rem;
+    padding: 5rem;
 
     h2 {
-      font-weight: 600;
+      font-weight:600;
       font-size: 2.5rem;
-      text-align: center;
+      width: fit-content;
+      text-align: left;
     }
+ }
+
+ &__content{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+ }
+
+ &__cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 10rem;
+
+}
+
+&__card {      
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: $dominant;
+  margin: 1rem;
+  align-items: center;
+  border-radius: 0.7rem;
+  box-shadow: $shadow4;
+  
+}
+
+&__text-card{
+  gap: 0.5rem;
+
+ h2{
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $accent-cetacean-blue;
+    }
+    p{
+      font-size: 1rem;
+      color: $text4;
+    }
+}
+
+
+&__feature{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 2rem;
+}
+
+&__info{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+&__text{
+  text-align: left;
+
+    h2{
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $accent-cetacean-blue;
+    }
+    p{
+      font-size: 1.3rem;
+      color: $text4;
+      text-align: justify;
+    }
+}
+&__icon{
+  transform: rotate(-45deg);
+  color: $accent-cetacean-blue;
+
+  button {   
+    width: 3rem;
+    height: 3rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: larger;
+
   }
 
-  @include media-breakpoint-up($screen-md) {
-    padding-block: 10rem;
+  button:hover{
+    background-color: $accent-navajo-white;
+    border-color: $accent-navajo-white;
+    color: $accent-cetacean-blue;
+  }  
+}
+
+
+  @include media-breakpoint-up($screen-sm) {
 
     &__title {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3.438rem;
+         
+      gap: 5rem;  
+      padding-block: 3rem;
 
       h2 {
         text-align: left;
       }
     }
+   
+
+
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    padding-block: 8rem;
+
+    &__title {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+
+      h2 {
+        text-align: left;
+      }
+      p{
+        font-size: large;
+      }
+
+    }
   }
 
   @include media-breakpoint-up($screen-lg) {
-    &__title {
-      gap: 11.875rem; 
-    }
+    padding-block: 10rem;
 
+    &__title {
+      gap: 8rem; 
+    
     h2 {
       font-size: 3.988rem;
     }
@@ -50,4 +169,5 @@
       font-size: 1.5rem;
     }
   }
+}
 }

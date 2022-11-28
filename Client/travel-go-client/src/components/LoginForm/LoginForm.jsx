@@ -42,7 +42,7 @@ const LoginForm = () => {
 
   // When the form is submitted, but there are errors
   const onInvalid = () => {
-    toast.warn("Please check your fields and try again", {
+    toast.warn("Revisa bien tus datos e intenta de nuevo, por favor", {
       toastId: "warning"
     });
   };
@@ -60,8 +60,8 @@ const LoginForm = () => {
         icon={<Person />}
         type={"email"}
       >
-        {errors.email?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
-        {errors.email?.type === "pattern" && (<ErrorMessage>Por favor ingrese un correo electrónico válido</ErrorMessage>)}
+        {errors.email?.type === "required" && (<ErrorMessage>¡Hey! Este campo es requerido</ErrorMessage>)}
+        {errors.email?.type === "pattern" && (<ErrorMessage>Por favor, ingresa un correo electrónico válido</ErrorMessage>)}
       </InputField>
 
       <label htmlFor="password">Contraseña</label>
@@ -76,7 +76,7 @@ const LoginForm = () => {
         type={showPassword ? "text" : "password"}
         autoComplete={"off"}
       />
-        {errors.password?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+        {errors.password?.type === "required" && (<ErrorMessage>¡Hey! Este campo es requerido</ErrorMessage>)}
       <Button type="submit">Iniciar sesión</Button>
     </Form>
   );

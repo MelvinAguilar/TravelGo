@@ -46,10 +46,10 @@ const FavoriteTripsView = ({ userD, className, ...rest }) => {
   return (
     <div>
     {
-      trips?
+      trips[0]?
         <Place trips={trips[0].lugares} />
       :
-      <h1>No se han agregado favoritos</h1>
+      <h2>No se han agregado favoritos</h2>
     }
     </div>
   );

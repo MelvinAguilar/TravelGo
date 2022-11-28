@@ -4,13 +4,16 @@
   position: relative;
   min-height: 100vh;
 
+  &__shape{
+
   img {
-    position: absolute;
+    position: absolute; 
     width: 64.604rem;
     height: 65rem;
     left: -28rem;
     z-index: -1;
   }
+}
 
   &__title {
     gap: 5rem;
@@ -33,29 +36,65 @@
  &__cards {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  padding-left: 10rem;
+  width: fit-content;
+  
+  position: relative;
+  align-items: center;
+  justify-content: center;  
+  padding-left: 8rem; 
+  gap: 1.5rem;
+  
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  transition: ease all .3s;
+  -webkit-transition: ease all .3s;
+  
+
 
 }
 
 &__card {      
-  width: 200px;
-  height: 300px;
-  text-align: center;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background: $dominant;
-  margin: 1rem;
-  align-items: center;
-  border-radius: 0.7rem;
-  box-shadow: $shadow4;
+  padding: 1rem;
   
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  
+  width: 180px;
+  height: 280px;
+
+  border-radius: 0.7rem;
+  background: $dominant;
+  box-shadow: $shadow4;
+
 }
+  
+&__pic{
+  background-size: contain;
+  padding: 1rem;
+  
+  img{
+    width: 120px;
+    height: 120px;
+    transition: ease all .3s;
+      -webkit-transition: ease all .3s;
+  }
+}
+
+&__card:hover &__pic {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+} 
+
 
 &__text-card{
   gap: 0.5rem;
+  display: block;
+  padding: 1rem 0.5rem;
+  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 
  h2{
       font-size: 1.3rem;
@@ -73,13 +112,13 @@
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 &__info{
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  padding: 2rem;
   gap: 1rem;
   justify-content: space-between;
   justify-items: center;
@@ -100,43 +139,33 @@
       text-align: justify;
     }
 }
-&__icon{
-  transform: rotate(-45deg);
-  color: $accent-cetacean-blue;
 
+&__icon{
+  font-size: 1.3rem;
+  text-align: center;
+  
   button {   
     width: 3rem;
     height: 3rem;
     border-radius: 20px;
     font-weight: 600;
-    font-size: larger;
+    color: $accent-cetacean-blue;
+    transform: rotate(-45deg);
 
-  }
+  p{
+    transform: rotate(45deg);
+    }
+
+}
 
   button:hover{
-    background-color: $accent-navajo-white;
-    border-color: $accent-navajo-white;
+    cursor: auto; 
     color: $accent-cetacean-blue;
+ 
   }  
 }
 
-
-  @include media-breakpoint-up($screen-sm) {
-
-    &__title {
-         
-      gap: 5rem;  
-      padding-block: 3rem;
-
-      h2 {
-        text-align: left;
-      }
-    }
-   
-
-
-  }
-
+    
   @include media-breakpoint-up($screen-md) {
     padding-block: 8rem;
 
@@ -153,6 +182,17 @@
       }
 
     }
+    /* &__info{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+      justify-content: space-between;
+      justify-items: center;
+      align-items: center;
+    } */
+
   }
 
   @include media-breakpoint-up($screen-lg) {

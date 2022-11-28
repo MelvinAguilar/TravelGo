@@ -39,7 +39,7 @@ const FooterForm = () => {
   return (
     <Form className={classes["FooterForm"]} onSubmit={handleSubmit(onSubmit, onInvalid)}>
       <fieldset>
-        <legend className={classes["Subtitle"]}>Leave a message</legend>
+        <legend className={classes["Subtitle"]}>Dejános un mensaje</legend>
         <FormGroupInput
           label="Usuario"
           name="user"
@@ -50,7 +50,7 @@ const FooterForm = () => {
           validation={errors.user}
           type="text"
         >
-          {errors.user?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+          {errors.user?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
         </FormGroupInput>
 
         <FormGroupInput
@@ -63,7 +63,7 @@ const FooterForm = () => {
           validation={errors.email}
           type="email"
         >
-          {errors.email?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+          {errors.email?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
           {errors.email?.type === "pattern" && (<ErrorMessage>Por favor ingrese un correo electrónico válido</ErrorMessage>)}
         </FormGroupInput>
 
@@ -76,7 +76,7 @@ const FooterForm = () => {
           innerRef={{...register("message", { required: true }) }}
           validation={errors.message}
         >
-          {errors.message?.type === "required" && (<ErrorMessage>Este campo es requerido</ErrorMessage>)}
+          {errors.message?.type === "required" && (<ErrorMessage>¡Hey!, Este campo es requerido</ErrorMessage>)}
         </FormGroupTextarea>
 
         <Button modifierClass="Button--white" type="submit">

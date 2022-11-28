@@ -17,7 +17,7 @@ const Footer = () => {
       <div>
         <Container className={classes["Footer__content"]}>
           <div>
-            <h2 className={classes["Subtitle"]}>Follow Us</h2>
+            <h2 className={classes["Subtitle"]}>Siguenos en</h2>
             <div className={classes["Footer__social"]}>
               <a
                 href="https://www.facebook.com/"
@@ -61,16 +61,19 @@ const Footer = () => {
               </a>
             </div>
 
-            <h2 className={classes["Subtitle"]}>Information</h2>
+            <h2 className={classes["Subtitle"]}>Contenidos</h2>
             <ul className={classes["Footer__list"]}>
-              <NavLink to="/about">About Us</NavLink>
-              <NavLink to="/privacy-policy">Privacy Policy</NavLink>
-              <NavLink to="/terms-of-service">Terms & Conditions</NavLink>
+              <NavLink to="/about">Acerca de nosotros</NavLink>
+              <NavLink to="/solo-trips">solo trips</NavLink>
+              <NavLink to="/multi-trips">multi trips</NavLink>
+              <NavLink to="/recs-trips">Hecho para ti</NavLink>
+              <NavLink to="/privacy-policy">Política de Privacidad</NavLink>
+              <NavLink to="/terms-of-service">Terminos y Condiciones</NavLink>
             </ul>
           </div>
           <div>
             <address>
-              <p className={classes["Subtitle"]}>Contact us</p>
+              <p className={classes["Subtitle"]}>Contáctanos</p>
               <a href="mailto:hello@travelgo.com">hello@travelgo.com</a>
             </address>
             <FooterForm />

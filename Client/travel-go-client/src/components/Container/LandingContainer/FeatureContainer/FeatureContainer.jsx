@@ -7,12 +7,15 @@ const FeatureContainer = () => {
     <section className={classes["FeatureContainer"]}>
       <img src={mockup}  alt="" aria-hidden="true" />
       <div className={classes["FeatureContainer__title"]}>
-        <h2>Go solo, and enjoy your time.</h2>
-        <p>
-          Aplicamos tecnologías que nos permiten sistematizar, simplificar y
-          automatizar la búsqueda de tus trips
-        </p>
+
+        <h2>Go solo,
+        <h2>and enjoy</h2> 
+        <h2>your time.</h2> </h2>
+
+        <p> Descubrí las maravillas que te ofrece tu trip, un paso a la vez.
+        Durante tu estadía en un lugar, conocerás a profundidad lo que tiene que ofrecerte, sin preocuparte, solo disfrutando de tu tiempo en ese lugar.</p>
       </div>
+
     </section>
   );
 };

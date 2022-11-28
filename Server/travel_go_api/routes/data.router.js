@@ -7,6 +7,8 @@ const generalController = require("../controllers/generalData.controller");
 const userController = require("../controllers/auth.controller");
 const turisticPlaceController = require("../controllers/turisticplace.controller");
 const commentsController = require("../controllers/comments.controller");
+const wishlistController = require("../controllers/wishlist.controller");
+const shoppingcartController = require("../controllers/shoppingcart.controller");
 
 /*general validators*/
 const generalValidator = require("../validators/general.validators");
@@ -22,14 +24,32 @@ const ROLS = require("../data/roles.constant.json");
 router.get("/user/rol/", 
     authentication,
     userController.findRoleByToken
-);
-
-//find user by token
-router.get("/user/profile/", 
+    );
+    
+    //find user by token
+    router.get("/user/profile/", 
     authentication,
     userController.findUserByToken
-);
+    );
 
+//Wishlist get extra Information
+router.get("/own/wishlist", 
+    authentication,
+    wishlistController.findWishListExtraInformation
+);
+    
+//ShoppingCart per user with extra Information
+router.get("/own/shoppingcart", 
+    authentication,
+    shoppingcartController.findShoppingCartExtraInformation
+);
+    
+//ShoppingCart per user with extra Information
+router.patch("/own/remove/shoppingcart", 
+    authentication,
+    shoppingcartController.patchShoppingCartRemove
+);
+    
 //find view (admin administration) data
 router.get("/adm/:dataSchema", generalController.findAllPlaces);
 

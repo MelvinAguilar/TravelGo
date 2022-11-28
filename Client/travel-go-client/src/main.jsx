@@ -12,7 +12,7 @@ import "./index.css";
 import { AuthContextProvider } from "./contexts/authContext"; 
 import "react-toastify/dist/ReactToastify.css";
 
-axios.defaults.baseURL = import.meta.env.VITE_API || "http://localhost:3500/api";
+axios.defaults.baseURL = import.meta.env.VITE_API || "http://localhost:3000/api";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -6,7 +6,7 @@ const Adventure =({itemInformation})=>{
     return (
         <div className={classes["adventure-container"]}>
             <div className={classes["image-container"]}>
-               {<img src={itemInformation.image} alt={`${itemInformation.nombre} Trip`} />}
+               {<img src={itemInformation.img} alt={`${itemInformation.nombre} Trip`} />}
             </div>
             <div className={classes["information"]}>
                 <h2>

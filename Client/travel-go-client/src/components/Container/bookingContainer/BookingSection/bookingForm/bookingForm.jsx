@@ -3,7 +3,7 @@ import FormGroupInput from "./FormGroupInput/FormGroupInput";
 import Button from "../../../../Button/Button";
 import {StarFill} from "react-bootstrap-icons"
 import classes from "./bookingForm.module.scss";
-import {shoppingCartApi} from "../../../../../Server/shoppingCartServer";
+import {shoppingCartApi} from "../../../../../services/shoppingCartServer";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
 
@@ -43,9 +43,9 @@ const BookingForm = ({placeInformation})=>{
             "fecha_final": fecha_final,
             "precio_unitario": parseFloat(placeInformation.precio)
         }
-        const token = localStorage.tokens_TG;
-        await postShoppingItem(precio_total, item, token);
-        toast.success("Agregado al carrito");
+        await postShoppingItem(precio_total, item);
+        // toast.success("Agregado al carrito");
+        console.log("ssssss");
     }
     
       const onInvalid = () => {

@@ -5,7 +5,8 @@ const Schema = Mongoose.Schema;
 
 const itemSchema = new Schema({
     id_lugar:{
-        type: mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId,
+        ref: "TuristicPlace",
         trim: true,
         required: true,
 

@@ -49,21 +49,28 @@ controller.toogleWishList = async(req, res)=>{
         return res.status(500).json({error: "Error inesperado en el servidor"});
     }
 }
+
+//find all for client views and actions
+controller.findWishListExtraInformation = async(req, res) =>{
+    const {_id: userId} = req.user;
+    if(!userId) return(404).json({error: "user not found"})
+    try{
+        const data = await WishList.findOne({
+            user: userId
+        })
+        .find({hidden: false})
+        .populate("user", "nombre email")
+        .populate("lugares", "nombre ubicacion img");
+
+        return res.status(200).json(data);
+
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+}
+
 module.exports = controller;
-
-/*
-agregar comentario
-  //verificando si el lugar existe antes de agregar o quitar
-        if(!place)  return res.status(404).json({error: "Lugar no encontrado"});
-
-        //verificando accion quitar o agregar
-        const index = place.comentarios.findIndex(placeId => placeId.equals(identifier));
-
-        if(index >= 0)
-            place.comentarios.filter(placeId => !placeId.equals(identifier));
-        else
-            place.comentarios = [...place.comentarios, identifier];
-
-        //guardando cambios
-        return res.status(200).json({message: "Lista de deseo modificada"});
-*/

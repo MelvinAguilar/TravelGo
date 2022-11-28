@@ -1,3 +1,4 @@
+const shoppingcartModel = require("../models/shoppingcart.model");
 const Shoppingcart = require("../models/shoppingcart.model");
 const debug = require("debug")("app:post-controller");
 
@@ -62,12 +63,12 @@ controller.patchShoppingCart = async(req, res)=>{
 controller.findShoppingCartExtraInformation = async(req, res) =>{
     const {_id: userId} = req.user;
     try{
-        const data = await WishList.findOne({
+        const data = await Shoppingcart.findOne({
             user: userId
         })
         .find({hidden: false})
         .populate("user", "nombre email")
-        .populate("id_lugar", "nombre ubicacion img");
+        .populate("item.id_lugar", "nombre precio cant_comentarios puntuacion_prom ubicacion img");
 
         return res.status(200).json(data);
 

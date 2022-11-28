@@ -8,6 +8,7 @@ const userController = require("../controllers/auth.controller");
 const turisticPlaceController = require("../controllers/turisticplace.controller");
 const commentsController = require("../controllers/comments.controller");
 const wishlistController = require("../controllers/wishlist.controller");
+const shoppingcartController = require("../controllers/shoppingcart.controller");
 
 /*general validators*/
 const generalValidator = require("../validators/general.validators");
@@ -35,6 +36,12 @@ router.get("/user/rol/",
 router.get("/own/wishlist", 
     authentication,
     wishlistController.findWishListExtraInformation
+);
+    
+//ShoppingCart per user with extra Information
+router.get("/own/shoppingcart", 
+    authentication,
+    shoppingcartController.findShoppingCartExtraInformation
 );
     
 //find view (admin administration) data

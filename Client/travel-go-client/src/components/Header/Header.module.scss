@@ -60,7 +60,7 @@
       padding: 0.6rem;
     }
 
-    > div > a:last-child {
+    > div > div > a:last-child {
       font-size: 1rem;
       margin-right: 0;
       padding: 0.3rem 1.5rem;
@@ -74,7 +74,7 @@
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   padding-block: 0.8rem;
 
-  > div > a:last-child {
+  > div > div > a:last-child {
     border: 0.125rem solid #2a2a2a;
   }
 }

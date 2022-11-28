@@ -19,30 +19,29 @@ const months = {
 const Comment = ({commentInformation})=>{
 
     const dateFormat = (date)=>{
-        date = new Date(date);
-        try{
-            const commentDate = `${date.getDay()} de ${months[date.getMonth().toString()]} de ${date.getFullYear()}`;
-            return commentDate;
+        try {
+            const _date = new Date(date);
+            return `${_date.getDate()} de ${months[_date.getMonth()+1]} de ${_date.getFullYear()}`;
         }
         catch(error){
-            return '01 de enero de 2022';
+            return 'Hace mucho tiempo';
         }
     }
 
     return(
         <div className={classes["comment-container"]}>
             <div className={classes["user-information"]}>
-                <figure>
+                <div className={classes["user-image"]}>
                     <PersonCircle/>
-                </figure>
+                </div>
                 <div>
                     <h3>{commentInformation.user.nombre}</h3>
-                    {dateFormat(commentInformation.fecha)}
+                    <p>{dateFormat(commentInformation.fecha)}</p>
                 </div>
             </div>
-            <div>
+            <p>
                 {commentInformation.comentario}
-            </div>
+            </p>
         </div>
     );
 }

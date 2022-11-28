@@ -18,7 +18,7 @@
     flex-direction: row;
     gap: 0.75rem;
 
-    > figure{
+    .user-image {
         border-radius: 50%;
         background-color: rgb(12, 192, 132);
         display: inline-flex;
@@ -29,7 +29,7 @@
             height: 2.2rem;
             color: #fff;
         }
-}
+    }
         
     > div{
         font-size: 0.75rem;

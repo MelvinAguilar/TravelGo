@@ -3,19 +3,24 @@ import { useNavigate } from "react-router-dom";
 import {toast} from "react-toastify";
 import { useConfigContext } from "../contexts/ConfigContext"; 
 import React, {useEffect, useState} from "react";  
-import { UseAuthContext } from "../contexts/authContext"; 
 
 const R = 'Bearer';
 
 export const commentsAPI = (_id)=>{
     const {startLoading, stopLoading} = useConfigContext();
-    const {token} = UseAuthContext();
+    const [token, setToken] = useState(getTokensLS || null);
     const navigateTo = useNavigate();
     const [comments, setComments] = useState([]);
     const [place_id, setPlace] = useState(null);
     const [saved, setSaved] = useState([]);
 
-    
+    //token
+    useEffect(()=>{
+        const _token = getTokensLS();
+        if(_token)  
+             setToken(_token);
+     },[]);
+
     //verificando validez de id
     useEffect(()=>{
         if(_id)
@@ -29,7 +34,6 @@ export const commentsAPI = (_id)=>{
     }, [place_id]);
 
     const fetchComments = async()=>{
-        console.log();
         if(!place_id)
             return;
         startLoading();
@@ -50,7 +54,7 @@ export const commentsAPI = (_id)=>{
     const fetchSavedPlace = async()=>{
         if(!_id) return;
         try{
-            const data = await axios.get(`/own/wishlist/place/${_id}`,{
+            const {data} = await axios.get(`/own/wishlist/place/${_id}`,{
                 headers:{
                     Authorization: `${R} ${token}`
                 }
@@ -69,8 +73,15 @@ export const commentsAPI = (_id)=>{
 
 export const wishlist = ()=>{
     const {startLoading, stopLoading} = useConfigContext();
-    const {token} = UseAuthContext();
+    const [token, setToken] = useState(null);
     
+        //verificar la validez del token
+    useEffect(()=>{
+       const _token = getTokensLS();
+       if(_token)  
+            setToken(_token);
+    },[]);
+
     const patchWishList = async(_id)=>{
         if(!_id)
             return;
@@ -99,3 +110,5 @@ export const wishlist = ()=>{
     };
     return funcs;
 }
+
+const getTokensLS = () => localStorage.tokens_TG;

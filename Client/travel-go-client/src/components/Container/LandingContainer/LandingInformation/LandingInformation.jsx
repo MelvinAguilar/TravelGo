@@ -23,8 +23,10 @@ const LandingInformation = () => {
           <p>
             Hermosas playas, imponentes montañas, lagunas en lo profundo de bosques, dejate atrapar por las maravillas que te ofrece el país. Escoje entre las docenas de lugares cuidadosamente seleccionadas por nuestro equipo, descubre los secretos que guarda El Salvador en sus tierras.
           </p>
-          <Button modifierClass="Button--cute_pink">saber más</Button>
-
+          <a className={classes["Link--cute_pink"]}
+            href="https://en.wikipedia.org/wiki/El_Salvador" 
+            target="_blank" rel="noreferrer noopener"
+          >Saber más</a>
         </div>
         <div className={classes["LandingInformation__card"]}>
           <Laptop size={55} />
@@ -32,7 +34,10 @@ const LandingInformation = () => {
           <p>
           Aplicamos herramientas que nos permiten sistematizar, simplificar y automatizar la búsqueda de lugares ideales para la aventura, hostales/hoteles para turistas, restaurantes y pequeños locales con recuerdos, asi como la planificación de tus actividades favoritos en tus lugares turísticos.
           </p>         
-          <Button modifierClass="Button--baby_blue">saber más</Button>
+          <a className={classes["Link--baby_blue"]}
+            href="https://en.wikipedia.org/wiki/El_Salvador"  
+            target="_blank" rel="noreferrer noopener"
+          >Saber más</a>
         </div>
         <div className={classes["LandingInformation__card"]}>
           <Flower1 size={45} />
@@ -40,7 +45,10 @@ const LandingInformation = () => {
           <p>
             ¿Preocupado por el medio ambiente? La mayoria de nuestros trips están seleccionados para que disfrutes responsable y respetuosamente de la narturaleza. Debes saber que al escoger TRAVELGO formas parte de la cultura del <i>kilometro cero</i>, mientras te diviertes practicas el consumo local y ayudas a miles de salvadoreños.
           </p>
-          <Button modifierClass="Button--light_yellow">saber más</Button>
+          <a className={classes["Link--light_yellow"]}
+            href="https://en.wikipedia.org/wiki/El_Salvador" 
+            target="_blank" rel="noreferrer noopener"
+            >Saber más</a>
         </div>
       </div>
     </section>

@@ -30,10 +30,7 @@ const TripsView = ({ className, ...rest }) => {
       <main className={classes["TripsView"]}>
         <ul className={classes["TripsView__tabs"]}>
           <li>
-            <NavLink
-              to="/trips"
-              className={classes["TripsView__item"]}
-            >
+            <NavLink to="/trips" className={classes["TripsView__item"]}>
               Todos
             </NavLink>
           </li>
@@ -55,21 +52,25 @@ const TripsView = ({ className, ...rest }) => {
 
         <ExploreContainer>
           <h2>
-            Trips made with{" "}
+            Destinos hechos con{" "}
             <span>
               <HeartFill
                 className={classes["TripsView__heart"]}
                 fill="#FF5A5F"
               />
             </span>{" "}
-            just for you
+            para ti.
           </h2>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vitae
-            congue justo. Maecenas at imperdiet ligula, et lobortis augue. Nam
-            suscipit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Etiam vitae congue justo.
+            Sabemos que te encanta la aventura, y que descubir un solo lugar no
+            te puede conformar o llenar. Es por eso que hemos creado una
+            selección de multitrips especialmente para ti.
+          </p>
+          <p>
+            Explora montañas, rios y lagunas mientras disfutas de las playas y
+            practicas tus actividades favoritas, en un mismo trip, a un mejor
+            precio.
           </p>
           <Button modifierClass="Button--purple" onClick={onClickHandler}>
             Explore a hidden trip

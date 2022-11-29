@@ -62,11 +62,51 @@
       font-weight: 600;
     }
 
-    button {
+    button, a {
       width: fit-content;
       margin-top: auto;
       font-weight: 600;
       font-size:large;
+
+      font-size: 1rem;
+      margin: 0.3rem;
+      text-align: center;
+      border: 0.125rem solid #2a2a2a;
+      background-color: #2a2a2a;
+      padding: 0.3rem 1.5rem;
+      color: white;
+      border-radius: 7rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+
+      display: inline-flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: fit-content;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .Link--baby_blue {
+      background-color: $accent-baby-blue;
+      border-color: $accent-baby-blue;
+      color: $accent-cetacean-blue;
+    }
+  
+    .Link--cute_pink{
+      margin-top: auto;
+      background-color: $accent-blush-pink;
+      border-color: $accent-blush-pink;
+      color: $text5;
+    }
+  
+    .Link--light_yellow {
+      background-color: $accent-navajo-white;
+      border-color: $accent-navajo-white;
+      color: $accent-cetacean-blue;
     }
   }
 

@@ -1,0 +1,611 @@
+[{
+  "_id": {
+    "$oid": "6381060790bbac72edc02a9f"
+  },
+  "nombre": "Punta Mango",
+  "sub_nombre": "punta_mano",
+  "descripcion_especifica": "Punta Mango es una playa mítica, ubicada en el oriental. Hasta hace poco conocida solo por unos pocos afortunados, ahora se encuentra en la lista de deseos de cualquier surfista aventurero.Durante muchos años Punta Mango solo fue accesible por lancha, partiendo desde las playas Las Flores o El Cuco. Hoy en día, se puede acceder en automóvil, utilizando la calle de terracería que inicia en El Cuco y pasa por Las Flores.",
+  "precio": 35,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Playa",
+    "Oriente",
+    "Chill",
+    "Relax",
+    "Flora y Fauna",
+    "Surf",
+    "Buenas fotos",
+    "Nadar",
+    "Flora y Fauna",
+    "Paradísiaco"
+  ],
+  "ubicacion": {
+    "departamento": "Usulután",
+    "direccion": "Jucuarán, Usulután",
+    "_id": {
+      "$oid": "6381060790bbac72edc02aa0"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/punta_mano/1.jpg",
+    "img/punta_mano/2.jpg",
+    "img/punta_mano/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669400071497"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669400071497"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638106d990bbac72edc02aa4"
+  },
+  "nombre": "El Tazumal",
+  "sub_nombre": "tazumal",
+  "descripcion_especifica": "Recorre algunas estructuras mayas, entre ellas un campo de pelota y templos, en el Parque Arqueológico Tazumal, en Chalchuapa. Tazumal fue el escenario de un importante y sofisticado asentamiento maya que existió alrededor de los años 100 y 1200 d.C. Tras una larga ocupación, el sitio fue abandonado alrededor del año 1200 d.C. y ahora es un tesoro lleno de historia.",
+  "precio": 30,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Maya",
+    "Parque",
+    "Ruinas",
+    "Sol",
+    "Historico",
+    "Hiking",
+    "Cultural"
+  ],
+  "ubicacion": {
+    "departamento": "Santa Ana",
+    "direccion": "Chalchuapa, Santa Ana",
+    "_id": {
+      "$oid": "638106d990bbac72edc02aa5"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/tazumal/1.jpg",
+    "img/tazumal/2.jpg",
+    "img/tazumal/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669400281275"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669400281275"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638107a390bbac72edc02aa8"
+  },
+  "nombre": "Camping en Conchagua",
+  "sub_nombre": "camping_conchagua",
+  "descripcion_especifica": "Ubicado en el municipio de Conchagua, La Unión, encontrarás este coloso del oriente del país, lugar donde disfrutar de una vista sin igual hacia Honduras, Nicaragua y el Golfo de Fonseca, viviendo una experiencia inolvidable para los amantes de la aventura, este lugar es perfecto para acampar, ver los amaneceres y atardeceres, un espectaculo único en este punto del país con paisajes llenos de color y riqueza natural, esto es lo que encontrarás en el Volcán de Conchagua.",
+  "precio": 45,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Lanchitas",
+    "Aventura",
+    "Atardecer Bonito",
+    "Volcanes",
+    "Flora y Fauna",
+    "Buenas fotos",
+    "Hiking",
+    "Camping",
+    "Oriente"
+  ],
+  "ubicacion": {
+    "departamento": "La Unión",
+    "direccion": "Conchagua, La Unión",
+    "_id": {
+      "$oid": "638107a390bbac72edc02aa9"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/camping_conchagua/1.jpg",
+    "img/camping_conchagua/2.jpg",
+    "img/camping_conchagua/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669400483398"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669400483398"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638128e265fae1cb7bad9b7e"
+  },
+  "nombre": "Cristo Negro Coffee Farm",
+  "sub_nombre": "cristo_negro_chocolate",
+  "descripcion_especifica": "En Cristo Negro Coffee Farm podrás observas diversas técnicas de manejo agronómico para asegurar el equilibrio con los bosques de bálsamo del país. Adentrate a una aventura gastronocmica y sostenible que gana terreno cada vez más en El Salvador",
+  "precio": 25,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Comida rica",
+    "Historia",
+    "Cultura",
+    "Plantas",
+    "Café",
+    "Flora y Fauna"
+  ],
+  "ubicacion": {
+    "departamento": "Sonsonate",
+    "direccion": "San Julián, Sonsonate⠀",
+    "_id": {
+      "$oid": "638128e265fae1cb7bad9b7f"
+    }
+  },
+  "redes": {
+    "nombre": "Instagram",
+    "url": "https://www.instagram.com/cristonegrocoffeefarm/?hl=es",
+    "_id": {
+      "$oid": "638128e265fae1cb7bad9b80"
+    }
+  },
+  "img": [
+    "img/cristo_negro_chocolate/1.jpg",
+    "img/cristo_negro_chocolate/2.jpg",
+    "img/cristo_negro_chocolate/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669408994041"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669408994041"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63812cff65fae1cb7bad9b84"
+  },
+  "nombre": "Playa El Esterón",
+  "sub_nombre": "esteron",
+  "descripcion_especifica": "¡Bienvenidos a la playa secreta de El Salvador que está causando sensación! Recientemente este destino fue incluido en la lista de las mejores playas escondidas alrededor del mundo por la tranquilidad con la que los turistas gozan al visitarla. Este lugar ha sido destacada por Business Insider Australia como una de las 19 playas desconocidas de diferentes países alrededor del mundo por su belleza natural y la tranquilidad que se respira.",
+  "precio": 30,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Playa",
+    "Oriente",
+    "Chill",
+    "Relax",
+    "Flora y Fauna",
+    "Buenas fotos",
+    "Nadar",
+    "Paradísiaco",
+    "Paraiso Escondido"
+  ],
+  "ubicacion": {
+    "departamento": "La Unión",
+    "direccion": "Intipucá, La Unión",
+    "_id": {
+      "$oid": "63812cff65fae1cb7bad9b85"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/esteron/1.jpg",
+    "img/esteron/2.jpg",
+    "img/esteron/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669410047981"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669410047981"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63812d9465fae1cb7bad9b88"
+  },
+  "nombre": "Volcán de Guazapa",
+  "sub_nombre": "volcan_guazapa",
+  "descripcion_especifica": "Formación geográfica de hasta 1436 msnm y 22 kms. de longitud, Existen condiciones de adecuación para una oferta turística en esta zona, con senderismo, caminata o cabalgata, tatús, miradores y canopy, cuenta historias del conflicto armado.",
+  "precio": 25,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Cerro",
+    "Volcan",
+    "Hiking",
+    "Canopy",
+    "Diversión",
+    "Camping",
+    "Tirolesa"
+  ],
+  "ubicacion": {
+    "departamento": "Cuscatlán",
+    "direccion": "Shuchitoto, Cuscatlán",
+    "_id": {
+      "$oid": "63812d9465fae1cb7bad9b89"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/volcan_guazapa/1.jpg",
+    "img/volcan_guazapa/2.jpg",
+    "img/volcan_guazapa/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669410196504"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669410196504"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63812e5565fae1cb7bad9b8c"
+  },
+  "nombre": "Cascada El Escuco",
+  "sub_nombre": "cascada_escuco",
+  "descripcion_especifica": "Este destino en la zona oriental del país te atrapa con su idiosincrasia, su herencia indígena y su enorme cascada El Escuco. Una pequeña caminata de medio kilómetro, aproximadamente, entre verdes y coloridos paisajes te preparan para ver una asombrosa cascada de 80 metros de caída, solo estar frente a ella recibiendo el rocío es relajante, y más aún si decides darte un baño en su poza, cuya profundidad es de uno a cinco metros.",
+  "precio": 30,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Atardecer Bonito",
+    "Buenas fotos",
+    "Hiking",
+    "Cascada",
+    "Rappel",
+    "Plantas",
+    "Laguna",
+    "Flora y Fauna",
+    "Artesanias"
+  ],
+  "ubicacion": {
+    "departamento": "Sonsonate",
+    "direccion": "Santo Domingo de Guzmán, Sonsonate",
+    "_id": {
+      "$oid": "63812e5565fae1cb7bad9b8d"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/cascada_escuco/1.jpg",
+    "img/cascada_escuco/2.jpg",
+    "img/cascada_escuco/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669410389545"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669410389545"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638170d55be2b0320c9fa749"
+  },
+  "nombre": "La Olomina trip",
+  "sub_nombre": "olomina",
+  "descripcion_especifica": "La Olomina, se encuentra custodiada por una pared de roca y árboles y su formación de dos niveles la hacen una cascada visualmente increíble. Sas aguas turquesas le dan un vista única a esta cascada. La Olomina tiene una casacada cristalina de dos nivel que se eleva más de 50 metros rodeada por un pequerño bosque de robles, ideal para aventureros que buscan una experiencia impriosante.",
+  "precio": 40,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Paradísiaco",
+    "Atardecer Bonito",
+    "Diversion",
+    "Laguna",
+    "Flora y Fauna",
+    "Cascada",
+    "Buenas fotos",
+    "Hiking",
+    "Nadar"
+  ],
+  "ubicacion": {
+    "departamento": "Morazán",
+    "direccion": "Arambala, Morazán",
+    "_id": {
+      "$oid": "638170d55be2b0320c9fa74a"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/olomina/1.jpg",
+    "img/olomina/2.jpg",
+    "img/olomina/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427413952"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427413952"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638171305be2b0320c9fa74e"
+  },
+  "nombre": "Laguna de Alegria Trip",
+  "sub_nombre": "alegria",
+  "descripcion_especifica": "falta descripcion aquí",
+  "precio": 25,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Atardecer Bonito",
+    "Buenas fotos",
+    "Hiking",
+    "Plantas",
+    "Laguna",
+    "Flora y Fauna"
+  ],
+  "ubicacion": {
+    "departamento": "Usulután",
+    "direccion": "Alegría, Usulután",
+    "_id": {
+      "$oid": "638171305be2b0320c9fa74f"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/alegria/1.jpg",
+    "img/alegria/2.jpg",
+    "img/alegria/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427504026"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427504026"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638171935be2b0320c9fa752"
+  },
+  "nombre": "Volcán de Ilamatepec",
+  "sub_nombre": "volcan_ilamatepec",
+  "descripcion_especifica": "También llamado volcán de Santa Ana, este coloso es el más alto del país con una altitud de 2,381 metros sobre el nivel del mar. Todavía “vivo”, las últimas erupciones del volcán tuvieron lugar en 2005. El Ilamatepec forma parte del Complejo Los Volcanes en la cordillera de Apaneca y su ascenso no es muy complicado. Una vez arriba podrás ver el cráter o disfrutar de las vistas al lago Coatepeque. El recorrido también se puede hacer en la noche con total seguridad.",
+  "precio": 25,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Volcan",
+    "Flora y Fauna",
+    "Diversión",
+    "Hiking",
+    "Plantas",
+    "Buenas fotos",
+    "Atardecer Bonito"
+  ],
+  "ubicacion": {
+    "departamento": "Santa Ana",
+    "direccion": "Santa Ana",
+    "_id": {
+      "$oid": "638171935be2b0320c9fa753"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/volcan_ilamatepec/1.jpg",
+    "img/volcan_ilamatepec/2.jpg",
+    "img/volcan_ilamatepec/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427603977"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427603977"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638171c35be2b0320c9fa756"
+  },
+  "nombre": "El Palmarcito Trip",
+  "sub_nombre": "palmarcito",
+  "descripcion_especifica": "El Palmarcito tiene un ambiente tranquilo, rodeado de naturaleza tropical y arena volcánica. Está ubicada a solo 15 kilómetros al occidente del Puerto de la Libertad, como una pequeña ensenada entre dos enormes desfiladeros. Como en toda la costa salvadoreña, el sol alumbra todo el año, y el agua es cálida y limpia. Y si eres de espíritu aventurero, acampar es una opción segura y divertida.",
+  "precio": 20,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Playa",
+    "Naturaleza",
+    "Camping",
+    "Comida rica",
+    "Plantas",
+    "Surf",
+    "Flora y Fauna"
+  ],
+  "ubicacion": {
+    "departamento": "La Libertad",
+    "direccion": "Tamanique, La Libertad",
+    "_id": {
+      "$oid": "638171c35be2b0320c9fa757"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/palmarcito/1.jpg",
+    "img/palmarcito/2.jpg",
+    "img/palmarcito/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427651523"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427651523"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638171ed5be2b0320c9fa75a"
+  },
+  "nombre": "El Chorrerón Trip",
+  "sub_nombre": "chorreron",
+  "descripcion_especifica": "Escápate de la rutina y reconecta con la naturaleza. La Cascada",
+  "precio": 25,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Atardecer Bonito",
+    "Buenas fotos",
+    "Hiking",
+    "Cascada",
+    "Plantas",
+    "Rappel",
+    "Flora y Fauna"
+  ],
+  "ubicacion": {
+    "departamento": "Morazán",
+    "direccion": "San Fernando, Morazán",
+    "_id": {
+      "$oid": "638171ed5be2b0320c9fa75b"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/chorreron/1.jpg",
+    "img/chorreron/2.jpg",
+    "img/chorreron/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427693790"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427693790"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638173115be2b0320c9fa75e"
+  },
+  "nombre": "Al Eramón Vamos",
+  "sub_nombre": "cerro_eramon",
+  "descripcion_especifica": "El Cerro Eramón es una joya que ofrece una vista única, que te permitirá apreciar multidestinos emblemáticos de El Salvador al mismo tiempo. Desde la cúspide del Cerro Eramón, verás maravillosos paisajes, como: el Embalse de la Central Hidroeléctrica 5 de Noviembre, la represa del Cerrón Grande, el río Lempa, el río Sumpul y los volcanes Chinchontepec, San Salvador, Guazapa y Chaparrastique. Mientras que, al oeste apreciarás el imponente volcán de Izalco, el Cerro Verde, el volcán Ilamatepec y el volcán El Chingo.",
+  "precio": 35,
+  "capacidad": null,
+  "cant_comentarios": 0,
+  "puntuacion_prom": 0,
+  "comentarios": [],
+  "etiqueta": [
+    "Naturaleza",
+    "Montañas",
+    "Plantas",
+    "Atardecer Bonito",
+    "Buenas fotos",
+    "Buenas fotos",
+    "Hiking",
+    "Camping",
+    "Flora y Fauna"
+  ],
+  "ubicacion": {
+    "departamento": "Chalatenango",
+    "direccion": "Nombre de Jesús, Chalatenango",
+    "_id": {
+      "$oid": "638173115be2b0320c9fa75f"
+    }
+  },
+  "redes": null,
+  "img": [
+    "img/cerro_eramon/1.jpg",
+    "img/cerro_eramon/2.jpg",
+    "img/cerro_eramon/3.jpg"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669427985760"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669427985760"
+    }
+  },
+  "__v": 0
+}]

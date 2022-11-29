@@ -42,7 +42,7 @@ const UserSchema = new Schema({
     imagen:{
         type: String,
         trim: true,
-        default: 'img/img_user/usuario.png',       
+        default: 'https://i.imgur.com/GvsgVco.jpeg',       
 
     },
     roles:{

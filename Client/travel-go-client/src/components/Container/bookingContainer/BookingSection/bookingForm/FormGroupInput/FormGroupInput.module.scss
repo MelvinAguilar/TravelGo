@@ -1,0 +1,10 @@
+@import "../../../../../../mixins";
+
+.FormGroupInput {
+  width: 100%;
+  @include flex(column, center, flex-start);
+  gap: 0.5rem;
+  &__input {
+    @include forminput;
+  }
+}

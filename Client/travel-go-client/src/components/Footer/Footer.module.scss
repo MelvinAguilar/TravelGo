@@ -1,0 +1,111 @@
+@import "./../../mixins";
+
+.Footer {
+  text-align: center;
+  background-color: #f9ffff;
+
+  > div:first-child {
+    padding: 1rem;
+  }
+
+  // Email section
+  address {
+    font-style: normal;
+
+    a {
+      color: #7e70ea;
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+      margin-block: 1rem;
+      display: block;
+    }
+  }
+
+  // Social media links
+  &__social {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    text-align: center;
+
+    a {
+      width: 3rem;
+      font-size: 2.5rem;
+      color: #2a2a2a;
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+
+      @include media-hover-effect() {
+        &:hover {
+          color: #6c5ce7;
+        }
+      }
+    }
+  }
+
+  &__list a {
+    color: #2a2a2a;
+    display: inline-block;
+    margin-block: 0.3rem;
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    text-align: left;
+    background-color: white;
+
+    > div:first-child {
+      padding: 4rem 3rem;
+    }
+
+    &__content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin: auto;
+    }
+
+    &__social {
+      justify-content: flex-start;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 10rem;
+
+      a {
+        margin-block: 1rem;
+      }
+    }
+
+    address {
+      margin-block: 0;
+      a {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    &__list {
+      max-height: 7rem;
+    }
+  }
+}
+
+.Subtitle {
+  color: #2a2a2a;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-block: 4rem 0.5rem;
+
+  @include media-breakpoint-up($screen-md) {
+    font-size: 0.89rem;
+    margin-block: 2rem 1rem;
+  }
+}

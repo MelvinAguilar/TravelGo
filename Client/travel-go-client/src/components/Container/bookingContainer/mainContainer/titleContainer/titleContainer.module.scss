@@ -1,0 +1,71 @@
+@import "../../../../../mixins";
+@import "../../../../../_variables";
+
+.title-section{
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    >:first-child{
+        font-family: ($body-label-tittle-font);
+        h1{
+            color: black;
+            font-size: 2.25rem;
+            font-weight: 600;
+        }
+        h2{
+            color: rgb(88, 86, 86);
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+
+    >:last-child{
+        @include flex(row, space-between);
+        gap: 1rem; 
+
+        > div,
+        .share-button{
+            background: none;
+            border: none;
+            font-family: ($body-label-tittle-font);
+            font-weight: 400;
+            font-size: 1.15rem;
+            cursor: pointer;
+            @include flex(row, space-between);
+            gap: 0.5rem;
+            
+            > svg{
+                @include size(1.25rem)
+            }
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        
+        >:last-child:active{
+            >svg{
+                color: rgb(243, 35, 35);
+            }
+        }
+    }
+
+    >:last-child >:first-child:hover{
+        text-decoration: underline;
+    }
+    >:last-child >:last-child:hover{
+        text-decoration: underline;
+    }
+}
+
+.save-false{
+    >svg{
+        color: ($text2);
+    }
+}
+
+.save-true{
+    >svg{
+        color: red;
+    }
+}

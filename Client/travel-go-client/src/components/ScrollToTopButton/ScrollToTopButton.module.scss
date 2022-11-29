@@ -1,0 +1,34 @@
+.ScrollToTopButton {
+  position: fixed;
+  bottom: 25px;
+  right: 20px;
+  z-index: 20;
+
+  &__button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #6c5ce7;
+    border: 3px solid #e5e5e5;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #e5e5e5;
+      border-color: #6c5ce7;
+
+      .ScrollToTopButton__icon {
+        color: #6c5ce7;
+      }
+    }
+  }
+
+  &__icon {
+    color: #fff;
+    font-size: 1.3rem;
+  }
+}

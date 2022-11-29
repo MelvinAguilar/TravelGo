@@ -1,0 +1,39 @@
+/* Concert One para display
+IBM Plex Serif para headlines
+Source Sans Pro para body, label y tittles */
+
+//Font families
+$display-font: 'Concert One', cursive;
+$headlines-font: 'IBM Plex Serif', serif;
+$body-label-tittle-font: 'Source Sans Pro', sans-serif;
+
+// Breakpoints
+$screen-sm: 36em;       //576px Large smartphones
+$screen-md: 48em;       //768px Small tablets
+$screen-lg: 62em;       //992px Tablets
+$screen-xl: 75em;       //1200px Desktops
+$screen-xxl: 87.5em;    //1400px Large desktops
+
+//Font colors
+$text1: #000000;
+$text2: #111111;
+$text3: #2A2A2A;
+$text4: #515151;
+$text5: #ffffff;
+
+//colors
+$dominant: #ffffff;
+$complement: #111111;
+$accent-navajo-white: #FEDFB1;
+$accent-cetacean-blue: #130F49;
+$accent-baby-blue: #CCE8FD;
+$accent-blush-pink: #DE5A75;
+$accent-cute-pink: #F5ADAE;
+$accent-cadet-grey: #8DABAC;
+$accent-majorelle-blue: #6C5CE7;
+
+//Shadow
+$shadow1: (0 0.25rem 0.313rem 0.313rem rgba(0, 0, 0, 0.05));
+$shadow2:rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+$shadow3: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$shadow4: rgba(0, 0, 0, 0.24) 0px 3px 8px;

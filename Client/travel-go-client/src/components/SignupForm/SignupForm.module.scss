@@ -1,0 +1,21 @@
+@import "../../mixins";
+
+.SignupForm {
+  label {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-block: 1.2rem 0.7rem;
+  }
+
+  > button {
+    margin-block: 3.125rem 1.438rem;
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    label {
+      font-size: 1.5rem;
+      margin-block: 1.438rem 0.75rem;
+    }
+  }
+}

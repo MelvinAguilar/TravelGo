@@ -1,0 +1,15 @@
+@import "../../mixins";
+@import "../../_variables";
+
+.Place {
+    @include flex(column, flex-start, center);
+    position: relative;
+    gap: 5rem;
+    padding: 6.313rem 3rem 0;
+
+    >hr{
+        height: 0;
+        width: 90%;
+        border-color: ($text5);
+    }
+}

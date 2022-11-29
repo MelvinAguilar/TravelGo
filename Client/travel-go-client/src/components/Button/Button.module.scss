@@ -1,0 +1,91 @@
+@import "./../../mixins";
+
+.Button {
+  font-size: 1rem;
+  margin: 0.3rem;
+  text-align: center;
+  border: 0.125rem solid #2a2a2a;
+  background-color: #2a2a2a;
+  padding: 0.3rem 1.5rem;
+  color: white;
+  border-radius: 7rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5rem;
+  text-decoration: none;
+  
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &--purple {
+    background-color: $accent-majorelle-blue;
+    border-color: $accent-majorelle-blue;
+  }
+
+  &--white {
+    background-color:$dominant;
+    border-color: $text3;
+    color: $text3;
+  }
+
+  &--blue {
+    background-color: $accent-cetacean-blue;
+    border-color: $accent-cetacean-blue;
+    color:$text5;
+  }
+
+  &--baby_blue {
+    background-color: $accent-baby-blue;
+    border-color: $accent-baby-blue;
+    color: $accent-cetacean-blue;
+  }
+
+  &--pink{
+    background-color: $accent-blush-pink;
+    border-color: $accent-blush-pink;
+    color: $text5;
+  }
+
+  &--cute_pink {
+    background-color: $accent-cute-pink;
+    border-color: $accent-cute-pink;
+    color: $accent-cetacean-blue;
+  }
+
+  &--light_yellow {
+    background-color: $accent-navajo-white;
+    border-color: $accent-navajo-white;
+    color: $accent-cetacean-blue;
+  }
+
+
+  @include media-hover-effect {
+    &:hover {
+      background-color: white;
+      color: #2a2a2a;
+    }
+
+    &--purple:hover {
+      color: #6c5ce7;
+    }
+
+    &--white:hover {
+      background-color: #f3f3f3;
+    }
+
+    &--pink:hover{
+      background-color: white;
+      color: #DE5A75;
+    }
+  }
+}

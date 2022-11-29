@@ -1,0 +1,138 @@
+@import "../../mixins";
+@import "../../_variables";
+
+.shopping-cart-container{
+    width: 100%;
+    max-width: 75rem;    
+    padding:  3.313rem 0.5rem 0;
+
+    h2 {
+        text-align: center;
+    }
+
+    .empty-cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+        border: 0.0625rem solid $accent-blush-pink;
+        border-radius: 0.5rem;
+        margin: 2rem auto;
+        width: fit-content;
+
+        &__icon {
+            font-size: 3rem;
+            color: $text3;
+
+            @include media-hover-effect {
+                &:hover {
+                    animation: shake 0.5s;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+    }
+
+   .shopping-cart-introduction {
+        color: $text4;
+
+        > div{
+            @include flex(column, center, normal);
+            gap: 1rem;
+
+            >h1{
+                font-size: 2.2rem;
+                font-weight: 600;
+            }
+
+            >p{
+                text-align: center;
+                font-size: 1.05rem;
+                font-weight: 400;
+                background-color: #eee;
+                padding: 1rem;
+                border-radius: 1rem;
+                margin-inline: auto;
+                max-width: 58rem;
+            }
+        }
+    }
+
+    .back {
+        color: $text4;
+        display: block;
+        font-size: 0.975rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 3.5rem;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .total-container{
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        background-color: $dominant;
+        border-top: 0.0625rem solid rgb(184, 184, 184);
+        padding: 1rem;
+        z-index: 5;
+        @include flex(row, flex-end);
+        gap: 1.1rem;
+        
+    
+        > div {
+            @include flex(column, center, flex-end);
+            text-transform: uppercase;
+    
+            > .total-money {
+                font-weight: 600;
+            }
+        }
+    
+        > button {
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0;
+        }
+    }
+
+    .shopping-cart-items {
+        margin: 2rem 1rem;
+    }
+
+    @include media-breakpoint-up($screen-md) {
+        padding: 5.313rem 2rem 0;
+        .back {
+            font-size: 1.375rem;
+        }
+
+        .total-container > button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 0.7rem 3.5rem;
+            border-radius: 0;
+        }
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(0.0625rem, 0.0625rem) rotate(0deg); }
+    10% { transform: translate(-0.0625rem, -0.125rem) rotate(-1deg); }
+    20% { transform: translate(-0.1875rem, 0rem) rotate(1deg); }
+    30% { transform: translate(0.1875rem, 0.125rem) rotate(0deg); }
+    40% { transform: translate(0.0625rem, -0.0625rem) rotate(1deg); }
+    50% { transform: translate(-0.0625rem, 0.125rem) rotate(-1deg); }
+    60% { transform: translate(-0.1875rem, 0.0625rem) rotate(0deg); }
+    70% { transform: translate(0.1875rem, 0.0625rem) rotate(-1deg); }
+    80% { transform: translate(-0.0625rem, -0.0625rem) rotate(1deg); }
+    90% { transform: translate(0.0625rem, 0.125rem) rotate(0deg); }
+    100% { transform: translate(0.0625rem, -0.125rem) rotate(-1deg); }
+}

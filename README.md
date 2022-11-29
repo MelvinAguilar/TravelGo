@@ -33,6 +33,13 @@ Distribuido bajo MIT License. Ver `LICENSE.txt` para más información.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Usuario de prueba
+
+### Usuario
+adminTravelGo@gmail.com
+
+### Contraseña
+rootpassword02
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [issues-shield]: https://img.shields.io/badge/Report%20an-Issue-important.svg?style=for-the-badge

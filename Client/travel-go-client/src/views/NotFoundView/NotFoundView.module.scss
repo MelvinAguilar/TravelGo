@@ -1,0 +1,76 @@
+@import "./../../mixins";
+
+.ErrorContainer {
+  min-height: 100vh;
+  max-width: 72.5rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5rem;
+  text-align: center;
+  align-content: center;
+
+  img {
+    max-width: 13.75rem;
+  }
+
+  svg {
+    margin-inline: 0.3rem;
+  }
+  
+  &__heart {
+    @include media-hover-effect() {
+      &:hover {
+        animation: heartBeat 1s infinite;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+  }
+
+  &__greating {
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+
+  a {
+    margin-block: 1rem;
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: left;
+    margin-inline: auto;
+    gap: 5rem;
+
+    img {
+      max-width: 31.25rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__text {
+      font-size: 1.25rem;
+    }
+
+    &__greating {
+      font-size: 6rem;
+    }
+  }
+}
+
+@include heartBeat();

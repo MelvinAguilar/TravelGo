@@ -1,0 +1,22 @@
+@import "./../../../mixins";
+
+.FormGroupTextarea {
+  position: relative;
+
+  &__area {
+    @include forminput;
+    @include formfloatlabel;
+  }
+
+  &__label {
+    @include formlabel;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  & textarea.has-error{
+    border-color: rgb(255, 88, 88);
+  }
+}

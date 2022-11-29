@@ -1,0 +1,137 @@
+@import "./../../../../mixins";
+
+.LandingInformation {
+  padding-block: 4.25rem;
+
+  &__title {
+    font-family: 'IBM Plex Serif';
+    text-align: center;
+
+    > div {
+      flex: 1;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin-block: 1rem;
+      font-size: 1.875rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  &__card {
+    max-width: 18.708rem;
+    min-height: 19.688rem;
+    text-align: center;
+    padding: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 0.7rem;
+    box-shadow: $shadow4;
+    transition: all 0.3s ease-in-out;
+
+   
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    i {
+      font-size: 1rem;
+    }
+
+    h3 {
+      padding-top: 0.5rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    button, a {
+      width: fit-content;
+      margin-top: auto;
+      font-weight: 600;
+      font-size:large;
+
+      font-size: 1rem;
+      margin: 0.3rem;
+      text-align: center;
+      border: 0.125rem solid #2a2a2a;
+      background-color: #2a2a2a;
+      padding: 0.3rem 1.5rem;
+      color: white;
+      border-radius: 7rem;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+
+      display: inline-flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: fit-content;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .Link--baby_blue {
+      background-color: $accent-baby-blue;
+      border-color: $accent-baby-blue;
+      color: $accent-cetacean-blue;
+    }
+  
+    .Link--cute_pink{
+      margin-top: auto;
+      background-color: $accent-blush-pink;
+      border-color: $accent-blush-pink;
+      color: $text5;
+    }
+  
+    .Link--light_yellow {
+      background-color: $accent-navajo-white;
+      border-color: $accent-navajo-white;
+      color: $accent-cetacean-blue;
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    &__card {
+      max-width: 24.708rem;
+      padding: 2rem;
+    }
+
+    &__title {
+      font-family: 'IBM Plex Serif';
+      max-width: 50.063rem;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 1rem;
+  
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      > div {
+        flex: 1;
+      }
+    }
+  }
+}

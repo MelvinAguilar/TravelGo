@@ -1,0 +1,74 @@
+@import "./../../../mixins";
+
+.FooterForm {
+  max-width: 20rem;
+  margin: 3.5rem auto;
+
+  fieldset {
+    border: none;
+    margin-top: 2rem;
+    color: $text4;
+
+    button {
+      width: 100%;
+      height: fit-content;
+      margin: 0;
+    }
+
+    > div {
+      margin-block: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    fieldset {
+      display: grid;
+      grid-template-columns: 2fr 0.5fr 1.6fr;
+      grid-template-rows: auto auto;
+      gap: 2rem;
+      grid-template-areas:
+        "c1 c2 c2"
+        "c3 c3 c4";
+
+      > div {
+        margin-block: 0;
+      }
+
+      div:nth-child(2) {
+        grid-area: c1;
+      }
+
+      div:nth-child(3) {
+        grid-area: c2;
+      }
+
+      div:nth-child(4) {
+        grid-area: c3;
+      }
+
+      button {
+        grid-area: c4;
+        padding: 0.8rem;
+        border-radius: 1.063rem;
+      }
+    }
+  }
+}
+
+.Subtitle {
+  color: #2a2a2a;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-block: 2rem 0.5rem;
+
+  @include media-breakpoint-up($screen-md) {
+    font-size: 0.89rem;
+    margin-block: 2rem 1rem;
+  }
+}

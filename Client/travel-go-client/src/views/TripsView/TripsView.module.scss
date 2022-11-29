@@ -1,0 +1,55 @@
+@import "../../mixins";
+
+.TripsView {
+  max-width: 90rem;
+  width: 100%;
+  margin-inline: auto;
+  padding: 3rem 2rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  &__heart {
+    width: 2rem;
+
+    @include media-hover-effect() {
+      &:hover {
+        animation: heartBeat 1s infinite;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  }
+
+  &__item {
+    margin: 0;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: #2a2a2a;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    overflow: hidden;
+    display: inline-flex;
+    padding: 0.3rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    padding: 5.313rem 3rem 3rem;
+  }
+}
+
+@include heartBeat();

@@ -1,0 +1,44 @@
+@import "../../mixins";
+
+.Privacy-policy {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: 3rem 2rem;
+
+  &__title {
+    font-family: "IBM Plex Serif";
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1.02rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+  }
+
+  ul {
+    margin: 1rem 0;
+    padding-inline-start: 1.5rem;
+    list-style-type: circle;
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    padding: 5.313rem 3rem 3rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__subtitle {
+      font-size: 1.5rem;
+    }
+  }
+}

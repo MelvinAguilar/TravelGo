@@ -1,0 +1,129 @@
+@import "./variables";
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin center-grid() {
+  display: grid;
+  place-content: center;
+}
+
+@mixin img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Media query
+@mixin media-breakpoint-up($breakpoint, $direction: min-width) {
+  @media screen and ($direction: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-double-breakpoint-up(
+  $break_min,
+  $dir_min: min-width,
+  $break_max,
+  $dir_max: max-width
+) {
+  @media screen and ($dir_min: $break_min) and ($dir_max: $break_max) {
+    @content;
+  }
+}
+
+@mixin media-hover-effect() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin forminput {
+  background-color: #f0f0f0;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  border: 0.125rem solid #e0ddf7;
+  border-radius: 0.8rem;
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin formlabel {
+  width: 100%;
+  text-align: left;
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  padding: 0.9125rem;
+  transition: all 0.1s ease-in-out;
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+@mixin formfloatlabel {
+  &:hover,
+  &:focus {
+    border-color: #adadad;
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    padding-block: 1.2rem 0.4rem;
+
+    & ~ svg {
+      fill: #6c5ce7;
+    }
+  }
+
+  &:focus + label,
+  &:not(:placeholder-shown) + label {
+    opacity: 0.9;
+    transform: scale(0.8) translateX(0.2rem) translateY(-0.5rem);
+    color: #6c5ce7;
+  }
+}
+
+@mixin animate($animation,$duration,$method,$times){
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+  @keyframes #{$name}{
+      @content;
+  }
+}
+
+// Animation keyframes
+@mixin heartBeat {
+  @keyframes heartBeat {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.3);
+    }
+    40% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.3);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

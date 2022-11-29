@@ -1,0 +1,89 @@
+@import "./../../mixins";
+
+.PlaceForm {
+  > div {
+    margin-block: 1rem;
+  }
+
+  .ReactTags {
+    background-color: red;
+    &__tagInput {
+      width: 100%;
+      border-radius: 0.125rem;
+      display: inline-block;
+    }
+
+    &__tagInput input.ReactTags__tagInputField,
+    &__tagInput input.ReactTags__tagInputField:focus {
+      @include forminput;
+      margin-top: 1rem;
+    }
+
+    &__activeSuggestion {
+      background-color: red;
+    }
+
+    @mixin tagStyle {
+      background: #2a2a2a;
+      color: white;
+      font-size: 0.75rem;
+      display: inline-block;
+      padding: 0.5125rem 0.75rem;
+      margin: 0 0.3125rem;
+      border-radius: 0.125rem;
+    }
+
+    &__selected span.ReactTags__tag {
+      @include tagStyle;
+    }
+
+    &__selected span.ReactTags__tag--url {
+      @include tagStyle;
+      display: flex;
+      justify-content: space-between;
+      margin-block: 0.2rem;
+    }
+
+    &__selected a.ReactTags__remove {
+      color: #aaa;
+      margin-left: 0.3125rem;
+      cursor: pointer;
+    }
+
+    &__suggestions {
+      position: absolute;
+      z-index: 10000;
+    }
+
+    &__suggestions ul {
+      list-style-type: none;
+      box-shadow: 0.05em 0.01em 0.5em rgba(0, 0, 0, 0.2);
+      background: white;
+      width: 12.5rem;
+    }
+
+    &__suggestions li {
+      border-bottom: 0.0625rem solid #ddd;
+      padding: 0.3125rem 0.625rem;
+      margin: 0;
+    }
+
+    &__suggestions li mark {
+      text-decoration: underline;
+      background: none;
+      font-weight: 600;
+    }
+
+    &__suggestions ul li.ReactTags__activeSuggestion {
+      background: #b7cfe0;
+      cursor: pointer;
+    }
+
+    &__remove {
+      border: none;
+      cursor: pointer;
+      background: none;
+      color: white;
+    }
+  }
+}

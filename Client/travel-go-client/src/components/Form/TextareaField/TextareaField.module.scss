@@ -1,0 +1,12 @@
+@import "./../../../mixins";
+
+.Textarea {
+    textarea {
+        @include forminput;
+        resize: none;
+    }
+
+    .has-error{
+        border-color: rgb(255, 88, 88);
+    }
+}

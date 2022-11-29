@@ -1,0 +1,118 @@
+@import "./../../mixins";
+
+.Signup {
+  background-color: #fedfb1;
+  min-height: 100vh;
+  color: $text3;
+
+  a {
+    color: $text3;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &__back {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__signup {
+    margin: auto;
+    display: block;
+    width: fit-content;
+  }
+
+  &__container {
+    max-width: 27.125rem;
+    width: 100%;
+
+    padding: 2rem;
+    background: #ffffff;
+    z-index: 1;
+
+    h2 {
+      font-family: "Concert One";
+      font-weight: 400;
+      font-size: 1.7rem;
+    }
+
+    p {
+      margin-block: 0.75rem 2rem;
+      font-size: 1.25rem;
+    }
+
+    h2,
+    p {
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-up(24.125rem) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    &__container {
+      margin-top: 1rem;
+      border-radius: 1.7rem;
+      padding: 2.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      bottom: 0;
+      right: 50%;
+      left: 50%;
+      width: 80%;
+      max-width: 100rem;
+      aspect-ratio: 1/1;
+      background-color: $text3;
+      border-radius: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+
+  @include media-breakpoint-up($screen-md) {
+    &__container {
+      max-width: 30.375rem;
+      padding: 3.75rem;
+      margin-top: 2.5rem;
+      border-radius: 3.75rem 3.75rem 0 0;
+
+      &__back {
+        font-size: 1.375rem;
+        margin-bottom: 3.5rem;
+      }
+
+      h2 {
+        font-size: 3.625rem;
+      }
+
+      p {
+        margin-block: 2.25rem;
+        font-size: 1.25rem;
+      }
+
+      h2,
+      p {
+        text-align: left;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(93.75rem) {
+    align-items: center;
+
+    &__container {
+      border-radius: 3.75rem;
+      padding-block: 4.5rem;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import "./../../../mixins";
+
+.SinglePlace {
+  // max-width: 23.25rem;
+  flex-basis: 21.25rem;
+  flex-grow: 1;
+  min-height: 15.5094rem;
+
+  box-shadow: 0rem 0.25rem 0.3125rem 0.3125rem rgba(0, 0, 0, 0.2);
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.6fr 0.4fr;
+  grid-template-areas:
+    "image"
+    "info";
+  overflow: hidden;
+
+  &__title {
+    font-family: "IBM Plex Serif";
+    font-weight: 400;
+    font-size: 0.976rem;
+  }
+
+  &__location {
+    font-size: 0.7906rem;
+  }
+
+  &__image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+    z-index: 1;
+
+    @include media-hover-effect() {
+      &:hover {
+        filter: brightness(0.8);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__info {
+    grid-area: info;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    background-color: #ffffff;
+
+    @include media-hover-effect() {
+      &:hover .SinglePlace__icon {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  &__icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: all 0.3s;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  @include media-breakpoint-up($screen-sm) {
+    max-width: 23.25rem;
+    min-height: 21.5094rem;
+
+    &__title {
+      font-size: 1.276rem;
+    }
+
+    &__location {
+      font-size: 0.8906rem;
+    }
+  }
+}

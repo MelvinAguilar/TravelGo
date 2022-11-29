@@ -1,0 +1,217 @@
+@import "./../../../../mixins";
+
+.FeatureContainer {
+  position: relative;
+
+  &__shape{
+    img {
+      position: absolute; 
+      width: 64.604rem;
+      height: 65rem;
+      left: -28rem;
+      z-index: -1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5rem;
+    h2 {
+      text-align: center;
+      font-weight:600;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: $text3
+    }
+ }
+
+ &__cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  
+  position: relative;
+  align-items: center;
+  justify-content: center;  
+  gap: 1.5rem;
+  
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  transition: ease all .3s;
+  -webkit-transition: ease all .3s;
+}
+
+&__card {      
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  
+  width: 180px;
+  height: 280px;
+
+  border-radius: 0.7rem;
+  background: $dominant;
+  box-shadow: $shadow4;
+}
+  
+&__pic{
+  background-size: contain;
+  padding: 1rem;
+  transition: ease all .3s;
+  -webkit-transition: ease all .3s;
+  
+  img{
+    width: 120px;
+    height: 120px;
+  }
+}
+
+&__card:hover &__pic {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+} 
+
+&__text-card{
+  gap: 0.5rem;
+  display: block;
+  padding: 1rem 0.5rem;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  h2{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $accent-cetacean-blue;
+  }
+  
+  p{
+    font-size: 1rem;
+    color: $text4;
+  }
+}
+
+
+&__feature{
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 3rem;
+}
+
+&__info{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+}
+
+&__text{
+  text-align: left;
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $accent-cetacean-blue;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: $text4;
+      text-align: justify;
+    }
+}
+
+&__icon {
+  margin-left: -3rem;
+  font-size: 1.3rem;
+  text-align: center;
+  
+  button {   
+    width: 3rem;
+    height: 3rem;
+    border-radius: 20px;
+    font-weight: 600;
+    color: $accent-cetacean-blue;
+    transform: rotate(-45deg);
+
+    p {
+      transform: rotate(45deg);
+    }
+  }
+
+  button:hover{
+    cursor: auto; 
+    color: $accent-cetacean-blue;
+  }  
+}
+
+    
+  @include media-breakpoint-up($screen-md) {
+    padding: 4rem;
+
+    &__title {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+
+      h2 {
+        max-width: 20rem;
+        text-align: left;
+      }
+      p{
+        font-size: large;
+      }
+    }
+
+    &__icon{
+      margin-left: 0;
+    }
+
+    &__info{
+      padding-block: 1rem;
+    }
+
+    &__content{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+
+    &__feature{
+      gap: 1rem;
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    padding-block: 6rem;
+
+    &__title {
+      gap: 8rem; 
+    
+      h2 {
+        font-size: 3.988rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__cards {
+      padding-left: 8rem;
+    }
+
+    &__info{
+      padding: 2rem;
+    }
+  }
+}

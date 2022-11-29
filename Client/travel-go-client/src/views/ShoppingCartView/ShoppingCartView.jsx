@@ -118,10 +118,8 @@ const ShoppingCartView = ()=>{
                 "fecha_final": item.fecha_final,
                 "precio_unitario": item.id_lugar.precio
             }
-            console.log(item.fecha_inicio);
-            console.log(item.fecha_final);
             items = [...items, newItem];
-            toogleBoughtItems(item.id_lugar._id);
+            toogleBoughtItems(item._id);
         });
        await saveInBooking(toDay, precio_total, items);
 

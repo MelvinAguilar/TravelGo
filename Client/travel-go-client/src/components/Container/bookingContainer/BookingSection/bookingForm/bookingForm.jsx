@@ -6,7 +6,7 @@ import ErrorMessage from "../../../../Form/ErrorMessage/ErrorMessage";
 import {shoppingCartApi} from "../../../../../services/shoppingCartServer";
 import {useForm} from "react-hook-form";
 import {toast} from "react-toastify";
-import {StarFill} from "react-bootstrap-icons"
+import {StarFill} from "react-bootstrap-icons";
 
 const BookingForm = ({placeInformation})=>{
     const {postShoppingItem} = shoppingCartApi();
@@ -49,7 +49,7 @@ const BookingForm = ({placeInformation})=>{
     
     const onInvalid = (data) => {
         console.log(data);
-        toast.warn("Please check your fields and try again", {
+        toast.warn("Por favor, revise los campos del formulario", {
           toastId: "warning"
         });
     };

@@ -112,22 +112,18 @@ export const AuthContextProvider = (props)=>{
                 return;
             }
             await generalCreateUser(data);
-
-
         }
         catch(error){
             const {status} = error.response || {status: 500};
-            const dataResponse = error.response.data || {error: "Something went wrong!"};
-
-            // console.log(error.response.data);
-            const errorMessage = dataResponse ? error.response.data?.error[0].message : "";
+            let data = error.response.data.error || "";
+            const newMsg = Array.isArray(data) ? data[0].message : data.message;
 
             const msg = {
                 "400": "Datos erroneos",
                 "409": "Usuario o Email ya registrados",
                 "500": "Error inesperado"
             }
-            toast.error(`${msg[String(status)]} ${errorMessage}`, {
+            toast.error(`${msg[String(status)]} ${newMsg}`, {
                 toastId: "error"
             });
         }
@@ -144,7 +140,7 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             //console.log(error.status.data.error[0].message);
-            toast.error("error inesperado 1");
+            toast.error("error inesperado en la creación de elementos");
         }
     }
 

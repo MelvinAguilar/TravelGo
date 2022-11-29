@@ -11,6 +11,7 @@ import ShoppingCartView from "./views/ShoppingCartView/ShoppingCartView";
 import CreatePlaceView from "./views/CreatePlaceView/CreatePlaceView";
 import TripsView from "./views/TripsView/TripsView";
 import AboutUsView from "./views/AboutUsView/AboutUsView";
+import PDFR from "./views/PDFView/PDFView";
 
 import { Route, Routes, useParams, Navigate, Outlet } from "react-router-dom";
 import { UseAuthContext } from "./contexts/authContext";
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <Routes>
+      <Route path="/Compra" element={<PDFR />} />
       <Route path="/" element={<LandingView />} />
       <Route path="/login" element={<LoginView />} />
       <Route path="/register" element={<SignupView />} />

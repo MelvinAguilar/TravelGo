@@ -72,6 +72,12 @@ router.patch("/shoppingcart",
     runValidation,
     shoppingcartController.patchShoppingCart
 );
+
+//function to remove items bought on shopping cart
+router.patch("/shoppingcart/bought",
+    authentication,
+    shoppingcartController.patchShoppingCartItemBought
+);
 //for admin only
 router.post("/turisticplan", 
     authentication,

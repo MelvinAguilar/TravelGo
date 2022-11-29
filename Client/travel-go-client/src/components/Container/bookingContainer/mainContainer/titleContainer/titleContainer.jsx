@@ -11,7 +11,8 @@ const titleContainer = ({title, _id})=>{
     const [placeSaved, setSaved] = useState(false);
 
     useEffect(()=>{
-        setSaved(saved.saved)
+        if(saved.saved !== undefined)
+            setSaved(saved.saved)
     },[saved.saved])
 
     const onClickHandler = ()=>{

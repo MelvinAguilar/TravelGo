@@ -54,6 +54,31 @@ controller.patchShoppingCart = async(req, res)=>{
         });
     }
 }
+
+controller.patchShoppingCartItemBought = async(req, res)=>{
+    try{
+        const {_id: userId} = req.user;
+        const {_id} = req.body;
+        const shoppingcart = await Shoppingcart.findOne({
+            user: userId
+        });
+        shoppingcart.item = shoppingcart.item.filter(individualItem =>{
+            if(individualItem._id === _id)
+                individualItem.compra = true;
+        });
+        
+        await shoppingcart.save();
+
+        return res.status(200).json({message: "Lista de compras actualizada"});
+
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+}
 //toogle for delete items in user
 
 controller.patchShoppingCartRemove = async(req, res)=>{

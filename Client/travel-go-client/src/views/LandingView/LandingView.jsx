@@ -15,9 +15,13 @@ import axios from 'axios';
 import { Binoculars } from "react-bootstrap-icons";
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { randomPlace } from "../../services/placeServer";
+import { useNavigate } from "react-router-dom";
 
 const LandingView = () => {
+  const navigateTo = useNavigate();
   const [ trips, setTrips ] = useState([]);
+  const { fetchRandomPlace, place } = randomPlace();
 
   useEffect(() => {
     fetchTrips();
@@ -31,6 +35,13 @@ const LandingView = () => {
       toast.error(error.message, {
         toastId: "fetchTripsError"
       });
+    }
+  };
+
+  const onClickHandler = () => {
+    fetchRandomPlace();
+    if (place && place[0]) {
+      navigateTo(`/place/${place[0]._id}`);
     }
   };
 
@@ -75,7 +86,7 @@ const LandingView = () => {
 
         <Container>
           <LandingInformation />
-          {/* <FeatureContainer /> */}
+          <FeatureContainer />
           <CategoryContainer />
 
           <ExploreContainer>
@@ -83,7 +94,7 @@ const LandingView = () => {
             <p>
               Sabemos que te encanta la aventura, y que descubir un solo lugar no te puede conformar o llenar. Es por eso que hemos creado una selección de multitrips especialmente para ti.</p> 
             <p> Explora montañas, rios y lagunas mientras disfutas de las playas y practicas tus actividades favoritas, en un mismo trip, a un mejor precio.</p>
-            <Button modifierClass="Button--purple">
+            <Button modifierClass="Button--purple" onClick={onClickHandler}>
               Explora un trip mágico
               <Binoculars />
             </Button>

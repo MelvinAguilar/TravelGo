@@ -25,14 +25,22 @@ export const AuthContextProvider = (props)=>{
     //efecto para verificar usuario
     useEffect(()=>{
         //obtener datos del usuario
+        console.log("tossken", token);
         fetchUserData();
     }, [token]);
     
     const fetchUserData = async()=>{
-        if(!token)
+        //Check if token is null
+        if(!token || token === "null") {
+            console.log(token); 
             return;
+        } else {
+            console.log("PASO CON token", token);
+        }
+
         startLoading();
         try{
+            console.log("[asp " +token);
             const {data} = await axios.get("/user/profile",{
                 headers:{
                     Authorization: `Bearer ${token}`
@@ -42,10 +50,11 @@ export const AuthContextProvider = (props)=>{
               setUser(data);
         }
         catch(error){
+            console.log(error);
             toast.error("Error inesperado", {
                 toastId: "error"
             });
-            logout();
+            logout(false);
 
         }
         finally{
@@ -71,7 +80,7 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             //loging out
-            logout();
+            logout(false);
             const {status} = error.response || {status: 500};
             const msg = {
                 "400": "Datos erroneos " + error.message,
@@ -113,8 +122,10 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             const {status} = error.response || {status: 500};
-            console.log(error.response.data);
-            const errorMessage = error.response.data !== undefined ? error.response.data?.error[0].message : "";
+            const dataResponse = error.response.data || {error: "Something went wrong!"};
+
+            // console.log(error.response.data);
+            const errorMessage = dataResponse ? error.response.data?.error[0].message : "";
 
             const msg = {
                 "400": "Datos erroneos",
@@ -146,13 +157,14 @@ export const AuthContextProvider = (props)=>{
         return token;
     }
 
-    const logout = ()=>{
+    const logout = ( showToast = true ) => {
         removeItemLS();
         setTokenLS(null);
         setUser(null);
-        toast.success("Sesión cerrada", {
-            toastId: "success"
-        });
+        if(showToast)
+            toast.success("Sesión cerrada", {
+                toastId: "success"
+            });
     }
 
     //funcion para singup

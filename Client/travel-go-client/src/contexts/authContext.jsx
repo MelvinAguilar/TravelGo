@@ -25,22 +25,17 @@ export const AuthContextProvider = (props)=>{
     //efecto para verificar usuario
     useEffect(()=>{
         //obtener datos del usuario
-        console.log("tossken", token);
         fetchUserData();
     }, [token]);
     
     const fetchUserData = async()=>{
         //Check if token is null
         if(!token || token === "null") {
-            console.log(token); 
             return;
-        } else {
-            console.log("PASO CON token", token);
         }
 
         startLoading();
         try{
-            console.log("[asp " +token);
             const {data} = await axios.get("/user/profile",{
                 headers:{
                     Authorization: `Bearer ${token}`

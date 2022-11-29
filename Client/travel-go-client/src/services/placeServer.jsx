@@ -31,7 +31,7 @@ export const commentsAPI = (_id)=>{
         //obtenemos comentarios
         fetchComments();
         fetchSavedPlace();
-    }, [place_id]);
+    }, [_id]);
 
     const fetchComments = async()=>{
         if(!place_id)

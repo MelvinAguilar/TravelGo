@@ -17,7 +17,7 @@ const commentsContainer  = ({commentsInformation, cant_comentarios, puntuacion_p
                     <StarFill/>
                 </div>
                 <h2>
-                    {puntuacion_prom} · ({cant_comentarios} reseñas)
+                    Reseñas
                 </h2>
             </div>
             <div className={classes["comments-container"]}>

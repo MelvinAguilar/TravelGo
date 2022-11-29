@@ -10,6 +10,11 @@
     border-radius: 1rem;
     box-shadow: 0rem 0rem 0.3125rem 0.1563rem rgba(0, 0, 0, 0.2);
     width: 100%;
+
+    label {
+        margin-block: 0.7rem 0.5rem;
+        display: block;
+    }
     
     >:first-child{
         @include flex(column, flex-start);

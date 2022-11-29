@@ -64,7 +64,7 @@ const BookingForm = ({placeInformation})=>{
                 <div>
                     <h2>${placeInformation.precio}</h2> USD
                 </div>
-                <div><StarFill/> {placeInformation.puntuacion_prom} · {placeInformation.cant_comentarios} reseñas</div>
+                {/* <div><StarFill/> {placeInformation.puntuacion_prom} · {placeInformation.cant_comentarios} reseñas</div> */}
             </div>
             <fieldset>
                 <label htmlFor="fecha_inicio">Fecha de inicio</label>
@@ -82,7 +82,7 @@ const BookingForm = ({placeInformation})=>{
                     {errors.fecha_inicio?.type === "required" && <ErrorMessage>Este campo es requerido</ErrorMessage>}
                     </InputField>
 
-                <label htmlFor="fecha_final">Fecha de final</label>
+                <label htmlFor="fecha_final">Fecha final</label>
                 <InputField 
                     id="fecha_final"
                     name="fecha_final"

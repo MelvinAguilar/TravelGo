@@ -90,7 +90,7 @@ const LandingView = () => {
           <CategoryContainer />
 
           <ExploreContainer>
-            <h2>Multitrips hechos solo para ti</h2>
+            <h2>Destinos hechos solo para ti</h2>
             <p>
               Sabemos que te encanta la aventura, y que descubir un solo lugar no te puede conformar o llenar. Es por eso que hemos creado una selección de multitrips especialmente para ti.</p> 
             <p> Explora montañas, rios y lagunas mientras disfutas de las playas y practicas tus actividades favoritas, en un mismo trip, a un mejor precio.</p>

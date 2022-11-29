@@ -110,4 +110,21 @@ controller.findByName = async(req, res)=>{
         });
     }
 }
+
+//find random place
+controller.findRandomPlace = async(req, res)=>{
+    try{
+        const data = await TuristicPlace.aggregate([{
+            $sample: {size: 1}
+        }]);
+
+        return res.status(200).json(data);
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error interno del servidor"
+        });
+    }
+}
 module.exports = controller;

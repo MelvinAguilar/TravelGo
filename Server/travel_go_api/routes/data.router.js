@@ -61,6 +61,13 @@ router.patch("/own/remove/shoppingcart",
     shoppingcartController.patchShoppingCartRemove
 );
     
+    
+//random place
+router.get("/own/random/place", 
+   // authentication,
+    turisticPlaceController.findRandomPlace
+);
+    
 //find view (admin administration) data
 router.get("/adm/:dataSchema", generalController.findAllPlaces);
 

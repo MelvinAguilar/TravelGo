@@ -2,6 +2,16 @@ import classes from "./AboutUsView.module.scss";
 import Header from "../../components/Header/Header";
 import FooterAttribution from "../../components/Footer/FooterAttribution/FooterAttribution";
 import intro from "./../../assets/intro_pic.png";
+import mongo from "./../../assets/mongo.png";
+import react from "./../../assets/react.png";
+import node from "./../../assets/node.png";
+import express from "./../../assets/express.png";
+import Footer from "../../components/Footer/Footer";
+
+import Button from "../../components/Button/Button";
+
+
+
 
 const AboutUsView = ({ className, ...rest }) => {
   return (
@@ -49,7 +59,7 @@ const AboutUsView = ({ className, ...rest }) => {
                 </div>
               </div>
             </div>
-
+            
             <div className={classes["AboutUs__content-values"]}>
                <div className={classes["AboutUs__values"]}>
                 <b><span>Comunidad y Medio Ambiente</span></b>
@@ -71,58 +81,101 @@ const AboutUsView = ({ className, ...rest }) => {
                 <p>Buscamos generar un impacto social a través del  turismo, nuestro objetivo principal es incrementar la actividad turística en la región.
                 </p>
               </div>
+
+            </div>
+
+        
+
+          <div className={classes["AboutUs__content-techs"]}>
+            <br></br>
+            <h1 className={classes["AboutUs__title"]}>Tecnologias que hacen posible la magia</h1> 
+            <div className={classes["AboutUs__card-tech"]}>
+              <div className={classes["AboutUs__tech"]}>
+                  <div className={classes["AboutUs__pic-tech"]}>
+                    <img src={mongo} alt="" aria-hidden="true"/>
+                  </div>            
+                    <h2>MongoDB</h2>
+              </div>
+              <div className={classes["AboutUs__tech"]}>
+                  <div className={classes["AboutUs__pic-tech"]}>
+                    <img src={react} alt="" aria-hidden="true"/>
+                  </div>            
+                    <h2>React</h2>
+              </div>
+              <div className={classes["AboutUs__tech"]}>
+                  <div className={classes["AboutUs__pic-tech"]}>
+                    <img src={express} alt="" aria-hidden="true"/>
+                  </div>            
+                    <h2>Express</h2>
+              </div>
+              <div className={classes["AboutUs__tech"]}>
+                  <div className={classes["AboutUs__pic-tech"]}>
+                    <img src={node} alt="" aria-hidden="true"/>
+                  </div>            
+                    <h2>Node</h2>
+              </div>
+          </div>
+          
+          </div>
+
+          <div className={classes["AboutUs__content-nosotros"]}>
+              <div className={classes["AboutUs__github"]}>
+                <div className={classes["AboutUs__info"]}>
+                <h1 className={classes["AboutUs__title"]}>¿Quieres saber más de nosotrsos?</h1>   
+                <p>Si te interesa conocer más acerca de lo que hacemos y de como funciona TRAVELGO, puedes visitar nuestros respositorios de GitHub. Si te interesa conocer más acerca de lo que hacemos y de como funciona TRAVELGO, puedes visitar nuestros respositorios de GitHub. Si te interesa conocer más acerca de lo que hacemos 
+                </p>
+                </div>
+                <div className={classes["AboutUs__repos"]}>
+          
+                  <div className={classes["AboutUs__repos-git"]}>
+                  <div className={classes["AboutUs__text"]}>
+                  <div className={classes["AboutUs__icon"]}>
+                  <Button modifierClass="Button--cute_pink"><p>❤</p></Button>
+                </div>
+                <div className={classes["AboutUs__repo-link"]}>
+                <h2>Fernanda Vásquez</h2>
+                <a href="https://github.com/cam-vasquez" target="_blank"  rel="noreferrer noopener">cam-vasquez</a>
+                </div>
+                </div>
+                <div className={classes["AboutUs__text"]}>
+                  <div className={classes["AboutUs__icon"]}>
+                  <Button modifierClass="Button--light_yellow"><p>❤</p></Button>
+                </div>
+                <div className={classes["AboutUs__repo-link"]}>
+                <h2>Melvin Aguilar</h2>
+                <a href="https://github.com/MelvinAguilar" target="_blank"  rel="noreferrer noopener">MelvinAguilar</a>
+                </div>
+                </div>
+                <div className={classes["AboutUs__text"]}>
+                  <div className={classes["AboutUs__icon"]}>
+                  <Button modifierClass="Button--baby_blue"><p>❤</p></Button>
+                </div>
+                <div className={classes["AboutUs__repo-link"]}>
+                <h2>Henry Escobar</h2>
+                <a href="https://github.com/HenryLima07" target="_blank"  rel="noreferrer noopener">HenryLima07</a>
+                </div>
+                </div>
+               
+                
+                
+
+              </div>
+
+             
+
+              </div>
+            </div>
             </div>
 
 
 
 
-          <p>
-              Nuestro objetivo es que los usuarios puedan encontrar lugares
-              turísticos en El Salvador, que puedan compartir sus comentarios
-              sobre sus visitas a los lugares turísticos, y poder reservar
-              estadías en los lugares turísticos. Nuestra aplicación web está
-              hecha con React, Node.js, Express y MongoDB.
-            </p>
-            <p>
-              Si quieres saber más sobre nosotros, puedes visitar nuestro
-              GitHub:
-            </p>
-            <ul className={classes["AboutUs__links"]}>
-              <li>
-                <a
-                  href="https://github.com/cam-vasquez"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Fernanda Camila Vásquez Meléndez
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/MelvinAguilar"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Melvin Armando Aguilar Hernández
-                </a>
-              </li>
 
-              <li>
-                <a
-                  href="https://github.com/HenryLima07"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Henry Eduardo Escobar Lima
-                </a>
-              </li>
-            </ul>
           </div>
            
         </section>
       </main>
-
-      <FooterAttribution />
+            <Footer></Footer>
     </>
   );
 };

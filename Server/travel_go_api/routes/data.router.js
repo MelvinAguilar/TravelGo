@@ -43,7 +43,7 @@ router.get("/own/wishlist",
     wishlistController.findWishListExtraInformation
 );
 
-//Wishlist get place from wishlist 
+//Wishlist get place from wishlist {true: false}
 router.get("/own/wishlist/place/:identifier", 
     authentication,
     wishlistController.findPlaceInWishlist

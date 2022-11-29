@@ -5,32 +5,138 @@
   margin-inline: auto;
   padding: 3rem 2rem;
 
-  min-height: calc(100vh - 2.8rem);
+  /* min-height: calc(100vh - 2.8rem);
   background-image: url("./../../assets/shape.svg");
   background-repeat: no-repeat;
-  background-position: right -6rem bottom -29vh;
+  background-position: right -6rem bottom -29vh; */
 
-  &__title {
-    font-family: "IBM Plex Serif";
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin: 2rem 0;
+ 
+
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+
+    &__introduction {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      padding: 5rem;
+      align-items: center;
+      justify-content: center;
+      width: 70%;
+       
+  
+    &__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: $accent-cetacean-blue;
+    font-family: "Source Sans Pro";
+
+    span{
+      font-size: large;
+    }
+
+    }
+
+   &__pic{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    
+    img{
+      width: 20rem;
+      padding: 2rem;
+      justify-content: center;
+      align-items: center;
+
+    } 
+
+   }
+  }
+}
+ 
+
+
+&__mision-vision{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+  align-items: center;
+  justify-content: center;
+  color: $accent-cetacean-blue;
+  height: fit-content;
   }
 
-  &__image {
+  &__mision{
+    background: $accent-baby-blue;
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+    height: 100%;
+    height: -webkit-fill-available;
+
+    
+    p{
+      text-align: justify;
+    }
+  }
+
+  &__vision{
+    background: $accent-cute-pink;
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+    height: 100%;
+    height: -webkit-fill-available;
+
+    p{
+      text-align: justify;
+    }
+  }
+
+  &__content-values{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    gap: 3rem;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    color: $accent-cetacean-blue;
+    height: fit-content;
+    background: $accent-navajo-white;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    height: 100%;
+    height: -webkit-fill-available;
+}
+    
+    
+
+
+
+/*    &__image {
     display: block;
-  }
-
+  } */
+  
   &__subtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 1rem 0;
-  }
+  } 
 
   p {
-    font-size: 1.02rem;
+    font-size: 1.3rem;
     line-height: 1.5;
     margin: 1rem 0;
+    
+  }
+
+  span{
+    font-weight: 700;
+    font-size: 1.5rem;
   }
 
   &__warning {
@@ -69,13 +175,37 @@
   }
 
   @include media-breakpoint-up($screen-md) {
+
+
     &__introduction {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      gap: 5rem;
-
-      margin-block: 3rem 7rem;
+      gap: 5rem; 
+    } 
+    
+  &__title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: $accent-cetacean-blue;
+    font-family: "Source Sans Pro";
+    padding: 0 0 2rem 0;
+      
+    span{
+      font-weight: 600;
+      font-size: large;
     }
   }
+
+/*   &__mision-vision{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 3rem;
+      padding: 5rem;
+      align-items: center;
+      justify-content: center;
+
+} */
+  }
+
 }

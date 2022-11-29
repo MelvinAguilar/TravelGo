@@ -4,23 +4,19 @@ import { Heart } from "react-bootstrap-icons";
 import { RWebShare } from "react-web-share";
 import { useLocation } from "react-router-dom";
 import {useState} from "react";
-import {wishlist} from "../../../../../services/placeServer";
+import {wishlist, commentsAPI} from "../../../../../services/placeServer";
 
 const titleContainer = ({title, _id})=>{
-
     const location = useLocation();
-    const [saved, setSave] = useState(false);
     const {patchWishList} = wishlist();
-    
+    const {saved} = commentsAPI(_id);
+    let _saved = saved;
     const onClickHandler = ()=>{
-        const token = localStorage.tokens_TG;
-        if(!saved) setSave(true);
-        else setSave(false);
 
-        if(!_id) return;
-        if(!token) return;
+        if(_saved) _saved = false;
+        else _saved = true;
 
-        patchWishList(_id, token);
+        patchWishList(_id);
     }
 
     return(
@@ -42,7 +38,7 @@ const titleContainer = ({title, _id})=>{
                         Compartir
                     </button>
                 </RWebShare>
-                <div onClick={onClickHandler} className={classes[`save-${saved}`]}>
+                <div onClick={onClickHandler} className={classes[`save-${_saved}`]}>
                     <Heart/>
                     Guardar
                 </div>

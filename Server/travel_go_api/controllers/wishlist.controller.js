@@ -5,12 +5,15 @@ const controller = {};
 
 controller.create = async(req, res)=>{
     try{
-        const {lugares} = req.body;
-        const {_id: userId} = req.user;
+        const {user: userId} = req.body;
         const wishlist = new WishList({
             user: userId,
-            lugares: lugares
         });
+
+        const element = await WishList.findOne({
+            user: userId
+        });
+        if(element) return res.status(500).json({error: "this user already exists"});
 
         const newWishList = await wishlist.save();
 
@@ -63,6 +66,29 @@ controller.findWishListExtraInformation = async(req, res) =>{
         .populate("lugares", "nombre ubicacion img");
 
         return res.status(200).json(data);
+
+    }
+    catch(error){
+        debug(error);
+        return res.status(500).json({
+            error: "Error en el servidor"
+        });
+    }
+}
+
+//find place added on wishlist by id
+controller.findPlaceInWishlist = async(req, res) =>{
+    try{
+        const {_id: userId} = req.user;
+        const {identifier} = req.params;
+        
+        const wishlist = await WishList.findOne({
+            user: userId
+        });
+
+        const index = wishlist.lugares.findIndex(lugarId => lugarId.equals(identifier));
+        if(index >= 0) return res.status(200).json({"saved": true});
+        return res.status(200).json({"saved": false});
 
     }
     catch(error){

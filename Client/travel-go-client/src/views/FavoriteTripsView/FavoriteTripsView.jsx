@@ -9,30 +9,26 @@ import { UseAuthContext } from "../../contexts/authContext";
 const FavoriteTripsView = ({ userD, className, ...rest }) => {
   const [ trips, setTrips ] = useState([]);
   const { startLoading, stopLoading } = useConfigContext();
-  const { token, user } = UseAuthContext();
+  const { token } = UseAuthContext();
 
   useEffect(() => {
-   if (user) {
+   if (token) {
     fetchTrips();
     }
-  }, [user]);
+  }, [token]);
 
   const fetchTrips = async () => {
     const R = 'Bearer';
     try {
       startLoading();
-      
-      //TODO Arreglar esto, no autorizado
-      
-      const { data } = await axios.get("/own/wishlist", { userId: user._id }, {
+            
+      const { data } = await axios.get("/own/wishlist", {
         headers: {
           Authorization: `${R} ${token}`
         }
       });
-      
       setTrips(data);
     } catch (error) {
-      // console.log(error);
       const { status } = error.response || { status: 500 };
       const errorMessage = error.response.data.error || ["Error inesperado"];
       const msg = {
@@ -49,7 +45,12 @@ const FavoriteTripsView = ({ userD, className, ...rest }) => {
 
   return (
     <div>
-      <Place trips={trips} />
+    {
+      trips?
+        <Place trips={trips[0].lugares} />
+      :
+      <h1>No se han agregado favoritos</h1>
+    }
     </div>
   );
 };

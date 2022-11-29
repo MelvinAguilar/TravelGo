@@ -97,7 +97,17 @@ export const AuthContextProvider = (props)=>{
             toast.success("Creación de usuario completado", {
                 toastId: "success"
             }); 
-            generalCreateUser();
+            const {data} = await axios.get("/user/id",{
+                headers:{
+                    email: email,
+                    nombre: nombre
+                }
+            })
+            if(!data){
+                toast.error("Error al crear usuario");
+                return;
+            }
+            await generalCreateUser(data);
 
 
         }
@@ -118,21 +128,15 @@ export const AuthContextProvider = (props)=>{
         }
     }
 
-    const generalCreateUser = async()=>{
+    const generalCreateUser = async(user)=>{
         try{
-            await axios.post("/wishlist", {}, {
-                headers: {
-                    Authorization: `${R} ${token}`
-                }
-            });
-            await axios.post("/shoppingcart", {},{
-                headers:{
-                    Authorization: `${R} ${token}`
-                }
-            })
+            await axios.post("/wishlist", {user});
+            await axios.post("/shoppingcart", {user});
+            console.log("elementos creados correctamente");
         }
         catch(error){
-            toast.error("error inesperado")
+            //console.log(error.status.data.error[0].message);
+            toast.error("error inesperado 1");
         }
     }
 

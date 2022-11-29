@@ -14,13 +14,14 @@ import {
     totalPerItem,
     DayCounter,
     setDateFormat,
-    setPriceFormat
+    setPriceFormat,
     } from "../../services/shoppingCartServer";
+import { toast } from "react-toastify";
 
 const ShoppingCartView = ()=>{
     let total = 0; //as global
     const [elements, setElements] = useState([]);
-    const {shoppingCartData, removeShoppingCartItem} = shoppingCartApi();
+    const {shoppingCartData, removeShoppingCartItem, saveInBooking, toogleBoughtItems} = shoppingCartApi();
 
     useEffect(()=>{
         if(shoppingCartData !== null && shoppingCartData.length > 0) {
@@ -43,8 +44,9 @@ const ShoppingCartView = ()=>{
         console.log(total);
         removeShoppingCartItem(item._id, total)
     }
-
-
+    
+    
+    //mapping items creation
     const mappedShoppingCart = (fetchedData)=>{
         if(!fetchedData) return;
         const totalPerService = 0;
@@ -58,7 +60,6 @@ const ShoppingCartView = ()=>{
             const totalPerDays = item.id_lugar.precio * (days===0 ? 1: days);
             const subTotal = totalPerItem(item.cant_personas, totalPerDays);
             total += (subTotal*0.13)+subTotal;
-            console.log(total);
         
             //new object
             const _moreInformation = {
@@ -86,8 +87,46 @@ const ShoppingCartView = ()=>{
         
         return items;
     } 
+
+    const dateFormat = (date)=>{
+        date = new Date(date);
+        try{
+            return `${date.getFullYear()}/${String(date.getMonth()).padStart(2, "0")}/${String(date.getDate()).padStart(2, "0")}`;
+
+        }
+        catch(error){
+            return;
+        }
+
+    }
     
-    //mapping items creation
+    const onClickHandler = async()=>{
+        const _toDay = new Date();
+        const toDay = `${_toDay.getFullYear()}/${_toDay.getMonth()}/${_toDay.getDate()}`;
+        const precio_total = total;
+        let items = [];
+        elements.map(item=>{
+
+            //getting dates
+            item.fecha_inicio = dateFormat(item.fecha_inicio)?dateFormat(item.fecha_inicio): item.fecha_inicio;
+            item.fecha_final = dateFormat(item.fecha_final)?dateFormat(item.fecha_final): item.fecha_final;
+
+            const newItem ={
+                "id_lugar": item.id_lugar._id,
+                "cant_personas": item.cant_personas,
+                "fecha_inicio": item.fecha_inicio,
+                "fecha_final": item.fecha_final,
+                "precio_unitario": item.id_lugar.precio
+            }
+            console.log(item.fecha_inicio);
+            console.log(item.fecha_final);
+            items = [...items, newItem];
+            toogleBoughtItems(item.id_lugar._id);
+        });
+       await saveInBooking(toDay, precio_total, items);
+
+        location.reload();
+    }   
     return (
         <>
         <Header />
@@ -120,7 +159,7 @@ const ShoppingCartView = ()=>{
                         </p>
                         <p>+ IVA Incluido</p>
                     </div>
-                    <Button modifierClass={'Button--black'}>CONTINUAR</Button>
+                    <Button modifierClass={'Button--black'} onClick = {onClickHandler}>CONTINUAR</Button>
                 </div>
                     </>
                 : <h1>No hay elementos en el carrito</h1> }

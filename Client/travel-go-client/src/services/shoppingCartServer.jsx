@@ -19,6 +19,52 @@ export const shoppingCartApi = ()=>{
     }, [token]);
 
 
+    const saveInBooking = async(fecha, precio_total, item)=>{
+        if(!fecha || !precio_total || !item) return;
+        startLoading();
+        try{
+            await axios.post("/booking",{
+                fecha, precio_total, item
+            }, {
+                headers:{
+                    Authorization: `${R} ${token}`
+                }
+            });
+            toast.success("Gracias por su compra");
+
+        }
+        catch(error){
+            console.log(error.response.data.error);
+            toast.error("Lo sentimos, no se ha podido guardar el registro");
+        }
+        finally{
+            stopLoading();
+        }
+    }
+
+    const toogleBoughtItems = async(_id)=>{
+        if(!_id) return;
+        startLoading();
+        try{
+            console.log(_id);
+            await axios.patch("/shoppingcart/bought",{
+                _id
+            }, {
+                headers:{
+                    Authorization: `${R} ${token}`
+                }
+            });
+            toast.success("Gracias por su compra");
+
+        }
+        catch(error){
+            toast.error("Lo sentimos, no se ha podido guardar el registro");
+        }
+        finally{
+            stopLoading();
+        }
+    }
+
     const postShoppingItem = async(precio_total, item)=>{
         if(!precio_total || !item || !token){
             toast.error("Error inesperado!");
@@ -86,7 +132,9 @@ export const shoppingCartApi = ()=>{
     const func ={
         shoppingCartData,
         postShoppingItem,
-        removeShoppingCartItem
+        removeShoppingCartItem,
+        saveInBooking,
+        toogleBoughtItems
     }
     return func;
 }

@@ -25,17 +25,8 @@
     border: none;
     padding: 0;
   }
-
-  & input.has-error{
-    border-color: rgb(255, 88, 88);
-
-    ~ svg,
-    ~ button svg {
-      fill: red;
-    }
-  }
   
-  > svg {
+  svg {
     pointer-events: none;
     width: 1.25rem;
     height: 1.25rem;

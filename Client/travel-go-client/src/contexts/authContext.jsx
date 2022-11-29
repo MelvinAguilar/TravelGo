@@ -113,13 +113,15 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             const {status} = error.response || {status: 500};
-            const errorMessage = error.response.data.error[0].message || ["Error inesperado"];
+            console.log(error.response.data);
+            const errorMessage = error.response.data !== undefined ? error.response.data?.error[0].message : "";
+
             const msg = {
                 "400": "Datos erroneos",
-                "409": "Usuario e Email ya registrados",
+                "409": "Usuario o Email ya registrados",
                 "500": "Error inesperado"
             }
-            toast.error(msg[String(status)] + ": " + errorMessage, {
+            toast.error(`${msg[String(status)]} ${errorMessage}`, {
                 toastId: "error"
             });
         }

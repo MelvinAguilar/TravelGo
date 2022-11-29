@@ -111,4 +111,28 @@ export const wishlist = ()=>{
     return funcs;
 }
 
+export const randomPlace = () => {
+    const { startLoading, stopLoading } = useConfigContext();
+    const [place, setPlace] = useState(null);
+    
+    const fetchRandomPlace = async () => {
+        startLoading();
+        try {
+            const { data } = await axios.get("/own/random/place");
+            setPlace(data);
+        } catch (error) {
+            toast.error("Error inesperado");
+        } finally {
+            stopLoading();
+        }
+    };
+    
+    useEffect(() => {
+        fetchRandomPlace();
+    }, []);
+    
+    return { place, setPlace, fetchRandomPlace };
+}
+
 const getTokensLS = () => localStorage.tokens_TG;
+

@@ -2,7 +2,7 @@
 
 .Footer {
   text-align: center;
-  background-color: #e3ebeb;
+  background-color: #f9ffff;
 
   > div:first-child {
     padding: 1rem;
@@ -75,7 +75,7 @@
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      max-height: 7rem;
+      max-height: 10rem;
 
       a {
         margin-block: 1rem;
@@ -87,6 +87,12 @@
       a {
         font-size: 2rem;
       }
+    }
+  }
+
+  @include media-breakpoint-up($screen-lg) {
+    &__list {
+      max-height: 7rem;
     }
   }
 }

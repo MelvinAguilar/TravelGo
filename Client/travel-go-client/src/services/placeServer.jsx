@@ -49,10 +49,10 @@ export const commentsAPI = (_id)=>{
             stopLoading();
         }
     }
-
        
     const fetchSavedPlace = async()=>{
-        if(!_id) return;
+        if(!_id || !token || token === "null") return;
+
         try{
             const {data} = await axios.get(`/own/wishlist/place/${_id}`,{
                 headers:{
@@ -96,8 +96,6 @@ export const wishlist = ()=>{
         }
         catch(error){
             console.log(error);
-            //const {status} = error.response;
-            //console.log(status.data.error[0].message);
             toast.error("Error inesperado");
         }
         finally{

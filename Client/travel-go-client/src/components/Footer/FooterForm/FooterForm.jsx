@@ -32,7 +32,6 @@ const FooterForm = () => {
           toast.success("¡Gracias por tus comentarios!", {
             toastId: "success",
           });
-          console.log(result.text);
 
           reset(); // Reset forms
         });

@@ -4,15 +4,25 @@ import FooterAttribution from "../../components/Footer/FooterAttribution/FooterA
 import ExploreContainer from "../../components/Container/ExploreContainer/ExploreContainer";
 import Button from "../../components/Button/Button";
 import NotFoundView from "../NotFoundView/NotFoundView";
-import { Binoculars, HeartFill } from "react-bootstrap-icons";
-import { Route, Routes } from "react-router-dom";
-
-import { NavLink } from "react-router-dom";
 import FavoriteTripsView from "../FavoriteTripsView/FavoriteTripsView";
 import AllTripsView from "../AllTripsView/AllTripsView";
 
-const TripsView = ({ className, ...rest }) => {
+import { Binoculars, HeartFill } from "react-bootstrap-icons";
+import { Route, Routes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { randomPlace } from "../../services/placeServer";
+import { useNavigate } from "react-router-dom";
 
+const TripsView = ({ className, ...rest }) => {
+  const navigateTo = useNavigate();
+  const { fetchRandomPlace, place } = randomPlace();
+
+  const onClickHandler = () => {
+    fetchRandomPlace();
+    if (place && place[0]) {
+      navigateTo(`/place/${place[0]._id}`);
+    }
+  };
 
   return (
     <>
@@ -61,7 +71,7 @@ const TripsView = ({ className, ...rest }) => {
             suscipit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Etiam vitae congue justo.
           </p>
-          <Button modifierClass="Button--purple">
+          <Button modifierClass="Button--purple" onClick={onClickHandler}>
             Explore a hidden trip
             <Binoculars />
           </Button>

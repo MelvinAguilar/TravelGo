@@ -1,14 +1,13 @@
 @import "./../../../mixins";
 
 .FooterForm {
-  max-width: 320px;
+  max-width: 20rem;
   margin: 3.5rem auto;
 
   fieldset {
     border: none;
     margin-top: 2rem;
     color: $text4;
-    
 
     button {
       width: 100%;
@@ -23,7 +22,7 @@
 
   @include media-breakpoint-up($screen-md) {
     margin: 0;
-    max-width: fit-content;
+    max-width: 100%;
   }
 
   @include media-breakpoint-up($screen-lg) {

@@ -64,8 +64,8 @@ const Footer = () => {
             <h2 className={classes["Subtitle"]}>Contenidos</h2>
             <ul className={classes["Footer__list"]}>
               <NavLink to="/about">Acerca de nosotros</NavLink>
-              <NavLink to="/solo-trips">solo trips</NavLink>
-              <NavLink to="/multi-trips">multi trips</NavLink>
+              <NavLink to="/trips">Lugares</NavLink>
+              <NavLink to="/multidestinations">Viajes</NavLink>
               <NavLink to="/recs-trips">Hecho para ti</NavLink>
               <NavLink to="/privacy-policy">Política de Privacidad</NavLink>
               <NavLink to="/terms-of-service">Terminos y Condiciones</NavLink>

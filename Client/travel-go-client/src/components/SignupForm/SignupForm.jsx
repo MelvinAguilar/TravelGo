@@ -1,8 +1,8 @@
-import { useState } from "react";
-import React, { useRef } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
-import {UseAuthContext} from "../../contexts/authContext";
+import { UseAuthContext } from "../../contexts/authContext";
+import { useNavigate } from "react-router-dom";
 
 import classes from "./SignupForm.module.scss";
 import InputField from "../Form/InputField/InputField";
@@ -14,8 +14,8 @@ import { Person, Envelope, Eye, EyeSlash } from "react-bootstrap-icons";
 
 
 const SignupForm = () => {
-
-  const {singup} = UseAuthContext();
+  const navigateTo = useNavigate();
+  const {singup, token, user } = UseAuthContext();
 
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -23,7 +23,6 @@ const SignupForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const ref = useRef();
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -35,9 +34,19 @@ const SignupForm = () => {
     </button>
   );
 
+  // useEffect(() => {
+  //   if (user) {
+  //     navigateTo("/");
+  //   }
+  // }, [user, navigateTo]);
+
   const onSubmit = async(data)=>{
     const {name, email, password, date_birth, phone} = data;
     await singup(name, email, password, date_birth, phone);
+    
+    // if (token && token !== "null") {
+    //   navigateTo("/");
+    // }
   }
 
   // When the form is submitted, but there are errors

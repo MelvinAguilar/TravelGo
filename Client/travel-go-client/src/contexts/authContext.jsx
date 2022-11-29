@@ -29,8 +29,11 @@ export const AuthContextProvider = (props)=>{
     }, [token]);
     
     const fetchUserData = async()=>{
-        if(!token)
+        //Check if token is null
+        if(!token || token === "null") {
             return;
+        }
+
         startLoading();
         try{
             const {data} = await axios.get("/user/profile",{
@@ -42,10 +45,11 @@ export const AuthContextProvider = (props)=>{
               setUser(data);
         }
         catch(error){
+            console.log(error);
             toast.error("Error inesperado", {
                 toastId: "error"
             });
-            logout();
+            logout(false);
 
         }
         finally{
@@ -71,7 +75,7 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             //loging out
-            logout();
+            logout(false);
             const {status} = error.response || {status: 500};
             const msg = {
                 "400": "Datos erroneos " + error.message,
@@ -108,20 +112,18 @@ export const AuthContextProvider = (props)=>{
                 return;
             }
             await generalCreateUser(data);
-
-
         }
         catch(error){
             const {status} = error.response || {status: 500};
-            console.log(error.response.data);
-            const errorMessage = error.response.data !== undefined ? error.response.data?.error[0].message : "";
+            let data = error.response.data.error || "";
+            const newMsg = Array.isArray(data) ? data[0].message : data.message;
 
             const msg = {
                 "400": "Datos erroneos",
                 "409": "Usuario o Email ya registrados",
                 "500": "Error inesperado"
             }
-            toast.error(`${msg[String(status)]} ${errorMessage}`, {
+            toast.error(`${msg[String(status)]} ${newMsg}`, {
                 toastId: "error"
             });
         }
@@ -138,7 +140,7 @@ export const AuthContextProvider = (props)=>{
         }
         catch(error){
             //console.log(error.status.data.error[0].message);
-            toast.error("error inesperado 1");
+            toast.error("error inesperado en la creación de elementos");
         }
     }
 
@@ -146,13 +148,14 @@ export const AuthContextProvider = (props)=>{
         return token;
     }
 
-    const logout = ()=>{
+    const logout = ( showToast = true ) => {
         removeItemLS();
         setTokenLS(null);
         setUser(null);
-        toast.success("Sesión cerrada", {
-            toastId: "success"
-        });
+        if(showToast)
+            toast.success("Sesión cerrada", {
+                toastId: "success"
+            });
     }
 
     //funcion para singup

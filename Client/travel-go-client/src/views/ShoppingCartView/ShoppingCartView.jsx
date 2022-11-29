@@ -7,6 +7,7 @@ import Header from "../../components/Header/Header";
 import FooterAttribution from "../../components/Footer/FooterAttribution/FooterAttribution";
 import ItemContainer from "../../components/Container/ShoppingCartContainer/ItemContainer/ItemContainer";
 
+import { CartX } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 import { 
     shoppingCartApi,
@@ -123,7 +124,11 @@ const ShoppingCartView = ()=>{
                     <Button modifierClass={'Button--black'}>CONTINUAR</Button>
                 </div>
                     </>
-                : <h1>No hay elementos en el carrito</h1> }
+                :   <div className={classes["empty-cart"]}>
+                        <CartX className={classes["empty-cart__icon"]}/>
+                        <h2 role="alert">No hay elementos en el carrito</h2>
+                    </div>
+                }
                 
             </Container>
         </main>

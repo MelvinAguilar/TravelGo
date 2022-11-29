@@ -2,12 +2,10 @@ import classes from "./titleContainer.module.scss";
 import { BoxArrowInRight } from "react-bootstrap-icons";
 import { Heart } from "react-bootstrap-icons";
 import { RWebShare } from "react-web-share";
-import { useLocation } from "react-router-dom";
 import {useState, useEffect} from "react";
 import {wishlist, commentsAPI} from "../../../../../services/placeServer";
 
 const titleContainer = ({title, _id})=>{
-    const location = useLocation();
     const {patchWishList} = wishlist();
     const {saved} = commentsAPI(_id);
     const [placeSaved, setSaved] = useState(false);
@@ -34,7 +32,7 @@ const titleContainer = ({title, _id})=>{
                 <RWebShare
                     data={{
                         text: title,
-                        url: location.pathname,
+                        url: window.location.href,
                         title: "Travel Go"
                     }}
                 >

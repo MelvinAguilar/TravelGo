@@ -59,8 +59,6 @@ router.post("/booking",
     
 //for user
 router.post("/shoppingcart", 
-    authentication,
-    authorization(ROLS.USER),
     shoppingcartValidator.createShoppingCartValidatorFirst,
     runValidation,
     shoppingcartController.create
@@ -85,8 +83,6 @@ router.post("/turisticplan",
     
 //for user
 router.post("/wishlist", 
-    authentication,
-    authorization(ROLS.USER),
     wishlistValidator.createWishListValidator,
     runValidation,
     wishlistController.create

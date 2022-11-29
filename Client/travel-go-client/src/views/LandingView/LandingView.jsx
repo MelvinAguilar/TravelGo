@@ -41,8 +41,9 @@ const LandingView = () => {
         <div className={classes["LandingContainer__content"]}>
           <Container>
             <div className={classes["LandingContainer__content-text"]}>
-              <h1>Let's find your</h1> <span>Adventure</span>
-              
+              <h1>
+                Let's find your <span>Adventure</span>
+              </h1>
               <p>
                 Descubre lugares mágicos en El Salvador, un paraíso tropical completamente 
                 secreto en medio de junglas de concreto.

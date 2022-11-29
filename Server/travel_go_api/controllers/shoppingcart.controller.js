@@ -1,4 +1,3 @@
-const shoppingcartModel = require("../models/shoppingcart.model");
 const Shoppingcart = require("../models/shoppingcart.model");
 const debug = require("debug")("app:post-controller");
 
@@ -6,18 +5,15 @@ const controller = {};
 
 controller.create = async(req, res)=>{
     try{
-        const {precio_total, item} = req.body;
-        const {_id: userId} = req.user;
+        const {user: userId} = req.body;
         
         const element = await Shoppingcart.findOne({
             user: userId
         });
-        if(element) return res.status(500).json({error: "shopping cart in user already"});
+        if(element) return res.status(500).json({error: "this user already exists"});
 
         const shoppingcart = new Shoppingcart({
             user: userId,
-            precio_total: precio_total,
-            item: item
         });
         
         const newShoppingCart = await shoppingcart.save();

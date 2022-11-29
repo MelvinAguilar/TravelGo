@@ -11,7 +11,7 @@ import { Cart } from "react-bootstrap-icons";
 
 const Header = () => {
   const [isSticky, setSticky] = useState(false);
-  const {user, logout} = UseAuthContext();
+  const { user, logout } = UseAuthContext();
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -23,34 +23,40 @@ const Header = () => {
 
   window.addEventListener("scroll", handleScroll);
   return (
-    <header className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}>
+    <header
+      className={`${classes["Header"]} ${isSticky ? classes["Fixed"] : ""}`}
+    >
       <Container>
         <Link to="/">
           <img src={logo} alt="TravelGo" className={classes["Header__logo"]} />
         </Link>
 
         <Navbar />
-        {
-          !user ?
-          <>
-            <ButtonLink to = "/login" modifierClass="Button--white">
-              Iniciar sesión
-            </ButtonLink>
-          </>
-            :
-          <div className={classes["Header__links"]}>
-            <Link 
-              to="/cart" 
-              aria-label="Ir al carro de compras"
-              className={classes["Header__cart"]}
-            >
-              <Cart />
-            </Link>
-            <ButtonLink onClick ={()=>logout()} modifierClass="Button--white">
-              Cerrar sesión
-            </ButtonLink>
-          </div>
-        }
+        <div className={classes["Header__links"]}>
+          {!user ? (
+            <>
+              <ButtonLink to="/login" modifierClass="Button--white">
+                Iniciar sesión
+              </ButtonLink>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/cart"
+                aria-label="Ir al carro de compras"
+                className={classes["Header__cart"]}
+              >
+                <Cart />
+              </Link>
+              <ButtonLink
+                onClick={() => logout()}
+                modifierClass="Button--white"
+              >
+                Cerrar sesión
+              </ButtonLink>
+            </>
+          )}
+        </div>
       </Container>
     </header>
   );

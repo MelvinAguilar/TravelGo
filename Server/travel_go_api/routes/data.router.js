@@ -24,7 +24,12 @@ const ROLS = require("../data/roles.constant.json");
 router.get("/user/rol/", 
     authentication,
     userController.findRoleByToken
-    );
+);
+
+//find user _id by name and email
+router.get("/user/id", 
+    userController.findUserByNameAndEmail
+);
     
     //find user by token
     router.get("/user/profile/", 
@@ -37,6 +42,12 @@ router.get("/own/wishlist",
     authentication,
     wishlistController.findWishListExtraInformation
 );
+
+//Wishlist get place from wishlist {true: false}
+router.get("/own/wishlist/place/:identifier", 
+    authentication,
+    wishlistController.findPlaceInWishlist
+);
     
 //ShoppingCart per user with extra Information
 router.get("/own/shoppingcart", 
@@ -48,6 +59,13 @@ router.get("/own/shoppingcart",
 router.patch("/own/remove/shoppingcart", 
     authentication,
     shoppingcartController.patchShoppingCartRemove
+);
+    
+    
+//random place
+router.get("/own/random/place", 
+   // authentication,
+    turisticPlaceController.findRandomPlace
 );
     
 //find view (admin administration) data

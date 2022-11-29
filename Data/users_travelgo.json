@@ -1,0 +1,800 @@
+[{
+  "_id": {
+    "$oid": "637bfdac494f3999a5f50d98"
+  },
+  "nombre": "Nuevo",
+  "email": "nanny@cyberchimps.com",
+  "contrasenia_hash": "42e8ce90a7e480b228dbb9ae91631689ca58b4fc39a23fe48e48cb07fa86aa76ddbecb6a65a3a3ee5ff0d19ba8a62ae3e7edbe037cab8c61c73d58dfb7ebfd44",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "900482400000"
+    }
+  },
+  "telefono": "9995-5896",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "d2544f5e1190a380f84e1f1dd5cd570a",
+  "tokens": [
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdiZmRhYzQ5NGYzOTk5YTVmNTBkOTgiLCJpYXQiOjE2NjkxNjI1NjcsImV4cCI6MTY3MDAyNjU2N30.fZ9sQ16R1c3bCrn7boJ0eSCGOpT4FniAb27hKaDfjQc",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdiZmRhYzQ5NGYzOTk5YTVmNTBkOTgiLCJpYXQiOjE2NjkxNjI1NDcsImV4cCI6MTY3MDAyNjU0N30.bFoRGnCh8KFr20gsIZwVusGnqkTB6F4OCMKtsfBASUM",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdiZmRhYzQ5NGYzOTk5YTVmNTBkOTgiLCJpYXQiOjE2NjkxNjI0NzEsImV4cCI6MTY3MDAyNjQ3MX0.QQaVuJunmItkdyaKhIXbkrWL0NfLZCoGhkUTDKzlMVc",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdiZmRhYzQ5NGYzOTk5YTVmNTBkOTgiLCJpYXQiOjE2NjkxNjI0MTQsImV4cCI6MTY3MDAyNjQxNH0.8nuoJWFTLak2H-tT1GG6iP4Oueggp3Zcdt9_JwXRwFo"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669070252940"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669246121550"
+    }
+  },
+  "__v": 21
+},{
+  "_id": {
+    "$oid": "637db547b5413185870d79df"
+  },
+  "nombre": "Ninny Klaves",
+  "email": "ninny@cyberchimps.com",
+  "contrasenia_hash": "b5fa24dd1d1cc06376ef28ac63516f960096f810489fdcdb04d698d5a43f34ee70fac63a34254c1a9f5fbf2ffa5cf9c524945f9c19a4d48c30f9c827c1dcade6",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "900482400000"
+    }
+  },
+  "telefono": "9996-5896",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "d6c212e2387bf71d1046f7bcc79ef710",
+  "tokens": [
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdkYjU0N2I1NDEzMTg1ODcwZDc5ZGYiLCJpYXQiOjE2NjkzOTk1MzAsImV4cCI6MTY3MDI2MzUzMH0.yq2u783PH3D1p2nMscFWzszuDfiYGvVd2zdFtzmH_mI",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdkYjU0N2I1NDEzMTg1ODcwZDc5ZGYiLCJpYXQiOjE2NjkzOTkzMzMsImV4cCI6MTY3MDI2MzMzM30._-eT9YunzO13ZWUnxwJBdPlZ3xU_Wle-QVRxbWBpjr0",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdkYjU0N2I1NDEzMTg1ODcwZDc5ZGYiLCJpYXQiOjE2NjkzOTAxMjAsImV4cCI6MTY3MDI1NDEyMH0.PoEqHPF2sByGeuBY3Wtndi1b3kVQ6xP-bBg2UOiCN98",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdkYjU0N2I1NDEzMTg1ODcwZDc5ZGYiLCJpYXQiOjE2NjkzOTAwOTYsImV4cCI6MTY3MDI1NDA5Nn0.pyoHClQWjLVw-deWfE21u9SPHREATOHosK4I8rSI28I"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669182791408"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669399530663"
+    }
+  },
+  "__v": 5
+},{
+  "_id": {
+    "$oid": "637e92d441d14f4700759f94"
+  },
+  "nombre": "Sophia Melton",
+  "email": "sophiamelton@gmail.com",
+  "contrasenia_hash": "087ee98d19223d20f1cc2e74b5cb4f3246c499a0d4043d4009f43e46e0b4fedd94bb8d542eedbf9b81ef5a4218ef010f7211054fdac097b60bbc826000c9e933",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "954741600000"
+    }
+  },
+  "telefono": "6050-7515",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "8fc2fdb366216f7824d29a020fe339f5",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239508989"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239508989"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e930741d14f4700759f97"
+  },
+  "nombre": "Wing Avila",
+  "email": "wingavila@hotmail.com",
+  "contrasenia_hash": "8808ccf1d7998b23f45898e6f26f363cf325ecaf52476ab8d5cf0e928fcabb37271929c0386270efa3cc2b800cbb23ed07dae016c4699200f4dd2b48164f0e30",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1093759200000"
+    }
+  },
+  "telefono": "6319-4700",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "451de154a95881a2945a360eff39ccc4",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239559387"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239559387"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e932941d14f4700759f9a"
+  },
+  "nombre": "Brandon Mccarthy",
+  "email": "brandonmccarthy@hotmail.com",
+  "contrasenia_hash": "20878e6f5ab2b00ff959095ad8850cacb9a7c66c16293c75587227346658e6aad8e676c5d6600bceac1e0f8aced0dd1b1e3663833fc92fce18bdcd478e503459",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1052546400000"
+    }
+  },
+  "telefono": "7527-0875",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "b68d2d9bc27d143c9b038882f23063d3",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239593166"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239593166"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e936e41d14f4700759f9d"
+  },
+  "nombre": "Yvette Spence",
+  "email": "yvettespence@gmail.com",
+  "contrasenia_hash": "13f095aace31ebcbdf07e7ff45233a34940587c2e01b65278464de223a100f9f95333d3f3ddab33c3a1bd1cad7b1811e2411d09e896b990efa88d48b47d65def",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1094364000000"
+    }
+  },
+  "telefono": "7675-2807",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "a967f72d520e39ce56b01e895864368a",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239662103"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239662103"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e938341d14f4700759fa0"
+  },
+  "nombre": "Abdul Huffman",
+  "email": "abdulhuffman@gmail.com",
+  "contrasenia_hash": "fe08d4eafb202620514d90bd2b537726530abbdec7e29b6b74c074245faadd716b5a8567f50047d70c7dbbe4e67ace502b14e35185d1d6be88081a34671c38f4",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1100930400000"
+    }
+  },
+  "telefono": "6294-8280",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "99f5659ba7f74f53eb6b6dbcf44059c5",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239683898"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239683898"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e939c41d14f4700759fa3"
+  },
+  "nombre": "Celeste Bond",
+  "email": "celestebond7492@hotmail.org",
+  "contrasenia_hash": "32ff7dffecbedbd14fe8bd67d1ed184dafca8c9f238260ba08f19b3c27b6b23441470f66026d94dde07f92485cf61f1b53626e7d659bddb2d6af696e8ec944b7",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "623397600000"
+    }
+  },
+  "telefono": "6759-7633",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "774b8d53622973c80f2b58130c52d91a",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239708155"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239708155"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e93fe41d14f4700759fa6"
+  },
+  "nombre": "Kenyon Hurley",
+  "email": "kenyonhurley@outlook.com",
+  "contrasenia_hash": "ec08674a4e2b5ea59566a41153d978a2ee12632891954e928194d0206535fd829505d25ba75516128cf90dc34c95390e3caef1f5d2d3734567a2a80a0ca384eb",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "806220000000"
+    }
+  },
+  "telefono": "7928-4540",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "8a336f54c9ebed2409c773e1cf8cdf74",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239806337"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239806337"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e940e41d14f4700759fa9"
+  },
+  "nombre": "Justine Jarvis",
+  "email": "justinejarvis@hotmail.com",
+  "contrasenia_hash": "3de22ac66b2df12b546be8fd0dd7ce5ede260e51064450573f3f9344db90c6917434eaeb8952a5893efdb1861015d9df375f760650f9d2ef7ed81f2c3a8924b2",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "952754400000"
+    }
+  },
+  "telefono": "7754-0543",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "4cfb069c12ced9a459f4bdc6d187bf09",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239822762"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239822762"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e942141d14f4700759fac"
+  },
+  "nombre": "Sasha Terry",
+  "email": "sashaterry6051@outlook.com",
+  "contrasenia_hash": "7a95b4f2fa6c076128f6d75bf8421c0a5f461c66e452955fd869e5ce0860fab4a6f31ddc99c3bfb34371e54ca16df53dc189dad718e88ceaddf3272fe9ba7661",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "518940000000"
+    }
+  },
+  "telefono": "6886-3834",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "7e3643399fee021bea9110de7f0e10c3",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239841912"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239841912"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e942d41d14f4700759faf"
+  },
+  "nombre": "Uta Chase",
+  "email": "utachase@outlook.com",
+  "contrasenia_hash": "b5a3e56db8b02df599a3b6f0c766503f9e2c9f1b6dbb0751ec1de660e06fac8addfa6d7c4825215ca7e7fdd4b907288e74f4acf387c5f1ede216d47eff6d52bb",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "860997600000"
+    }
+  },
+  "telefono": "7217-6155",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "e922297e6ca4108c1b3af6a8c526a770",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239853527"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239853527"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e943641d14f4700759fb2"
+  },
+  "nombre": "Damian Stone",
+  "email": "damianstone@hotmail.com",
+  "contrasenia_hash": "87b5810c2018d223948aa39dd6a4492914cc1b58350e488ee56f540948de8b5b9fb33d5cc0e4580958f1fb2d5936300ced64d000124953552543058b2f2205a9",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "982044000000"
+    }
+  },
+  "telefono": "6121-9517",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "22838b37d807cd44499e1e206e1b4fe6",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239862745"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239862745"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e944441d14f4700759fb5"
+  },
+  "nombre": "Michelle Cochran",
+  "email": "michellecochran3497@hotmail.org",
+  "contrasenia_hash": "9b2360fc565d3a6eb05bb8debeca1dbb4d663340b27c4e6a473d1b27a78503ccb2ac8d31df3fcde1531435c29ded2a6e3ca28e4af9d77569ddb1f0f7255c5419",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "237708000000"
+    }
+  },
+  "telefono": "6207-5396",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "3c458a2ff5a92b36208b09332742fad5",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239876464"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239876464"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e945341d14f4700759fb8"
+  },
+  "nombre": "Quail Sosa",
+  "email": "quailsosa@gmail.com",
+  "contrasenia_hash": "1aa639b310f6005723b6868eb77f6e128a180288cc817ae4ffb3c3e6591e21961fac26880a1a72920ba1d0e0e2ca233f303ead568ad7a9f931a62f2eeeb73287",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "501660000000"
+    }
+  },
+  "telefono": "6955-5514",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "e078f8e862e241e2543320c839c375f7",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239891602"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239891602"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e946f41d14f4700759fbb"
+  },
+  "nombre": "Kiara Crawford",
+  "email": "kiaracrawford@hotmail.com",
+  "contrasenia_hash": "6b379f30bc0e0d2ab629f101d991d651de1fa45d1f44c5df52704c31765e4c97a71eb8d715dd0ac3f69ea7e0c05d436a96645840dfc78d46049f6e73185cb556",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1028959200000"
+    }
+  },
+  "telefono": "7607-4336",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "3287fb04854ce9ec8e3ebe8dbaefc78d",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239919157"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239919157"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e947841d14f4700759fbe"
+  },
+  "nombre": "Britanni Puckett",
+  "email": "britannipuckett7700@gmail.com",
+  "contrasenia_hash": "497c370bcd229ff016736df0906876e547eee002ae61ea9eae0850169c084b0d88e97cda8d81e6748e0ac8ae5cfb1f686913cc21c5072361119b9118b80ee175",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "945928800000"
+    }
+  },
+  "telefono": "7334-7136",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "78e0bb5fcf6433cac36c47cdd0e23128",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239928809"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239928809"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e948241d14f4700759fc1"
+  },
+  "nombre": "Felicia Pickett",
+  "email": "feliciapickett@hotmail.com",
+  "contrasenia_hash": "94d039a7bf569fbe6c71b5c513b945b706cd3d5f4cb967581ac2d74123aaf2c37b43ac442685399e5186c69d0850572ee3fcdfd6297aeb15955e80fa62c79543",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1038463200000"
+    }
+  },
+  "telefono": "6668-8299",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "c03ebffc7b6533c176af39caaf0cd1d3",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239938004"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239938004"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e949241d14f4700759fc4"
+  },
+  "nombre": "Brent Quinn",
+  "email": "brentquinn@hotmail.org",
+  "contrasenia_hash": "1af5a5c648aaa0ef33c164d8b69282f1a64e75f970e590e65b0950044268a866e9d9f093dea36b4283bac5384b436a82556f700318455b03b58973b23bac14f2",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1083218400000"
+    }
+  },
+  "telefono": "7657-1288",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "92be88c2e0a363e0f9ae02565cc510a3",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239954585"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239954585"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94ad41d14f4700759fc8"
+  },
+  "nombre": "Felix Mclaughlin",
+  "email": "felixmclaughlin8547@hotmail.com",
+  "contrasenia_hash": "2d21a0af47b33c202bd0b1cc145b431053c46f350ef37ae20faa8d7edd4f1d97b904024cea7d9c16daf1cdc4e3aab89ed9c70d20f0631aedab0afcc57a8c3225",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1073541600000"
+    }
+  },
+  "telefono": "7867-8905",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "cb078a920b57c84855fc9b1704e99c21",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239981862"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239981862"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94b641d14f4700759fcb"
+  },
+  "nombre": "Aspen Huffman",
+  "email": "aspenhuffman7163@outlook.com",
+  "contrasenia_hash": "d16bc215544fe8ea008c8e57036d078273cfa622558e5b0b143367ed5305e6399c64e339bd3c53fedaad1201e2ba0cca7b66c7b7e68d565e4341aa6d7dabedac",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "512805600000"
+    }
+  },
+  "telefono": "6730-3680",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "0132695124e0aa9243c940b653952ce7",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239990233"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239990233"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94be41d14f4700759fce"
+  },
+  "nombre": "Nerea Parsons",
+  "email": "nereaparsons4103@hotmail.com",
+  "contrasenia_hash": "8b22e52fca7a0799bb964df69efb7a8f002012651c1be893ed736e48ff436a4a8dee8f6bdb7cc1b0e6daf77cc7b56d8dbc9ee35563b3ad83cb1d2d114ad090b1",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "619164000000"
+    }
+  },
+  "telefono": "6547-2753",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "5fe8bf93afe9f9da8f31b0843416c883",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669239998282"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669239998282"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94cd41d14f4700759fd1"
+  },
+  "nombre": "Derek Hughes",
+  "email": "derekhughes8088@hotmail.com",
+  "contrasenia_hash": "925d9c4a252a33612cdc95471ae13a326e2d3852715295a09306f0c8d5eb57064fb951782332ad8bbb39f2da62da12558ce8cb19fd7b5bd54b054db917079afb",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1081058400000"
+    }
+  },
+  "telefono": "7560-7304",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "d2e3cc1412f2a5b5954b41381ef4e457",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669240013007"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669240013007"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94d941d14f4700759fd4"
+  },
+  "nombre": "Barry Hogan",
+  "email": "barryhogan@hotmail.com",
+  "contrasenia_hash": "4541fc2698b0a9991c1e0de933582eccc1ef00ac5a9a86b56c7607c36932f103ade37aa6c2a318f6361003a2d0f78d72fd0b39cb8a1b57fd47661cb48e5493db",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "1012024800000"
+    }
+  },
+  "telefono": "6096-8950",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "6d28f9ccfeb54457128681359d875236",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669240025581"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669240025581"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637e94e141d14f4700759fd7"
+  },
+  "nombre": "Eliana Kramer",
+  "email": "elianakramer3187@gmail.org",
+  "contrasenia_hash": "74006e42080abead48f8ef3d63a25f39933f02d42262e8df527d0740b3f8129fc1a3c1607d8349a2d0e5f9b948e596e177e1f75a77d20b36e0643bd5d1139f0a",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "592552800000"
+    }
+  },
+  "telefono": "6260-7586",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user"
+  ],
+  "salt": "2b74b58b883942d6d630562680c90d3f",
+  "tokens": [],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669240033870"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669240033870"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "637ea6ed89e33e7e61dc5155"
+  },
+  "nombre": "Anjolie Dunlap",
+  "email": "anjoliedunlap962@hotmail.com",
+  "contrasenia_hash": "14570f44d8e8222efd42dcb396235aad3e8c02402155c0edc5dc1185a5b00bf75ce968c928d0b26e7d1a31e7e9c5f04893218046b8fa82108a4920d0985de08b",
+  "fec_nacimiento": {
+    "$date": {
+      "$numberLong": "238226400000"
+    }
+  },
+  "telefono": "7865-5188",
+  "imagen": "img/img_user/usuario.png",
+  "roles": [
+    "user",
+    "admin"
+  ],
+  "salt": "02aa5d8bd729c1ab21887c151464089e",
+  "tokens": [
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2MzdlYTZlZDg5ZTMzZTdlNjFkYzUxNTUiLCJpYXQiOjE2NjkzOTk2NDYsImV4cCI6MTY3MDI2MzY0Nn0.sbbGqXmerdwOUNFXUrWMlwKKu4S7ui0IIXE3E9lPxLY"
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1669244653452"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1669399646134"
+    }
+  },
+  "__v": 2
+},{"_id":{"$oid":"638631cf1a9bc9074140cc04"},
+	"nombre":"AdminTravelGo","email":"admingTravelGo@gmail.com",
+	"contrasenia_hash":"23734c30977d82a3a5ee00ef6977257ae728b57eaadb7a83a97fcc8fcf3c9e37315d189548cde35b61ea8fc2e750212fcf58ba7974e6f3db09fe1c459725d96d",
+	"fec_nacimiento":{"$date":{"$numberLong":"1667260800000"}},"telefono":"53536432","imagen":"img/img_user/usuario.png",
+	"roles":["user"],"salt":"2a8e12a70f1cf137ecef0678107ff6cc",
+	"tokens":["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2Mzg2MzE2YWQ3YWYyOGNjNzU3ZjdlNTQiLCJpYXQiOjE2Njk3Mzg4ODcsImV4cCI6MTY3MDYwMjg4N30.YIgPo1YRAUP3-2_eNuPjpwMpu1OXy3X1jvjoD9Ytubg"],
+	"createdAt":{"$date":{"$numberLong":"1669738858559"}},"updatedAt":{"$date":{"$numberLong":"1669738887742"}},"__v":{"$numberInt":"1"}}]

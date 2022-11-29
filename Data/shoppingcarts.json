@@ -1,0 +1,153 @@
+[{
+  "_id": {
+    "$oid": "63815915f64ffe98b32931b0"
+  },
+  "user": {
+    "$oid": "637db547b5413185870d79df"
+  },
+  "precio_total": 60.53,
+  "item": [
+    {
+      "id_lugar": {
+        "$oid": "638106d990bbac72edc02aa4"
+      },
+      "cant_personas": 2,
+      "fecha": {
+        "$date": {
+          "$numberLong": "1667887200000"
+        }
+      },
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "fecha_final": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "precio_unitario": 10.5,
+      "compra": false,
+      "_id": {
+        "$oid": "6381591ff64ffe98b32931b8"
+      }
+    },
+    {
+      "id_lugar": {
+        "$oid": "6381060790bbac72edc02a9f"
+      },
+      "cant_personas": 1,
+      "fecha": {
+        "$date": {
+          "$numberLong": "1668751200000"
+        }
+      },
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "fecha_final": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "precio_unitario": 10.5,
+      "compra": false,
+      "_id": {
+        "$oid": "63815933f64ffe98b32931bd"
+      }
+    },
+    {
+      "id_lugar": {
+        "$oid": "63812e5565fae1cb7bad9b8c"
+      },
+      "cant_personas": 4,
+      "fecha": {
+        "$date": {
+          "$numberLong": "1667628000000"
+        }
+      },
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "fecha_final": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "precio_unitario": 10.5,
+      "compra": false,
+      "_id": {
+        "$oid": "63815944f64ffe98b32931c3"
+      }
+    }
+  ],
+  "__v": 3
+},{
+  "_id": {
+    "$oid": "63815969f64ffe98b32931c9"
+  },
+  "user": {
+    "$oid": "637ea6ed89e33e7e61dc5155"
+  },
+  "precio_total": 60.53,
+  "item": [
+    {
+      "id_lugar": {
+        "$oid": "63812cff65fae1cb7bad9b84"
+      },
+      "cant_personas": 3,
+      "fecha": {
+        "$date": {
+          "$numberLong": "1669010400000"
+        }
+      },
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "fecha_final": {
+        "$date": {
+          "$numberLong": "1657260000000"
+        }
+      },
+      "precio_unitario": 10.5,
+      "compra": false,
+      "_id": {
+        "$oid": "6381596ff64ffe98b32931cd"
+      }
+    },
+    {
+      "id_lugar": {
+        "$oid": "638107a390bbac72edc02aa8"
+      },
+      "cant_personas": 2,
+      "fecha": {
+        "$date": {
+          "$numberLong": "1668578400000"
+        }
+      },
+      "fecha_inicio": {
+        "$date": {
+          "$numberLong": "1656655200000"
+        }
+      },
+      "fecha_final": {
+        "$date": {
+          "$numberLong": "1657000800000"
+        }
+      },
+      "precio_unitario": 10.5,
+      "compra": false,
+      "_id": {
+        "$oid": "63815986f64ffe98b32931d2"
+      }
+    }
+  ],
+  "__v": 2
+}]

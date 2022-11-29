@@ -59,7 +59,7 @@ const LandingView = () => {
                 Descubre lugares mágicos en El Salvador, un paraíso tropical completamente 
                 secreto en medio de junglas de concreto.
               </p>
-              <Button modifierClass="Button--white">
+              <Button modifierClass="Button--white" onClick={onClickHandler}>
                 Explora un trip mágico
                 <Binoculars/>
               </Button>

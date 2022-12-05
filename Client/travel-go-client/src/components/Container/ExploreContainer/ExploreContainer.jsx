@@ -1,6 +1,6 @@
 import classes from "./ExploreContainer.module.scss";
 
-import cameraPic from "./../../../assets/camera.svg";
+import cameraPic from "./../../../assets/camera.png";
 
 const ExploreContainer = ({ children }) => {
   return (

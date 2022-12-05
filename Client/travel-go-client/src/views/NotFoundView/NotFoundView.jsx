@@ -1,6 +1,6 @@
 import ButtonLink from "../../components/Button/ButtonLink/ButtonLink";
 import classes from "./NotFoundView.module.scss";
-import pageNotFound from "./../../assets/page-not-found.svg";
+import pageNotFound from "./../../assets/page-not-found.png";
 import Header from "../../components/Header/Header";
 import { HeartFill } from "react-bootstrap-icons";
 

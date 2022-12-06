@@ -69,6 +69,21 @@ Lista de tecnologías utilizadas en este proyecto.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- documentación -->
+## :memo: Documentación
+
+- [[Documento] 01 - Definición del proyecto.pdf](https://drive.google.com/file/d/1o9fUTMX2PNPHBia2zzQ6SrJDkOFwaSKN/view?usp=sharing)
+- [[Documento] 02 - Prototipo de la aplicación.pdf](https://drive.google.com/file/d/1qF6r2XBzdWuuJ54xCnAPtfaoM6DorMe1/view?usp=sharing)
+- [[Documento] 02.1 - Branding.pdf](https://drive.google.com/file/d/1extmq9J8_s92Ot1UAdZvtYTNC90do1w0/view?usp=sharing)
+- [[Documento] 03 - Diccionario de datos.pdf](https://drive.google.com/file/d/12DHkTEVa7652uMemu-pdBNfOpC2_5tCS/view?usp=sharing)
+- [[Documento] 04 - Diagramas UML de casos de uso.pdf](https://drive.google.com/file/d/1hxjaR_g-GfzmjPnGjQY6p7Weclr_v0_T/view?usp=sharing)
+- [[Documento] 05 - Manual de usuario.pdf](https://drive.google.com/file/d/1ahSu21mzNV1BGOyW9QgMrIIBzQlUefwS/view?usp=sharing)
+- [Carpeta contenedora de documentos](https://drive.google.com/drive/folders/1TVu6Fqgzc5ul_Z63fria0BxNfTJXVlQ-?usp=sharing)
+
+<br>
+
+- [Diseños en Figma](https://www.figma.com/file/1lLqBg4BEUuq3whFCkACwx/UI%2FUX-Design?node-id=136%3A53511)
+- [Documentación de Insomnia](https://travel-go-doc-api.vercel.app/)
 
 <!-- Prerrequisitos -->
 ## Prerrequisitos

@@ -9,24 +9,30 @@
 
  
   
-  <h2 align="center">Proyecto de Programación Web</h2>
+  <h2 align="center">Travel Go SV</h2>
   <p align="center">
     Proyecto de Programación Web
     <br />
-    <a href="https://github.com/Programacion-Web-02-2022/proyecto-grupo-de-trabajo-27-los-fullstack/issues">Reportar Error</a>
+    <a href="https://github.com/MelvinAguilar/TravelGo/issues">Reportar Error</a>
     ·
-    <a href="https://github.com/Programacion-Web-02-2022/proyecto-grupo-de-trabajo-27-los-fullstack/issues">Solicitar Característica</a>
+    <a href="https://github.com/MelvinAguilar/TravelGo/issues">Solicitar Característica</a>
   </p>
+  
+  <h3 align="center">Links</h3>
+  <a href="https://travelgo-app.vercel.app/">Demo en linea</a>
 </div>
 
 <br />
-<br />
 
-## Acerca del Proyecto
+## :tada: Acerca del Proyecto
 
-Proyecto de Programación Web 
+Esta aplicación fue creada con el fin de ayudar a los usuarios a encontrar lugares turísticos en El Salvador, y brindarles información sobre estos lugares. Hecha por un grupo de estudiantes de ingenieria informática de la Universidad Jose Simeon Cañas, UCA.
+
+<div align="center">
+
 ![](.screenshots/desktop-preview.png)
 
+</div>
 
 <!-- BUILT WITH -->
 ## :hammer: Tecnologías
@@ -85,8 +91,11 @@ Lista de tecnologías utilizadas en este proyecto.
 - [Diseños en Figma](https://www.figma.com/file/1lLqBg4BEUuq3whFCkACwx/UI%2FUX-Design?node-id=136%3A53511)
 - [Documentación de Insomnia](https://travel-go-doc-api.vercel.app/)
 
+<br>
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- Prerrequisitos -->
-## Prerrequisitos
+## :building_construction: Prerrequisitos
 
 * NPM
 * YARN
@@ -95,7 +104,7 @@ Lista de tecnologías utilizadas en este proyecto.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->
-## Licencia
+## :page_facing_up: Licencia
 
 Distribuido bajo MIT License. Ver `LICENSE.txt` para más información.
 
@@ -114,7 +123,7 @@ rootpassword02
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- TEAM -->
-### Miembros del equipo
+### :technologist: Miembros del equipo
 
 
 Fernanda Vásquez  | Melvin Aguilar | Henry Escobar
@@ -130,6 +139,6 @@ Fernanda Vásquez  | Melvin Aguilar | Henry Escobar
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [issues-shield]: https://img.shields.io/badge/Report%20an-Issue-important.svg?style=for-the-badge
-[issues-url]: https://github.com/Programacion-Web-02-2022/proyecto-grupo-de-trabajo-27-los-fullstack/issues
+[issues-url]: https://github.com/MelvinAguilar/TravelGo/issues
 [license-shield]: https://img.shields.io/badge/License%20-MIT-57b9d3.svg?style=for-the-badge
-[license-url]: https://github.com/Programacion-Web-02-2022/proyecto-grupo-de-trabajo-27-los-fullstack/blob/main/LICENSE
+[license-url]: https://github.com/MelvinAguilar/TravelGo/blob/main/LICENSE
